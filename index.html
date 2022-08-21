@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricardo Sanchez, webDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/83c3e527ac.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!--svg map-->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    
+    <!--svg header-->
+    <symbol id="svg-header__bg"  fill="none" >
+      <title>asdasd</title>
+      <g>
+        <rect width="895" height="287" rx="35" fill="#CC3030"/>
+      </g>
+    </symbol>
+
+    <symbol fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="svg-header__google-clock">
+        <path id="frame" d="M72 36C72 55.8823 55.8823 72 36 72C16.1177 72 0 55.8823 0 36C0 16.1177 16.1177 0 36 0C55.8823 0 72 16.1177 72 36Z" fill="#666666"/>
+        <g id="clock-bg" filter="url(#filter0_i_62_345)">
+          <circle cx="36" cy="36" r="33" fill="#FDFDFD"/>
+        </g>
+        <g>
+          <path d="M56.5916 31.8872H54.9V31.8H36V40.2H47.8682C46.1367 45.0899 41.4841 48.6 36 48.6C29.0416 48.6 23.4 42.9583 23.4 36C23.4 29.0416 29.0416 23.4 36 23.4C39.2119 23.4 42.1341 24.6117 44.3591 26.5909L50.2989 20.6511C46.5483 17.1556 41.5314 15 36 15C24.4027 15 15 24.4027 15 36C15 47.5972 24.4027 57 36 57C47.5972 57 57 47.5972 57 36C57 34.5919 56.8551 33.2175 56.5916 31.8872V31.8872Z" fill="#FFC107"/>
+          <path d="M17.4212 26.2255L24.3208 31.2855C26.1877 26.6634 30.709 23.4 35.9999 23.4C39.2119 23.4 42.134 24.6117 44.359 26.5909L50.2988 20.6511C46.5482 17.1556 41.5313 15 35.9999 15C27.9338 15 20.9387 19.5538 17.4212 26.2255V26.2255Z" fill="#FF3D00"/>
+          <path d="M35.9999 57C41.4242 57 46.3529 54.9241 50.0793 51.5484L43.5798 46.0485C41.4714 47.6455 38.8506 48.6 35.9999 48.6C30.5378 48.6 25.8999 45.1171 24.1527 40.2567L17.3046 45.5329C20.7801 52.3338 27.8382 57 35.9999 57V57Z" fill="#4CAF50"/>
+          <path d="M56.5915 31.8872L56.5575 31.8L54.9 31.8H36V40.2H47.8682C47.0366 42.5489 45.5256 44.5743 43.5768 46.0496L43.5799 46.0475L50.0795 51.5474C49.6196 51.9653 57 46.5 57 36C57 34.592 56.8551 33.2175 56.5915 31.8872Z" fill="#1976D2"/>
+        </g>
+        <g>
+          <rect x="35" y="5" width="2" height="7" rx="1" fill="#AAAAAA"/>
+          <rect x="19" y="11" width="2" height="7" rx="1" transform="rotate(-30 19 11)" fill="#AAAAAA"/>
+          <rect x="9" y="21.732" width="2" height="7" rx="1" transform="rotate(-60 9 21.732)" fill="#AAAAAA"/>
+          <rect x="57" y="47.732" width="2" height="7" rx="1" transform="rotate(-60 57 47.732)" fill="#AAAAAA"/>
+          <rect x="5" y="37" width="2" height="7" rx="1" transform="rotate(-90 5 37)" fill="#AAAAAA"/>
+          <rect x="60" y="37" width="2" height="7" rx="1" transform="rotate(-90 60 37)" fill="#AAAAAA"/>
+          <rect x="49" y="57" width="2" height="7" rx="1" transform="rotate(-30 49 57)" fill="#AAAAAA"/>
+          <rect x="35" y="60" width="2" height="7" rx="1" fill="#AAAAAA"/>
+          <rect x="57" y="25.232" width="2" height="7" rx="1" transform="rotate(-120 57 25.232)" fill="#AAAAAA"/>
+          <rect x="49.7321" y="17.0622" width="2" height="7" rx="1" transform="rotate(-150 49.7321 17.0622)" fill="#AAAAAA"/>
+          <rect x="20.7321" y="63.0622" width="2" height="7" rx="1" transform="rotate(-150 20.7321 63.0622)" fill="#AAAAAA"/>
+          <rect x="10" y="52.232" width="2" height="7" rx="1" transform="rotate(-120 10 52.232)" fill="#AAAAAA"/>
+        </g>
+        <g id="large-hand">
+          <path d="M40.2 36C40.2 38.3196 38.3196 40.2 36 40.2C33.6804 40.2 31.8 38.3196 31.8 36C31.8 33.6804 33.6804 31.8 36 31.8C38.3196 31.8 40.2 33.6804 40.2 36Z" fill="#666666"/>
+          <path d="M36 8L40.3501 13.4377C40.612 13.765 40.3789 14.25 39.9597 14.25H37.25V36H34.75V14.25H32.0403C31.6211 14.25 31.388 13.765 31.6499 13.4377L36 8Z" fill="#666666"/>
+        </g>
+        <g id="small-hand">
+          <path d="M39 36C39 37.6569 37.6569 39 36 39C34.3431 39 33 37.6569 33 36C33 34.3431 34.3431 33 36 33C37.6569 33 39 34.3431 39 36Z" fill="#323131"/>
+          <path d="M36 16L40.3501 21.4377C40.612 21.765 40.3789 22.25 39.9597 22.25H37.25V36.625H34.75V22.25H32.0403C31.6211 22.25 31.388 21.765 31.6499 21.4377L36 16Z" fill="#323131"/>
+        </g>
+      </g>
+      <defs>
+      <filter id="filter0_i_62_345" x="3" y="3" width="66" height="66" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_innerShadow_62_345"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_62_345"/>
+      </filter>
+      </defs>
+    </symbol>
+      
+    <!--svg header end-->
+
+    <symbol id="Layer_1" viewBox="0 0 32 32" height="32px" width="32px" >
+      <title>Linkedin icon</title>
+      <g>
+        <path d="M32,30c0,1.104-0.896,2-2,2H2c-1.104,0-2-0.896-2-2V2c0-1.104,0.896-2,2-2h28c1.104,0,2,0.896,2,2V30z" fill="#007BB5"/>
+        <rect fill="#FFFFFF" height="14" width="4" x="7" y="11"/>
+        <path d="M20.499,11c-2.791,0-3.271,1.018-3.499,2v-2h-4v14h4v-8c0-1.297,0.703-2,2-2c1.266,0,2,0.688,2,2v8h4v-7    C25,14,24.479,11,20.499,11z" fill="#FFFFFF"/>
+        <circle cx="9" cy="8" fill="#FFFFFF" r="2"/>
+      </g>
+    </symbol>  
+    <symbol id="github_icon" viewbox="0 0 32 32" height="32px" widht="32px">
+      <title>Github icon</title>
+      <g>
+        <path clip-rule="evenodd" d="M16.003,0C7.17,0,0.008,7.162,0.008,15.997  c0,7.067,4.582,13.063,10.94,15.179c0.8,0.146,1.052-0.328,1.052-0.752c0-0.38,0.008-1.442,0-2.777  c-4.449,0.967-5.371-2.107-5.371-2.107c-0.727-1.848-1.775-2.34-1.775-2.34c-1.452-0.992,0.109-0.973,0.109-0.973  c1.605,0.113,2.451,1.649,2.451,1.649c1.427,2.443,3.743,1.737,4.654,1.329c0.146-1.034,0.56-1.739,1.017-2.139  c-3.552-0.404-7.286-1.776-7.286-7.906c0-1.747,0.623-3.174,1.646-4.292C7.28,10.464,6.73,8.837,7.602,6.634  c0,0,1.343-0.43,4.398,1.641c1.276-0.355,2.645-0.532,4.005-0.538c1.359,0.006,2.727,0.183,4.005,0.538  c3.055-2.07,4.396-1.641,4.396-1.641c0.872,2.203,0.323,3.83,0.159,4.234c1.023,1.118,1.644,2.545,1.644,4.292  c0,6.146-3.74,7.498-7.304,7.893C19.479,23.548,20,24.508,20,26c0,2,0,3.902,0,4.428c0,0.428,0.258,0.901,1.07,0.746  C27.422,29.055,32,23.062,32,15.997C32,7.162,24.838,0,16.003,0z" fill="#181616" fill-rule="evenodd"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <nav class="nav">
+    <header class="nav__header">
+        <h1>Ricardo Hernandez</h1>
+    </header>
+    <ul class="nav__list">
+      <li>Dark mode</li>
+      <li>Lenguaje</li>
+    </ul>
+  </nav> 
+
+  <!--header-->  
+  <header class="header">
+    <div>
+      <svg id="svg-header-use__google-clock"role="img" title="google-clock" width="72" height="90" viewBox="0 0 80 80">
+        <use href="#svg-header__google-clock"></use>
+      </svg>
+      <svg id="svg-header-use__bg"role="img" title="bg" width="895" height="287" viewBox="0 0 895 287">
+        <use href="#svg-header__bg"></use>
+      </svg>
+      <div class="dialogue">
+        <p>Hola, soy ricardo y soy un desarrollador web full stack apasionado por el codigo<br>
+          Que te gustaria conocer sobre mi?
+        </p>
+        <nav>
+          <ul class="dialogue__nav">
+            <li><a href="#about-me">Sobre mi</a></li>
+            <li><a href="#skills">Portfolio</a></li>
+            <li><a href="#portfolio">Habilidades</a></li>
+            <li><a href="#footer">Contactame</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+    </div> 
+  </header> 
+
+  <!--content-->
+  <div class="content">
+    <!--about me-->
+    <section id="about-me">
+      <div class="about-me__grid-container">
+        <div class="about-me__item1-title">
+          <h1>About me</h1>
+        </div>
+        <div class="about-me__content about-me__item2-beginnig">
+          <h2>Mis inicios</h2>
+          <hr>
+          <p>Desde chico me propuse a ser desarrollador de videojuegos, 
+            asi que los a los quince a;os por mi cuenta estude sobre el 
+            desarrollo en unity y tras varios meses termine aprendiendo 
+            C# y en unity llegue a crear. No lo logre aquella vez, pero 
+            nunca es tarde</p>
+        </div>
+        <div class="about-me__content about-me__item3-education">
+          <h2>Mis inicios</h2>
+          <p>Desde chico me propuse a ser desarrollador de videojuegos, 
+            asi que los a los quince a;os por mi cuenta estude sobre el 
+            desarrollo en unity y tras varios meses termine aprendiendo 
+            C# y en unity llegue a crear. No lo logre aquella vez, pero 
+            nunca es tarde</p>
+        </div>
+        <div class="about-me__content about-me__item4-work">
+          <h2>Mis inicios</h2>
+          <p>Desde chico me propuse a ser desarrollador de videojuegos, 
+            asi que los a los quince a;os por mi cuenta estude sobre el 
+            desarrollo en unity y tras varios meses termine aprendiendo 
+            C# y en unity llegue a crear. No lo logre aquella vez, pero 
+            nunca es tarde</p>
+        </div>
+      </div>
+    </section>
+    <!--skills-->
+    <section id="skills">
+
+    </section>
+
+    <!--portfolio-->
+    <section id="portfolio">
+
+    </section>
+
+    <!--contact-->
+    <footer id="footer">
+      <svg role="img" title="icon1">
+        <use href="#Layer_1"></use>
+      </svg>
+      <svg role="img" title="github-icon">
+        <use href="#github_icon"></use>
+      </svg>
+      <div class="designed-by">
+        <p>Website designed by Ricardo Hernadez - 2022</p> 
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
