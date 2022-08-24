@@ -1,0 +1,83 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+
+.nav {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  padding: 0.5rem 0rem;
+}
+.nav__left-side {
+  flex-basis: 300px;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 5rem;
+}
+.nav__list > li {
+  margin: 0rem 0.3rem;
+  list-style-type: none;
+}
+.nav__list-item > a {
+  font-family: "Red Hat Mono", monospace;
+  text-decoration: none;
+  padding: 0.5rem;
+  color: #646464;
+}
+.nav__language {
+  font-family: "Red Hat Mono", monospace;
+}
+.nav__language--btn {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #979797;
+  border-radius: 11px;
+  background-color: #FAFAFA;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all ease 0.3s;
+}
+.nav__language--btn > div {
+  display: inline-block;
+  font-family: "Red Hat Mono", monospace;
+  font-size: 1rem;
+  color: #646464;
+}
+.nav__language--btn > svg {
+  margin: auto 0px auto 0.6rem;
+  transform: translate(0px, 2px);
+}
+.nav__language--btn:hover {
+  background-color: #417BB5;
+  color: white;
+}
+.nav__language--btn:hover > div {
+  color: white;
+}
+.nav__language--dropdown-content {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem;
+  border: 2px solid #041D36;
+  border-radius: 11px;
+  width: 150px;
+}
+.nav__language--dropdown-content > a {
+  width: 100%;
+  font-family: "Red Hat Mono", monospace;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
