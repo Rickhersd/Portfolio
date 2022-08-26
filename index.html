@@ -30,21 +30,18 @@
   <nav class="nav">
     <div class="nav__left-side">
       <img src="" alt="" id="svg__nav-logo">
-      <h1>Ricardo Hernandez</h1>
     </div>
     <ul class="nav__list">
       <li class="nav__list-item"><a href="#about-me">About me</a></li>
       <li class="nav__list-item"><a href="#skills">Skills</a></li>
       <li class="nav__list-item"><a href="#portfolio">Portfolio</a></li>
       <li class="nav__list-item"><a href="#footer">Contact</a></li>
-      <li class="nav__language">
-        <button onclick="myfunction()" class="nav__language--btn">
-          <div>Language</div>
-          <svg id="svg-nav-use__language-arrow" role="img" title="dropdown-arrow" width="23" height="14" viewBox="0 0 26 14">
-            <use href="#svg-nav__language-arrow"></use>
-          </svg>
+      <li class="nav__language dropdown">
+        <button OnClick=btnDropdown() class="nav__language--btn dropdown">
+          <div class="dropdown">Language</div>
+          <i class="fa-solid fa-chevron-left dropdown"></i>
         </button>
-        <div class="nav__language--dropdown-content">
+        <div id="nav__btn-dropdown" class="nav__language--dropdown-content dropdown">
           <a href="#">English</a>
           <a href="#">Spanish</a>
         </div>
@@ -60,25 +57,8 @@
   <!--header-->  
   <header class="header">
     <div>
-      <svg id="svg-header-use__google-clock"role="img" title="google-clock" width="72" height="90" viewBox="0 0 80 80">
-        <use href="#svg-header__google-clock"></use>
-      </svg>
-      <svg id="svg-header-use__bg"role="img" title="bg" width="895" height="287" viewBox="0 0 895 287">
-        <use href="#svg-header__bg"></use>
-      </svg>
-      <div class="dialogue">
-        <p>Hola, soy ricardo y soy un desarrollador web full stack apasionado por el codigo<br>
-          Que te gustaria conocer sobre mi?
-        </p>
-        <nav>
-          <ul class="dialogue__nav">
-            <li><a href="#about-me">Sobre mi</a></li>
-            <li><a href="#skills">Portfolio</a></li>
-            <li><a href="#portfolio">Habilidades</a></li>
-            <li><a href="#footer">Contactame</a></li>
-          </ul>
-        </nav>
-      </div>
+      <h1 class="header__title">Hi, my name is <br> Ricardo Hernandez</h1>
+      <p class="header__subtext">Soy un desarrollador web Full Stack y actualmente un estudiante de ingeniería en informatica. Desde siempre he disfrutado la programacion, y disfruto cada dia poder dedicarme a esto y a seguir aprendiendo</p>
     </div> 
   </header> 
 
@@ -88,33 +68,32 @@
     <section id="about-me">
       <div class="about-me__grid-container">
         <div class="about-me__item1-title">
-          <h1>About me</h1>
+          <h1 class="about-me__title">About me</h1>
+          <p class="about-me__subtext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis dolore tenetur eius officia at! Molestias nostrum, perferendis quae iure autem cum similique tempore libero quos voluptatibus ea obcaecati delectus ab.</p>
         </div>
-        <div class="about-me__content about-me__item2-beginnig">
-          <h2>Mis inicios</h2>
-          <hr>
-          <p>Desde chico me propuse a ser desarrollador de videojuegos, 
-            asi que los a los quince a;os por mi cuenta estude sobre el 
-            desarrollo en unity y tras varios meses termine aprendiendo 
-            C# y en unity llegue a crear. No lo logre aquella vez, pero 
-            nunca es tarde</p>
+        <div class="about-me__item2-photo">
+          
         </div>
-        <div class="about-me__content about-me__item3-education">
-          <h2>Mis inicios</h2>
-          <p>Desde chico me propuse a ser desarrollador de videojuegos, 
-            asi que los a los quince a;os por mi cuenta estude sobre el 
-            desarrollo en unity y tras varios meses termine aprendiendo 
-            C# y en unity llegue a crear. No lo logre aquella vez, pero 
-            nunca es tarde</p>
+        <div class="about-me__numbers about-me__item3-number1"> 
+          <div>1</div> 
         </div>
-        <div class="about-me__content about-me__item4-work">
-          <h2>Mis inicios</h2>
-          <p>Desde chico me propuse a ser desarrollador de videojuegos, 
-            asi que los a los quince a;os por mi cuenta estude sobre el 
-            desarrollo en unity y tras varios meses termine aprendiendo 
-            C# y en unity llegue a crear. No lo logre aquella vez, pero 
-            nunca es tarde</p>
+        <div class="about-me__content about-me__item4-start">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, veniam. Ipsam praesentium excepturi iste quasi culpa, impedit suscipit assumenda quae explicabo vero perferendis recusandae dolor itaque mollitia eos totam laudantium!</p>
         </div>
+        <div class="about-me__numbers about-me__item5-number2"> 
+          <div>2</div> 
+        </div>
+        <div class="about-me__content about-me__item6-education"> 
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, veniam. Ipsam praesentium excepturi iste quasi culpa, impedit suscipit assumenda quae explicabo vero perferendis recusandae dolor itaque mollitia eos totam laudantium!</p>
+        </div>
+        <div class="about-me__numbers about-me__item7-number3"> 
+          <div> 3 </div>
+        </div>
+        <div class="about-me__content about-me__item8-work"> 
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, veniam. Ipsam praesentium excepturi iste quasi culpa, impedit suscipit assumenda quae explicabo vero perferendis recusandae dolor itaque mollitia eos totam laudantium!</p>
+        </div>
+        <span class="about-me__item9-span"></span>
+        <div class="about-me__item10-cv">Download CV</div>
       </div>
     </section>
 
@@ -124,8 +103,22 @@
     </section>
 
     <!--portfolio-->
-    <section id="portfolio">
-
+    <section id="portfolio" class="portfolio">
+      <div>
+          <h1 class="portfolio__title">Portfolio</h1>
+          <p class="portfolio__subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quam quis quia consequatur! Neque saepe soluta perferendis sint, cupiditate quia et, eum, repellat ad ab sapiente consequuntur laudantium nemo asperiores?</p>
+      </div>
+      <div class="portfolio__flex-container">
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+        <div class="portfolio__item"></div>
+      </div>
     </section>
 
     <!--contact-->
@@ -141,5 +134,7 @@
       </div>
     </footer>
   </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
