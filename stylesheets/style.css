@@ -5,6 +5,10 @@
   font-family: "Red Hat Text", sans-serif;
 }
 
+:root {
+  --colorsvg: orange;
+}
+
 body {
   background-color: #FAFAFA;
 }
@@ -23,6 +27,7 @@ body {
   color: #484848;
   font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
+  margin-right: auto;
 }
 .header__subtext {
   max-width: 800px;
@@ -80,6 +85,7 @@ body {
   color: #484848;
   font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
+  margin-right: auto;
 }
 .about-me__subtext {
   max-width: auto;
@@ -197,12 +203,71 @@ body {
   display: block;
 }
 
+.skills__title {
+  font-size: 3.5rem;
+  color: #484848;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  text-align: right;
+  margin-left: auto;
+}
+.skills__subtext {
+  max-width: 700px;
+  font-size: 1.25rem;
+  color: #646464;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  text-align: right;
+  margin-left: auto;
+}
+.skills__flex-container {
+  display: flex;
+}
+.skills__area {
+  padding: 50px;
+  border-right: 1px solid black;
+}
+.skills__icons-container {
+  display: flex;
+}
+
+.svg-icons {
+  border: 1px solid;
+  border-color: var(--black);
+  fill: #767676;
+  background-color: var(--white);
+  transition: all ease 0.3s;
+  margin: 1rem;
+}
+.svg-icons > svg {
+  height: 100px;
+  width: 100px;
+}
+.svg-icons:hover {
+  cursor: pointer;
+  fill: #041D36;
+}
+.svg-icons > h5 {
+  text-align: center;
+  transition-property: letter-spacing color;
+  transition-timing-function: ease;
+  transition-duration: 0.1s;
+  color: #646464;
+}
+.svg-icons:hover > h5 {
+  color: #041D36;
+  letter-spacing: 0.08rem;
+}
+
 .portfolio__title {
   font-size: 3.5rem;
   color: #484848;
   font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .portfolio__subtext {
   max-width: 60%;

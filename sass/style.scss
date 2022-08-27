@@ -7,11 +7,25 @@ $font-mono:'Red Hat Mono', monospace;
 $font-display: 'Red Hat Display', sans-serif;
 $font-text: 'Red Hat Text', sans-serif;
 
-@mixin title-fonts {
+:root {
+    --colorsvg: orange;
+}
+
+@mixin title-fonts ($block-align){
     font-size: 3.5rem;
     color: #484848;
     font-family: $font-display;
     font-weight: 600;
+    @if $block-align == center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto; 
+    } @else if $block-align == right {
+        text-align: right; 
+        margin-left: auto;
+    } @else if $block-align ==left {
+        margin-right: auto;
+    }
 }
 
 @mixin subtext-font($max-widht, $block-align){
@@ -26,6 +40,7 @@ $font-text: 'Red Hat Text', sans-serif;
         margin-left: auto;
         margin-right: auto; 
     } @else if $block-align == right { 
+        text-align: right;
         margin-left: auto;
     } @else if $block-align ==left {
         margin-right: auto;
@@ -48,7 +63,7 @@ body {
     }
 
     &__title{
-        @include title-fonts();
+        @include title-fonts(left);
     }
 
     &__subtext {
@@ -88,7 +103,7 @@ body {
     }
 
     &__title{
-        @include title-fonts();
+        @include title-fonts(left);
     }
 
     &__subtext {
@@ -233,11 +248,66 @@ body {
     }
 }
 
+.skills {
+
+    &__title {
+        @include title-fonts(right);
+    } 
+
+    &__subtext{
+        @include subtext-font(700px, right)
+    }
+
+    &__flex-container{
+        display: flex;
+    }
+    &__area{
+        padding: 50px;
+        border-right: 1px solid black;
+    }
+
+    &__icons-container {
+        display: flex;
+    }
+
+}
+
+.svg-icons{
+
+    border: 1px solid;
+    border-color: var(--black);
+    fill: #767676;
+    background-color: var(--white);
+    transition: all ease 0.3s;
+    margin: 1rem;
+
+    & > svg {
+        height: 100px;
+        width: 100px;
+    }
+
+    &:hover{
+        cursor: pointer;
+        fill: $primary-color-blue;
+    }
+
+    & > h5 {
+        text-align: center;
+        transition-property: letter-spacing color;
+        transition-timing-function: ease;
+        transition-duration: 0.1s;
+        color: $font-color-gray;
+    }
+    &:hover > h5 {
+        color: $primary-color-blue;
+        letter-spacing: 0.08rem;
+    }
+}
+
 .portfolio{
 
     &__title {
-        @include title-fonts;
-        text-align: center;
+        @include title-fonts(center);
     }
 
     &__subtext{
@@ -260,5 +330,6 @@ body {
         background-color: #D9D9D9;
         border-radius: 1.2rem;
     }
+
 
 }
