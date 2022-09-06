@@ -1,0 +1,71 @@
+@use 'library.scss';
+
+.about-me{
+
+    &__item1-title{grid-area: title;}
+    &__item2-photo{grid-area: photo;}
+    &__item3-number1{grid-area: number-1;}
+    &__item4-start{grid-area:start;}
+    &__item5-number2{grid-area:number-2;}
+    &__item6-education{grid-area:education;}
+    &__item7-number3{grid-area:number-3;}
+    &__item8-work{grid-area:work;}
+    &__item9-span{grid-area:span;}
+    &__item10-cv{grid-area:cv;}
+
+    &__grid-container{
+        display: grid;
+        width: 90%;
+        margin: auto;
+        grid-template-columns: 150px auto auto;
+        grid-template-areas: 
+            "title title photo"
+            "number-1 start photo"
+            "number-2 education photo"
+            "number-3 work photo" 
+            "span cv photo";
+        gap: 1.5rem;
+    }
+
+    &__numbers{
+        text-align: right;
+    }
+
+    &__title{
+        @include library.title-fonts(left);
+    }
+
+    &__subtext {
+        @include library.subtext-font(auto, left);
+    }
+
+    &__item2-photo{
+        width: 450px;
+    }
+
+    &__content > p {
+        font-size: 1.25rem;
+        padding-top: 2.5rem;
+        font-weight: 400;
+        color: #393939;
+        font-family: library.$font-text;
+    }
+
+    &__numbers > div {
+        font-family: library.$font-text;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    &__item10-cv {
+        width: 250px;
+        background: #041D36;
+        margin-top: 2rem;
+        padding: 0.75rem;
+        text-align: center;
+        font-size: 1.25rem;
+        color:white
+
+    }
+
+}

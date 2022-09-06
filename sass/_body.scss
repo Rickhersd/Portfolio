@@ -1,0 +1,5 @@
+@use 'library.scss';
+
+body {
+    background-color: library.$main-bg;
+}

@@ -1,292 +1,119 @@
 @use "config.scss";
-
-$main-bg: #FAFAFA;
-$primary-color-blue: #041D36;
-$font-color-gray: #646464;
-$font-mono:'Red Hat Mono', monospace;
-$font-display: 'Red Hat Display', sans-serif;
-$font-text: 'Red Hat Text', sans-serif;
-
-:root {
-    --colorsvg: orange;
-}
-
-@mixin title-fonts ($block-align){
-    font-size: 3.5rem;
-    color: #484848;
-    font-family: $font-display;
-    font-weight: 600;
-    @if $block-align == center {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto; 
-    } @else if $block-align == right {
-        text-align: right; 
-        margin-left: auto;
-    } @else if $block-align ==left {
-        margin-right: auto;
-    }
-}
-
-@mixin subtext-font($max-widht, $block-align){
-    max-width: $max-widht;
-    font-size:1.25rem;
-    color: #646464;;
-    font-family: $font-text;
-    font-weight: 400;  
-    margin-top: 1.5rem;
-    @if $block-align == center {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto; 
-    } @else if $block-align == right { 
-        text-align: right;
-        margin-left: auto;
-    } @else if $block-align ==left {
-        margin-right: auto;
-    }
-
-}
-
-body {
-    background-color: $main-bg;
-}
-
-.header{
-    width: 100%;
-    height: 100vh;
-    display:flex;
-
-    & > div {
-        margin-top: 100px;
-        margin-left: 3rem;
-    }
-
-    &__title{
-        @include title-fonts(left);
-    }
-
-    &__subtext {
-        @include subtext-font(800px, left);
-    }
-}
-
-.about-me{
-
-    &__item1-title{grid-area: title;}
-    &__item2-photo{grid-area: photo;}
-    &__item3-number1{grid-area: number-1;}
-    &__item4-start{grid-area:start;}
-    &__item5-number2{grid-area:number-2;}
-    &__item6-education{grid-area:education;}
-    &__item7-number3{grid-area:number-3;}
-    &__item8-work{grid-area:work;}
-    &__item9-span{grid-area:span;}
-    &__item10-cv{grid-area:cv;}
-
-    &__grid-container{
-        display: grid;
-        width: 90%;
-        margin: auto;
-        grid-template-columns: 150px auto auto;
-        grid-template-areas: 
-            "title title photo"
-            "number-1 start photo"
-            "number-2 education photo"
-            "number-3 work photo" 
-            "span cv photo";
-        gap: 1.5rem;
-    }
-
-    &__numbers{
-        text-align: right;
-    }
-
-    &__title{
-        @include title-fonts(left);
-    }
-
-    &__subtext {
-        @include subtext-font(auto, left);
-    }
-
-    &__item2-photo{
-        width: 450px;
-    }
-
-    &__content > p {
-        font-size: 1.25rem;
-        padding-top: 2.5rem;
-        font-weight: 400;
-        color: #393939;
-        font-family: $font-text;
-    }
-
-    &__numbers > div {
-        font-family: $font-text;
-        font-weight: 600;
-        font-size: 2rem;
-    }
-
-    &__item10-cv {
-        width: 250px;
-        background: #041D36;
-        margin-top: 2rem;
-        padding: 0.75rem;
-        text-align: center;
-        font-size: 1.25rem;
-        color:white
-
-    }
-
-}
-
-.nav {
-    display: flex;
-    position: fixed;
-    width: 100%;
-    padding: 1rem 0rem;
-    background-color: $main-bg;
-    box-shadow: 1px 0px 1px black;
-
-    &__left-side{
-        flex-basis: 300px;
-    }
+@use "library.scss";
+@use 'body.scss';
+@use 'header.scss';
+@use 'nav.scss';
+@use 'about-me.scss';
 
 
-    &__list{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-        margin-right: 5rem;
+#skills {
 
-        & > li {
-            margin: 0rem 0.3rem;
-            list-style-type: none;
+    & > div:first-child {
+        padding: 3rem;
+        background-color: #417BB5;
+
+        & > div{
+            max-width: 900px;
+            margin: 0px auto;
         }
     }
-
-    &__list-item {
-        & > a{
-            font-family: $font-mono;
-            text-decoration: none;
-            padding:0.5rem;
-            color:#646464;
-        }
-    }
-
-    &__language{
-        font-family: $font-mono;
-        
-        &--btn{
-            padding: 0.2rem 0.5rem;
-            border: none;
-            border-left: 1px solid lighten($font-color-gray, 20);
-            background-color: $main-bg;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: all ease 0.3s;
-
-            & > div{
-                display: inline-block;
-                font-family: $font-mono;
-                font-size: 1rem;
-                color: $font-color-gray;
-            }
-
-            & > i {
-                color: $font-color-gray;
-                margin: auto 0px auto 0.6rem;
-                transform-origin: 50% 60%;
-                transform: translate(0px, 2px);
-                transition: all ease 0.5s;
-                height: 12px;
-            }
-
-            &:hover{
-                background-color: #417BB5;
-                color:white;
-
-                & > div {
-                    color: white;
-                }
-
-                & > i{
-                    color: white;
-                    transform: rotate(-90deg);
-                }
-            }
-
-
-
-        }
-
-        &--dropdown-content{
-            position: absolute;
-            display: none;
-            flex-direction: column;
-            padding: 0.5rem;
-            border: 2px solid $primary-color-blue; 
-            border-radius: 11px;
-            width: 150px;
-
-            & > a {
-                width: 100%;
-                font-family: $font-mono;
-                font-size: 1rem;
-            }
-        }
-
-
-    }
-    .show {
-        display: block;
-    }
 }
+
 
 .skills {
 
     &__title {
-        @include title-fonts(right);
+        @include library.title-fonts(right);
+        color: white;
     } 
 
     &__subtext{
-        @include subtext-font(700px, right)
+        @include library.subtext-font(700px, right)
+    }
+
+    &__container {
+        margin: 3rem 0rem;
+        border:#DDD 1px solid;
+        border-radius: 30px;
+        position: relative;
+
+        & > h3 {
+            display: inline-block;
+            padding: 0px 0.5rem;
+            position: absolute;
+            top: -14px;
+            left: 60px;
+            background-color: library.$main-bg;
+            color: #666;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     &__flex-container{
         display: flex;
-    }
-    &__area{
-        padding: 50px;
-        border-right: 1px solid black;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 1rem;
     }
 
-    &__icons-container {
+    &__description {
         display: flex;
+        margin: 2rem;
+
+        & > svg {
+            margin: 0rem 1rem;
+        }
+        & > div {
+            padding:0rem 1rem;
+            position: relative;
+
+            & > h3{
+                font-size: 1.8rem;
+                color: library.$primary-color-blue;
+            }
+
+            & > p{
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                font-family: library.$font-text;
+                color: library.$font-color-gray;
+            }
+
+            & > button {
+                border: none;
+                cursor: pointer;
+                position: absolute;
+                bottom: 0px;
+                background-color: #CCC;
+                padding: 0.2rem 1rem;
+                font-size: 1rem;
+            }
+        }
+    }
+    
+
+    &__show{
+        display:none;
     }
 
 }
 
 .svg-icons{
-
-    border: 1px solid;
-    border-color: var(--black);
     fill: #767676;
+    display:inline-block;
     background-color: var(--white);
     transition: all ease 0.3s;
     margin: 1rem;
 
     & > svg {
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 80px;
     }
 
     &:hover{
         cursor: pointer;
-        fill: $primary-color-blue;
+        fill: library.$primary-color-blue;
     }
 
     & > h5 {
@@ -294,10 +121,10 @@ body {
         transition-property: letter-spacing color;
         transition-timing-function: ease;
         transition-duration: 0.1s;
-        color: $font-color-gray;
+        color: library.$font-color-gray;
     }
     &:hover > h5 {
-        color: $primary-color-blue;
+        color: library.$primary-color-blue;
         letter-spacing: 0.08rem;
     }
 }
@@ -305,11 +132,11 @@ body {
 .portfolio{
 
     &__title {
-        @include title-fonts(center);
+        @include library.title-fonts(center);
     }
 
     &__subtext{
-        @include subtext-font(60%, "center")
+        @include library.subtext-font(60%, "center")
     }
 
     &__flex-container{
@@ -348,4 +175,23 @@ body {
     transition-timing-function: ease;
     transform: translate(100px, 0px);
     opacity: 1.0;
+}
+
+.s{
+    height: 250px;
+    width: 1000px; 
+
+    &__flex-container{
+        display:none;
+        background-color: red;
+        height: 100%;
+        width: 100%; 
+    }
+    
+    &__description{
+        display:none;
+        background-color: blue;
+        height: 100%;
+        width: 100%; 
+    }
 }

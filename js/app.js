@@ -1,3 +1,8 @@
+import {skills} from "../data/skills.js";
+import { SkillUI } from "../models/SkillsUI.js";
+import '../models/Skills.js'
+
+
 function btnDropdown () {
     document.getElementById("nav__btn-dropdown").classList.toggle("show");
 }
@@ -12,6 +17,20 @@ window.onclick = (event) => {
         }
     }
 }
+
+function main () {
+    const ui = new SkillUI();
+    ui.renderSkills(skills);
+    const but = document.querySelector(".skills__back-button");
+    console.log(but);
+    but.addEventListener('click', () => {
+        console.log(skills);
+        document.querySelector(".skills__flex-container").classList.toggle("skills__show");
+        document.querySelector(".skills__description").classList.toggle("skills__show");
+    });
+}
+
+main();
 
 if(!!window.IntersectionObserver){
     
@@ -33,6 +52,6 @@ if(!!window.IntersectionObserver){
         });
     }, options); 
 
-    boxElement = document.querySelector(".block");
+    let boxElement = document.querySelector(".block");
     observer.observe(boxElement);
 }

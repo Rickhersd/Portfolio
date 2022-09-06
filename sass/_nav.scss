@@ -1,0 +1,106 @@
+@use 'library.scss';
+
+.nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 1rem 0rem;
+    background-color: library.$main-bg;
+    box-shadow: 1px 0px 1px black;
+
+    &__left-side{
+        flex-basis: 300px;
+    }
+
+
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        margin-right: 5rem;
+
+        & > li {
+            margin: 0rem 0.3rem;
+            list-style-type: none;
+        }
+    }
+
+    &__list-item {
+        & > a{
+            font-family: library.$font-mono;
+            text-decoration: none;
+            padding:0.5rem;
+            color:#646464;
+        }
+    }
+
+    &__language{
+        font-family: library.$font-mono;
+        
+        &--btn{
+            padding: 0.2rem 0.5rem;
+            border: none;
+            border-left: 1px solid lighten(library.$font-color-gray, 20);
+            background-color: library.$main-bg;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all ease 0.3s;
+
+            & > div{
+                display: inline-block;
+                font-family: library.$font-mono;
+                font-size: 1rem;
+                color: library.$font-color-gray;
+            }
+
+            & > i {
+                color: library.$font-color-gray;
+                margin: auto 0px auto 0.6rem;
+                transform-origin: 50% 60%;
+                transform: translate(0px, 2px);
+                transition: all ease 0.5s;
+                height: 12px;
+            }
+
+            &:hover{
+                background-color: #417BB5;
+                color:white;
+
+                & > div {
+                    color: white;
+                }
+
+                & > i{
+                    color: white;
+                    transform: rotate(-90deg);
+                }
+            }
+
+
+
+        }
+
+        &--dropdown-content{
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            padding: 0.5rem;
+            border: 2px solid library.$primary-color-blue; 
+            border-radius: 11px;
+            width: 150px;
+
+            & > a {
+                width: 100%;
+                font-family: library.$font-mono;
+                font-size: 1rem;
+            }
+        }
+
+
+    }
+    .show {
+        display: block;
+    }
+}

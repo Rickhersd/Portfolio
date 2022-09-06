@@ -5,10 +5,6 @@
   font-family: "Red Hat Text", sans-serif;
 }
 
-:root {
-  --colorsvg: orange;
-}
-
 body {
   background-color: #FAFAFA;
 }
@@ -37,88 +33,6 @@ body {
   font-weight: 400;
   margin-top: 1.5rem;
   margin-right: auto;
-}
-
-.about-me__item1-title {
-  grid-area: title;
-}
-.about-me__item2-photo {
-  grid-area: photo;
-}
-.about-me__item3-number1 {
-  grid-area: number-1;
-}
-.about-me__item4-start {
-  grid-area: start;
-}
-.about-me__item5-number2 {
-  grid-area: number-2;
-}
-.about-me__item6-education {
-  grid-area: education;
-}
-.about-me__item7-number3 {
-  grid-area: number-3;
-}
-.about-me__item8-work {
-  grid-area: work;
-}
-.about-me__item9-span {
-  grid-area: span;
-}
-.about-me__item10-cv {
-  grid-area: cv;
-}
-.about-me__grid-container {
-  display: grid;
-  width: 90%;
-  margin: auto;
-  grid-template-columns: 150px auto auto;
-  grid-template-areas: "title title photo" "number-1 start photo" "number-2 education photo" "number-3 work photo" "span cv photo";
-  gap: 1.5rem;
-}
-.about-me__numbers {
-  text-align: right;
-}
-.about-me__title {
-  font-size: 3.5rem;
-  color: #484848;
-  font-family: "Red Hat Display", sans-serif;
-  font-weight: 600;
-  margin-right: auto;
-}
-.about-me__subtext {
-  max-width: auto;
-  font-size: 1.25rem;
-  color: #646464;
-  font-family: "Red Hat Text", sans-serif;
-  font-weight: 400;
-  margin-top: 1.5rem;
-  margin-right: auto;
-}
-.about-me__item2-photo {
-  width: 450px;
-}
-.about-me__content > p {
-  font-size: 1.25rem;
-  padding-top: 2.5rem;
-  font-weight: 400;
-  color: #393939;
-  font-family: "Red Hat Text", sans-serif;
-}
-.about-me__numbers > div {
-  font-family: "Red Hat Text", sans-serif;
-  font-weight: 600;
-  font-size: 2rem;
-}
-.about-me__item10-cv {
-  width: 250px;
-  background: #041D36;
-  margin-top: 2rem;
-  padding: 0.75rem;
-  text-align: center;
-  font-size: 1.25rem;
-  color: white;
 }
 
 .nav {
@@ -205,6 +119,97 @@ body {
   display: block;
 }
 
+.about-me__item1-title {
+  grid-area: title;
+}
+.about-me__item2-photo {
+  grid-area: photo;
+}
+.about-me__item3-number1 {
+  grid-area: number-1;
+}
+.about-me__item4-start {
+  grid-area: start;
+}
+.about-me__item5-number2 {
+  grid-area: number-2;
+}
+.about-me__item6-education {
+  grid-area: education;
+}
+.about-me__item7-number3 {
+  grid-area: number-3;
+}
+.about-me__item8-work {
+  grid-area: work;
+}
+.about-me__item9-span {
+  grid-area: span;
+}
+.about-me__item10-cv {
+  grid-area: cv;
+}
+.about-me__grid-container {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  grid-template-columns: 150px auto auto;
+  grid-template-areas: "title title photo" "number-1 start photo" "number-2 education photo" "number-3 work photo" "span cv photo";
+  gap: 1.5rem;
+}
+.about-me__numbers {
+  text-align: right;
+}
+.about-me__title {
+  font-size: 3.5rem;
+  color: #484848;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  margin-right: auto;
+}
+.about-me__subtext {
+  max-width: auto;
+  font-size: 1.25rem;
+  color: #646464;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  margin-right: auto;
+}
+.about-me__item2-photo {
+  width: 450px;
+}
+.about-me__content > p {
+  font-size: 1.25rem;
+  padding-top: 2.5rem;
+  font-weight: 400;
+  color: #393939;
+  font-family: "Red Hat Text", sans-serif;
+}
+.about-me__numbers > div {
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.about-me__item10-cv {
+  width: 250px;
+  background: #041D36;
+  margin-top: 2rem;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: white;
+}
+
+#skills > div:first-child {
+  padding: 3rem;
+  background-color: #417BB5;
+}
+#skills > div:first-child > div {
+  max-width: 900px;
+  margin: 0px auto;
+}
+
 .skills__title {
   font-size: 3.5rem;
   color: #484848;
@@ -212,6 +217,7 @@ body {
   font-weight: 600;
   text-align: right;
   margin-left: auto;
+  color: white;
 }
 .skills__subtext {
   max-width: 700px;
@@ -223,28 +229,73 @@ body {
   text-align: right;
   margin-left: auto;
 }
+.skills__container {
+  margin: 3rem 0rem;
+  border: #DDD 1px solid;
+  border-radius: 30px;
+  position: relative;
+}
+.skills__container > h3 {
+  display: inline-block;
+  padding: 0px 0.5rem;
+  position: absolute;
+  top: -14px;
+  left: 60px;
+  background-color: #FAFAFA;
+  color: #666;
+  align-items: center;
+  justify-content: center;
+}
 .skills__flex-container {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 1rem;
 }
-.skills__area {
-  padding: 50px;
-  border-right: 1px solid black;
-}
-.skills__icons-container {
+.skills__description {
   display: flex;
+  margin: 2rem;
+}
+.skills__description > svg {
+  margin: 0rem 1rem;
+}
+.skills__description > div {
+  padding: 0rem 1rem;
+  position: relative;
+}
+.skills__description > div > h3 {
+  font-size: 1.8rem;
+  color: #041D36;
+}
+.skills__description > div > p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: "Red Hat Text", sans-serif;
+  color: #646464;
+}
+.skills__description > div > button {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+  background-color: #CCC;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+}
+.skills__show {
+  display: none;
 }
 
 .svg-icons {
-  border: 1px solid;
-  border-color: var(--black);
   fill: #767676;
+  display: inline-block;
   background-color: var(--white);
   transition: all ease 0.3s;
   margin: 1rem;
 }
 .svg-icons > svg {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 .svg-icons:hover {
   cursor: pointer;
@@ -316,6 +367,23 @@ body {
   transition-timing-function: ease;
   transform: translate(100px, 0px);
   opacity: 1;
+}
+
+.s {
+  height: 250px;
+  width: 1000px;
+}
+.s__flex-container {
+  display: none;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+}
+.s__description {
+  display: none;
+  background-color: blue;
+  height: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

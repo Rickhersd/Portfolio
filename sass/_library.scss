@@ -1,0 +1,42 @@
+$main-bg: #FAFAFA;
+$primary-color-blue: #041D36;
+$font-color-gray: #646464;
+$font-mono:'Red Hat Mono', monospace;
+$font-display: 'Red Hat Display', sans-serif;
+$font-text: 'Red Hat Text', sans-serif;
+
+@mixin title-fonts ($block-align){
+    font-size: 3.5rem;
+    color: #484848;
+    font-family: $font-display;
+    font-weight: 600;
+    @if $block-align == center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto; 
+    } @else if $block-align == right {
+        text-align: right; 
+        margin-left: auto;
+    } @else if $block-align ==left {
+        margin-right: auto;
+    }
+}
+
+@mixin subtext-font($max-widht, $block-align){
+    max-width: $max-widht;
+    font-size:1.25rem;
+    color: #646464;;
+    font-family: $font-text;
+    font-weight: 400;  
+    margin-top: 1.5rem;
+    @if $block-align == center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto; 
+    } @else if $block-align == right { 
+        text-align: right;
+        margin-left: auto;
+    } @else if $block-align ==left {
+        margin-right: auto;
+    }
+}
