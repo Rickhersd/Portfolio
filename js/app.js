@@ -18,6 +18,14 @@ window.onclick = (event) => {
     }
 }
 
+function fieldEmpty(){
+    document.querySelectorAll(".contact__form-field").forEach(element => element.addEventListener("change", (e) => {
+        e.target.setAttribute("data-empty", e.target.value != "" ? false : true);
+    }));
+}
+
+fieldEmpty();
+
 function main () {
     const ui = new SkillUI();
     ui.renderSkills(skills);
