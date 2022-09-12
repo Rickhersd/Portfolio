@@ -1,7 +1,10 @@
 import {skills} from "../data/skills.js";
 import { SkillUI } from "../models/SkillsUI.js";
+import { HamburgerMenu } from "../models/HamburgerMenu.js";
 import '../models/Skills.js'
 
+const hamburgerMenuController = new HamburgerMenu();
+hamburgerMenuController.setEvents();
 
 function btnDropdown () {
     document.getElementById("nav__btn-dropdown").classList.toggle("show");
@@ -16,6 +19,10 @@ window.onclick = (event) => {
             }
         }
     }
+    if (event.target.matches('.nav-mobile__outside')){
+        hamburgerMenuController.closeMenu();
+        hamburgerMenuController.toogleHamburgerBtn("close");
+    }
 }
 
 function fieldEmpty(){
@@ -27,6 +34,16 @@ function fieldEmpty(){
 fieldEmpty();
 
 function main () {
+
+
+    const btn = document.querySelector('.hamburger-button');
+
+    btn.addEventListener('click', () => {
+        hamburgerMenuController.toggleDisplayMenu();
+        hamburgerMenuController.toogleHamburgerBtn();
+    });
+
+
     const ui = new SkillUI();
     ui.renderSkills(skills);
     const but = document.querySelector(".skills__back-button");

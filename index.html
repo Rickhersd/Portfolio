@@ -100,42 +100,78 @@
   </svg>
 
   <!--nav -->
-  <nav class="nav">
+  <nav id="nav">
     <div class="nav__left-side">
       <img src="" alt="" id="svg__nav-logo">
     </div>
-    <ul class="nav__list">
-      <li class="nav__list-item"><a href="#about-me">About me</a></li>
-      <li class="nav__list-item"><a href="#skills">Skills</a></li>
-      <li class="nav__list-item"><a href="#portfolio">Portfolio</a></li>
-      <li class="nav__list-item"><a href="#contact">Contact</a></li>
-      <li class="nav__language dropdown">
-        <button OnClick=btnDropdown() class="nav__language--btn dropdown">
-          <div class="dropdown">Language</div>
-          <i class="fa-solid fa-chevron-left dropdown"></i>
-        </button>
-        <div id="nav__btn-dropdown" class="nav__language--dropdown-content dropdown">
-          <a href="#">English</a>
-          <a href="#">Spanish</a>
+    <div class="nav__right-side">
+      <div class="nav__list-item-container">
+        <ul>
+          <li class="nav__list-item"><a href="#about-me">About me</a></li>
+          <li class="nav__list-item"><a href="#skills">Skills</a></li>
+          <li class="nav__list-item"><a href="#portfolio">Portfolio</a></li>
+          <li class="nav__list-item"><a href="#contact">Contact</a></li>
+          <li class="nav__language dropdown">
+            <button OnClick=btnDropdown() class="nav__language--btn dropdown">
+              <div class="dropdown">Language</div>
+              <i class="fa-solid fa-chevron-left dropdown"></i>
+            </button>
+            <div id="nav__btn-dropdown" class="nav__language--dropdown-content dropdown">
+              <a href="#">English</a>
+              <a href="#">Spanish</a>
+            </div>
+          </li>
+          <li class="nav__dark-mode">
+            <svg id="svg-nav-use__sun-icon" role="img" title="sun-icon" width="29" height="29" viewBox="0 0 33 33">
+              <use href="#svg-nav__sun"></use>
+            </svg>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-mobile">
+        <div class="hamburger-button">
+          <svg class="hambuger-button" xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 70 58">
+            <path id="hamburger-middleBar" d="M0 28.603C0 30.0407 0.864852 31.2061 1.9317 31.2061H67.6096C68.6764 31.2061 69.5413 30.0407 69.5413 28.603C69.5413 27.1654 68.6764 26 67.6096 26H1.9317C0.864852 26 0 27.1654 0 28.603Z" />
+            <path id="hamburger-bottomBar" d="M0 55.603C0 57.0407 0.864852 58.2061 1.9317 58.2061H67.6096C68.6764 58.2061 69.5413 57.0407 69.5413 55.603C69.5413 54.1654 68.6764 53 67.6096 53H1.9317C0.864852 53 0 54.1654 0 55.603Z" />
+            <path id="hamburger-topBar" d="M0 2.60305C0 4.04067 0.864852 5.2061 1.9317 5.2061H67.6096C68.6764 5.2061 69.5413 4.04067 69.5413 2.60305C69.5413 1.16542 68.6764 0 67.6096 0H1.9317C0.864852 0 0 1.16542 0 2.60305Z" />
+          </svg>
         </div>
-      </li>
-      <li class="nav__dark-mode">
-        <svg id="svg-nav-use__sun-icon" role="img" title="sun-icon" width="29" height="29" viewBox="0 0 33 33">
-          <use href="#svg-nav__sun"></use>
-        </svg>
-      </li>
-    </ul>
+        <div class="nav-mobile__outside"></div> 
+        <div class="nav-mobile__list-item-container">
+          <ul class="nav-mobile__nav-list">
+            <li id="nav-mobile__about-me" class="nav-mobile__list-item"><a href="#about-me">ABOUT ME<span>.</span></a></li>
+            <li id="nav-mobile__skills" class="nav-mobile__list-item"><a href="#skills">SKILLS<span>.</span></a></li>
+            <li id="nav-mobile__portfolio" class="nav-mobile__list-item"><a href="#portfolio">PORTFOLIO<span>.</span></a></li>
+            <li id="nav-mobile__contact" class="nav-mobile__list-item"><a href="#contact">CONTACT<span>.</span></a></li>
+          </ul>
+          <div class="nav-mobile__settings">
+            <div>
+              <svg id="svg-nav-use__sun-icon" role="img" title="sun-icon" width="29" height="29" viewBox="0 0 33 33">
+                <use href="#svg-nav__sun"></use>
+              </svg>
+            </div>
+
+            <div>
+              <button OnClick=btnDropdown() class="nav__language--btn dropdown">
+                <div class="dropdown">Language</div>
+                <i class="fa-solid fa-chevron-left dropdown"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav> 
   
   <!--header -->
   <header class="header">
     <div>
-      <h1 class="header__title">Hi, my name is <br> Ricardo Hernandez</h1>
-      <p class="header__subtext">Soy un desarrollador web Full Stack y actualmente un estudiante de ingeniería en informatica. Desde siempre he disfrutado la programacion, y disfruto cada dia poder dedicarme a esto y a seguir aprendiendo</p>
+      <h1 class="header__title">Hi, my name is <br> Ricardo Hernandez</h1> 
+      <p class="header__subtext">Soy un desarrollador web Full Stack y actualmente un estudiante de ingeniería en informatica. Desde siempre he disfrutado la programacion, y disfruto cada dia poder dedicarme a esto y a seguir aprendiendo</p> 
     </div> 
   </header> 
 
-  <!--about me --> 
+  <!-- about me
   <section id="about-me">
     <div class="about-me__grid-container">
       <div class="about-me__item1-title">
@@ -166,9 +202,9 @@
       <span class="about-me__item9-span"></span>
       <div class="about-me__item10-cv">Download CV</div>
     </div>
-  </section> 
+  </section> -->
 
-  <!-- skills-->
+  <!-- skills -->
   <section id="skills">
     <div>
       <div>
@@ -247,13 +283,24 @@
 
   <!--portfolio -->
   <section id="portfolio" class="portfolio">
-    <div class="block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi neque reiciendis excepturi a voluptate. Qui possimus corporis, nostrum quod repellat ratione sunt aliquid voluptatem voluptates quibusdam dolores rem labore.</div>
+    <div class="block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi neque reiciendis excepturi a voluptate. Qui possimus corporis, nostrum quod repellat ratione sunt aliquid voluptatem voluptates quibusdam dolores rem labore.</div> 
     <div>
         <h1 class="portfolio__title">Portfolio</h1>
-        <p class="portfolio__subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quam quis quia consequatur! Neque saepe soluta perferendis sint, cupiditate quia et, eum, repellat ad ab sapiente consequuntur laudantium nemo asperiores?</p>
+        <p class="portfolio__subtext">Quieres ver mis proyectos? A continucacion mis proyectos personales</p>
     </div>
     <div class="portfolio__flex-container">
-      <div class="portfolio__item"></div>
+      <div class="portfolio__item">
+        <figure>
+          <figcaption>
+            <div>
+              <h1>proyecto uno</h1> 
+              <a href="#contact"><button>Visit Website</button></a>
+              <button>about this WebPage</button> 
+            </div> 
+          </figcaption>
+          <img src="https://source.unsplash.com/random/400x300?iran" width="400" height="300" alt="imagen">
+        </figure>
+      </div>
       <div class="portfolio__item"></div>
       <div class="portfolio__item"></div>
       <div class="portfolio__item"></div>

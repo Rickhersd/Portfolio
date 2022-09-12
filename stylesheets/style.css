@@ -45,7 +45,7 @@ body {
   margin-left: 3rem;
 }
 .header__title {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 10vw, 3.5rem);
   color: #484848;
   font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
@@ -61,36 +61,43 @@ body {
   margin-right: auto;
 }
 
-.nav {
+#nav {
   display: flex;
   position: fixed;
   width: 100%;
   padding: 1rem 0rem;
+  top: 0px;
+  font-family: "Red Hat Mono", monospace;
+  z-index: 10;
 }
+
 .nav__left-side {
   flex-basis: 300px;
 }
-.nav__list {
+.nav__right-side {
+  width: 100%;
+}
+.nav__list-item-container ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
   margin-right: 5rem;
 }
-.nav__list > li {
+.nav__list-item-container li {
   margin: 0rem 0.3rem;
   list-style-type: none;
 }
-.nav__list-item > a {
+.nav__list-item-container a {
   font-family: "Red Hat Mono", monospace;
   text-decoration: none;
   padding: 0.5rem;
   color: #646464;
 }
-.nav__language {
+.nav__list-item-container .nav__language {
   font-family: "Red Hat Mono", monospace;
 }
-.nav__language--btn {
+.nav__list-item-container .nav__language--btn {
   padding: 0.2rem 0.5rem;
   border: none;
   border-left: 1px solid #979797;
@@ -100,13 +107,13 @@ body {
   align-items: center;
   transition: all ease 0.3s;
 }
-.nav__language--btn > div {
+.nav__list-item-container .nav__language--btn > div {
   display: inline-block;
   font-family: "Red Hat Mono", monospace;
   font-size: 1rem;
   color: #646464;
 }
-.nav__language--btn > i {
+.nav__list-item-container .nav__language--btn > i {
   color: #646464;
   margin: auto 0px auto 0.6rem;
   transform-origin: 50% 60%;
@@ -114,18 +121,18 @@ body {
   transition: all ease 0.5s;
   height: 12px;
 }
-.nav__language--btn:hover {
+.nav__list-item-container .nav__language--btn:hover {
   background-color: #417BB5;
   color: white;
 }
-.nav__language--btn:hover > div {
+.nav__list-item-container .nav__language--btn:hover > div {
   color: white;
 }
-.nav__language--btn:hover > i {
+.nav__list-item-container .nav__language--btn:hover > i {
   color: white;
   transform: rotate(-90deg);
 }
-.nav__language--dropdown-content {
+.nav__list-item-container .nav__language--dropdown-content {
   position: absolute;
   display: none;
   flex-direction: column;
@@ -134,15 +141,193 @@ body {
   border-radius: 11px;
   width: 150px;
 }
-.nav__language--dropdown-content > a {
+.nav__list-item-container .nav__language--dropdown-content > a {
   width: 100%;
   font-family: "Red Hat Mono", monospace;
   font-size: 1rem;
 }
-.nav .show {
+.show {
   display: block;
 }
 
+@media only screen and (max-width: 600px) {
+  .nav__list-item-container ul {
+    display: none;
+  }
+}
+.nav-mobile__outside {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+}
+.nav-mobile__list-item-container {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 280px;
+  background-color: #041D36;
+}
+.nav-mobile__list-item-container ul {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+}
+.nav-mobile__list-item-container li {
+  margin: 1rem;
+  padding: 1rem 0rem 0.8rem 1rem;
+  animation: ejemplo;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  list-style-type: none;
+  position: relative;
+}
+.nav-mobile__list-item-container li span {
+  color: yellow;
+}
+.nav-mobile__list-item-container li::before {
+  content: "";
+  position: absolute;
+  right: -3px;
+  bottom: 0px;
+  background-color: #417BB5;
+  width: 100%;
+  height: 1px;
+}
+.nav-mobile__list-item-container li[id=nav-mobile__about-me] {
+  animation-delay: 0.1s;
+}
+.nav-mobile__list-item-container li[id=nav-mobile__skills] {
+  animation-delay: 0.15s;
+}
+.nav-mobile__list-item-container li[id=nav-mobile__portfolio] {
+  animation-delay: 0.2s;
+}
+.nav-mobile__list-item-container li[id=nav-mobile__contact] {
+  animation-delay: 0.25s;
+}
+.nav-mobile__list-item-container a {
+  padding: inherit;
+  color: #FAFAFA;
+  font-size: 1.3rem;
+  text-align: right;
+  font-family: "Red Hat Text", sans-serif;
+  text-decoration: none;
+  position: relative;
+}
+.nav-mobile__list-item-container a::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  bottom: 0px;
+  background-color: #D8D133;
+  width: 20px;
+  height: 1px;
+}
+.nav-mobile__settings {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+.nav-mobile__settings > div:first-of-type {
+  width: 35%;
+}
+.nav-mobile__settings > div:last-of-type {
+  border-left: 1px #335577 solid;
+  width: 65%;
+}
+.nav-mobile__settings button {
+  padding: 0.2rem 0.5rem;
+  margin: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #FAFAFA;
+  font-size: 1.2rem;
+}
+.nav-mobile__settings button > div {
+  display: inline-block;
+  font-family: "Red Hat Mono", monospace;
+  font-size: 1rem;
+}
+.nav-mobile__settings button > i {
+  margin: auto 0px auto 0.6rem;
+  transform-origin: 50% 60%;
+  transform: translate(0px, 2px);
+  transition: all ease 0.5s;
+  height: 12px;
+}
+.nav-mobile__settings button:hover > div {
+  color: white;
+}
+.nav-mobile__settings button:hover > i {
+  color: white;
+  transform: rotate(-90deg);
+}
+.nav-mobile__settings svg {
+  margin: auto;
+  display: block;
+}
+
+.hamburger-button {
+  background-color: #041D36;
+  display: none;
+  position: absolute;
+  padding: 16px 16px 11px 16px;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  fill: #FAFAFA;
+}
+.hamburger-button #hamburger-topBar {
+  transform-origin: 0 0;
+  transition: transform cubic-bezier(0.33, 1, 0.68, 1) 0.3s;
+}
+.hamburger-button #hamburger-middleBar {
+  transition: all ease 0.4s;
+}
+.hamburger-button #hamburger-bottomBar {
+  transform-origin: 0% 100%;
+  transition: transform cubic-bezier(0.33, 1, 0.68, 1) 0.3s;
+}
+
+.hamburger-button__close #hamburger-topBar {
+  transform: rotate(45deg) scaleX(1.1) translate(6px, -6px);
+}
+.hamburger-button__close #hamburger-middleBar {
+  opacity: 0;
+}
+.hamburger-button__close #hamburger-bottomBar {
+  transform: rotate(-45deg) scaleX(1.1) translate(6px, 6px);
+}
+
+@media only screen and (max-width: 600px) {
+  .hamburger-button {
+    display: block;
+  }
+}
+@keyframes ejemplo {
+  from {
+    opacity: 0;
+    transform: translate(0px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-2px, -10px);
+  }
+}
 .about-me__item1-title {
   grid-area: title;
 }
@@ -185,7 +370,7 @@ body {
   text-align: right;
 }
 .about-me__title {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 10vw, 3.5rem);
   color: #484848;
   font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
@@ -225,6 +410,188 @@ body {
   color: white;
 }
 
+#skills > div:first-child {
+  padding: 3rem;
+  background-color: #417BB5;
+}
+#skills > div:first-child > div {
+  max-width: 900px;
+  margin: 0px auto;
+}
+
+.skills__title {
+  font-size: clamp(2rem, 10vw, 3.5rem);
+  color: #484848;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  text-align: right;
+  margin-left: auto;
+  color: white;
+}
+.skills__subtext {
+  max-width: 700px;
+  font-size: 1.25rem;
+  color: #646464;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  text-align: right;
+  margin-left: auto;
+}
+.skills__container {
+  margin: 3rem 0rem;
+  border: #DDD 1px solid;
+  border-radius: 30px;
+  position: relative;
+}
+.skills__container > h3 {
+  display: inline-block;
+  padding: 0px 0.5rem;
+  position: absolute;
+  top: -14px;
+  left: 60px;
+  background-color: #FAFAFA;
+  color: #666;
+  align-items: center;
+  justify-content: center;
+}
+.skills__flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 1rem;
+}
+.skills__description {
+  display: flex;
+  margin: 2rem;
+}
+.skills__description > svg {
+  margin: 0rem 1rem;
+}
+.skills__description > div {
+  padding: 0rem 1rem;
+  position: relative;
+}
+.skills__description > div > h3 {
+  font-size: 1.8rem;
+  color: #223C56;
+}
+.skills__description > div > p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: "Red Hat Text", sans-serif;
+  color: #646464;
+}
+.skills__description > div > button {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+  background-color: #CCC;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+}
+.skills__show {
+  display: none;
+}
+
+.portfolio__title {
+  font-size: clamp(2rem, 10vw, 3.5rem);
+  color: #484848;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.portfolio__subtext {
+  max-width: 60%;
+  font-size: 1.25rem;
+  color: #646464;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.portfolio__flex-container {
+  width: min(90%, 1200px);
+  background-color: blue;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.portfolio__item {
+  width: 400px;
+  aspect-ratio: 1.3/1;
+  margin: 0.5rem;
+  background-color: #D9D9D9;
+  overflow: hidden;
+}
+.portfolio__item figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.portfolio__item img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  transition: transform 0.5s linear;
+  overflow: hidden;
+}
+.portfolio__item img:hover {
+  transform: scale(1.2);
+}
+.portfolio__item figcaption {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: inherit;
+  height: inherit;
+  z-index: 1;
+}
+.portfolio__item figcaption h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.portfolio__item figcaption a:first-of-type {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.portfolio__item figcaption button:last-of-type {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.portfolio__item figcaption div {
+  opacity: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.437), rgba(255, 255, 255, 0));
+  position: relative;
+  width: 200px;
+  height: inherit;
+  transition: all 0.5s linear;
+  transform: translate(-200px, 0px);
+}
+.portfolio__item figcaption:hover div {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+.portfolio__item figcaption:hover ~ img {
+  filter: blur(2px);
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 600px) {
+  .portfolio__item {
+    width: 100%;
+  }
+}
 /* Contact */
 #contact {
   background-color: #223C56;
@@ -385,91 +752,6 @@ hr {
   line-height: 21px;
 }
 
-#skills > div:first-child {
-  padding: 3rem;
-  background-color: #417BB5;
-}
-#skills > div:first-child > div {
-  max-width: 900px;
-  margin: 0px auto;
-}
-
-.skills__title {
-  font-size: 3.5rem;
-  color: #484848;
-  font-family: "Red Hat Display", sans-serif;
-  font-weight: 600;
-  text-align: right;
-  margin-left: auto;
-  color: white;
-}
-.skills__subtext {
-  max-width: 700px;
-  font-size: 1.25rem;
-  color: #646464;
-  font-family: "Red Hat Text", sans-serif;
-  font-weight: 400;
-  margin-top: 1.5rem;
-  text-align: right;
-  margin-left: auto;
-}
-.skills__container {
-  margin: 3rem 0rem;
-  border: #DDD 1px solid;
-  border-radius: 30px;
-  position: relative;
-}
-.skills__container > h3 {
-  display: inline-block;
-  padding: 0px 0.5rem;
-  position: absolute;
-  top: -14px;
-  left: 60px;
-  background-color: #FAFAFA;
-  color: #666;
-  align-items: center;
-  justify-content: center;
-}
-.skills__flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 1rem;
-}
-.skills__description {
-  display: flex;
-  margin: 2rem;
-}
-.skills__description > svg {
-  margin: 0rem 1rem;
-}
-.skills__description > div {
-  padding: 0rem 1rem;
-  position: relative;
-}
-.skills__description > div > h3 {
-  font-size: 1.8rem;
-  color: #223C56;
-}
-.skills__description > div > p {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-family: "Red Hat Text", sans-serif;
-  color: #646464;
-}
-.skills__description > div > button {
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  bottom: 0px;
-  background-color: #CCC;
-  padding: 0.2rem 1rem;
-  font-size: 1rem;
-}
-.skills__show {
-  display: none;
-}
-
 .svg-icons {
   fill: #767676;
   display: inline-block;
@@ -497,48 +779,11 @@ hr {
   letter-spacing: 0.08rem;
 }
 
-.portfolio__title {
-  font-size: 3.5rem;
-  color: #484848;
-  font-family: "Red Hat Display", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.portfolio__subtext {
-  max-width: 60%;
-  font-size: 1.25rem;
-  color: #646464;
-  font-family: "Red Hat Text", sans-serif;
-  font-weight: 400;
-  margin-top: 1.5rem;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.portfolio__flex-container {
-  width: 90%;
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.portfolio__item {
-  width: 30%;
-  height: 200px;
-  margin: 5px;
-  background-color: #D9D9D9;
-  border-radius: 1.2rem;
-}
-
 .block {
-  margin-left: 100px;
+  margin-left: 0px;
   margin-top: 10px;
   text-align: center;
   padding: 20px;
-  width: 350px;
   height: 350px;
   color: black;
   font-size: large;
@@ -549,7 +794,7 @@ hr {
   transition-property: opacity, transform;
   transition-duration: 2s;
   transition-timing-function: ease;
-  transform: translate(100px, 0px);
+  transform: translate(-50px, 0px);
   opacity: 1;
 }
 

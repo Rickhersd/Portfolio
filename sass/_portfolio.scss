@@ -1,0 +1,104 @@
+@use 'library.scss';
+
+.portfolio{
+
+  &__title {
+    @include library.title-fonts(center);
+  }
+
+  &__subtext{
+    @include library.subtext-font(60%, "center")
+  }
+
+  &__flex-container{
+    width: min(90%, 1200px);
+    background-color: blue;
+    margin: 3rem auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    width: 400px;
+    aspect-ratio: 1.3 / 1;
+    margin: 0.5rem;
+    background-color: #D9D9D9;
+    overflow: hidden;
+
+    figure{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    img{
+      width:  inherit;
+      height: inherit;
+      object-fit:cover;
+      transition: transform 0.5s linear;
+      overflow: hidden;
+
+      &:hover{
+      transform: scale(1.2);
+      }
+    }
+
+    figcaption {
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: inherit;
+      height: inherit;
+      z-index: 1;
+
+      h1{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      a:first-of-type{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+      }
+
+      button:last-of-type{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      div {
+        opacity: 0;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.437), rgba(255, 255, 255, 0));
+        position: relative;
+        width: 200px;
+        height: inherit;
+        transition: all 0.5s linear;
+        transform: translate(-200px, 0px);
+
+      }
+      
+      
+      &:hover div{
+        opacity: 1;
+        transform: translate(0px, 0px);
+      }
+
+      &:hover ~ img{ 
+        filter: blur(2px);
+        transform: scale(1.1);      
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .portfolio__item {
+    width: 100%;
+  }
+}

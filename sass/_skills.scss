@@ -1,0 +1,93 @@
+@use 'library.scss';
+
+#skills {
+
+    & > div:first-child {
+        padding: 3rem;
+        background-color: #417BB5;
+
+        & > div{
+            max-width: 900px;
+            margin: 0px auto;
+        }
+    }
+}
+
+.skills {
+
+    &__title {
+        @include library.title-fonts(right);
+        color: white;
+    } 
+
+    &__subtext{
+        @include library.subtext-font(700px, right)
+    }
+
+    &__container {
+        margin: 3rem 0rem;
+        border:#DDD 1px solid;
+        border-radius: 30px;
+        position: relative;
+
+        & > h3 {
+            display: inline-block;
+            padding: 0px 0.5rem;
+            position: absolute;
+            top: -14px;
+            left: 60px;
+            background-color: library.$main-bg;
+            color: #666;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__flex-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 1rem;
+    }
+
+    &__description {
+        display: flex;
+        margin: 2rem;
+
+        & > svg {
+            margin: 0rem 1rem;
+        }
+        & > div {
+            padding:0rem 1rem;
+            position: relative;
+
+            & > h3{
+                font-size: 1.8rem;
+                color: library.$primary-color-blue;
+            }
+
+            & > p{
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                font-family: library.$font-text;
+                color: library.$font-color-gray;
+            }
+
+            & > button {
+                border: none;
+                cursor: pointer;
+                position: absolute;
+                bottom: 0px;
+                background-color: #CCC;
+                padding: 0.2rem 1rem;
+                font-size: 1rem;
+            }
+        }
+    }
+    
+
+    &__show{
+        display:none;
+    }
+
+}
