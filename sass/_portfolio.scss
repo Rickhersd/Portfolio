@@ -2,17 +2,54 @@
 
 .portfolio{
 
+  &__header{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 1300px;
+    margin:auto;
+    padding: 3rem;
+    background-color: lighten(#8cb5df, 40%); ;
+
+    &-content{
+      width: 1000px;
+      margin: auto;
+      padding: 3rem;
+    }
+
+    &-title{
+      width: 100%;
+      display: inline-block;
+      font-size: 5rem;
+      line-height: 1;
+      text-align: center;
+      color: #041d36;
+      font-family: library.$font-display;
+      font-weight: 800;
+
+      span{
+        color: library.$secundary-color-yellow;
+      }
+    }
+
+    &-text{
+      max-width: 500px;
+      margin: auto;
+    }
+  }
+
   &__title {
-    @include library.title-fonts(center);
+    
+    
   }
 
   &__subtext{
-    @include library.subtext-font(60%, "center")
   }
 
+  
+
   &__flex-container{
-    width: min(90%, 1200px);
-    background-color: blue;
+    width: min(100%, 1300px);
     margin: 3rem auto;
     display:flex;
     flex-direction: row;
@@ -21,7 +58,7 @@
   }
 
   &__item {
-    width: 400px;
+    width: 48%;
     aspect-ratio: 1.3 / 1;
     margin: 0.5rem;
     background-color: #D9D9D9;
@@ -37,16 +74,11 @@
       width:  inherit;
       height: inherit;
       object-fit:cover;
-      transition: transform 0.5s linear;
+      transition: transform 0.2s linear;
       overflow: hidden;
-
-      &:hover{
-      transform: scale(1.2);
-      }
     }
 
     figcaption {
-
       position: absolute;
       top: 0px;
       left: 0px;
@@ -54,51 +86,154 @@
       height: inherit;
       z-index: 1;
 
-      h1{
+      .portfolio__item-background{
         position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      a:first-of-type{
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-      }
-
-      button:last-of-type{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      }
-
-      div {
+        width: 100%;
+        height: 100%;
         opacity: 0;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.437), rgba(255, 255, 255, 0));
-        position: relative;
-        width: 200px;
-        height: inherit;
-        transition: all 0.5s linear;
-        transform: translate(-200px, 0px);
-
-      }
-      
-      
-      &:hover div{
-        opacity: 1;
-        transform: translate(0px, 0px);
+        background-image: linear-gradient(to top, #041d36, #041d36, #041d36cb, #041d3682 , rgb(122, 122, 122, 0));
+        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
       }
 
-      &:hover ~ img{ 
-        filter: blur(2px);
-        transform: scale(1.1);      
+      .portfolio__item-content{
+        opacity: 0;
+        position: absolute;
+        bottom: 0px;
+        padding: 2rem;
+        width: inherit;
+        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .portfolio__item-links{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        font-size: 0.9rem;
+
+        &-github{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          border: 1px solid white;
+          border-radius: 3px;
+          padding:0.3rem 0.7rem;
+        }
+
+        &-visit{
+          display: inline-block;  
+          font-weight: 400;
+          border: 1px solid transparent;
+          padding:0.3rem 0.7rem;
+        }
+
+      }
+
+      .portfolio__item-header{
+        margin-bottom: 1.2rem;
+
+        p:first-of-type {
+          font-size: 0.8rem;
+          color: rgb(186, 186, 186);
+          font-style: italic;
+        }
+
+        h3{
+          color: white;
+          font-family: library.$font-display;
+          font-weight: 800;
+          font-size: 1.8rem;
+        }
+
+        p:last-of-type{
+          font-size: 0.9rem;
+          width: min(100%, 400px);
+          color:white;
+          line-height: 1.2;
+        }
+
+        span{
+          color: library.$secundary-color-yellow;
+        }
+      }
+
+      &:hover{
+
+        .portfolio__item-number{
+          opacity: 1;
+        }
+
+        .portfolio__item-background{
+          opacity: 1;
+        }
+
+        .portfolio__item-content{
+          opacity: 1;
+        }
+
+        ~ img {
+          transform: scale(1.03);
+        }
+      }
+
+      a{
+        cursor: pointer;
+        color: white;
+        display: flex;
+        display: inline-block;
+        flex-direction: row;
+        align-items: center;
+
+
+        &[class="portfolio__visit-link"]{
+          border: library.$secundary-color-yellow 1px solid;
+          border-radius: 50px;
+          display: inline-block;
+          padding:0.5rem 0.6rem;
+          font-size: 1rem;
+          text-align: center;
+  
+          &:hover{
+            background-color: library.$secundary-color-yellow;
+            color:  #041d36;
+          } 
+        }
+
+        &[class="portfolio__about-link"], &[class="portfolio__github-link"]{
+          font-size: 0.8rem;
+        }
+
+        &[class="portfolio__github-link"]{
+          font-size: 0.8rem;
+          margin-top: 0.2rem;
+        }
+
+        &:visited, &:active, &:link{
+          text-decoration: none;
+        }
+
+        & svg{
+          fill: white;
+        }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .portfolio__item {
+    width: 45%;
   }
 }
 
 @media only screen and (max-width: 600px){
   .portfolio__item {
     width: 100%;
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+
+  .portfolio__header-content-container{
+    @include library.MQ__sub-header__div-content-container();
   }
 }
+

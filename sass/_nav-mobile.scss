@@ -1,5 +1,17 @@
 @use 'library.scss';
 
+#nav-mobile{
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  width:100%;
+  background-color: red;
+  top: 0px;
+  font-size: 0.85rem;
+  color: library.$font-color-white;
+  z-index: 10;
+}
+
 .nav-mobile {
 
   &__outside{

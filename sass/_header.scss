@@ -1,20 +1,351 @@
 @use 'library.scss';
 
+$space-between-blocks:0.5rem;
+$drop-shadow: drop-shadow(0px 0px 3px gray);
+
 .header{
     width: 100%;
     height: 100vh;
     display:flex;
+    flex-direction: column;
+    align-items: center;
 
-    & > div {
-        margin-top: 100px;
-        margin-left: 3rem;
+    > div:first-of-type{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: calc(100% - 3rem);
+
     }
 
     &__title{
-        @include library.title-fonts(left);
+      text-align: left;
+      font-size:2.5rem;
+      color: white;
+      font-weight: 400;
+
+        span{
+          font-size: 3.5rem;
+          color: #041D36;
+          font-weight: 800;
+          font-family: library.$font-mono
+        }
+
     }
 
     &__subtext {
-        @include library.subtext-font(800px, left);
+        width: 400px;
+        text-align: left;
     }
+
+    nav ul{
+       display: flex;
+       flex-direction: row;
+        
+    }
+    
+    nav li{
+        margin: 0px calc($space-between-blocks/2);
+        width: 14rem;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        list-style-type:none;
+        background-color: #041D36;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        transition-property: filter, transform;
+        scale: 0.8;
+        opacity: 0;
+
+        &:hover{
+          transition-property: transform;
+          filter: drop-shadow(0px 0px 3px gray);
+          transform: scale(1.1);
+          z-index: 10;
+        }
+    
+    }
+
+    nav ul a {
+        display: block;
+        width: inherit;
+        aspect-ratio: 1/1;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 1rem;
+        color: white;
+        
+        font-weight: 800;
+        font-family: library.$font-mono;
+        text-decoration: none;
+
+    }
+
+    &__language {
+      display: none;
+      text-align: center;
+      position: relative;
+      margin-right: 0.5rem;
+      
+
+      button{
+        border: none;
+        padding: 0rem 1rem;
+        background-color: transparent;
+        color: #041D36;
+        font-weight: 600;
+
+      }
+
+      ul{
+        position: absolute;
+        top: 40px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      li{
+        margin: 0.1rem 0rem;
+        position: relative;
+        height: 30px;
+        width: 100%;
+        list-style-type: none;
+
+        &:after{
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(140%, 0px);
+          background-color: library.$font-color-gray;;
+          height: 2px;
+          width: 30px ;
+          transform-origin: 100% 0%;
+          transition: all 0.3s cubic-bezier(.12,.28,.47,.91);
+        }  
+
+        &:hover:after{ 
+          transform: translate(140%, 0px) scaleX(1.8);
+        }
+      }
+
+      a{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        width: inherit;
+        transition: all 0.3s ease;
+
+        &:active, &:link, &:visited{
+          text-decoration: none;
+          color: library.$font-color-gray;
+        }
+
+        &:hover{
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+      }
+    }
+}
+
+
+@keyframes mi {
+    from {
+        transform: rotate(-180deg);
+        d: path("M72 47C72 60.8071 60.8071 72 47 72C33.1929 72 22 60.8071 22 47C22 33.1929 33.1929 22 47 22C48.3615 22 49.6976 22.1088 51 22.3183C61.7694 24.0501 70.2384 32.6607 71.7569 43.5C71.9172 44.6437 72 45.8122 72 47Z");
+    }
+    to {
+        transform: rotate(0deg);
+        d: path("M83.9886 59.8669C83.2336 68.1625 68.5976 84 47.7493 84C26.9009 84 10 67.1178 10 46.2927C10 28.8586 21.3248 13.11 33.4045 10.0933C35.4859 9.5349 37.1795 11.6017 36.4245 13.11C25.8547 34.2257 46.2393 69.6707 80.2136 57.6045C82.4786 56.8001 84.1555 58.033 83.9886 59.8669Z");
+    }
+  }
+
+  @keyframes palo1 {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+  }
+
+  @keyframes paloscale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.5);
+    }
+  }
+
+.svg-darkmode {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 0.5rem;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.svg-darkmode > path {
+    transform-origin: 50% 50%;
+    transition: all 0.6s cubic-bezier(.52,.26,1,.6);
+    transform: rotate(-630deg);
+}
+
+.svg-darkmode > g {
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    transform: rotate(0deg);
+    transition: all 0.6s cubic-bezier(.26,.46,.48,.99);
+    
+}
+
+.svg-darkmode > path[darkmode="true"] {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+    transition-timing-function: cubic-bezier(.13,.54,.5,.99) ;
+    d: path("M83.9886 59.8669C83.2336 68.1625 68.5976 84 47.7493 84C26.9009 84 10 67.1178 10 46.2927C10 28.8586 21.3248 13.11 33.4045 10.0933C35.4859 9.5349 37.1795 11.6017 36.4245 13.11C25.8547 34.2257 46.2393 69.6707 80.2136 57.6045C82.4786 56.8001 84.1555 58.033 83.9886 59.8669Z");
+}
+
+.svg-darkmode > g[darkmode="true"]  {
+    transform-origin: 50% 50%;
+    transform: scale(0.5);
+    transform: rotate(240deg);
+    transition-timing-function: cubic-bezier(.13,.54,.5,.99);
+    opacity: 0;
+    
+}
+
+.first-row{
+  display: flex;
+  width: 1100px;
+  height: 350px;
+
+  &-info{
+    background-color: lightblue;
+    margin-right: $space-between-blocks;
+    width: calc(100% - 360px - $space-between-blocks * 2);
+    padding: 2rem;
+    border-radius: 2px;
+    
+  }
+  
+  &-settings{
+
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+
+    & > div {
+      background-color: #041D36;
+      width: inherit;
+      flex-basis: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      transition-property: scale, filter;
+
+      &:hover{
+        scale: 1.1;
+        filter: $drop-shadow;
+      }
+    }
+
+    & > bottom{
+      cursor: pointer;
+      margin-top: $space-between-blocks;
+      position: relative;
+      background-color: library.$primary-color-blue;
+      height: calc(100% - 60px - $space-between-blocks);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      transition-property: scale, filter;
+
+      & span{
+        position: absolute;
+        font-size: 1rem;
+        rotate: 90deg;
+      }
+
+      &:hover{
+        scale:1.1;
+        filter: $drop-shadow;
+      }
+    }
+  }
+}
+
+.rotable-div{
+  
+  margin-right: $space-between-blocks;
+  width: 300px;
+  height: 350px;
+  position: relative;
+  border-radius: 2px;
+
+  &__frontside {
+    position: absolute;
+    background-color: rgb(116, 162, 177);
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    padding: 1rem;
+    perspective: 1000px;
+  }
+
+  &__backside{
+    position: absolute;
+    background-color: rgb(255, 180, 134);
+    width: 300px;
+    height: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    padding: 1rem;
+
+    div{
+      border-radius: 10px;
+      background-color: rgb(255, 236, 225);
+      padding: 0.2rem;
+    }
+
+    h3 {
+      font-family: library.$font-display;
+      padding: 0.5rem;
+      display: block;
+      text-align: center;
+      color:rgb(222, 129, 72);
+    }
+
+    li{
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.2rem;
+      list-style: none;
+      color: rgb(255, 166, 110);
+      border-bottom: 1px solid transparent;
+
+      &:hover{
+        border-bottom: 1px solid red;
+      }
+
+    }
+  }
 }

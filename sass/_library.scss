@@ -1,44 +1,87 @@
 $main-bg: #FAFAFA;
 $primary-color-blue: #223C56;
-$secundary-color-yellow: #D8D133;
+$secundary-color-yellow: #afa715;
 $font-color-gray: #646464;
 $font-color-white: #FAFAFA;
 $font-mono:'Red Hat Mono', monospace;
 $font-display: 'Red Hat Display', sans-serif;
 $font-text: 'Red Hat Text', sans-serif;
 
-@mixin title-fonts ($block-align){
-    font-size: clamp(2rem, 10vw, 3.5rem);
-    color: #484848;
-    font-family: $font-display;
-    font-weight: 600;
-    @if $block-align == center {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto; 
-    } @else if $block-align == right {
-        text-align: right; 
-        margin-left: auto;
-    } @else if $block-align ==left {
-        margin-right: auto;
-    }
-}
+@mixin sub-header{
+  width: 100%;
 
-@mixin subtext-font($max-widht, $block-align){
-    max-width: $max-widht;
-    font-size:1.25rem;
-    color: #646464;;
+  & > div{
+    background-color: $primary-color-blue;
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    z-index: 1;
+  }
+  
+  &-content-container{
+    width: 800px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  & h1{
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-family: $font-display;
+    font-weight: 800;
+    color: $font-color-white;
+  
+    & span{
+      color: $secundary-color-yellow;
+    }
+  }
+
+  & p{
+    font-size:1.1rem;
+    color: $font-color-white;
     font-family: $font-text;
     font-weight: 400;  
     margin-top: 1.5rem;
-    @if $block-align == center {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto; 
-    } @else if $block-align == right { 
-        text-align: right;
-        margin-left: auto;
-    } @else if $block-align ==left {
-        margin-right: auto;
-    }
+  }
+
+  & img{
+    clip-path: circle(45%);
+  }
+
+  & svg:first-of-type{
+    position: relative;
+    fill: $primary-color-blue;
+    transform: translate(0px, 6px);
+    filter: drop-shadow(0px -4px 2px rgb(163, 163, 163));
+  }
+
+  & svg:last-of-type{
+    position: relative;
+    fill: $primary-color-blue;
+    transform: translate(0px, -1px);
+    filter: drop-shadow(0px 4px 2px rgb(163, 163, 163));
+  }
+}
+
+@mixin MQ__sub-header__div-content-container(){
+
+  flex-direction: column;
+  justify-content: center;
+
+  div{
+    margin:2rem 0rem
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  & > img{
+    margin: auto;
+    background-color: green;
+  }
 }

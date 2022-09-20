@@ -15,13 +15,15 @@
 
 .skills {
 
+  &__header {
+    @include library.sub-header();
+  }
+
     &__title {
-        @include library.title-fonts(right);
         color: white;
     } 
 
     &__subtext{
-        @include library.subtext-font(700px, right)
     }
 
     &__container {
@@ -43,6 +45,7 @@
         }
     }
 
+
     &__flex-container{
         display: flex;
         flex-wrap: wrap;
@@ -52,25 +55,29 @@
 
     &__description {
         display: flex;
-        margin: 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
 
         & > svg {
             margin: 0rem 1rem;
+            fill: library.$main-bg;
         }
         & > div {
-            padding:0rem 1rem;
-            position: relative;
+            display: flex ;
+            flex-direction: column;
 
             & > h3{
-                font-size: 1.8rem;
-                color: library.$primary-color-blue;
+                font-size: 1.5rem;
+                text-align: center;
+                color: white;
             }
 
             & > p{
-                margin-top: 1rem;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-family: library.$font-text;
-                color: library.$font-color-gray;
+                color: white;
             }
 
             & > button {
@@ -90,4 +97,181 @@
         display:none;
     }
 
+}
+
+.skills__frontend{
+    border-radius: 350px 0% 0% 350px;
+    transition: filter 0.3s ease;
+
+    &:hover{
+        filter: drop-shadow(0px 0px 3px rgb(152, 152, 152));
+    }
+}
+
+.skills__backend{
+    border-radius: 0% 350px 350px 0%;
+    transition: filter 0.3s ease;
+    
+    &:hover{
+        filter: drop-shadow(0px 0px 3px rgb(152, 152, 152));
+    };
+}
+
+
+.skills__radial-container{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    border-radius: calc( 350px + 2rem);
+    width: calc(700px + 3rem);
+    height: calc(700px + 2rem);
+    background-color: library.$main-bg;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 0% 0%;
+    transform: rotate(30deg) translate(-50%, -50%);
+    transition-property: transform, width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+
+    &:hover{
+        transform: rotate(0deg) translate(-50%, -50%);
+        width: calc(700px + 10rem);
+    }
+
+    &:hover .skillElement{
+        transform: translate(-50%, -50%) rotate(0deg);
+
+        &:hover{
+            transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+        }
+    }
+
+    &:hover .skills__frontend-radial{
+        margin-right: 4rem;
+    }
+
+    &:hover .skills__backend-radial{
+        margin-left: 4rem;
+    }
+
+    &:hover .skills__description{
+        border-radius: 175px;
+        width: calc(330px + 8rem);
+        transform: translate(-50%, -50%) rotate(0deg);
+        
+        &:hover{
+            transform: translate(-50%, -50%) scale(1.04) rotate(0deg);
+            filter: drop-shadow(0px 0px 3px rgb(152, 152, 152));
+        }
+    }
+}
+
+.skills__frontend-radial{
+    position: relative;
+    width: 350px;
+    margin-right: 0.5rem;
+    height: 700px;
+    overflow: hidden;
+    border-radius: 350px 0% 0% 350px;
+    clip-path: path('M 0 0 V 700 H 350 V 530 A 70 70 360 0 1 350 170 V 0 H 0z');
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform-origin: 100% 50%;
+        transform: scale(1.05);
+    }
+}
+
+.skills__backend-radial{
+    position: relative;
+    margin-left: 0.5rem;
+    width: 350px;
+    height: 700px;
+    overflow: hidden;
+    border-radius: 0% 350px 350px 0%;
+    clip-path: path('M 350 0 H 0 V 170 A 70 70 0 0 1 0 530 V 700 H 350z');
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform-origin: 0% 50%;
+        transform: scale(1.05);
+    }
+}
+
+.skills__description{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: calc(330px + 1rem);
+    height: 330px;
+    background-color: library.$primary-color-blue;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.skills__circle-path-frontend{
+    background-color: lighten(#417BB5, 40%);
+    width: calc(350px * 2);
+    height: inherit;
+    border-radius: 50%;
+}
+
+.skills__circle-path-backend{
+    position: absolute;
+    left: calc(-1 * 350px);
+    background-color: lighten(#417BB5, 45%);
+    width: calc(350px * 2);
+    height: inherit;
+    border-radius: 50%;
+}
+
+.skillElement{
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    fill: library.$primary-color-blue;
+    display:inline-block;
+    background-color: var(--white);
+    transition-property: transform, fill;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    
+
+    & > svg {
+        height: 80px;
+        width: 80px;
+    }
+
+    &:hover{
+        cursor: pointer;
+        fill: red;
+        transform: translate(-50%, -50%) scale(1.1) rotate(-30deg);
+    }
+
+    & > h5 {
+        text-align: center;
+        transition-property: letter-spacing color;
+        transition-timing-function: ease;
+        transition-duration: 0.1s;
+        color: library.$font-color-gray;
+    }
+    &:hover > h5 {
+        color: library.$primary-color-blue;
+        letter-spacing: 0.08rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .skills__header-content-container{
+    @include library.MQ__sub-header__div-content-container();
+  }
 }
