@@ -2,6 +2,7 @@ import {skills} from "../data/skills.js";
 import { SkillUI } from "../models/SkillsUI.js";
 import { HamburgerMenu } from "../models/HamburgerMenu.js";
 import { DarkModeController } from "../models/DarkMode.js";
+import { ParallaxController } from "../models/Parallax.js";
 import '../models/Skills.js'
 
 const hamburgerMenuController = new HamburgerMenu();
@@ -9,6 +10,8 @@ hamburgerMenuController.setEvents();
 
 const darkModeController = new DarkModeController();
 darkModeController.hola();
+
+const parallaxController = new ParallaxController();
 
 
 function btnDropdown () {
@@ -69,8 +72,6 @@ function main () {
 
 }
 
-window.onscroll = function() {myFunction()};
-
 function myFunction() {
   var winScroll = document.documentElement.scrollTop;
 
@@ -106,38 +107,6 @@ if(!!window.IntersectionObserver){
 }*/
 
 
-const dots = [];
-
-let plus = 0;
-
-
-
-function toRadian(angle){
-    return angle * Math.PI / 180;
-}
-
-function drawDots(){
-
-    plus += 1;
-    console.log(plus);
-
-
-    for (let i = 0; i < numberDots; i++){
-        const pos = {
-            x: center.x + Math.sin(radian + toRadian(i * parts)) * radio,
-            y: center.y - Math.cos(radian + toRadian(i * parts)) * radio,
-        }
-
-        let dot = document.createElement("div");
-        dot.setAttribute("class", "dot"); 
-        dot.setAttribute("style", `top:${pos.y}px; left:${pos.x}px`)
-
-        dots.push(dot);
-        container.append(dot);
-    }
-
-    console.log(dots);
-}
 
 
 
@@ -147,22 +116,15 @@ function preventDefault(e) {
   }
   
 
-let isDisplay = "block";  
-const parallaxElements = document.querySelectorAll(`[data-parallax]`);
+window.addEventListener('resize', () => {
+    parallaxController.clientHeight = calcClientHeight()
+});
 
-
-
-window.addEventListener('scroll', () => parallax(0.05))
-
-function parallax(speed){
-
-    for (let parallaxElement of parallaxElements){
-
-        let posY = Math.pow(parallaxElement.dataset.parallax * (window.pageYOffset * speed), 2) + window.pageYOffset * speed
-        parallaxElement.setAttribute('style', `translate: 0px ${-posY}px`)
-    }
-    
-}
+window.addEventListener('scroll', () => {
+    parallaxController.parallaxHero();
+    parallaxController.parallax();
+    myFunction();
+});
 
 const blockElements = document.querySelectorAll(`[data-appearIndex]`);
 appear();
@@ -211,7 +173,7 @@ let keyframeRotate2 = [
 
 let optionsrotate = {
     easing: "ease",
-    duration: 1500,
+    duration: 1000,
     fill: 'forwards'
 }
 
@@ -220,4 +182,8 @@ languageBtn.addEventListener('click', () => animacion())
 function animacion(){
     frontSize.animate(keyframeRotate, optionsrotate);
     backSize.animate(keyframeRotate2, optionsrotate)
+}
+
+function calcClientHeight(){
+    return document.documentElement.clientHeight 
 }
