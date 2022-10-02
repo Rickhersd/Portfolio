@@ -2,26 +2,74 @@
 
 #skills {
 
-    & > div:first-child {
-        padding: 3rem;
-        background-color: #417BB5;
-
-        & > div{
-            max-width: 900px;
-            margin: 0px auto;
-        }
-    }
+    background-color: library.$skills__bg;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
 }
 
 .skills {
 
-  &__header {
-    @include library.sub-header();
-  }
-
-    &__title {
-        color: white;
-    } 
+    &__header{
+        width: 1050px;
+        margin: auto;
+        padding: 2rem;
+        height: 300px;
+        position: relative;
+    
+        &-bg{
+          background-color: library.$primary-color-blue;
+          left: -5%;
+          position: absolute;
+          width: 110%;
+          height: inherit;
+        }
+    
+        &-content-container{
+          padding: 2rem 3rem;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: lightblue;
+          width: 1050px;
+          height: 300px;
+        }
+    
+        &-part-1{
+          border-radius: 3px;
+          clip-path: polygon(0% 0%, 25.05% 0%, 25.05% 100%, 0% 100%);
+        }
+    
+        &-part-2{
+          clip-path: polygon(24.95% 0%, 50.05% 0%, 50.05% 100%, 24.95% 100%);
+        }
+    
+        &-part-3{
+          clip-path: polygon(49.95% 0%, 75.05% 0%, 75.05% 100%, 49.95% 100%);
+        }
+    
+        &-part-4{
+          border-radius: 3px;
+          clip-path: polygon(74.95% 0%, 100% 0%, 100% 100%, 74.95% 100%);
+        }
+    
+        .skills__title{
+          text-align: left;
+          font-size: 3rem;
+          line-height: 1.2;
+          color: #09233e;
+          font-family: library.$font-mono;
+          font-weight: 600;
+          position: relative;
+        }
+    
+        .skills__subtitle{
+          font-family: library.$font-text;
+          font-size: 1.5rem;
+        }
+      }
+    
 
     &__subtext{
     }
@@ -166,6 +214,14 @@
             filter: drop-shadow(0px 0px 3px rgb(152, 152, 152));
         }
     }
+
+    &:hover .skills__buttons-top{
+        clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    &:hover .skills__buttons-down{
+        clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
 }
 
 .skills__frontend-radial{
@@ -268,6 +324,25 @@
 }
 
 
+.skills__buttons-top{
+    position: absolute;
+    top: 1.2rem;
+    width: 100px;
+    height: calc(170px - 0.4rem);
+    background-color: red;
+    clip-path: polygon( 50% 0%, 50% 0%, 50% 100%, 50% 100%);
+    transition: clip-path 0.3s ease;
+}
+
+.skills__buttons-down{
+    position: absolute;
+    bottom: 1.2rem;
+    width: 100px;
+    height: calc(170px - 0.4rem);
+    background-color: red;
+    clip-path: polygon( 50% 0%, 50% 0%, 50% 100%, 50% 100%);
+    transition: clip-path 0.3s ease;
+}
 
 @media only screen and (max-width: 600px) {
 

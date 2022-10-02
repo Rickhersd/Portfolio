@@ -1,10 +1,14 @@
-$main-bg: #FAFAFA;
+$main-bg: rgb(235, 246, 249);
+$about-me__bg: rgb(205, 225, 230);
+$skills__bg: rgb(130, 161, 179);
+$portfolio__bg: rgb(72, 114, 138);
+$contact__bg: rgb(34, 68, 88);
 $primary-color-blue: #223C56;
 $secundary-color-yellow: #afa715;
 $font-color-gray: #646464;
 $font-color-white: #FAFAFA;
-$font-mono:'Red Hat Mono', monospace;
-$font-display: 'Red Hat Display', sans-serif;
+$font-mono:'Roboto Slab', monospace;
+$font-display: 'Roboto Slab', sans-serif;
 $font-text: 'Red Hat Text', sans-serif;
 
 @mixin sub-header{

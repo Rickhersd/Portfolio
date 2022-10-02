@@ -1,206 +1,78 @@
 @use 'library.scss';
 
+$height-nav-item: 200px;
+
 #nav {
   display: flex;
   position: fixed;
-  justify-content: space-between;
-  margin: 1rem 1rem 0rem 1rem;
-  width: calc(100% - 2rem);
-  top: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
   font-size: 0.85rem;
   color: library.$font-color-white;
   z-index: 10;
-  display: none;
 }
 
 .nav{
-  &__left-side {
-    display: flex;
-    align-items: center;
 
-    a {
-      padding:0.2rem;
 
-      &:visited, &:link, &:active {
-        text-decoration: none;
-      }
-    }
-
-    h3{
-      font-size: 1.1rem;
-      color: #002B56;
-    }
-  }  
-
-  &__right-side {
-    background-color: #002B56;
-    padding: 0.3rem;
-    border-radius: 2px;
-  }
-
-  &__list-item-container {
-    display: flex;
-    justify-content: flex-end;
-
+  &__list-container {
+    position: absolute;
+    top: 0px;
+    right: 100px;
+  
     ul {
       display: flex;
-      align-items: center;
-      border-radius: 3px;
+      flex-direction: row;
     }
 
     li{
-      margin: 0rem 0.2rem;
-      width: 100px;
+      background-color: library.$main-bg;
       list-style-type: none;
+      width: 100px;
+      height: 100px;
+      transition: translate 0.3s ease;
+
+      &:first-of-type{
+        border-radius: 0px 2px 0px 0px;
+
+        svg{
+          border-radius: 0px 2px 0px 0px;
+        }
+      }
+
+      &:last-of-type{
+        border-radius: 0px 0px 2px 0px;
+
+        svg{
+          border-radius: 0px 0px 2px 0px;
+        }
+      }
     }
 
-    span {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      background-color: library.$font-color-gray;
-      width: 1px;
-      height: 1.2rem;
-      margin: auto 1rem;
-    }
 
     a {
       font-family: library.$font-text;
-      padding: 0.1rem 0.3rem;
-      text-align: center;
-      width: 100%;
-      display: block;
+      width: inherit;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
       color:library.$font-color-white;
-    }
-  }
 
-  &__settings{
+      div{
+        font-size: 1.2rem;
 
-    display: flex;
-    align-items: center;
-
-    .nav__language{
-      font-family: library.$font-mono;
-      margin: 0rem 1rem;
-      
-      button{
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        transition: all ease 0.3s;
-        background-color: transparent;
-
-        & > div{
-          display: inline-block;
-          font-family: library.$font-mono;
-          color: library.$font-color-white;
-        }
-
-        & > i {
-          color: library.$font-color-gray;
-          margin: auto 0px auto 0.6rem;
-          transform-origin: 50% 60%;
-          transform: translate(0px, 2px);
-          transition: all ease 0.5s;
-          height: 12px;
-        }
-
-        &:hover{
-          color:white;
-
-          & > div {
-            color: white;
-          }
-
-          & > i{
-            color: white;
-            transform: rotate(-90deg);
-          }
-        }
-      }
-
-      &--dropdown-content{
-        position: absolute;
-        transform-origin: center;
-        transform: translate(-25%, 0.8rem);
-        width: 150px;
-        z-index: -10;
-
-        a {
-          width: 100%;
-          font-family: library.$font-text;
-          font-size: 1rem;
-          color: black;
-          border-radius: 5px;
-
-          &:hover{
-            background-color: #F5F5F5;
-          }
-        }
-
-        div{
-          position: absolute;
-          padding: 0.5rem;
-          border-radius: 11px;
-          width: inherit;
-          background-color: library.$font-color-white;
-          filter: drop-shadow(0px 0px 1px black);
-          animation: desappear 1s ease forwards;
-
-          &:after{
-            content:"";
-            position: absolute;
-            top: -0.5rem;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 0.6rem solid transparent;
-            border-bottom: 0.6rem solid library.$font-color-white;
-          }
+        h6{
+          color: red;
         }
 
       }
-    }
-    .nav__dark-mode{
-      margin-right: 3rem;
-      height: 20px;
 
       svg{
-        fill:white;
+        background-color: green;
       }
-    }
-  }
 
-  &__hamburgerMenu{
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top:-3px;
-    width: 2.5rem;
-    height: 2.5rem;
-    transform: translate(50% 0%);
-
-    & > div{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transition: all 0.1s ease-out;
-      background-color: #417BB5;
-    }
-
-    &:hover > div{
-      transform: scale(1.2);
-      background-color: #417BB5;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px -3px black;
-    }      
-
-    svg{
-      position: absolute;
-      left: 50%;
-      top:50%;
-      transform: translate(-50%, -50%);
     }
   }
 

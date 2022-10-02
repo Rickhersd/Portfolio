@@ -1,9 +1,72 @@
 @use 'library.scss';
 
+#about-me{
+  background-color: library.$about-me__bg;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+
 .about-me{
 
   &__header{
-    @include library.sub-header();
+    width: 1050px;
+    margin: auto;
+    padding: 2rem;
+    height: 300px;
+    position: relative;
+
+    &-bg{
+      background-color: library.$primary-color-blue;
+      left: -5%;
+      position: absolute;
+      width: 110%;
+      height: inherit;
+    }
+
+    &-content-container{
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: lightblue;
+      width: 1050px;
+      height: 300px;
+    }
+
+    &-part-1{
+      border-radius: 3px;
+      clip-path: polygon(0% 0%, 25.05% 0%, 25.05% 100%, 0% 100%);
+    }
+
+    &-part-2{
+      clip-path: polygon(24.95% 0%, 50.05% 0%, 50.05% 100%, 24.95% 100%);
+    }
+
+    &-part-3{
+      clip-path: polygon(49.95% 0%, 75.05% 0%, 75.05% 100%, 49.95% 100%);
+    }
+
+    &-part-4{
+      border-radius: 3px;
+      clip-path: polygon(74.95% 0%, 100% 0%, 100% 100%, 74.95% 100%);
+    }
+
+    .about-me__title{
+      text-align: left;
+      font-size: 3rem;
+      line-height: 1.2;
+      color: #09233e;
+      font-family: library.$font-mono;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .about-me__subtitle{
+      font-family: library.$font-text;
+      font-size: 1.5rem;
+    }
   }
 
   & > div{
@@ -13,7 +76,7 @@
   }
 
   &__hobbies-container{
-    width: min(80%, 1000px);
+    width: min(80%, 800px);
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -28,10 +91,15 @@
     text-align: center;
     line-height: 1.65;
     
-    svg{
+    div:first-of-type{
       width: 100%;
       aspect-ratio: 1/1;
-      background-color: red;
+      background-color:  lightblue;
+    }
+
+    div:last-of-type{
+      margin-top: 0.5rem;
+      background-color: library.$primary-color-blue
     }
 
     h3{
@@ -39,85 +107,111 @@
     }
 
     p{
-      font-size: 1.1rem;
+      font-size: 1rem;
+      line-height: 1.2;
     }
   }
 
-    & > svg{
-        margin: auto;
-        display: block;
+  .about-me__buttons-container{
+    width: min(800px, 90%);
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    width: min(300px, 50%);
+    margin: 0px 2rem;
+    border: 2px solid #041D36;
+    background-color: #041D36;
+    cursor: pointer;
+    padding: 1rem 0rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+      background-color: #041D36;
+      color:white
     }
+  }
 
-    &__item1-title{grid-area: title;}
-    &__item2-photo{grid-area: photo;}
-    &__item3-number1{grid-area: number-1;}
-    &__item4-start{grid-area:start;}
-    &__item5-number2{grid-area:number-2;}
-    &__item6-education{grid-area:education;}
-    &__item7-number3{grid-area:number-3;}
-    &__item8-work{grid-area:work;}
-    &__item9-span{grid-area:span;}
-    &__item10-cv{grid-area:cv;}
+  &__info{
+    width: 900px; 
+    height: 500px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    &__grid-container{
-        display: grid;
-        width: 90%;
-        margin: auto;
-        grid-template-columns: 150px auto;
-        grid-template-areas: 
-            "title title"
-            "number-1 start"
-            "number-2 education"
-            "number-3 work" 
-            "span cv";
-        gap: 1.5rem;
-    }
+    &-rightside{
 
-    &__numbers{
-        text-align: right;
-    }
+      width: 600px;
+      height: inherit;
 
-    &__subtext {
-    }
+      > div{
+        padding: 1rem;
+        margin-top: 1rem;
+        position: relative;
 
-    &__item2-photo{
-        width: 450px;
-    }
+        > p {
+          font-family: library.$font-mono;
+          font-size: 1rem;
+        }
 
-    &__content > p {
-        font-size: 1.25rem;
-        padding-top: 2.5rem;
-        font-weight: 400;
-        color: #393939;
-        font-family: library.$font-text;
-    }
-
-    &__numbers > div {
-        font-family: library.$font-text;
-        font-weight: 600;
-        font-size: 2rem;
-    }
-
-    button {
-      width: 11rem;
-      margin: 0px 2rem;
-      border: 2px solid #041D36;
-      background-color: transparent;
-      cursor: pointer;
-      border-radius: 40px;
-      padding: 0.8rem 0rem;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #041D36;
-      transition: all 0.3s ease;
-
-      &:hover{
-        background-color: #041D36;
-        color:white
+        > div{
+          background-color: #041D36;
+          position: absolute;
+          z-index: -1;
+          transform: translate(-10%, 10%);
+          bottom: 0;
+          left: 0;
+        }
       }
+
+      &-beginning{
+        background-color: rgb(105, 153, 169);
+        height: 130px;
+        width: min(450px, 100%);
+
+        div {
+          width: 110px;
+          height: 110px;
+        }
+      }
+
+      &-education{
+        height: 160px;
+        background-color: lightblue;
+        width: min(450px, 100%);
+        margin-left: 6rem;
+
+        div {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      &-goals{
+        height: 145px;
+        background-color: rgb(126, 172, 187);
+        width: min(450px, 100%);
+        margin-left: 3rem;
+
+        div{
+          width: 130px;
+          height: 130px;
+        }
+      }
+    
     }
 
+    &-photograph{
+      background-color: red;
+      width: 300px;
+      height: 400px;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {

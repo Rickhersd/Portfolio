@@ -76,12 +76,6 @@
         width: 100%; 
     }
 }
-
-.path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: dash 5s linear alternate infinite;
-  }
   
 @keyframes dash {
     from {
@@ -106,36 +100,4 @@
     height: 8px;
     background: #04AA6D;
     width: 0%;
-}
-
-.radial {
-    background-color: gray; 
-    position:relative;
-    margin: auto; 
-    width: 700px; 
-    height: 700px;
-}
-
-.dot{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    background-color: red;
-    transition: transform 1s ease;
-
-    &:hover{
-        transform: translate(-50%, -50%) scale(2);
-    }
-}
-
-.container{
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    overflow: hidden;
-    border: 1px solid black;
 }

@@ -3,6 +3,7 @@ import { SkillUI } from "../models/SkillsUI.js";
 import { HamburgerMenu } from "../models/HamburgerMenu.js";
 import { DarkModeController } from "../models/DarkMode.js";
 import { ParallaxController } from "../models/Parallax.js";
+import { HeaderNav } from "../models/HeaderNav.js";
 import '../models/Skills.js'
 
 const hamburgerMenuController = new HamburgerMenu();
@@ -12,6 +13,9 @@ const darkModeController = new DarkModeController();
 darkModeController.hola();
 
 const parallaxController = new ParallaxController();
+
+const headerNavController = new HeaderNav();
+headerNavController.addEvents();
 
 
 function btnDropdown () {
@@ -70,6 +74,15 @@ function main () {
     ui.renderSkills(skills, frontendContainer, centerCircleFrontend, "inverse");
     ui.renderSkills(skills, backendContainer, centerCircleBackend);
 
+    window.addEventListener('resize', () => {
+        parallaxController.clientHeight = calcClientHeight()
+    });
+    
+    window.addEventListener('scroll', () => {
+        parallaxController.parallaxHero();
+        parallaxController.parallax();
+    });
+
 }
 
 function myFunction() {
@@ -123,7 +136,7 @@ window.addEventListener('resize', () => {
 window.addEventListener('scroll', () => {
     parallaxController.parallaxHero();
     parallaxController.parallax();
-    myFunction();
+    parallaxController.parallaxHeader();
 });
 
 const blockElements = document.querySelectorAll(`[data-appearIndex]`);
@@ -146,9 +159,9 @@ function appear(){
 
         let options = {
             delay: delay,
-            duration: 1000,
+            duration: 2500,
             fill: 'forwards',
-            easing: 'cubic-bezier(.37,1.69,.61,1)'
+            easing: 'cubic-bezier(.18,1.63,.21,.94)'
         }
 
         element.animate( keyframe, options);

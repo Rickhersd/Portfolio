@@ -1,40 +1,71 @@
 @use 'library.scss';
 
+#portfolio{
+  background-color: library.$portfolio__bg;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+
 .portfolio{
 
   &__header{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 1300px;
-    margin:auto;
-    padding: 3rem;
-    background-color: lighten(#8cb5df, 40%); ;
+    width: 1050px;
+    margin: auto;
+    padding: 2rem;
+    height: 300px;
+    position: relative;
 
-    &-content{
-      width: 1000px;
-      margin: auto;
-      padding: 3rem;
+    &-bg{
+      background-color: library.$primary-color-blue;
+      left: -5%;
+      position: absolute;
+      width: 110%;
+      height: inherit;
     }
 
-    &-title{
-      width: 100%;
-      display: inline-block;
-      font-size: 5rem;
-      line-height: 1;
-      text-align: center;
-      color: #041d36;
-      font-family: library.$font-display;
-      font-weight: 800;
-
-      span{
-        color: library.$secundary-color-yellow;
-      }
+    &-content-container{
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: lightblue;
+      width: 1050px;
+      height: 300px;
     }
 
-    &-text{
-      max-width: 500px;
-      margin: auto;
+    &-part-1{
+      border-radius: 3px;
+      clip-path: polygon(0% 0%, 25.05% 0%, 25.05% 100%, 0% 100%);
+    }
+
+    &-part-2{
+      clip-path: polygon(24.95% 0%, 50.05% 0%, 50.05% 100%, 24.95% 100%);
+    }
+
+    &-part-3{
+      clip-path: polygon(49.95% 0%, 75.05% 0%, 75.05% 100%, 49.95% 100%);
+    }
+
+    &-part-4{
+      border-radius: 3px;
+      clip-path: polygon(74.95% 0%, 100% 0%, 100% 100%, 74.95% 100%);
+    }
+
+    .portfolio__title{
+      text-align: left;
+      font-size: 3rem;
+      line-height: 1.2;
+      color: #09233e;
+      font-family: library.$font-mono;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .portfolio__subtitle{
+      font-family: library.$font-text;
+      font-size: 1.5rem;
     }
   }
 
