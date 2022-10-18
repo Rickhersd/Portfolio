@@ -8,6 +8,8 @@
 @use 'skills.scss';
 @use 'portfolio.scss';
 @use 'contact.scss';
+@use 'darkmode.scss';
+@use 'me-animation.scss';
 
 .svg-icons{
     fill: #767676;
@@ -39,65 +41,294 @@
     }
 }
 
-.block{
-    margin-left: 0px;
-    margin-top: 10px;
-    text-align: center;
-    padding: 20px;
-    height: 350px;
-    color:  black;
-    font-size: large;
+
+.svg__hand{
     opacity: 0;
 }
 
-.extra {
-    transition-property: opacity, transform;
-    transition-duration: 2s;
-    transition-timing-function: ease;
-    transform: translate(-50px, 0px);
-    opacity: 1.0;
+.svg__computer{
+
+    opacity: 0;
+
+    &-dot{
+        transform-origin: 50% 50%;
+        opacity: 0;
+    }
+
+    &-line{
+        transform: scaleX(0);
+    }
+
+    &-block{
+        transform: scaleX(0);
+    }
 }
 
-.s{
-    height: 250px;
-    width: 1000px; 
+.skills__header[data-intersection="true"]{
 
-    &__flex-container{
-        display:none;
-        background-color: red;
-        height: 100%;
-        width: 100%; 
+    
+    
+    .skills__header-subtitle{
+        opacity: 1;
+        translate: 0px 0px;
+    }
+
+    .skills__header-title{
+        
+        opacity: 1;
+
+        span{
+            display: inline-block;
+            opacity: 0;
+            animation: SlideDownLetter 0.7s ease forwards;
+        }
+    }
+
+}
+
+.portfolio__header[data-intersection="true"] {
+
+    .portfolio__header-subtitle{
+        opacity: 1;
+        translate: 0px 0px
     }
     
-    &__description{
-        display:none;
-        background-color: blue;
-        height: 100%;
-        width: 100%; 
+    .portfolio__header-title{
+        
+        opacity: 1;
+
+        span{
+            display: inline-block;
+            opacity: 0;
+            animation: SlideDownLetter 0.7s ease forwards;
+        }
+    }
+
+    .svg__computer{
+
+        opacity: 1;
+
+        &-blob{
+            opacity: 0;
+            transform-origin: 50% 50%;
+            animation: blob 0.5s cubic-bezier(.48,.16,.4,1.45) forwards;
+            fill: rgb(214, 235, 241)
+        }
+
+        &-dot{
+            transform-origin: 40% 50%;
+            animation: appear 0.3s ease forwards;
+        }
+
+        &-line{
+            transform-origin: 39% 50%;
+            animation: increaseWidht 1s cubic-bezier(.3,1.59,.57,.96) forwards;
+        }
+
+        &-dash{
+            transform-origin: 50% 50%;
+            animation: computeDash ease 2s forwards;
+            stroke-dasharray: 2800;
+            stroke-dashoffset: -2800;
+        }
+
+        &-button{
+            animation: computer-button ease 1s forwards;
+            animation-delay: 0.8s;
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+        }
+
+        &-block{
+            transform-origin: 20% 0%;
+            animation: appearScale 0.5s ease forwards;
+        }
+
+        &-curve{
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: dash2 0.75s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        &-curve-outside{
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: dash2 0.75s ease forwards;
+            animation-delay: 0.9s;
+        }
     }
 }
-  
-@keyframes dash {
-    from {
-      stroke-dashoffset: 1000;
+
+@keyframes computeDash {
+    0% {
+      stroke-dashoffset: -2800;
+      scale: 0.7;
     }
-    to {
+
+    50%{
+        scale: 1;
+    }
+
+    100%{
       stroke-dashoffset: 0;
     }
 }
 
 
 
-  /* The progress container (grey background) */
-.progress-container {
-    width: 100%;
-    height: 8px;
-    background: #ccc;
-  }
-  
-  /* The progress bar (scroll indicator) */
-.progress-bar {
-    height: 8px;
-    background: #04AA6D;
-    width: 0%;
+@keyframes computer-button {
+    from{
+        stroke-dashoffset: 50;
+    }
+    to{
+        stroke-dashoffset: 0;
+    }
 }
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes appearScale {
+    from {
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
+
+@keyframes increaseWidht {
+    from {
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
+
+
+.contact__container[data-intersection="true"]{
+
+    .contact__title{
+        opacity: 1;
+
+        span{
+            display: inline-block;
+            opacity: 0;
+            animation: SlideDownLetter 0.7s ease forwards;
+        }
+    }
+}
+
+.about-me__header[data-intersection="true"]{
+
+    .about-me__header-subtitle{
+        opacity: 1;
+        translate: 0px 0px
+    }
+
+    .about-me__header-title{
+        
+        opacity: 1;
+
+        span{
+            display: inline-block;
+            opacity: 0;
+            animation: SlideDownLetter 0.7s ease forwards;
+        }
+    }
+
+    .svg__hand{
+
+        opacity: 1;
+
+        &-hand{
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: dash 2s ease forwards;
+            transform-origin: 50% 50%;
+            stroke: #0b3b6b;
+        }
+    
+        &-decoration{
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: dash2 0.75s ease forwards;
+            animation-delay: 0.9s;
+            stroke: library.$portfolio__bg
+        }
+    
+        &-decoration1{
+            stroke-dasharray: 150;
+            stroke-dashoffset: 150;
+            animation: dash2 0.75s ease forwards;
+            animation-delay: 0.5s;
+            stroke: library.$portfolio__bg;
+        }
+    
+        &-blob{
+            opacity: 0;
+            transform-origin: 50% 50%;
+            animation: blob 0.5s cubic-bezier(.48,.16,.4,1.45) forwards;
+            fill: rgb(214, 235, 241)
+        }
+    }
+      
+}
+
+@keyframes dash {
+    0% {
+      stroke-dashoffset: 2000;
+      scale: 0.7;
+    }
+
+    50%{
+        scale: 1
+    }
+
+    100%{
+      stroke-dashoffset: 0;
+    }
+}
+
+
+@keyframes dash2 {
+    from {
+      stroke-dashoffset: 150;
+    }
+    to {
+      stroke-dashoffset: 0;
+
+    }
+}
+
+
+
+@keyframes blob {
+    from {
+        opacity: 0;
+      scale: 0.7;
+    }
+    to {
+        opacity: 1;
+      scale: 1;
+    }
+}
+  
+@keyframes SlideDownLetter {
+    from{
+      translate: 0px -40px;
+      opacity: 0;
+    }
+    to{
+      translate: 0px 0px;
+      opacity: 1;
+    }
+  }

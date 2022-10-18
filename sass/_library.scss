@@ -1,12 +1,14 @@
-$main-bg: rgb(235, 246, 249);
-$about-me__bg: rgb(205, 225, 230);
-$skills__bg: rgb(130, 161, 179);
-$portfolio__bg: rgb(72, 114, 138);
-$contact__bg: rgb(34, 68, 88);
-$primary-color-blue: #223C56;
+$main-bg: rgb(246, 252, 255);
+$about-me__bg: rgb(246, 252, 255);
+$skills__bg: rgb(246, 252, 255);
+$portfolio__bg: rgb(246, 252, 255);
+$contact__bg: rgb(246, 252, 255);
+$primary-color-blue: #15314c;
 $secundary-color-yellow: #afa715;
 $font-color-gray: #646464;
+$font-color-navy: #09233e;
 $font-color-white: #FAFAFA;
+$color-40: #56697C;
 $font-mono:'Roboto Slab', monospace;
 $font-display: 'Roboto Slab', sans-serif;
 $font-text: 'Red Hat Text', sans-serif;
@@ -71,13 +73,11 @@ $font-text: 'Red Hat Text', sans-serif;
 
   flex-direction: column;
   justify-content: center;
+  height: 600px;
+  width: min(1050px, 100%);
 
   div{
     margin:2rem 0rem
-  }
-
-  h1{
-    text-align: center;
   }
 
   p {
@@ -87,5 +87,87 @@ $font-text: 'Red Hat Text', sans-serif;
   & > img{
     margin: auto;
     background-color: green;
+  }
+
+  &-content-container{
+    flex-direction: column;
+
+    div{
+      width: 100%;
+    }
+  }
+
+  &-title{
+    text-align: center;
+  }
+
+  & svg{
+    width: 60%;
+  }
+
+  &-bg{
+    width: 100%;
+  }
+}
+
+@mixin subHeader(){
+
+  &__header{
+    width: min(1200px, 90%);
+    margin: auto;
+    padding: 2rem;
+    height: 350px;
+    position: relative;
+
+    &-content-container{
+      padding: 2rem clamp(1rem, 5vw, 3.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #D3E8E5;
+      width: 100%;
+      height: inherit;
+
+      div{
+        width: 63%;
+      }
+    }
+
+    &-title{
+      text-align: left;
+      font-size: clamp(2rem, 8vw, 4rem);
+      margin-bottom: 1.6rem;
+      line-height: 1.2;
+      color: #183a5e;
+      font-family: $font-mono;
+      font-weight: 700;
+      position: relative;
+      opacity: 0;
+
+      span{
+        font-family: "Roboto Slab", monospace;
+      }
+
+    }
+
+    &-subtitle{
+      font-family: 'Roboto';
+      font-weight: 400;
+      color:#183a5e;
+      line-height: 1.8rem;
+      font-size: 1.3rem;
+      opacity: 0;
+      translate: 0px 25px;
+      transition-duration: 1s;
+      transition-timing-function: ease;
+      transition-property: opacity, translate;
+    }
+
+    svg{
+      width: 27%;
+    }
   }
 }

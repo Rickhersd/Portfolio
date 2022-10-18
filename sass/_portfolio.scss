@@ -1,270 +1,185 @@
 @use 'library.scss';
 
 #portfolio{
-  background-color: library.$portfolio__bg;
+  background-color: library.$main-bg;
   padding-top: 15rem;
   padding-bottom: 15rem;
 }
 
 .portfolio{
 
-  &__header{
-    width: 1050px;
-    margin: auto;
-    padding: 2rem;
-    height: 300px;
-    position: relative;
-
-    &-bg{
-      background-color: library.$primary-color-blue;
-      left: -5%;
-      position: absolute;
-      width: 110%;
-      height: inherit;
-    }
-
-    &-content-container{
-      padding: 2rem 3rem;
-      display: flex;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: lightblue;
-      width: 1050px;
-      height: 300px;
-    }
-
-    &-part-1{
-      border-radius: 3px;
-      clip-path: polygon(0% 0%, 25.05% 0%, 25.05% 100%, 0% 100%);
-    }
-
-    &-part-2{
-      clip-path: polygon(24.95% 0%, 50.05% 0%, 50.05% 100%, 24.95% 100%);
-    }
-
-    &-part-3{
-      clip-path: polygon(49.95% 0%, 75.05% 0%, 75.05% 100%, 49.95% 100%);
-    }
-
-    &-part-4{
-      border-radius: 3px;
-      clip-path: polygon(74.95% 0%, 100% 0%, 100% 100%, 74.95% 100%);
-    }
-
-    .portfolio__title{
-      text-align: left;
-      font-size: 3rem;
-      line-height: 1.2;
-      color: #09233e;
-      font-family: library.$font-mono;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .portfolio__subtitle{
-      font-family: library.$font-text;
-      font-size: 1.5rem;
-    }
-  }
-
-  &__title {
-    
-    
-  }
-
-  &__subtext{
-  }
-
+  @include library.subHeader();
   
-
   &__flex-container{
-    width: min(100%, 1300px);
+    width: min(100%, 1200px);
     margin: 3rem auto;
     display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
   }
 
   &__item {
-    width: 48%;
-    aspect-ratio: 1.3 / 1;
-    margin: 0.5rem;
-    background-color: #D9D9D9;
+    width: 100%;
+    padding: 2rem;
     overflow: hidden;
+    display: flex;
+    border-bottom: 1px solid #D3E8E5;
+    gap: 1rem;
 
-    figure{
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    img{
-      width:  inherit;
-      height: inherit;
+    &-image{
+      width:  600px;
+      height: auto;
+      aspect-ratio: 1/0.75;
       object-fit:cover;
-      transition: transform 0.2s linear;
       overflow: hidden;
     }
 
-    figcaption {
-      position: absolute;
-      top: 0px;
-      left: 0px;
+    &-content{
+      padding: 0.5rem 1rem;
       width: inherit;
-      height: inherit;
-      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
-      .portfolio__item-background{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        background-image: linear-gradient(to top, #041d36, #041d36, #041d36cb, #041d3682 , rgb(122, 122, 122, 0));
-        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-      }
+    &-header{
+      margin-bottom: 1.2rem;
+      font-family: "Red Hat Text";
 
-      .portfolio__item-content{
-        opacity: 0;
-        position: absolute;
-        bottom: 0px;
-        padding: 2rem;
-        width: inherit;
-        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-
-      .portfolio__item-links{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        font-size: 0.9rem;
-
-        &-github{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          border: 1px solid white;
-          border-radius: 3px;
-          padding:0.3rem 0.7rem;
-        }
-
-        &-visit{
-          display: inline-block;  
-          font-weight: 400;
-          border: 1px solid transparent;
-          padding:0.3rem 0.7rem;
-        }
-
-      }
-
-      .portfolio__item-header{
-        margin-bottom: 1.2rem;
-
-        p:first-of-type {
-          font-size: 0.8rem;
-          color: rgb(186, 186, 186);
-          font-style: italic;
-        }
-
-        h3{
-          color: white;
-          font-family: library.$font-display;
-          font-weight: 800;
-          font-size: 1.8rem;
-        }
-
-        p:last-of-type{
-          font-size: 0.9rem;
-          width: min(100%, 400px);
-          color:white;
-          line-height: 1.2;
-        }
-
+      &-name{
         span{
-          color: library.$secundary-color-yellow;
+          color: #0F3154;
+          font-family: library.$font-text;
+          font-weight: 800;
+          font-size: 2.2rem;
+          animation-duration: 0.5s;
+          display: inline-block;
+          animation-timing-function: cubic-bezier(.18,.49,0,1.16);
+          animation-fill-mode: forwards;
+          animation-name: SlideDownLetter;
         }
       }
 
-      &:hover{
-
-        .portfolio__item-number{
-          opacity: 1;
-        }
-
-        .portfolio__item-background{
-          opacity: 1;
-        }
-
-        .portfolio__item-content{
-          opacity: 1;
-        }
-
-        ~ img {
-          transform: scale(1.03);
-        }
+      &-description{
+        margin-top: 1.05rem;
+        font-size: 1.1rem;
+        color: #374F67;
+        line-height: 1.2;
       }
+    }
+
+    &-links{
+      display: flex;
+      justify-content: space-between;
+      background-color: transparent;
+      flex-direction: row;
+      text-align: center;
+    }
+
+    &-link{
+
+      position: relative;
+      border: 4px solid #56697C;
+      list-style-type: none;
 
       a{
         cursor: pointer;
-        color: white;
         display: flex;
-        display: inline-block;
         flex-direction: row;
         align-items: center;
-
-
-        &[class="portfolio__visit-link"]{
-          border: library.$secundary-color-yellow 1px solid;
-          border-radius: 50px;
-          display: inline-block;
-          padding:0.5rem 0.6rem;
-          font-size: 1rem;
-          text-align: center;
-  
-          &:hover{
-            background-color: library.$secundary-color-yellow;
-            color:  #041d36;
-          } 
-        }
-
-        &[class="portfolio__about-link"], &[class="portfolio__github-link"]{
-          font-size: 0.8rem;
-        }
-
-        &[class="portfolio__github-link"]{
-          font-size: 0.8rem;
-          margin-top: 0.2rem;
-        }
+        display: block;
+        padding: 0.6rem 2rem;
+        align-items: center;
+        font-size: 1.1rem;
+        z-index: 2;
+        color: #56697C;
+        font-weight: 500;
+        font-family: "Red Hat Text";
+        text-decoration: none;
 
         &:visited, &:active, &:link{
           text-decoration: none;
         }
+      }
+      
+      &-github{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 10px;
 
-        & svg{
-          fill: white;
+        &::before{
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          left: 50%;
+          border-radius: 5px 5px 0px 0px;
+          translate: -50% 0%;
+          background-color: #6E869F;
+          width: 95%;
+          height: 0%;
+          transition: height 0.2s ease;
+        }
+
+        a{
+          transition: color 0.2s ease;
+        }
+  
+        &:hover{
+          border-color: #0F3154;
+    
+          &::before{
+            height: 90%;
+          }
+    
+          a{
+            color: white;
+          }
         }
       }
+    
+      &-visit{
+        font-weight: 400;
+        border: 4px solid transparent;
+      }
+
     }
   }
 }
 
-@media only screen and (max-width: 800px){
-  .portfolio__item {
-    width: 45%;
-  }
-}
 
 @media only screen and (max-width: 600px){
   .portfolio__item {
     width: 100%;
-    margin-right: 0rem;
-    margin-left: 0rem;
+    margin: auto;
+    padding: 2rem 0rem;
+    flex-direction: column;
+
+    &-image{
+      width: min(450px, 90%);
+      margin: auto;
+    }
+
+    &-content{
+      padding: 0rem;
+      margin: auto;
+      width: min(450px, 90%);
+    }
   }
 
-  .portfolio__header-content-container{
+  .portfolio__header{
     @include library.MQ__sub-header__div-content-container();
   }
 }
 
+@keyframes SlideDownLetter {
+  from{
+    translate: 0px -40px;
+    opacity: 0;
+  }
+  to{
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}

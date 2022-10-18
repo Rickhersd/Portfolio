@@ -2,72 +2,14 @@
 
 #about-me{
   background-color: library.$about-me__bg;
+  margin-top: 50rem;
   padding-top: 15rem;
   padding-bottom: 15rem;
 }
 
 .about-me{
 
-  &__header{
-    width: 1050px;
-    margin: auto;
-    padding: 2rem;
-    height: 300px;
-    position: relative;
-
-    &-bg{
-      background-color: library.$primary-color-blue;
-      left: -5%;
-      position: absolute;
-      width: 110%;
-      height: inherit;
-    }
-
-    &-content-container{
-      padding: 2rem 3rem;
-      display: flex;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: lightblue;
-      width: 1050px;
-      height: 300px;
-    }
-
-    &-part-1{
-      border-radius: 3px;
-      clip-path: polygon(0% 0%, 25.05% 0%, 25.05% 100%, 0% 100%);
-    }
-
-    &-part-2{
-      clip-path: polygon(24.95% 0%, 50.05% 0%, 50.05% 100%, 24.95% 100%);
-    }
-
-    &-part-3{
-      clip-path: polygon(49.95% 0%, 75.05% 0%, 75.05% 100%, 49.95% 100%);
-    }
-
-    &-part-4{
-      border-radius: 3px;
-      clip-path: polygon(74.95% 0%, 100% 0%, 100% 100%, 74.95% 100%);
-    }
-
-    .about-me__title{
-      text-align: left;
-      font-size: 3rem;
-      line-height: 1.2;
-      color: #09233e;
-      font-family: library.$font-mono;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .about-me__subtitle{
-      font-family: library.$font-text;
-      font-size: 1.5rem;
-    }
-  }
+  @include library.subHeader();
 
   & > div{
     display: flex;
@@ -76,7 +18,7 @@
   }
 
   &__hobbies-container{
-    width: min(80%, 800px);
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -112,98 +54,116 @@
     }
   }
 
-  .about-me__buttons-container{
-    width: min(800px, 90%);
-    display: flex;
-    justify-content: center;
-  }
-
   button {
-    width: min(300px, 50%);
-    margin: 0px 2rem;
-    border: 2px solid #041D36;
-    background-color: #041D36;
+    width: 100%;
+    border: 5px solid #0F3154;
+    background-color: transparent;
     cursor: pointer;
-    padding: 1rem 0rem;
+    padding: 0.8rem 0rem;
     text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
-    color: white;
-    transition: background-color 0.3s ease;
+    color: #0F3154;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-property: color;
+
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      border-radius: 5px 5px 0px 0px;
+      translate: -50% 0%;
+      background-color: #6E869F;
+      z-index: -1;
+      width: 95%;
+      height: 0%;
+      transition: height 0.2s ease;
+    }
 
     &:hover{
-      background-color: #041D36;
-      color:white
+      border-color: #0F3154;
+      color: white;
+
+      &::before{
+        height: 90%;
+      }
+
+      a{
+        color: #0F3154;
+      }
     }
   }
 
   &__info{
-    width: 900px; 
-    height: 500px; 
+    width: 1200px; 
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
 
     &-rightside{
 
-      width: 600px;
+      width: min(550px, 100%);
       height: inherit;
+
+      &-container{
+
+        position: relative;
+        
+        div{
+          border-radius: 1rem;
+
+          + div{
+            background-color: #56697C;
+          }
+
+          h4 span{
+            color: #09233e;
+            font-size: 3rem;
+            font-family: library.$font-mono;
+
+          }
+
+          p{
+            margin: auto;
+            margin-top: 1rem;
+            color:rgb(29, 29, 29);
+            font-family: 'Red Hat Text';
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            display: block;
+            color: rgb(30, 30, 30);
+
+            .tab{
+              margin-left: 3rem;
+            }
+          }
+        }
+
+      }
 
       > div{
         padding: 1rem;
         margin-top: 1rem;
         position: relative;
-
-        > p {
-          font-family: library.$font-mono;
-          font-size: 1rem;
-        }
-
-        > div{
-          background-color: #041D36;
-          position: absolute;
-          z-index: -1;
-          transform: translate(-10%, 10%);
-          bottom: 0;
-          left: 0;
-        }
       }
 
-      &-beginning{
-        background-color: rgb(105, 153, 169);
-        height: 130px;
-        width: min(450px, 100%);
-
-        div {
-          width: 110px;
-          height: 110px;
-        }
+      &-item{
+        width: 100%;
       }
+    }
 
-      &-education{
-        height: 160px;
-        background-color: lightblue;
-        width: min(450px, 100%);
-        margin-left: 6rem;
-
-        div {
-          width: 150px;
-          height: 150px;
-        }
-      }
-
-      &-goals{
-        height: 145px;
-        background-color: rgb(126, 172, 187);
-        width: min(450px, 100%);
-        margin-left: 3rem;
-
-        div{
-          width: 130px;
-          height: 130px;
-        }
-      }
-    
+    &-leftside {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 300px;
+      height: auto;
     }
 
     &-photograph{
@@ -216,7 +176,54 @@
 
 @media only screen and (max-width: 600px) {
 
-  .about-me__header-content-container{
+  .about-me__header{
     @include library.MQ__sub-header__div-content-container();
   }
+
+  .about-me__info{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-me__hobbies-container{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  .about-me__hobby{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  .about-me__info-rightside{
+
+    &-beginning{
+      margin: auto;
+    }
+
+    &-education{
+      margin: auto;
+    }
+
+    &-goals{
+      margin: auto;
+    }
+  }
+
+  .about-me__buttons-container{
+    flex-direction: column;
+    
+    button{
+      width: 90%;
+      margin: auto;
+    }
+
+  }
+
 }

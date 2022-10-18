@@ -1,0 +1,19 @@
+{
+  "nav-about-me": "Sobre mi",
+  "nav-skills": "Habilidades",
+  "nav-portfolio": "Porfolio",
+  "nav-contact": "Contacto",
+  "nav-home": "Home",
+  "header-title": "Hola, mi nombre es <br> <span>RICARDO SANCHEZ</span>",
+  "header-subtext": "Desarollador Full Stack, Diseñador UI y UX y Amante del Código. <br> <span> Creo impresionantes y originales páginas web. La imaginación no tiene límites <span>",
+  "settings-language": "Lenguaje",
+  "about-me-header-title": "Un Gusto Conocerte",
+  "about-me-header-text": "Soy un desarrollador Full Stack Venezolano y bienvenido a mi hogar en web. Actualmente tengo 19 amos y adoro crear dise;os unicods e intertitativo, buscar la excelencia en mi trabajo y afrontar cualquier clase de proyectos",
+  "contact-title":"Contactame",
+  "contact-paragraph":"Estoy interesando en oportunidades, tanto freelancers como laborales, e independiente del proyecto. Cualquier. si tiene alguna otra pregunta que hacerme, no dudes en usar el siguiente formulario o tambien escribirme directamente: ",
+  "form-name":"Nombre",
+  "form-email":"Correo Electronico",
+  "form-content":"Tu mensaje",
+  "contact-phrase":"El codigo es capaz de cosas incriebles",
+  "contact-handcrafted-by":"Esta pagina web fue hecha por mi © 2022"
+}

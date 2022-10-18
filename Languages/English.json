@@ -1,0 +1,19 @@
+{
+  "nav-about-me": "About me",
+  "nav-skills": "Skills",
+  "nav-portfolio": "Portfolio",
+  "nav-contact": "Contactme",
+  "nav-home": "Home",
+  "header-title": "Hi, my name is<br><span>RICARDO SANCHEZ</span>",
+  "header-subtext": "Full Stack Developer, UI and UX Desinger and code lover. <br> <span> I make impressives and originals websites. The imagination have no limits <span>",
+  "settings-language": "Language",
+  "about-me-header-title": "Nice to meet you!",
+  "about-me-`header-text": "I'm a Venezuelan Full Stack Developer and welcome to my place in the Web. Currinly, I'm 19 years old and i love to make interactive and...",
+  "contact-title":"Contact me",
+  "contact-paragraph":"I am interested in all kinds of opportunities regardless of their difficulty. If you have any questions, please feel free to use the form below.",
+  "form-name":"Name",
+  "form-email":"Email Address",
+  "form-content":"Your Message",
+  "contact-phrase":"Code is capable of incredible things",
+  "contact-handcrafted-by":"This website was handcrafted by me © 2022"
+}

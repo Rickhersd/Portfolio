@@ -1,0 +1,247 @@
+#me{
+
+  &__dash{
+      transform-origin: 50% 50%;
+      stroke-dasharray: 2500;
+      stroke-dashoffset: 2500;
+      animation: meDash 2.5s ease forwards;
+  }
+
+  &__shirt{
+    transform-origin: 50% 0%;
+    opacity: 0;
+    animation: meShirtBg 0.5s 0.5s ease forwards;
+  }
+
+  &__face{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    animation: meFace 1s 1s ease forwards;
+  }
+
+  &__cord{
+    &-right{
+      transform-origin: 50% 73%;
+      transform: scaleY(0);
+      animation: meCord 0.9s 1.6s cubic-bezier(.05,1.28,.26,1)forwards;
+    }
+    &-left{
+      transform-origin: 50% 73%;
+      transform: scaleY(0);
+      animation: meCord 0.9s 1.5s cubic-bezier(.05,1.28,.26,1)forwards;
+    }
+  }
+
+  &__mouth{
+
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: meMouth 1.5s 0.5s cubic-bezier(.2,.01,.03,1.33) forwards;
+    
+    &-line{
+
+    }
+  }
+
+  &__eye{
+    &-right-dot{
+      opacity: 0;
+      transform-origin: 50% 30%;
+      animation: meEyeDot 1s 1s cubic-bezier(.2,.01,0,1.02)forwards;
+    }
+
+    &-linetop-right{
+
+    }
+
+    &-left-dot{
+      opacity: 0;
+      transform-origin: 50% 30%;
+      animation: meEyeDot 1s 1.1s cubic-bezier(.2,.01,0,1.02)forwards;
+    }
+
+    &-linetop-left{
+
+    }
+  }
+
+  &__neck{
+    
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    animation: meHairTop  1.5s 1.2s ease forwards;
+
+    &-left{
+      transform-origin: 50% 0%;
+      opacity: 0;
+      animation: meNeckSide 0.5s 1s ease forwards;
+    }
+
+    &-right{
+      transform-origin: 50% 0%;
+      opacity: 0;
+      animation: meNeckSide 0.5s 1.2s ease forwards;
+    }
+  }
+
+  &__hair{
+    &-top{
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+      animation: meHairTop  1.5s 1.2s ease forwards;
+    }
+
+    &-left{
+      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+      animation: meHairLeft  2s 1.1s ease forwards;
+    }
+
+    &-right{
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      animation: meHairRight  2s 1s ease forwards;
+    }
+  }
+
+  &__nose{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: meEar  2.5s 0.5s ease forwards;
+  }
+
+  &__ear{
+
+    &-left{
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: meEar 1.5s 0.5s ease forwards;
+    }
+
+    &-right{
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: meEar 1s 1s ease forwards;
+    }
+  }
+
+  &__glasses{
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    animation: meGlasses 3s 0.5s cubic-bezier(.27,.07,0,1) forwards;
+    
+  }
+
+  &__blob{
+    opacity: 0;
+    transform-origin: 50% 50%;
+    animation: meBlob 1s ease forwards;
+  }
+
+  &__eyebrow{
+    &-left{
+      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+      animation: meEyebrowLeft 1s 0.7s cubic-bezier(.58,.31,.3,1.22)  forwards;
+    }
+
+    &-right{
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      animation: meEyebrowRight 1s 0.8s cubic-bezier(.58,.31,.3,1.22)  forwards;
+    }
+  }
+
+}
+
+@keyframes meShirtBg {
+  from{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    scale: 0.9;
+    transform: scaleX(0.8);
+    opacity: 0;}
+  to{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    scale: 1;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes meNeckSide {
+  from{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    scale: 0.9;
+    transform: scaleX(0.8);
+    opacity: 0;}
+  to{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    scale: 1;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes meDash {
+  0% {stroke-dashoffset: 2500;scale: 0.9;}
+  50%{scale: 1;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes meGlasses {
+  from {stroke-dashoffset: 440;}
+  to{stroke-dashoffset: 0;}
+}
+
+@keyframes meFace{
+  from{clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);}
+  to{clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}
+
+@keyframes meBlob{
+  from{scale: 0.7;opacity: 0;}
+  to{scale:1;opacity: 1;}
+}
+
+@keyframes meEar {
+  from{stroke-dashoffset: 50;}
+  to{stroke-dashoffset:0}
+}
+
+@keyframes meMouth {
+  from{stroke-dashoffset: 60;}
+  to{stroke-dashoffset:0}
+}
+
+@keyframes meCord {
+  from{transform: scaleY(0);}
+  to{transform: scaleY(1);}
+}
+
+@keyframes meEyeLine {
+  from{transform: scaleY(0);}
+  to{transform: scaleY(1);}
+}
+
+@keyframes meEyeDot {
+  from{transform: scaleY(0);opacity:0.7;}
+  to{transform: scaleY(1);opacity:1;}
+}
+
+@keyframes meEyebrowLeft {
+  from{clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);}
+  to{clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}
+
+@keyframes meEyebrowRight {
+  from{clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);}
+  to{clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}
+
+@keyframes meHairTop{
+  from{clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);}
+  to{clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}
+
+@keyframes meHairLeft{
+  from{clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);}
+  to{clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}
+
+@keyframes meHairRight{
+  from{clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);}
+  to{clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);}
+}

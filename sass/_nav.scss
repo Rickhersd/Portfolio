@@ -15,86 +15,113 @@ $height-nav-item: 200px;
 
 .nav{
 
-
-  &__list-container {
+  &__container {
     position: absolute;
     top: 0px;
-    right: 100px;
+    right: 0.8rem;
+    translate: 0px -100px;
+    transition: translate 0.3s ease;
   
     ul {
       display: flex;
+      position: relative;
       flex-direction: row;
+      filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.02))
+    }
+
+    div{
+      display: flex;
+      flex-direction: row;
+
+      &:hover ~ span{
+        opacity: 1;
+      }
     }
 
     li{
       background-color: library.$main-bg;
       list-style-type: none;
-      width: 100px;
-      height: 100px;
-      transition: translate 0.3s ease;
+      width: 120px;
+      height: 60px;
+      opacity: 0;
+      transition: translate 0.3s ease, background-color 0.2s ease;
 
       &:first-of-type{
-        border-radius: 0px 2px 0px 0px;
-
-        svg{
-          border-radius: 0px 2px 0px 0px;
-        }
+        border-radius: 0px 0px 0px 5px;
       }
 
-      &:last-of-type{
-        border-radius: 0px 0px 2px 0px;
+    }
 
-        svg{
-          border-radius: 0px 0px 2px 0px;
-        }
-      }
+    span{
+      position: absolute;
+      opacity: 0;
+      transition: translate 0.2s cubic-bezier(.25,0,.25,1), opacity 0.3s ease;
+      clip-path: polygon(40% 0%, 60% 0%, 60% 100%, 40% 100%);
+      bottom: 0.9rem;
+      width: 120px;
+      height: 2px;
+      background-color: rgb(193, 193, 193);
     }
 
 
     a {
-      font-family: library.$font-text;
       width: inherit;
       height: inherit;
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      color:library.$font-color-white;
+      padding: 0.5rem 0.5rem;
+      align-items: center;
+      justify-content: center;
 
-      div{
-        font-size: 1.2rem;
-
-        h6{
-          color: red;
-        }
-
+      h6{
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(59, 59, 59);
       }
+
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      width: 60px;
+      height: 60px;
+      background-color: library.$primary-color-blue;
 
       svg{
-        background-color: green;
+        width: 19.5px;
+        height: 12px;
+        rotate: 180deg;
+        transform-origin: 50% 50%;
+        transition: rotate 0.3s ease;
       }
 
+      path{
+        fill: library.$main-bg;
+      }
     }
   }
 
-  &__progress{
+  &__list-container{
+    transition: translate 0.3s ease;
+  }
 
-    &-container{
-      width: 100%;
-      height: 2px;
-      background: black;
-    }
-
-    &-bar{
-      height: 2px;
-      background: #D8D133;;
-      width: 0%;
+  &__list-hidden{
+    translate: 0px -100px;
+    
+    & ~ button svg {
+      rotate: 0deg;
     }
   }
 }
 
-.show {
-    display: block;
+.nav__show {
+  translate: 0px 0px;
 }
+
 
 
 @media only screen and (max-width: 600px) {
@@ -102,22 +129,4 @@ $height-nav-item: 200px;
   #nav{
     display:none;
   }
-}
-
-@keyframes desappear {
-  20%{
-    transform: scale(1);
-    top: 0px;
-  }
-
-  40%{
-    transform: scale(1);
-    top: 10px;
-  }
-
-  100%{
-    transform: scale(0.8);
-    top: -3rem;
-  }
-
 }
