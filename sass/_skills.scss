@@ -1,10 +1,8 @@
 @use 'library.scss';
 
 #skills {
-
-    background-color: library.$about-me__bg;
-    padding-top: 15rem;
-    padding-bottom: 15rem;
+  background-color: library.$about-me__bg;
+  padding-top: 15rem;
 }
 
 .skills {
@@ -127,43 +125,42 @@
     z-index: 2;
 
     &:hover{
-        transform: rotate(0deg) translate(-50%, -50%);
-        width: calc(700px + 10rem);
+      transform: rotate(0deg) translate(-50%, -50%);
+      width: calc(700px + 10rem);
     }
 
     &:hover .skillElement{
-        transform: translate(-50%, -50%) rotate(0deg);
+      transform: translate(-50%, -50%) rotate(0deg);
 
-        &:hover{
-            transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
-        }
+      &:hover{
+        transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+      }
     }
 
     &:hover .skills__frontend-radial{
-        margin-right: 4rem;
+      margin-right: 4rem;
     }
 
     &:hover .skills__backend-radial{
-        margin-left: 4rem;
+      margin-left: 4rem;
     }
 
     &:hover .skills__description{
-        border-radius: 175px;
-        width: calc(330px + 8rem);
-        transform: translate(-50%, -50%) rotate(0deg);
+      border-radius: 175px;
+      width: calc(330px + 8rem);
+      transform: translate(-50%, -50%) rotate(0deg);
         
-        &:hover{
-            transform: translate(-50%, -50%) scale(1.04) rotate(0deg);
-
-        }
+      &:hover{
+        transform: translate(-50%, -50%) scale(1.04) rotate(0deg);
+      }
     }
 
     &:hover .skills__buttons-top{
-        clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 
     &:hover .skills__buttons-down{
-        clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 }
 
@@ -283,17 +280,34 @@
     width: 100%;
     height: auto;
     background-color: transparent;
+
+    &:hover{
+      transform: rotate(0deg) translate(0px, 0px);
+      width: inherit;
+    }
+
+    &:hover .skillElement{
+      transform: translate(-50%, -50%) rotate(0deg);
+
+      &:hover{
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:hover .skills__frontend-radial{
+      margin-right: 0rem;
+    }
+
+    &:hover .skills__backend-radial{
+      margin-left: 0rem;
+    }
+      
+    &:hover{
+      transform: translate(0px, 0px) scale(1) rotate(0deg);
+    }
   }
 
-  .skills__description{
-    display: none;
-  }
-
-  .skills__buttons-down{
-    display:none;
-  }
-
-  .skils__buttons-top{
+  .skills__description, .skills__buttons-down, .skills__buttons-top, .skills__radial-bg{
     display: none;
   }
 
@@ -301,19 +315,21 @@
     margin-right:auto;
 
     &-radial{
-        margin: 0;
+      margin: 0;
+      &:hover{
+        transform: scale(1);
+      }
     }
-  }
-
-  .skills__radial-bg{
-    display: none;
   }
 
   .skills__frontend{
     margin-left: auto;
 
     &-radial{
-        margin: 0;
+      margin: 0;
+      &:hover{
+        transform: scale(1);
+      }
     }
   }
 }

@@ -5,7 +5,6 @@
   position: fixed;
   justify-content: space-between;
   width:100%;
-  background-color: red;
   top: 0px;
   font-size: 0.85rem;
   color: library.$font-color-white;
@@ -29,7 +28,7 @@
     position: absolute;
     top:0px;
     right: 0px;
-    height: 100vh;
+    min-height: 100vh;
     width: 280px;
     background-color: #041D36;
     
@@ -49,10 +48,6 @@
       animation-fill-mode: both;
       list-style-type: none;
       position: relative;
-
-      span{
-        color: yellow;
-      }
 
       &::before{
         content: "";
@@ -89,78 +84,6 @@
       font-family: library.$font-text;
       text-decoration: none;
       position: relative;
-
-      &::after{
-        content: "";
-        position: absolute;
-        right: -5px;
-        bottom: 0px;
-        background-color: #D8D133;
-        width: 20px;
-        height: 1px;  
-      }
-
-    }
-  }
-
-  &__settings{
-    display: flex;
-    position: absolute;
-    bottom: 0px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 100%;
-    
-    & > div:first-of-type {
-      width: 35%;
-    }
-
-    & > div:last-of-type{
-      border-left: 1px #335577 solid;
-      width:65%;
-    }
-
-    button{
-      padding: 0.2rem 0.5rem;
-      margin: auto;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      color: library.$font-color-white;
-      font-size: 1.2rem;
-
-      & > div{
-        display: inline-block;
-        font-family: library.$font-mono;
-        font-size: 1rem;
-      }
-
-      & > i {
-        margin: auto 0px auto 0.6rem;
-        transform-origin: 50% 60%;
-        transform: translate(0px, 2px);
-        transition: all ease 0.5s;
-        height: 12px;
-      }
-
-      &:hover{
-
-        & > div {
-          color: white;
-        }
-
-        & > i{
-          color: white;
-          transform: rotate(-90deg);
-        }
-      }
-    }
-
-    svg{
-      margin: auto;
-      display: block;
     }
   }
 }

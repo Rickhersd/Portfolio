@@ -1,10 +1,12 @@
+let previousTouchY = 0;
+const URI = "http://www.w3.org/2000/svg";
+
 export class SkillUI {
 
   constructor(){}
 
 	renderSkills(skills, container, centerCircle, direction = "clock"){
 
-		const URI = "http://www.w3.org/2000/svg";
 		const fragment = new DocumentFragment(); 
     const circleContainer = container;
     const skillsToShow = 12;
@@ -22,7 +24,15 @@ export class SkillUI {
 
     circleContainer.onmouseover = () => window.addEventListener("wheel", preventDefault, {passive: false});
     circleContainer.onmouseout = () => window.removeEventListener("wheel", preventDefault, {passive: false});
+
     circleContainer.addEventListener("wheel", (e) => rotate(e), { passive: false })
+    circleContainer.addEventListener("touchmove", (e) => {
+      rotate(e);
+      document.getElementsByTagName('body')[0].setAttribute('style', 'touch-action:none;')
+    })
+    circleContainer.addEventListener("touchend", () => {
+      previousTouchY = 0
+    })
 
 		function createSvgElements (title, width, height, pathList){
 			let element = document.createElementNS(URI,'svg')
@@ -119,8 +129,9 @@ export class SkillUI {
     }
 
     function rotate(e){
-      plus += e.deltaY * deceleration;
-      console.log(plus)
+      if(e.type == 'wheel') plus += e.deltaY * deceleration;
+      if(e.type == 'touchmove') plus += checkTouchScroll(e);
+      
 
       if (plus > ((svgList.length * parts) - (12 * parts) + parts/2)){
         plus = (svgList.length * parts) - (12 * parts) + parts/2;
@@ -149,4 +160,16 @@ function preventDefault(e) {
 
 function toRadian(angle){
   return angle * Math.PI / 180;
+}
+
+function checkTouchScroll(e){
+  let currentTouch = e.touches[0].clientY;
+  let scrollDirection = 0;
+  if (previousTouchY == 0) previousTouchY = currentTouch;
+  if (previousTouchY != currentTouch) {
+    scrollDirection = -(previousTouchY - currentTouch);
+  }
+  previousTouchY = currentTouch;
+  console.log(scrollDirection)
+  return scrollDirection;
 }

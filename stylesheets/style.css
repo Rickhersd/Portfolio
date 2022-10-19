@@ -40,7 +40,8 @@ html {
 }
 
 body {
-  background-color: rgb(246, 252, 255);
+  touch-action: none;
+  background-color: rgb(250, 252, 255);
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
@@ -56,7 +57,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 #home {
-  margin-bottom: 15rem;
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -494,7 +494,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 .nav__container li {
-  background-color: rgb(246, 252, 255);
+  background-color: rgb(250, 252, 255);
   list-style-type: none;
   width: 120px;
   height: 60px;
@@ -546,7 +546,7 @@ body::-webkit-scrollbar-thumb {
   transition: rotate 0.3s ease;
 }
 .nav__container button path {
-  fill: rgb(246, 252, 255);
+  fill: rgb(250, 252, 255);
 }
 .nav__list-container {
   transition: translate 0.3s ease;
@@ -572,7 +572,6 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   justify-content: space-between;
   width: 100%;
-  background-color: red;
   top: 0px;
   font-size: 0.85rem;
   color: #FAFAFA;
@@ -593,7 +592,7 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 0px;
   right: 0px;
-  height: 100vh;
+  min-height: 100vh;
   width: 280px;
   background-color: #041D36;
 }
@@ -612,9 +611,6 @@ body::-webkit-scrollbar-thumb {
   animation-fill-mode: both;
   list-style-type: none;
   position: relative;
-}
-.nav-mobile__list-item-container li span {
-  color: yellow;
 }
 .nav-mobile__list-item-container li::before {
   content: "";
@@ -645,64 +641,6 @@ body::-webkit-scrollbar-thumb {
   font-family: "Red Hat Text", sans-serif;
   text-decoration: none;
   position: relative;
-}
-.nav-mobile__list-item-container a::after {
-  content: "";
-  position: absolute;
-  right: -5px;
-  bottom: 0px;
-  background-color: #D8D133;
-  width: 20px;
-  height: 1px;
-}
-.nav-mobile__settings {
-  display: flex;
-  position: absolute;
-  bottom: 0px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  width: 100%;
-}
-.nav-mobile__settings > div:first-of-type {
-  width: 35%;
-}
-.nav-mobile__settings > div:last-of-type {
-  border-left: 1px #335577 solid;
-  width: 65%;
-}
-.nav-mobile__settings button {
-  padding: 0.2rem 0.5rem;
-  margin: auto;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: #FAFAFA;
-  font-size: 1.2rem;
-}
-.nav-mobile__settings button > div {
-  display: inline-block;
-  font-family: "Roboto Slab", monospace;
-  font-size: 1rem;
-}
-.nav-mobile__settings button > i {
-  margin: auto 0px auto 0.6rem;
-  transform-origin: 50% 60%;
-  transform: translate(0px, 2px);
-  transition: all ease 0.5s;
-  height: 12px;
-}
-.nav-mobile__settings button:hover > div {
-  color: white;
-}
-.nav-mobile__settings button:hover > i {
-  color: white;
-  transform: rotate(-90deg);
-}
-.nav-mobile__settings svg {
-  margin: auto;
-  display: block;
 }
 
 .hamburger-button {
@@ -754,9 +692,6 @@ body::-webkit-scrollbar-thumb {
 }
 #about-me {
   background-color: rgb(246, 252, 255);
-  margin-top: 50rem;
-  padding-top: 15rem;
-  padding-bottom: 15rem;
 }
 
 .about-me__header {
@@ -1015,7 +950,6 @@ body::-webkit-scrollbar-thumb {
 #skills {
   background-color: rgb(246, 252, 255);
   padding-top: 15rem;
-  padding-bottom: 15rem;
 }
 
 .skills__header {
@@ -1081,7 +1015,7 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: -14px;
   left: 60px;
-  background-color: rgb(246, 252, 255);
+  background-color: rgb(250, 252, 255);
   color: #666;
   align-items: center;
   justify-content: center;
@@ -1106,7 +1040,7 @@ body::-webkit-scrollbar-thumb {
   width: calc(330px + 1rem);
   height: 330px;
   border: 1px solid gray;
-  background-color: rgb(246, 252, 255);
+  background-color: rgb(250, 252, 255);
   transition: all 0.3s ease;
 }
 .skills__description:hover {
@@ -1159,7 +1093,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: calc(350px + 2rem);
   width: calc(700px + 3rem);
   height: calc(700px + 2rem);
-  background-color: rgb(246, 252, 255);
+  background-color: rgb(250, 252, 255);
   justify-content: center;
   align-items: center;
   transform-origin: 0% 0%;
@@ -1337,13 +1271,26 @@ body::-webkit-scrollbar-thumb {
     height: auto;
     background-color: transparent;
   }
-  .skills__description {
-    display: none;
+  .skills__radial-container:hover {
+    transform: rotate(0deg) translate(0px, 0px);
+    width: inherit;
   }
-  .skills__buttons-down {
-    display: none;
+  .skills__radial-container:hover .skillElement {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  .skils__buttons-top {
+  .skills__radial-container:hover .skillElement:hover {
+    transform: translate(-50%, -50%);
+  }
+  .skills__radial-container:hover .skills__frontend-radial {
+    margin-right: 0rem;
+  }
+  .skills__radial-container:hover .skills__backend-radial {
+    margin-left: 0rem;
+  }
+  .skills__radial-container:hover {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  .skills__description, .skills__buttons-down, .skills__buttons-top, .skills__radial-bg {
     display: none;
   }
   .skills__backend {
@@ -1352,14 +1299,17 @@ body::-webkit-scrollbar-thumb {
   .skills__backend-radial {
     margin: 0;
   }
-  .skills__radial-bg {
-    display: none;
+  .skills__backend-radial:hover {
+    transform: scale(1);
   }
   .skills__frontend {
     margin-left: auto;
   }
   .skills__frontend-radial {
     margin: 0;
+  }
+  .skills__frontend-radial:hover {
+    transform: scale(1);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -1461,7 +1411,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 #portfolio {
-  background-color: rgb(246, 252, 255);
+  background-color: rgb(250, 252, 255);
   padding-top: 15rem;
   padding-bottom: 15rem;
 }
@@ -1693,7 +1643,7 @@ body::-webkit-scrollbar-thumb {
 }
 /* Contact */
 #contact {
-  background-color: rgb(246, 252, 255);
+  background-color: rgb(250, 252, 255);
   min-height: 100vh;
   position: relative;
 }
@@ -1717,16 +1667,18 @@ body::-webkit-scrollbar-thumb {
 }
 .contact__form-cont h1 {
   font-family: "Roboto Slab", monospace;
-  color: #09233e;
+  color: #003f60;
   font-weight: 800;
   width: 100%;
-  font-size: clamp(3rem, 8vw, 4rem);
+  font-size: clamp(2rem, 8vw, 4rem);
   line-height: clamp(55px, 13vw, 66px);
   position: relative;
+  margin-bottom: 1rem;
 }
 .contact__form-cont p {
+  padding: 0rem 0.1rem;
   font-family: "Red Hat Text";
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
   color: #374F67;
   line-height: 1.5;
 }
@@ -1763,7 +1715,7 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.2s ease;
 }
 .contact__form-label[for=form__content] {
-  background-color: rgb(246, 252, 255);
+  background-color: rgb(250, 252, 255);
   padding: 0rem 0.3rem;
   top: 0.8rem;
   left: 0.9rem;
@@ -1822,7 +1774,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  color: #A1A1A1;
+  color: #0e3c4d;
 }
 .contact__me {
   grid-area: svg-me;
@@ -1836,17 +1788,19 @@ body::-webkit-scrollbar-thumb {
   bottom: -0.5rem;
 }
 .contact__me svg #me-shadow__eye-left, .contact__me svg #me-shadow__eye-right {
-  fill: rgb(246, 252, 255);
+  fill: rgb(250, 252, 255);
   transform-origin: 0% 44%;
   transform: scaleY(0);
   animation: openEyes 0.5s 3s ease forwards;
 }
 .contact__me svg #me-shadow__bg {
+  fill: #c0e3ef;
   animation: me-shadow 2.6s 1s cubic-bezier(0.25, 1.28, 0.46, 1.01) forwards;
 }
 .contact__me svg #me-shadow__eye-dot-left, .contact__me svg #me-shadow__eye-dot-right {
   position: absolute;
   filter: opacity(0%);
+  fill: #c0e3ef;
   animation: showEyeDots 0.1s 2.9s linear forwards;
 }
 .contact__modal {
@@ -1887,7 +1841,7 @@ body::-webkit-scrollbar-thumb {
   animation: modalDash 0.6s 0.1s ease forwards;
 }
 .contact__modal-response {
-  color: rgb(246, 252, 255);
+  color: rgb(250, 252, 255);
   margin-top: 0.2rem;
   font-family: "Roboto Mono";
   font-weight: 600;
@@ -1906,7 +1860,7 @@ body::-webkit-scrollbar-thumb {
 .contact-end {
   grid-area: social-links;
   width: 100%;
-  background-color: #D3E8E5;
+  background-color: #c0e3ef;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -1937,7 +1891,7 @@ body::-webkit-scrollbar-thumb {
 }
 .contact-end__social-link:hover {
   cursor: pointer;
-  fill: rgb(246, 252, 255);
+  fill: rgb(250, 252, 255);
 }
 .contact-end__handcrafted-by {
   text-align: center;
