@@ -332,6 +332,40 @@
       }
     }
   }
+
+  .skillElement{
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(0deg);
+    fill: library.$primary-color-blue;
+    display:inline-block;
+    background-color: var(--white);
+    transition-property: transform, fill;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    
+    & > svg {
+      height: 80px;
+      width: 80px;
+    }
+
+    &:hover{
+      cursor: pointer;
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+
+    & > h5 {
+      text-align: center;
+      transition-property: letter-spacing color;
+      transition-timing-function: ease;
+      transition-duration: 0.1s;
+      color: library.$font-color-gray;
+    }
+
+    &:hover > h5 {
+      color: library.$primary-color-blue;
+      letter-spacing: 0.08rem;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {

@@ -40,7 +40,6 @@ html {
 }
 
 body {
-  touch-action: none;
   background-color: rgb(250, 252, 255);
   overflow-x: hidden;
 }
@@ -1310,6 +1309,35 @@ body::-webkit-scrollbar-thumb {
   }
   .skills__frontend-radial:hover {
     transform: scale(1);
+  }
+  .skillElement {
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(0deg);
+    fill: #15314c;
+    display: inline-block;
+    background-color: var(--white);
+    transition-property: transform, fill;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+  }
+  .skillElement > svg {
+    height: 80px;
+    width: 80px;
+  }
+  .skillElement:hover {
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  .skillElement > h5 {
+    text-align: center;
+    transition-property: letter-spacing color;
+    transition-timing-function: ease;
+    transition-duration: 0.1s;
+    color: #646464;
+  }
+  .skillElement:hover > h5 {
+    color: #15314c;
+    letter-spacing: 0.08rem;
   }
 }
 @media only screen and (max-width: 600px) {

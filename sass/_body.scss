@@ -1,7 +1,6 @@
 @use 'library.scss';
 
 body {
-    touch-action: none;
     background-color: library.$main-bg;
     overflow-x: hidden;
 

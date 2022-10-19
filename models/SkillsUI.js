@@ -27,11 +27,8 @@ export class SkillUI {
 
     circleContainer.addEventListener("wheel", (e) => rotate(e), { passive: false })
     circleContainer.addEventListener("touchmove", (e) => {
+      preventDefault(e);
       rotate(e);
-      document.getElementsByTagName('body')[0].setAttribute('style', 'touch-action:none;')
-    })
-    circleContainer.addEventListener("touchend", () => {
-      previousTouchY = 0
     })
 
 		function createSvgElements (title, width, height, pathList){
@@ -100,7 +97,6 @@ export class SkillUI {
 			const svgBigElement = skillsContainer.children[0].children[0];
 			const h3Element = skillsContainer.children[1].children[0];
 			const pElement = skillsContainer.children[1].children[1];
-			console.log(path);
 			svgBigElement.setAttribute("d",path);
 			h3Element.innerHTML = title;
 			pElement.innerHTML = des;
@@ -144,8 +140,8 @@ export class SkillUI {
         let isDisplay = actualAngle < -235 || actualAngle > 150 ? "none" : "block";
 
         const pos = {
-            x: centerCircle.x + Math.sin(radian + toRadian(i * parts) - toRadian(plus)) * radio * clockDirection,
-            y: centerCircle.y - Math.cos(radian + toRadian(i * parts) - toRadian(plus)) * radio,
+          x: centerCircle.x + Math.sin(radian + toRadian(i * parts) - toRadian(plus)) * radio * clockDirection,
+          y: centerCircle.y - Math.cos(radian + toRadian(i * parts) - toRadian(plus)) * radio,
         }
 
         svgList[i].setAttribute("style", `top:${pos.y}px; left:${pos.x}px; display: ${isDisplay};`)
@@ -155,7 +151,7 @@ export class SkillUI {
 }
 
 function preventDefault(e) {
-  e.preventDefault();
+ if (e.cancelable) return e.preventDefault();
 }
 
 function toRadian(angle){
@@ -170,6 +166,5 @@ function checkTouchScroll(e){
     scrollDirection = -(previousTouchY - currentTouch);
   }
   previousTouchY = currentTouch;
-  console.log(scrollDirection)
   return scrollDirection;
 }
