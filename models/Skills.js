@@ -8,12 +8,12 @@ export class Skill {
    * @param {string} id 
    * @param {string} description 
    */
-  constructor(id,width,height,svgElements,description){
+  constructor(id, width, height, path, svgFill, description){
     this.id = id;
     this.width = width;
     this.height = height;
-    this.svgElements = svgElements;
+    this.path = path;
+    this.svgFill = svgFill;
     this.description = description;
   }
-
 }

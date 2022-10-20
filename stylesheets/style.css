@@ -1289,26 +1289,40 @@ body::-webkit-scrollbar-thumb {
   .skills__radial-container:hover {
     transform: translate(0px, 0px) scale(1) rotate(0deg);
   }
-  .skills__description, .skills__buttons-down, .skills__buttons-top, .skills__radial-bg {
+  .skills__description, .skills__buttons-down, .skills__buttons-top {
     display: none;
   }
   .skills__backend {
     margin-right: auto;
   }
   .skills__backend-radial {
+    border-radius: 0% 250px 250px 0%;
+    clip-path: path("M 250 0 H 0 V 180 A 70 70 0 0 1 0 320 V 500 H 250z");
     margin: 0;
+    width: 250px;
+    height: 500px;
   }
   .skills__backend-radial:hover {
     transform: scale(1);
+  }
+  .skills__backend .skills__circle-path-frontend {
+    width: 500px;
   }
   .skills__frontend {
     margin-left: auto;
   }
   .skills__frontend-radial {
+    border-radius: 250px 0% 0% 250px;
+    clip-path: path("M 0 0 V 500 H 250 V 320 A 70 70 0 0 1 250 180 V 0 H 0z");
     margin: 0;
+    width: 250px;
+    height: 500px;
   }
   .skills__frontend-radial:hover {
     transform: scale(1);
+  }
+  .skills__frontend .skills__circle-path-frontend {
+    width: 500px;
   }
   .skillElement {
     position: absolute;

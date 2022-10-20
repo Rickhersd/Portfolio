@@ -1,4 +1,6 @@
-import { skills } from "../data/skills.js";
+import { frontendSkills } from "../data/skills.js";
+import { backendSkills } from "../data/skills.js";
+
 import { SkillUI } from "../models/SkillsUI.js";
 import { HamburgerMenu } from "../models/HamburgerMenu.js";
 import { DarkMode } from "../models/DarkMode.js";
@@ -82,41 +84,45 @@ fieldEmpty();
 
 function main () {
 
-    let actualClientHeight = document.documentElement.clientHeight;
-    const btn = document.querySelector('.hamburger-button');
+  let actualClientHeight = document.documentElement.clientHeight;
+  const btn = document.querySelector('.hamburger-button');
 
-    btn.addEventListener('click', () => {
-        hamburgerMenuController.toggleDisplayMenu();
-        hamburgerMenuController.toogleHamburgerBtn();
-    });
+  btn.addEventListener('click', () => {
+    hamburgerMenuController.toggleDisplayMenu();
+    hamburgerMenuController.toogleHamburgerBtn();
+  });
 
+  const ui = new SkillUI();
 
-    const ui = new SkillUI();
+  const frontendContainer = document.querySelector(".skills__frontend-radial");
+  const backendContainer = document.querySelector(".skills__backend-radial");
 
-    const frontendContainer = document.querySelector(".skills__frontend-radial");
-    const backendContainer = document.querySelector(".skills__backend-radial");
+  const options = {
+    maxWidth: 800,
+    radio: 150,
+    skillsToShow: 6,
+    right: {x: 250, y: 250},
+    left: {x: 0, y:  250}
+  }
 
-    const centerCircleFrontend = {
-        x: frontendContainer.clientWidth, 
-        y: frontendContainer.clientHeight / 2
-    }
+  const options2 = {
+    maxWidth: 2000,
+    radio: 260,
+    skillsToShow: 10,
+    right: {x: 350, y: 350},
+    left: {x: 0, y: 350}
+  }
 
-    const centerCircleBackend = {
-        x: 0, 
-        y: backendContainer.clientHeight / 2
-    }
-
-    ui.renderSkills(skills, frontendContainer, centerCircleFrontend, "inverse");
-    ui.renderSkills(skills, backendContainer, centerCircleBackend);
+  ui.renderSkills(frontendSkills, frontendContainer, 'right', "inverse", options2, options);
+  ui.renderSkills(backendSkills, backendContainer, 'left', "clock", options2, options);
 
     window.addEventListener('resize', () => {
         actualClientHeight = calcClientHeight();
     });
     
-    window.addEventListener('scroll', () => {
-
-        navBar.checkScrollTop(actualClientHeight);
-    });
+  window.addEventListener('scroll', () => {
+    navBar.checkScrollTop(actualClientHeight);
+  });
 
 }
 
