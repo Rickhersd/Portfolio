@@ -1,7 +1,8 @@
 import spanishData from "../Languages/Spanish.json" assert { type:'json'}
 import englishData from "../Languages/English.json" assert { type:'json'}
+import { separate } from "./AnimationWord.js";
 
-export class Translater {
+export class Translater{
     
   constructor (){
     this.textElements = getTextElements();
@@ -16,9 +17,8 @@ export class Translater {
   
     for(let element of this.textElements){
       let key = element.dataset.text;
-      if(key != null) {
-        element.innerHTML = lngData[key]  ;
-      }
+      if(key != null) element.innerHTML = lngData[key];
+      if(element.hasAttribute('data-animatedWord')) separate(element);
     }
   }  
   
@@ -59,8 +59,6 @@ function addLocalValue(value){
 };
 
 function checkLangPreference(){
-  console.log(navigator.languages)
-  console.log(normalizeLangCode(navigator.language))
   return navigator.language;
 };
 

@@ -21,5 +21,4 @@ export class Header{
         this.originalHeader.remove();
         this.headerParent.append(fragment);
     }
-
 }

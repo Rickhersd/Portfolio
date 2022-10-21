@@ -3,7 +3,7 @@
 /* Contact */
 #contact{
   background-color: library.$main-bg;
-	min-height: 100vh;
+min-height: 100vh;
   position: relative;
 }
 
@@ -32,12 +32,12 @@
     h1{
       font-family: library.$font-mono;
       color: library.$primary-90;
-		  font-weight: 800;
-			width: 100%;
-		  font-size: clamp(2rem, 8vw, 4rem);
+	    font-weight: 600;
+		  width: 100%;
+		  font-size: clamp(2.2rem, 8vw, 4rem);
 		  line-height: clamp(55px, 13vw, 66px);
       position: relative;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     p{

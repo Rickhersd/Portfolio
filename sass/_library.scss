@@ -1,14 +1,14 @@
-$main-bg: rgb(250, 252, 255);
+$main-bg: #f0f6fd;
 $about-me__bg: rgb(246, 252, 255);
 $skills__bg: rgb(246, 252, 255);
-$portfolio__bg: rgb(246, 252, 255);
+$portfolio__bg: rgb(223, 242, 244);
 $contact__bg: rgb(246, 252, 255);
 $primary-color-blue: #15314c;
 $primary-10: #f5f3fd;
-$primary-30: #c0e3ef;
+$primary-30: #D3e1ed;
 $primary-50: #135f88;
 $primary-70: #5743A8;
-$primary-90: #003f60;
+$primary-90: #011f4b;
 $font-color-gray: #646464;
 $font-color-navy: #09233e;
 $font-color-white: #FAFAFA;
@@ -80,9 +80,6 @@ $font-text: 'Red Hat Text', sans-serif;
   height: 600px;
   width: min(1050px, 100%);
 
-  div{
-    margin:2rem 0rem
-  }
 
   p {
     text-align: center;

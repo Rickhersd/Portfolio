@@ -8,9 +8,10 @@ import { ParallaxController } from "../models/Parallax.js";
 import { HeaderNav } from "../models/HeaderNav.js";
 import { NavBar } from "../models/NavBar.js";
 import { Header } from "../models/Headers.js";
-import { AnimationWord } from "../models/AnimationWord.js";
+import { separate } from "../models/AnimationWord.js";
 import { Translater } from "../models/Translater.js";
 import { MeShadow } from "../models/MeShadow.js";
+import { Carrousel } from "../models/Carrousel.js";
 
 const hamburgerMenuController = new HamburgerMenu();
 hamburgerMenuController.setEvents();
@@ -33,12 +34,10 @@ navBar.setEvents();
 const meShadow = new MeShadow();
 meShadow.start();
 
-const AnimationWordController = new AnimationWord();
-
 let stringsElements = document.querySelectorAll('[data-animatedWord]');
 
 for(let element of stringsElements){
-    AnimationWordController.separate(element);
+    separate(element);
 }
 
 const aboutNodes = getHeaderNodes('about-me')
@@ -57,6 +56,14 @@ function* getHeaderNodes(sectionName){
     yield document.querySelector(`.${sectionName}__header`);
     yield document.querySelector(`.${sectionName}__header-content-container`);
 }
+
+const carrosuelItems = document.getElementsByClassName('about-me__hobby')
+
+const carrousel = new Carrousel(carrosuelItems);
+
+carrousel.setBtnLeft(document.querySelector('.about-me__hobbies-leftBtn'));
+carrousel.setBtnRight(document.querySelector('.about-me__hobbies-rightBtn'));
+
 
 window.onclick = (event) => {
     if (!event.target.matches('.dropdown')) {
@@ -254,14 +261,8 @@ const scrollElementBg = document.querySelector(".header__scroll-bg");
 const scrollElementCont = document.querySelector('.header__scroll-cont')
 window.addEventListener("scroll", () => {
   const scrollElement = document.querySelector(".header__scroll");
-  parallax();
 })
 
-function parallax(){
-  let distance = 0.003 * Math.pow(window.scrollY, 2);
-  scrollElementBg.setAttribute('style', `transform: scale(${clamp(0.9,1 + distance * 0.005,15)})`);
-  scrollElementCont.setAttribute('style', `filter: opacity(${clamp(0, 100 - distance * 0.2, 100)}%)`)
-}
 
 function clamp (min, value, max){
   if (value > min && value < max) return value;

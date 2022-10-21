@@ -49,10 +49,10 @@
 
       &-name{
         span{
-          color: #0F3154;
-          font-family: library.$font-text;
+          color: library.$primary-90;
+          font-family: library.$font-mono;
           font-weight: 800;
-          font-size: 2.2rem;
+          font-size: clamp(2rem, 8vw, 4rem);
           animation-duration: 0.5s;
           display: inline-block;
           animation-timing-function: cubic-bezier(.18,.49,0,1.16);
@@ -63,7 +63,7 @@
 
       &-description{
         margin-top: 1.05rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #374F67;
         line-height: 1.2;
       }

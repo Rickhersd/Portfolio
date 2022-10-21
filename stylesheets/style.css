@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
@@ -345,49 +345,6 @@ body::-webkit-scrollbar-thumb {
   fill: #6E869F;
 }
 
-.header__scroll {
-  position: fixed;
-  translate: -50% 50%;
-  width: 100%;
-  left: 50%;
-  bottom: 0rem;
-  display: flex;
-  width: 12rem;
-  height: 12rem;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: none;
-}
-.header__scroll-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-}
-.header__scroll-cont {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.25rem;
-  z-index: 10;
-  translate: 0px;
-  position: absolute;
-}
-.header__scroll-cont-h6 {
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 3px;
-  color: #56697C;
-}
-.header__scroll-cont-line {
-  display: inline-block;
-  width: 1px;
-  background-color: #56697C;
-  height: 6rem;
-}
-
 .increase {
   transform: scale(1.05);
   border-color: #0F3154;
@@ -493,7 +450,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 .nav__container li {
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   list-style-type: none;
   width: 120px;
   height: 60px;
@@ -545,7 +502,7 @@ body::-webkit-scrollbar-thumb {
   transition: rotate 0.3s ease;
 }
 .nav__container button path {
-  fill: rgb(250, 252, 255);
+  fill: #f0f6fd;
 }
 .nav__list-container {
   transition: translate 0.3s ease;
@@ -690,7 +647,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 #about-me {
-  background-color: rgb(246, 252, 255);
+  padding-top: 25rem;
 }
 
 .about-me__header {
@@ -744,11 +701,6 @@ body::-webkit-scrollbar-thumb {
 .about-me__header svg {
   width: 27%;
 }
-.about-me > div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 .about-me__hobbies-container {
   width: 100%;
   display: flex;
@@ -764,23 +716,60 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   line-height: 1.65;
 }
-.about-me__hobby div:first-of-type {
+.about-me__hobby div {
   width: 100%;
   aspect-ratio: 1/1;
   background-color: lightblue;
 }
-.about-me__hobby div:last-of-type {
-  margin-top: 0.5rem;
-  background-color: #15314c;
-}
 .about-me__hobby h3 {
+  width: 100%;
   font-size: 2rem;
 }
-.about-me__hobby p {
-  font-size: 1rem;
-  line-height: 1.2;
+.about-me__content {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
-.about-me button {
+.about-me__content-rightside {
+  width: min(550px, 100%);
+  height: inherit;
+}
+.about-me__content-leftside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  height: auto;
+}
+.about-me__info {
+  padding: 1rem;
+}
+.about-me__info span {
+  color: #09233e;
+  font-size: clamp(1.9rem, 7vw, 4rem);
+  font-family: "Roboto Slab", monospace;
+  font-weight: 600;
+}
+.about-me__info p {
+  margin: auto;
+  margin-top: 0.8rem;
+  font-family: "Red Hat Text";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  display: block;
+  color: rgb(30, 30, 30);
+}
+.about-me__photograph {
+  background-color: red;
+  width: 300px;
+  height: 400px;
+}
+.about-me__resumeBtn {
   width: 100%;
   border: 5px solid #0F3154;
   background-color: transparent;
@@ -795,7 +784,7 @@ body::-webkit-scrollbar-thumb {
   transition-timing-function: ease;
   transition-property: color;
 }
-.about-me button::before {
+.about-me__resumeBtn::before {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -808,75 +797,15 @@ body::-webkit-scrollbar-thumb {
   height: 0%;
   transition: height 0.2s ease;
 }
-.about-me button:hover {
+.about-me__resumeBtn:hover {
   border-color: #0F3154;
   color: white;
 }
-.about-me button:hover::before {
+.about-me__resumeBtn:hover::before {
   height: 90%;
 }
-.about-me button:hover a {
+.about-me__resumeBtn:hover a {
   color: #0F3154;
-}
-.about-me__info {
-  width: 1200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 100px;
-}
-.about-me__info-rightside {
-  width: min(550px, 100%);
-  height: inherit;
-}
-.about-me__info-rightside-container {
-  position: relative;
-}
-.about-me__info-rightside-container div {
-  border-radius: 1rem;
-}
-.about-me__info-rightside-container div + div {
-  background-color: #56697C;
-}
-.about-me__info-rightside-container div h4 span {
-  color: #09233e;
-  font-size: 3rem;
-  font-family: "Roboto Slab", monospace;
-}
-.about-me__info-rightside-container div p {
-  margin: auto;
-  margin-top: 1rem;
-  color: rgb(29, 29, 29);
-  font-family: "Red Hat Text";
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.7;
-  display: block;
-  color: rgb(30, 30, 30);
-}
-.about-me__info-rightside-container div p .tab {
-  margin-left: 3rem;
-}
-.about-me__info-rightside > div {
-  padding: 1rem;
-  margin-top: 1rem;
-  position: relative;
-}
-.about-me__info-rightside-item {
-  width: 100%;
-}
-.about-me__info-leftside {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 300px;
-  height: auto;
-}
-.about-me__info-photograph {
-  background-color: red;
-  width: 300px;
-  height: 400px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -885,9 +814,6 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     height: 600px;
     width: min(1050px, 100%);
-  }
-  .about-me__header div {
-    margin: 2rem 0rem;
   }
   .about-me__header p {
     text-align: center;
@@ -911,46 +837,52 @@ body::-webkit-scrollbar-thumb {
   .about-me__header-bg {
     width: 100%;
   }
+  .about-me__content {
+    width: 100%;
+    flex-direction: column;
+  }
   .about-me__info {
     flex-direction: column;
     width: 100%;
+    padding: 1rem 1.5rem;
   }
   .about-me__hobbies-container {
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: baseline;
-  }
-  .about-me__hobby {
-    width: 100%;
+    width: 60%;
+    height: calc(60vw + 4rem);
+    margin: auto;
+    overflow-x: hidden;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: baseline;
+    gap: 1rem;
   }
-  .about-me__info-rightside-beginning {
-    margin: auto;
+  .about-me__hobbies-rightBtn {
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
   }
-  .about-me__info-rightside-education {
-    margin: auto;
+  .about-me__hobbies-leftBtn {
+    width: 2rem;
+    height: 2rem;
+    background-color: blue;
   }
-  .about-me__info-rightside-goals {
-    margin: auto;
+  .about-me__hobby {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    transition: left 0.3s ease;
   }
-  .about-me__buttons-container {
-    flex-direction: column;
+  .about-me__hobby-item1 {
+    left: 0%;
   }
-  .about-me__buttons-container button {
-    width: 90%;
-    margin: auto;
+  .about-me__hobby-item2 {
+    left: 110%;
+  }
+  .about-me__hobby-item3 {
+    left: 220%;
   }
 }
-#skills {
-  background-color: rgb(246, 252, 255);
-  padding-top: 15rem;
-}
-
 .skills__header {
   width: min(1200px, 90%);
   margin: auto;
@@ -1014,7 +946,7 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: -14px;
   left: 60px;
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   color: #666;
   align-items: center;
   justify-content: center;
@@ -1039,7 +971,7 @@ body::-webkit-scrollbar-thumb {
   width: calc(330px + 1rem);
   height: 330px;
   border: 1px solid gray;
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   transition: all 0.3s ease;
 }
 .skills__description:hover {
@@ -1092,7 +1024,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: calc(350px + 2rem);
   width: calc(700px + 3rem);
   height: calc(700px + 2rem);
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   justify-content: center;
   align-items: center;
   transform-origin: 0% 0%;
@@ -1164,7 +1096,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .skills__circle-path-frontend {
-  background-color: #d3e1ef;
+  background-color: #D3e1ed;
   width: 700px;
   height: inherit;
   border-radius: 50%;
@@ -1173,7 +1105,7 @@ body::-webkit-scrollbar-thumb {
 .skills__circle-path-backend {
   position: absolute;
   left: -350px;
-  background-color: #e6eef6;
+  background-color: #D3e1ed;
   width: 700px;
   height: inherit;
   border-radius: 50%;
@@ -1234,9 +1166,6 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     height: 600px;
     width: min(1050px, 100%);
-  }
-  .skills__header-content-container div {
-    margin: 2rem 0rem;
   }
   .skills__header-content-container p {
     text-align: center;
@@ -1361,9 +1290,6 @@ body::-webkit-scrollbar-thumb {
     height: 600px;
     width: min(1050px, 100%);
   }
-  .skills__header div {
-    margin: 2rem 0rem;
-  }
   .skills__header p {
     text-align: center;
   }
@@ -1453,7 +1379,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 #portfolio {
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   padding-top: 15rem;
   padding-bottom: 15rem;
 }
@@ -1544,10 +1470,10 @@ body::-webkit-scrollbar-thumb {
   font-family: "Red Hat Text";
 }
 .portfolio__item-header-name span {
-  color: #0F3154;
-  font-family: "Red Hat Text", sans-serif;
+  color: #011f4b;
+  font-family: "Roboto Slab", monospace;
   font-weight: 800;
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 8vw, 4rem);
   animation-duration: 0.5s;
   display: inline-block;
   animation-timing-function: cubic-bezier(0.18, 0.49, 0, 1.16);
@@ -1556,7 +1482,7 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolio__item-header-description {
   margin-top: 1.05rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #374F67;
   line-height: 1.2;
 }
@@ -1647,9 +1573,6 @@ body::-webkit-scrollbar-thumb {
     height: 600px;
     width: min(1050px, 100%);
   }
-  .portfolio__header div {
-    margin: 2rem 0rem;
-  }
   .portfolio__header p {
     text-align: center;
   }
@@ -1685,7 +1608,7 @@ body::-webkit-scrollbar-thumb {
 }
 /* Contact */
 #contact {
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   min-height: 100vh;
   position: relative;
 }
@@ -1709,13 +1632,13 @@ body::-webkit-scrollbar-thumb {
 }
 .contact__form-cont h1 {
   font-family: "Roboto Slab", monospace;
-  color: #003f60;
-  font-weight: 800;
+  color: #011f4b;
+  font-weight: 600;
   width: 100%;
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(2.2rem, 8vw, 4rem);
   line-height: clamp(55px, 13vw, 66px);
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .contact__form-cont p {
   padding: 0rem 0.1rem;
@@ -1757,7 +1680,7 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.2s ease;
 }
 .contact__form-label[for=form__content] {
-  background-color: rgb(250, 252, 255);
+  background-color: #f0f6fd;
   padding: 0rem 0.3rem;
   top: 0.8rem;
   left: 0.9rem;
@@ -1830,19 +1753,19 @@ body::-webkit-scrollbar-thumb {
   bottom: -0.5rem;
 }
 .contact__me svg #me-shadow__eye-left, .contact__me svg #me-shadow__eye-right {
-  fill: rgb(250, 252, 255);
+  fill: #f0f6fd;
   transform-origin: 0% 44%;
   transform: scaleY(0);
   animation: openEyes 0.5s 3s ease forwards;
 }
 .contact__me svg #me-shadow__bg {
-  fill: #c0e3ef;
+  fill: #D3e1ed;
   animation: me-shadow 2.6s 1s cubic-bezier(0.25, 1.28, 0.46, 1.01) forwards;
 }
 .contact__me svg #me-shadow__eye-dot-left, .contact__me svg #me-shadow__eye-dot-right {
   position: absolute;
   filter: opacity(0%);
-  fill: #c0e3ef;
+  fill: #D3e1ed;
   animation: showEyeDots 0.1s 2.9s linear forwards;
 }
 .contact__modal {
@@ -1883,7 +1806,7 @@ body::-webkit-scrollbar-thumb {
   animation: modalDash 0.6s 0.1s ease forwards;
 }
 .contact__modal-response {
-  color: rgb(250, 252, 255);
+  color: #f0f6fd;
   margin-top: 0.2rem;
   font-family: "Roboto Mono";
   font-weight: 600;
@@ -1902,7 +1825,7 @@ body::-webkit-scrollbar-thumb {
 .contact-end {
   grid-area: social-links;
   width: 100%;
-  background-color: #c0e3ef;
+  background-color: #D3e1ed;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -1933,7 +1856,7 @@ body::-webkit-scrollbar-thumb {
 }
 .contact-end__social-link:hover {
   cursor: pointer;
-  fill: rgb(250, 252, 255);
+  fill: #f0f6fd;
 }
 .contact-end__handcrafted-by {
   text-align: center;
@@ -2462,14 +2385,14 @@ body::-webkit-scrollbar-thumb {
   stroke-dashoffset: 150;
   animation: dash2 0.75s ease forwards;
   animation-delay: 0.9s;
-  stroke: rgb(246, 252, 255);
+  stroke: rgb(223, 242, 244);
 }
 .about-me__header[data-intersection=true] .svg__hand-decoration1 {
   stroke-dasharray: 150;
   stroke-dashoffset: 150;
   animation: dash2 0.75s ease forwards;
   animation-delay: 0.5s;
-  stroke: rgb(246, 252, 255);
+  stroke: rgb(223, 242, 244);
 }
 .about-me__header[data-intersection=true] .svg__hand-blob {
   opacity: 0;

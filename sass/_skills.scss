@@ -1,10 +1,5 @@
 @use 'library.scss';
 
-#skills {
-  background-color: library.$about-me__bg;
-  padding-top: 15rem;
-}
-
 .skills {
 
     @include library.subHeader();
@@ -197,7 +192,7 @@
 }
 
 .skills__circle-path-frontend{
-    background-color: lighten(#417BB5, 40%);
+    background-color: library.$primary-30;
     width: calc(350px * 2);
     height: inherit;
     border-radius: 50%;
@@ -206,7 +201,7 @@
 .skills__circle-path-backend{
     position: absolute;
     left: calc(-1 * 350px);
-    background-color: lighten(#417BB5, 45%);
+    background-color: library.$primary-30;
     width: calc(350px * 2);
     height: inherit;
     border-radius: 50%;

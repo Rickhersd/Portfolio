@@ -1,20 +1,16 @@
-export class AnimationWord{
-
-  separate(element){
-      
-    let originalString = (element.innerText);
-    let fragment = new DocumentFragment();
-
-    for( let i = 0; i < originalString.length; i++){
-      let span = document.createElement('span');
-      span.innerText = originalString[i];
-      span.style.animationDelay = `${0.1 + (i * 0.020)}s`
-      if (span.innerText == " ") span.style.display = "initial";
-      fragment.append(span);
-    }
+export function separate(element){
     
-    element.innerText = null;
-    element.append(fragment);
+  let originalString = (element.innerText);
+  let fragment = new DocumentFragment();
+
+  for( let i = 0; i < originalString.length; i++){
+    let span = document.createElement('span');
+    span.innerText = originalString[i];
+    span.style.animationDelay = `${0.1 + (i * 0.020)}s`
+    if (span.innerText == " ") span.style.display = "initial";
+    fragment.append(span);
   }
   
+  element.innerText = null;
+  element.append(fragment);
 }
