@@ -529,20 +529,9 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-between;
   width: 100%;
   top: 0px;
-  font-size: 0.85rem;
-  color: #FAFAFA;
   z-index: 10;
 }
 
-.nav-mobile__outside {
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: black;
-}
 .nav-mobile__list-item-container {
   display: none;
   position: absolute;
@@ -550,7 +539,16 @@ body::-webkit-scrollbar-thumb {
   right: 0px;
   min-height: 100vh;
   width: 100vw;
-  background-color: #cbeeff;
+  background-color: #d5effc;
+}
+.nav-mobile__list-item-container span {
+  position: absolute;
+  width: calc(100% - 3rem);
+  height: 2px;
+  left: 1.5rem;
+  margin: auto;
+  background-color: #f0f6fd;
+  top: 4.2rem;
 }
 .nav-mobile__list-item-container ul {
   display: flex;
@@ -572,10 +570,10 @@ body::-webkit-scrollbar-thumb {
   content: "";
   position: absolute;
   left: 105%;
-  bottom: 40%;
+  bottom: 38%;
   width: 100%;
-  height: 2px;
-  background-color: white;
+  height: 5px;
+  border-radius: 5px;
 }
 .nav-mobile__list-item-container li[id=nav-mobile__about-me] {
   animation-delay: 0.08s;
@@ -599,26 +597,28 @@ body::-webkit-scrollbar-thumb {
   font-family: "Roboto Slab", monospace;
   text-decoration: none;
   position: relative;
-  text-shadow: 2px 2px 1px #a2d1ff;
+  text-shadow: 1px 1px 1px #a2d1ff;
 }
 
 .hamburger-button {
-  background-color: #cbeeff;
+  background-color: #d5effc;
   display: none;
   position: absolute;
-  padding: 16px 14px 16px 18px;
+  padding: 14px 14px 14px 18px;
   border-radius: 50px 0px 0px 50px;
-  top: 0.5rem;
+  top: 0.3rem;
   right: 0rem;
   z-index: 100;
   fill: #011f4b;
+  transition: filter 0.1s 0.5s ease;
+  filter: drop-shadow(1px 2px 1px #a2d1ff);
 }
 .hamburger-button svg {
   translate: 0px 2px;
   filter: drop-shadow(2px 2px 1px #a2d1ff);
 }
 .hamburger-button #hamburger-topBar {
-  transform-origin: 0 0;
+  transform-origin: 0% 0%;
   transition: transform cubic-bezier(0.33, 1, 0.68, 1) 0.3s;
 }
 .hamburger-button #hamburger-middleBar {
@@ -629,6 +629,10 @@ body::-webkit-scrollbar-thumb {
   transition: transform cubic-bezier(0.33, 1, 0.68, 1) 0.3s;
 }
 
+.hamburger-button__close {
+  transition: filter 0.1s 0s ease;
+  filter: none;
+}
 .hamburger-button__close #hamburger-topBar {
   transform: rotate(45deg) scaleX(1.1) translate(6px, -6px);
 }

@@ -15,41 +15,24 @@ const keyframesEffectsData = [
       fill: 'backwards',
     }
   },
-  {
-    name: "Outside",
-    target: '.nav-mobile__outside',
-    keyframes:
-    [
-      {opacity: 0},
-      {opacity: 0.7},
-    ],
-    options:
-    {
-      duration: 450,
-      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-      fill: 'both',
-    }
-  },
 ];
 
 const keyframesEffects = keyframesEffectsData.map(
   (data) => new KeyframeEffect(document.querySelector(data.target), data.keyframes, data.options)
 );
 
-function toggleDisplay(hamburgerMenu, outsideArea) {
+function toggleDisplay(hamburgerMenu) {
   hamburgerMenu.style.display = hamburgerMenu.style.display != "block" ? "block" : "none";
-  outsideArea.style.display = outsideArea.style.display != "block" ? "block" : "none";
 }
 
 const animation = new Animation(keyframesEffects[0]);
-const animationOutside = new Animation(keyframesEffects[1]);
+
 
 export class HamburgerMenu{
 
   constructor(){
     this.hamburgerMenu = document.querySelector('.nav-mobile__list-item-container');
     this.hamburgerBtn = document.querySelector('.hamburger-button');
-    this.outsideArea = document.querySelector('.nav-mobile__outside');
     this.isDisplay = false;
   }
 
@@ -74,19 +57,16 @@ export class HamburgerMenu{
   openMenu(toggable = false){
     if(animation.playState != 'running'){
       this.isDisplay = true;
-      animation.playState != 'idle' ? animation.reverse() : animation.play(); 
-      animationOutside.playState != 'idle' ? animationOutside.reverse() : animationOutside.play();
-      toggleDisplay(this.hamburgerMenu, this.outsideArea);
+      animation.playState != 'idle' ? animation.reverse() : animation.play();
+      toggleDisplay(this.hamburgerMenu);
       animation.finished
         .then(() => {
           this.hamburgerMenu.style.display = this.isDisplay == true ? 'block' : 'none'; 
-          this.outsideArea.style.display = this.isDisplay == true ? 'block' : 'none';
         })
         .catch(error => console.log(error))
     } else if (toggable == true) {
       this.isDisplay = animation.playbackRate > 0 ? false : true;
       animation.reverse();
-      animationOutside.reverse();
     }
   } 
 
@@ -94,17 +74,14 @@ export class HamburgerMenu{
     if(animation.playState != 'running'){
       this.isDisplay = false;
       animation.reverse();
-      animationOutside.reverse();
       animation.finished
         .then(() => {
           this.hamburgerMenu.style.display = this.isDisplay == false ? 'none' : 'block';
-          this.outsideArea.style.display = this.isDisplay == false ? 'none' : 'block';
         })
         .catch(error => console.log(error))
     } else if (toggable == true){
       this.isDisplay = animation.playbackRate > 0 ? false : true;
       animation.reverse();
-      animationOutside.reverse();
     }
   }
 

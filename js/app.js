@@ -74,10 +74,7 @@ window.onclick = (event) => {
             }
         }
     }
-    if (event.target.matches('.nav-mobile__outside')){
-        hamburgerMenuController.closeMenu();
-        hamburgerMenuController.toogleHamburgerBtn("close");
-    }
+
 }
 
 function fieldEmpty(){
@@ -167,7 +164,7 @@ if(!!window.IntersectionObserver){
 
 function preventDefault(e) {
     e.preventDefault();
-  }
+}
 
 const blockElements = document.querySelectorAll(`[data-appearIndex]`);
 appear();
@@ -255,13 +252,6 @@ function showModalResponse(successful, response){
 function hideModalResponse(){
     console.log('termino el modal')
 }
-
-const scrollElement = document.querySelector(".header__scroll");
-const scrollElementBg = document.querySelector(".header__scroll-bg");
-const scrollElementCont = document.querySelector('.header__scroll-cont')
-window.addEventListener("scroll", () => {
-  const scrollElement = document.querySelector(".header__scroll");
-})
 
 
 function clamp (min, value, max){
