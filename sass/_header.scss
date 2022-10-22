@@ -79,7 +79,7 @@
       bottom: -1rem;
       border-radius: 2px;
       left: 0px;
-      background-color: #6E869F;
+      background-color: library.$primary-50;
       width: 100px;
       height: 10px;
     }
@@ -286,7 +286,7 @@
     transition: transform 0.3s ease;
     padding: 0.5rem;
     &:hover{
-        transform: scale(1.1);
+      transform: scale(1.1);
     }
 
     .svg-darkmode__bg{
@@ -361,7 +361,7 @@
         left: 50%;
         translate: -50% 0%;
         border-radius: 2px;
-        background-color: #6E869F;
+        background-color: library.$primary-30;
         width: 100px;
         height: 5px;
       }

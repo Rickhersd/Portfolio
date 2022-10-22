@@ -6,7 +6,7 @@ $contact__bg: rgb(246, 252, 255);
 $primary-10: #e0f6ff;
 $primary-30: #d5effc;
 $primary-50: #a2d1ff;
-$primary-70: #06357c;
+$primary-70: #7aacde;
 $primary-90: #011f4b;
 $font-color-gray: #646464;
 $font-color-navy: #09233e;
@@ -16,120 +16,78 @@ $font-mono:'Roboto Slab', monospace;
 $font-display: 'Roboto Slab', sans-serif;
 $font-text: 'Red Hat Text', sans-serif;
 
-@mixin sub-header{
-  width: 100%;
-
-  & > div{
-    background-color: $primary-color-blue;
-    position: relative;
-    display: flex;
-    padding: 1rem;
-    z-index: 1;
-  }
-  
-  &-content-container{
-    width: 800px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-  }
-
-  & h1{
-    font-size: clamp(2rem, 8vw, 2.5rem);
-    font-family: $font-display;
-    font-weight: 800;
-    color: $font-color-white;
-  
-    & span{
-      color: $secundary-color-yellow;
-    }
-  }
-
-  & p{
-    font-size:1.1rem;
-    color: $font-color-white;
-    font-family: $font-text;
-    font-weight: 400;  
-    margin-top: 1.5rem;
-  }
-
-  & img{
-    clip-path: circle(45%);
-  }
-
-  & svg:first-of-type{
-    position: relative;
-    fill: $primary-color-blue;
-    transform: translate(0px, 6px);
-    filter: drop-shadow(0px -4px 2px rgb(163, 163, 163));
-  }
-
-  & svg:last-of-type{
-    position: relative;
-    fill: $primary-color-blue;
-    transform: translate(0px, -1px);
-    filter: drop-shadow(0px 4px 2px rgb(163, 163, 163));
-  }
-}
-
 @mixin MQ__sub-header__div-content-container(){
 
   flex-direction: column;
   justify-content: center;
-  height: 600px;
+  height: 280px;
   width: min(1050px, 100%);
 
-
   p {
-    text-align: center;
-  }
-
-  & > img{
-    margin: auto;
-    background-color: green;
+    text-align: left;
+    font-size: 1.4rem;
   }
 
   &-content-container{
     flex-direction: column;
-
+    align-items: left;
+    margin-left: 1.5rem;
+    justify-content: center;
+    width: min(1200px, 80%);
+    transition: translate 0.5s cubic-bezier(.27,.54,.48,1);
+    translate: -500px 0%;
+    
     div{
       width: 100%;
     }
   }
 
   &-title{
-    text-align: center;
+    text-align: left;
+    margin-bottom: 1rem;
+    span{
+      font-size: clamp(1.9rem, 12vw,2.6rem);
+    }
   }
 
   & svg{
     width: 60%;
+    height: auto;
   }
 
   &-bg{
-    width: 100%;
+    width: 95%;
+    transition: translate 0.5s cubic-bezier(.27,.54,.48,1);
+    translate: -500px 0%;
   }
 }
 
 @mixin subHeader(){
 
   &__header{
-    width: min(1200px, 90%);
-    margin: auto;
-    padding: 2rem;
+    width: 100%;
     height: 350px;
     position: relative;
 
+    &-bg{
+      position: absolute;
+      border-radius: 0% 150rem 150rem 0%;
+      background-color: $primary-30;
+      width: 80%;
+      height: inherit;
+      transition: translate 0.7s cubic-bezier(.27,.54,.48,1);
+      translate: -1300px 0%;
+    }
+
     &-content-container{
-      padding: 2rem clamp(1rem, 5vw, 3.5rem);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #D3E8E5;
-      width: 100%;
+      margin: auto;
+      width: min(1200px, 90%);
       height: inherit;
+      transition: translate 0.7s cubic-bezier(.27,.54,.48,1);
+      translate: -1300px 0%;
 
       div{
         width: 63%;
@@ -141,33 +99,62 @@ $font-text: 'Red Hat Text', sans-serif;
       font-size: clamp(2rem, 8vw, 4rem);
       margin-bottom: 1.6rem;
       line-height: 1.2;
-      color: #183a5e;
+      color: $primary-90;
       font-family: $font-mono;
       font-weight: 700;
       position: relative;
-      opacity: 0;
 
       span{
         font-family: "Roboto Slab", monospace;
       }
-
     }
 
     &-subtitle{
-      font-family: 'Roboto';
+      font-family: 'Red Hat Text';
       font-weight: 400;
-      color:#183a5e;
-      line-height: 1.8rem;
-      font-size: 1.3rem;
-      opacity: 0;
-      translate: 0px 25px;
+      color: $primary-90;
+      line-height: clamp(1.8rem, 5vw, 2.5rem);
+      font-size: clamp(1.3rem, 5vw, 2rem);;
       transition-duration: 1s;
+      transition-delay: 0s;
       transition-timing-function: ease;
       transition-property: opacity, translate;
     }
 
     svg{
-      width: 27%;
+      position: absolute;
+      bottom: -2rem;
+      right: 1.2rem;
+      display: none;
+    }
+
+  }
+}
+
+@mixin intersectionHeader{
+  
+  &-bg{
+    transform-origin: 0% 50%;
+    translate: 0% 0%;
+  }
+
+  &-content-container{
+    transform-origin: 0% 50%;
+    translate: 0% 0%;
+  }
+
+  &-subtitle{
+    opacity: 1;
+    translate: 0px 0px
+  }
+
+  &-title{
+    opacity: 1;
+
+    span{
+      display: inline-block;
+      transform-origin: 50% 100%;
+      animation: LetterAnim 1s 2s ease forwards;
     }
   }
 }

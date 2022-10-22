@@ -66,42 +66,15 @@
 
 .skills__header[data-intersection="true"]{
 
-    
-    
-    .skills__header-subtitle{
-        opacity: 1;
-        translate: 0px 0px;
+    .skills__header{
+        @include library.intersectionHeader(); 
     }
-
-    .skills__header-title{
-        
-        opacity: 1;
-
-        span{
-            display: inline-block;
-            opacity: 0;
-            animation: SlideDownLetter 0.7s ease forwards;
-        }
-    }
-
 }
 
 .portfolio__header[data-intersection="true"] {
 
-    .portfolio__header-subtitle{
-        opacity: 1;
-        translate: 0px 0px
-    }
-    
-    .portfolio__header-title{
-        
-        opacity: 1;
-
-        span{
-            display: inline-block;
-            opacity: 0;
-            animation: SlideDownLetter 0.7s ease forwards;
-        }
+    .portfolio__header{
+        @include library.intersectionHeader();
     }
 
     .svg__computer{
@@ -229,20 +202,8 @@
 
 .about-me__header[data-intersection="true"]{
 
-    .about-me__header-subtitle{
-        opacity: 1;
-        translate: 0px 0px
-    }
-
-    .about-me__header-title{
-        
-        opacity: 1;
-
-        span{
-            display: inline-block;
-            opacity: 0;
-            animation: SlideDownLetter 0.7s ease forwards;
-        }
+    .about-me__header{
+        @include library.intersectionHeader();
     }
 
     .svg__hand{
@@ -254,7 +215,8 @@
             stroke-dashoffset: 2000;
             animation: dash 2s ease forwards;
             transform-origin: 50% 50%;
-            stroke: #0b3b6b;
+            stroke: library.$main-bg;
+            stroke-width: 12;
         }
     
         &-decoration{
@@ -262,7 +224,8 @@
             stroke-dashoffset: 150;
             animation: dash2 0.75s ease forwards;
             animation-delay: 0.9s;
-            stroke: library.$portfolio__bg
+            stroke: library.$main-bg;
+            stroke-width: 0;
         }
     
         &-decoration1{
@@ -270,14 +233,8 @@
             stroke-dashoffset: 150;
             animation: dash2 0.75s ease forwards;
             animation-delay: 0.5s;
-            stroke: library.$portfolio__bg;
-        }
-    
-        &-blob{
-            opacity: 0;
-            transform-origin: 50% 50%;
-            animation: blob 0.5s cubic-bezier(.48,.16,.4,1.45) forwards;
-            fill: rgb(214, 235, 241)
+            stroke: library.$main-bg;
+            stroke-width: 0;
         }
     }
       
@@ -286,11 +243,6 @@
 @keyframes dash {
     0% {
       stroke-dashoffset: 2000;
-      scale: 0.7;
-    }
-
-    50%{
-        scale: 1
     }
 
     100%{
@@ -332,3 +284,10 @@
       opacity: 1;
     }
   }
+
+  @keyframes LetterAnim {
+    0%{rotate: 0deg;}
+    30%{rotate: 20deg}
+    100%{rotate: 0deg;}
+  }
+ 

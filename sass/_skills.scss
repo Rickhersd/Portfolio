@@ -262,7 +262,7 @@
 
 @media only screen and (max-width: 800px) {
 
-  .skills__header-content-container{
+  .skills__header{
     @include library.MQ__sub-header__div-content-container();
   }
 

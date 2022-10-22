@@ -6,7 +6,7 @@ export function separate(element){
   for( let i = 0; i < originalString.length; i++){
     let span = document.createElement('span');
     span.innerText = originalString[i];
-    span.style.animationDelay = `${0.1 + (i * 0.020)}s`
+    span.style.animationDelay = `${0.3 + (i * 0.03)}s`
     if (span.innerText == " ") span.style.display = "initial";
     fragment.append(span);
   }

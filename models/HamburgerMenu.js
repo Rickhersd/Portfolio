@@ -1,34 +1,24 @@
-const keyframesEffectsData = [
-  {
-    name: "OpenMenu",
-    target: ".nav-mobile__list-item-container",
-    keyframes: 
-    [
-      {clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)'},
-      {clipPath: 'polygon(100% 0, 30% 0, 40% 100%, 100% 100%)', offset: 0.6},
-      {clipPath: 'polygon(100% 0, 0 0, 0 100%, 100% 100%)'},
-    ],
-    options: 
-    {
-      duration: 450, 
-      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-      fill: 'backwards',
-    }
-  },
-];
-
-const keyframesEffects = keyframesEffectsData.map(
-  (data) => new KeyframeEffect(document.querySelector(data.target), data.keyframes, data.options)
-);
+const keyframes = [
+  {clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)'},
+  {clipPath: 'polygon(100% 0, 30% 0, 40% 100%, 100% 100%)', offset: 0.6},
+  {clipPath: 'polygon(100% 0, 0 0, 0 100%, 100% 100%)'},
+]
+const options = {
+  duration: 450, 
+  easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+  fill: 'backwards',
+}
+const target = document.querySelector(".nav-mobile__list-item-container")
 
 function toggleDisplay(hamburgerMenu) {
   hamburgerMenu.style.display = hamburgerMenu.style.display != "block" ? "block" : "none";
 }
 
-const animation = new Animation(keyframesEffects[0]);
-
 
 export class HamburgerMenu{
+
+  #animation = new Animation(new KeyframeEffect(target, keyframes, options));
+  #isDisplayBtn = false;
 
   constructor(){
     this.hamburgerMenu = document.querySelector('.nav-mobile__list-item-container');
@@ -55,33 +45,34 @@ export class HamburgerMenu{
   }
 
   openMenu(toggable = false){
-    if(animation.playState != 'running'){
+    if(this.#animation.playState != 'running'){
       this.isDisplay = true;
-      animation.playState != 'idle' ? animation.reverse() : animation.play();
+      this.#animation.playState != 'idle' ? this.#animation.reverse() : this.#animation.play();
       toggleDisplay(this.hamburgerMenu);
-      animation.finished
+      this.#animation.finished
         .then(() => {
           this.hamburgerMenu.style.display = this.isDisplay == true ? 'block' : 'none'; 
         })
         .catch(error => console.log(error))
     } else if (toggable == true) {
-      this.isDisplay = animation.playbackRate > 0 ? false : true;
-      animation.reverse();
+      this.isDisplay = this.#animation.playbackRate > 0 ? false : true;
+      this.#animation.reverse();
     }
   } 
 
   closeMenu(toggable = false){
-    if(animation.playState != 'running'){
+    if(this.#animation.playState != 'running'){
       this.isDisplay = false;
-      animation.reverse();
-      animation.finished
+      this.#animation.reverse();
+      this.#animation.finished
         .then(() => {
           this.hamburgerMenu.style.display = this.isDisplay == false ? 'none' : 'block';
+
         })
         .catch(error => console.log(error))
     } else if (toggable == true){
-      this.isDisplay = animation.playbackRate > 0 ? false : true;
-      animation.reverse();
+      this.isDisplay = this.#animation.playbackRate > 0 ? false : true;
+      this.#animation.reverse();
     }
   }
 
@@ -92,5 +83,12 @@ export class HamburgerMenu{
       this.hamburgerBtn.classList.remove('hamburger-button__close');
     }
   }
+}
+
+const addPreventDefault = () => window.addEventListener("wheel", preventDefault, {passive: false});
+const removePreventDefault= () => window.removeEventListener("wheel", preventDefault, {passive: false});
+
+function preventDefault(e) {
+  e.preventDefault();
 }
 
