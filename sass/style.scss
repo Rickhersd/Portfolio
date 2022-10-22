@@ -25,7 +25,7 @@
 
     &:hover{
         cursor: pointer;
-        fill: library.$primary-color-blue;
+        fill: library.$primary-90
     }
 
     & > h5 {
@@ -36,7 +36,7 @@
         color: library.$font-color-gray;
     }
     &:hover > h5 {
-        color: library.$primary-color-blue;
+        color: library.$primary-90;
         letter-spacing: 0.08rem;
     }
 }

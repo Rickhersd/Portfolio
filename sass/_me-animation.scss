@@ -1,13 +1,17 @@
+@use 'library.scss';
+
 #me{
 
   &__dash{
-      transform-origin: 50% 50%;
-      stroke-dasharray: 2500;
-      stroke-dashoffset: 2500;
-      animation: meDash 2.5s ease forwards;
+    stroke: #4c5687;
+    transform-origin: 50% 50%;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
+    animation: meDash 2.5s ease forwards;
   }
 
   &__shirt{
+    fill: #5F6CA9;
     transform-origin: 50% 0%;
     opacity: 0;
     animation: meShirtBg 0.5s 0.5s ease forwards;
@@ -20,11 +24,13 @@
 
   &__cord{
     &-right{
+      stroke: #4c5687;
       transform-origin: 50% 73%;
       transform: scaleY(0);
       animation: meCord 0.9s 1.6s cubic-bezier(.05,1.28,.26,1)forwards;
     }
     &-left{
+      stroke: #4c5687;
       transform-origin: 50% 73%;
       transform: scaleY(0);
       animation: meCord 0.9s 1.5s cubic-bezier(.05,1.28,.26,1)forwards;
@@ -32,7 +38,7 @@
   }
 
   &__mouth{
-
+    stroke: #4c5687;
     stroke-dasharray: 60;
     stroke-dashoffset: 60;
     animation: meMouth 1.5s 0.5s cubic-bezier(.2,.01,.03,1.33) forwards;
@@ -70,12 +76,14 @@
     animation: meHairTop  1.5s 1.2s ease forwards;
 
     &-left{
+      fill: #9fa6cb;
       transform-origin: 50% 0%;
       opacity: 0;
       animation: meNeckSide 0.5s 1s ease forwards;
     }
 
     &-right{
+      fill: #9fa6cb;;
       transform-origin: 50% 0%;
       opacity: 0;
       animation: meNeckSide 0.5s 1.2s ease forwards;
@@ -84,16 +92,19 @@
 
   &__hair{
     &-top{
+      fill: #5F6CA9;
       clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
       animation: meHairTop  1.5s 1.2s ease forwards;
     }
 
     &-left{
+      fill: #5F6CA9;
       clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
       animation: meHairLeft  2s 1.1s ease forwards;
     }
 
     &-right{
+      fill: #5F6CA9;
       clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
       animation: meHairRight  2s 1s ease forwards;
     }
@@ -108,12 +119,14 @@
   &__ear{
 
     &-left{
+      stroke: #4c5687;
       stroke-dasharray: 50;
       stroke-dashoffset: 50;
       animation: meEar 1.5s 0.5s ease forwards;
     }
 
     &-right{
+      stroke: #4c5687;
       stroke-dasharray: 50;
       stroke-dashoffset: 50;
       animation: meEar 1s 1s ease forwards;
@@ -128,6 +141,7 @@
   }
 
   &__blob{
+    fill: transparent;
     opacity: 0;
     transform-origin: 50% 50%;
     animation: meBlob 1s ease forwards;

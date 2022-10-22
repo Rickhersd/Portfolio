@@ -210,7 +210,7 @@
 .skillElement{
     position: absolute;
     transform: translate(-50%, -50%) rotate(-30deg);
-    fill: library.$primary-color-blue;
+    fill: library.$primary-90;
     display:inline-block;
     background-color: var(--white);
     transition-property: transform, fill;
@@ -235,7 +235,7 @@
         color: library.$font-color-gray;
     }
     &:hover > h5 {
-        color: library.$primary-color-blue;
+        color: library.$primary-90;
         letter-spacing: 0.08rem;
     }
 }
@@ -348,7 +348,7 @@
   .skillElement{
     position: absolute;
     transform: translate(-50%, -50%) rotate(0deg);
-    fill: library.$primary-color-blue;
+    fill: library.$primary-90;
     display:inline-block;
     background-color: var(--white);
     transition-property: transform, fill;
@@ -374,7 +374,7 @@
     }
 
     &:hover > h5 {
-      color: library.$primary-color-blue;
+      color: library.$primary-90;
       letter-spacing: 0.08rem;
     }
   }

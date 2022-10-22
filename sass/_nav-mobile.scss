@@ -26,7 +26,7 @@
       height: 2px;
       left: 1.5rem;
       margin: auto;
-      background-color: library.$main-bg;
+      background-color: #a2d1ff;
       top: 4.2rem;
     }
 
@@ -41,7 +41,7 @@
     li {
       margin: 1.5rem;
       width: 200px;
-      animation: ejemplo;
+      animation: showOptions;
       animation-duration: 0.5s;
       animation-fill-mode: both;
       list-style-type: none;
@@ -84,7 +84,7 @@
       font-family: library.$font-mono;
       text-decoration: none;
       position: relative;
-      text-shadow:  1px 1px 1px #a2d1ff;
+      text-shadow:  2px 2px 1px #a2d1ff;
     }
   }
 }
@@ -146,7 +146,7 @@
   }
 }
 
-@keyframes ejemplo{
+@keyframes showOptions{
   from {
     opacity: 0;
     transform: translate(-100px, 0px);

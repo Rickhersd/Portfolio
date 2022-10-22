@@ -1,7 +1,5 @@
 @use 'library.scss';
 
-$drop-shadow: drop-shadow(0px 0px 3px gray);
-
 #home{
   min-height: 100vh;
   position: relative;
@@ -19,7 +17,7 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
       'svg-me header-info'
       'svg-me header-nav';
     grid-template-columns: 50% 50%;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 70% 30%;
     width: min(1200px, 93%);
     margin: auto;
     align-content: center;
@@ -29,7 +27,7 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
   &__leftside{
     grid-area: svg-me;
     display: flex;
-    position: relative;;
+    position: relative;
 
     svg{
       width: 100%;
@@ -59,18 +57,18 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
 
     > div{
       display: flex;
+      margin-top: 5rem;
       flex-direction: column;
-      translate: -13% 0%;
-      width: 113%;
+      translate: -14% 0%;
+      width: 114%;
     }
-
   }
 
   &__title{
     text-align: left;
     font-size: clamp(2.1rem, 5vw, 3.5rem);
     line-height: 1.2;
-    color: #09233e;
+    color: library.$primary-90;
     font-family: library.$font-mono;
     font-weight: 300;
     position: relative;
@@ -88,7 +86,7 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
 
     span{
       font-size: clamp(2.3rem, 5vw, 4rem);
-      color: #09233e;
+      color: library.$primary-90;
       font-weight: 600;
       font-family: library.$font-mono
     }
@@ -135,7 +133,6 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
     margin-top: auto;
     margin-bottom: auto;
 
-    
     &:hover{
       background-color: #56697C;
     }
@@ -149,7 +146,7 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       width: 110%;
-      translate: -13% 0px;
+      translate: -14% 0px;
     }
     
     &-item{
@@ -200,15 +197,15 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
 
 
 @keyframes mi {
-    from {
-        transform: rotate(-180deg);
-        d: path("M72 47C72 60.8071 60.8071 72 47 72C33.1929 72 22 60.8071 22 47C22 33.1929 33.1929 22 47 22C48.3615 22 49.6976 22.1088 51 22.3183C61.7694 24.0501 70.2384 32.6607 71.7569 43.5C71.9172 44.6437 72 45.8122 72 47Z");
-    }
-    to {
-        transform: rotate(0deg);
-        d: path("M83.9886 59.8669C83.2336 68.1625 68.5976 84 47.7493 84C26.9009 84 10 67.1178 10 46.2927C10 28.8586 21.3248 13.11 33.4045 10.0933C35.4859 9.5349 37.1795 11.6017 36.4245 13.11C25.8547 34.2257 46.2393 69.6707 80.2136 57.6045C82.4786 56.8001 84.1555 58.033 83.9886 59.8669Z");
-    }
+  from {
+    transform: rotate(-180deg);
+    d: path("M72 47C72 60.8071 60.8071 72 47 72C33.1929 72 22 60.8071 22 47C22 33.1929 33.1929 22 47 22C48.3615 22 49.6976 22.1088 51 22.3183C61.7694 24.0501 70.2384 32.6607 71.7569 43.5C71.9172 44.6437 72 45.8122 72 47Z");
   }
+  to{
+    transform: rotate(0deg);
+    d: path("M83.9886 59.8669C83.2336 68.1625 68.5976 84 47.7493 84C26.9009 84 10 67.1178 10 46.2927C10 28.8586 21.3248 13.11 33.4045 10.0933C35.4859 9.5349 37.1795 11.6017 36.4245 13.11C25.8547 34.2257 46.2393 69.6707 80.2136 57.6045C82.4786 56.8001 84.1555 58.033 83.9886 59.8669Z");
+  }
+}
 
   @keyframes palo1 {
     from {
@@ -229,26 +226,33 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
   }
 
 .svg-darkmode {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    padding: 0.5rem;
-    &:hover{
-        transform: scale(1.1);
-    }
-}
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 0.5rem;
 
-.svg-darkmode > path {
+  &:hover{
+    transform: scale(1.1);
+  }
+
+  > path {
     transform-origin: 50% 50%;
     transition: all 0.6s cubic-bezier(.52,.26,1,.6);
     transform: rotate(-630deg);
+  }
+  
+  > g {
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    transform: rotate(0deg);
+    transition: all 0.6s cubic-bezier(.26,.46,.48,.99);
+
+    path{
+      fill: library.$primary-90;
+    }
+  }
 }
 
-.svg-darkmode > g {
-  transform-origin: 50% 50%;
-  transform: scale(1);
-  transform: rotate(0deg);
-  transition: all 0.6s cubic-bezier(.26,.46,.48,.99);
-}
+
 
 .svg-darkmode > path[darkmode="true"] {
   transform-origin: 50% 50%;
@@ -266,11 +270,6 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
     
 }
 
-@keyframes darkmodeTransition {
-  from{scale: 0;}
-  to{scale:50}
-}
-
 .header{
 
   &__darkmode-btn{
@@ -279,19 +278,6 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-  }
-
-  &__darkmode-transition{
-    background-color: gray;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 65px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    scale: 0;
-    z-index: -1000;
-    animation: darkmodeTransition 1s  ease-out forwards infinite;
   }
 
   &__darkmode-svg{
@@ -304,7 +290,7 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
     }
 
     .svg-darkmode__bg{
-      fill: #D3E8E5;
+      fill: library.$primary-30;
       transform-origin: 50% 50%;
       transition: all 0.4s ease;
     }
@@ -324,7 +310,7 @@ $drop-shadow: drop-shadow(0px 0px 3px gray);
       z-index: -1;   
 
       path{
-        fill: #6E869F;
+        fill: library.$primary-70;
       }
     }
   }

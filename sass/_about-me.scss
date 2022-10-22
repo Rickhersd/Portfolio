@@ -37,16 +37,17 @@
   }
 
   &__content{
-    width: 1200px; 
+    width: min(1200px, 90%); 
     display: flex;
     flex-direction: row;
+    margin: auto;
     align-items: center;
     justify-content: space-around;
     margin-top: 6rem;
     margin-bottom: 6rem;
 
     &-rightside{
-      width: min(550px, 100%);
+      width: min(450px, 100%);
       height: inherit;
     }
 
@@ -57,10 +58,13 @@
       width: 300px;
       height: auto;
     }
+
+    > span{
+      display: none;
+    };
   }
 
   &__info{
-    padding: 1rem;
     
     span{
       color: #09233e;
@@ -91,6 +95,7 @@
     width: 100%;
     border: 5px solid #0F3154;
     background-color: transparent;
+    position: relative;
     cursor: pointer;
     padding: 0.8rem 0rem;
     text-align: center;
