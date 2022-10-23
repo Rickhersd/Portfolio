@@ -25,7 +25,7 @@ headerNavController.addEvents();
 const translater = new Translater();
 let btn = document.documentElement.querySelector('.header__language-btn');
 btn.addEventListener('click', () => {
-  translater.translate('en');
+  translater.toggleLang('en','es');
 });
 
 const navBar = new NavBar();

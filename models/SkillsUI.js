@@ -75,7 +75,7 @@ export class SkillUI {
           skill.width, 
           skill.height,
           skill.path,
-          skill.flll,
+          skill.svgFill,
           skill.description
         ]
         const svgContainer = document.createElement('div');

@@ -1,7 +1,26 @@
+$DM-font: #fbf7fd;
+$DM-primary-50: #805a89;
+$DM-primary-30: #988ab1;
+
+@mixin subHeaderDM{
+
+  &__header{
+    
+    &-bg{
+      background-color: $DM-primary-50;
+    }
+
+    &-title{
+      color: $DM-font;
+    }
+  }
+}
+
 .svg-darkmode__sunMoon[data-darkmode="true"] {
   transform-origin: 50% 50%;
   transform: rotate(0deg);
   transition-timing-function: cubic-bezier(.13,.54,.5,.99);
+  stroke: rgb(252, 248, 253);
   d: path("M83.9886 59.8669C83.2336 68.1625 68.5976 84 47.7493 84C26.9009 84 10 67.1178 10 46.2927C10 28.8586 21.3248 13.11 33.4045 10.0933C35.4859 9.5349 37.1795 11.6017 36.4245 13.11C25.8547 34.2257 46.2393 69.6707 80.2136 57.6045C82.4786 56.8001 84.1555 58.033 83.9886 59.8669Z");
 }
   
@@ -15,6 +34,38 @@
 .svg-darkmode__bg[data-darkmode="true"] {
   transform-origin: 50% 50%;
   transform: rotate(0deg);
+  fill: rgb(215, 205, 237);
   transition-timing-function: cubic-bezier(.13,.54,.5,.99);
   d: path("M79.5 63C78.8572 69.3899 66.7493 79.5 49 79.5C31.2507 79.5 19 65.041 19 49C19 35.5711 24.5 25.5 29.4999 22C31.2719 21.5699 31.7018 25.6877 31.4999 27C29.4999 40 47.0759 69.7942 76 60.5C77.9283 59.8804 79.6421 61.5874 79.5 63Z");
+}
+
+body[data-darkmode="true"]{
+  background-color: #5a316b
+}
+
+//header
+.header__language-btn[data-darkmode="true"] {
+  color: $DM-font;
+}
+
+.header__rightside[data-darkmode="true"]{
+  .header{
+    &__title{
+      color: $DM-font;
+      span{color:$DM-font}
+    }
+
+  }
+}
+
+.about-me[data-darkmode='true']{
+  
+  .about-me{
+    @include subHeaderDM();
+  }
+
+  p{
+    color: $DM-font;
+  }
+
 }

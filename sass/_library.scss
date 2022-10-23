@@ -96,10 +96,10 @@ $font-text: 'Red Hat Text', sans-serif;
 
     &-title{
       text-align: left;
-      font-size: clamp(2rem, 8vw, 4rem);
+      font-size: clamp(2rem, 8vw, 3.8rem);
       margin-bottom: 1.6rem;
       line-height: 1.2;
-      color: $primary-90;
+      color: #002b6b;
       font-family: $font-mono;
       font-weight: 700;
       position: relative;
@@ -114,7 +114,7 @@ $font-text: 'Red Hat Text', sans-serif;
       font-weight: 400;
       color: $primary-90;
       line-height: clamp(1.8rem, 5vw, 2.5rem);
-      font-size: clamp(1.3rem, 5vw, 2rem);;
+      font-size: clamp(1.3rem, 5vw, 1.8rem);;
       transition-duration: 1s;
       transition-delay: 0s;
       transition-timing-function: ease;

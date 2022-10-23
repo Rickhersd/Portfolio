@@ -157,22 +157,40 @@ body::-webkit-scrollbar-thumb {
   top: 0;
 }
 .header__language-btn {
-  text-decoration: none;
-  font-family: "Quicksand";
-  color: #6E869F;
-  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  width: 50px;
+  font-size: 1.1rem;
+  color: rgb(83, 83, 83);
+  font-family: "Roboto Mono";
+  font-weight: 400;
   border: none;
-  font-weight: 700;
-  height: 40px;
-  padding: 0px 1rem;
   background-color: transparent;
   display: inline-block;
-  cursor: pointer;
   margin-top: auto;
   margin-bottom: auto;
 }
-.header__language-btn:hover {
-  background-color: #56697C;
+.header__language-ES {
+  font-family: inherit;
+  width: inherit;
+  height: inherit;
+  line-height: 1.1rem;
+  position: absolute;
+  font-size: inherit;
+  padding: 1rem 1rem 1rem 0.9rem;
+  top: 0px;
+}
+.header__language-EN {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1.1rem;
+  padding: 1rem;
+  top: 100%;
 }
 .header__nav {
   grid-area: header-nav;
@@ -673,10 +691,10 @@ body::-webkit-scrollbar-thumb {
 }
 .about-me__header-title {
   text-align: left;
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(2rem, 8vw, 3.8rem);
   margin-bottom: 1.6rem;
   line-height: 1.2;
-  color: #011f4b;
+  color: #002b6b;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -689,7 +707,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: #011f4b;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
-  font-size: clamp(1.3rem, 5vw, 2rem);
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
   transition-duration: 1s;
   transition-delay: 0s;
   transition-timing-function: ease;
@@ -750,7 +768,7 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 .about-me__info span {
-  color: #09233e;
+  color: #002b6b;
   font-size: clamp(1.9rem, 7vw, 2.5rem);
   font-family: "Roboto Slab", monospace;
   font-weight: 600;
@@ -766,25 +784,27 @@ body::-webkit-scrollbar-thumb {
   color: #011f4b;
 }
 .about-me__photograph {
-  background-color: red;
+  background-color: #a2d1ff;
   width: 300px;
   height: 400px;
 }
 .about-me__resumeBtn {
   width: 100%;
   border: none;
-  background-color: #7854a9;
+  background-color: #ffefa4;
   position: relative;
   cursor: pointer;
   padding: 1rem 0rem;
   text-align: center;
+  font-family: "Roboto Mono";
   font-size: 1.1rem;
   font-weight: 600;
-  color: #f0f6fd;
+  color: #917c12;
   border-radius: 50px;
   transition-duration: 0.3s;
   transition-timing-function: ease;
   transition-property: color;
+  text-decoration: none;
   /*
   &::before{
     content: "";
@@ -852,6 +872,8 @@ body::-webkit-scrollbar-thumb {
   }
   .about-me__content {
     width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
     flex-direction: column;
   }
   .about-me__info {
@@ -925,10 +947,10 @@ body::-webkit-scrollbar-thumb {
 }
 .skills__header-title {
   text-align: left;
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(2rem, 8vw, 3.8rem);
   margin-bottom: 1.6rem;
   line-height: 1.2;
-  color: #011f4b;
+  color: #002b6b;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -941,7 +963,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: #011f4b;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
-  font-size: clamp(1.3rem, 5vw, 2rem);
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
   transition-duration: 1s;
   transition-delay: 0s;
   transition-timing-function: ease;
@@ -1259,9 +1281,15 @@ body::-webkit-scrollbar-thumb {
     margin: 0;
     width: 250px;
     height: 500px;
+    transform-origin: left;
+    rotate: -180deg;
+    transition: rotate 1.5s cubic-bezier(0.16, 0.65, 0.51, 1);
   }
   .skills__backend-radial:hover {
     transform: scale(1);
+  }
+  .skills__backend[data-intersection=true] .skills__backend-radial {
+    rotate: 0deg;
   }
   .skills__backend .skills__circle-path-frontend {
     width: 500px;
@@ -1275,9 +1303,15 @@ body::-webkit-scrollbar-thumb {
     margin: 0;
     width: 250px;
     height: 500px;
+    transform-origin: right;
+    rotate: 180deg;
+    transition: rotate 1.5s cubic-bezier(0.16, 0.65, 0.51, 1);
   }
   .skills__frontend-radial:hover {
     transform: scale(1);
+  }
+  .skills__frontend[data-intersection=true] .skills__frontend-radial {
+    rotate: 0deg;
   }
   .skills__frontend .skills__circle-path-frontend {
     width: 500px;
@@ -1452,10 +1486,10 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolio__header-title {
   text-align: left;
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: clamp(2rem, 8vw, 3.8rem);
   margin-bottom: 1.6rem;
   line-height: 1.2;
-  color: #011f4b;
+  color: #002b6b;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -1468,7 +1502,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: #011f4b;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
-  font-size: clamp(1.3rem, 5vw, 2rem);
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
   transition-duration: 1s;
   transition-delay: 0s;
   transition-timing-function: ease;
@@ -1663,7 +1697,6 @@ body::-webkit-scrollbar-thumb {
 }
 /* Contact */
 #contact {
-  background-color: #f0f6fd;
   min-height: 100vh;
   position: relative;
 }
@@ -1979,6 +2012,7 @@ body::-webkit-scrollbar-thumb {
   transform-origin: 50% 50%;
   transform: rotate(0deg);
   transition-timing-function: cubic-bezier(0.13, 0.54, 0.5, 0.99);
+  stroke: rgb(252, 248, 253);
   d: path("M83.9886 59.8669C83.2336 68.1625 68.5976 84 47.7493 84C26.9009 84 10 67.1178 10 46.2927C10 28.8586 21.3248 13.11 33.4045 10.0933C35.4859 9.5349 37.1795 11.6017 36.4245 13.11C25.8547 34.2257 46.2393 69.6707 80.2136 57.6045C82.4786 56.8001 84.1555 58.033 83.9886 59.8669Z");
 }
 
@@ -1992,8 +2026,34 @@ body::-webkit-scrollbar-thumb {
 .svg-darkmode__bg[data-darkmode=true] {
   transform-origin: 50% 50%;
   transform: rotate(0deg);
+  fill: rgb(215, 205, 237);
   transition-timing-function: cubic-bezier(0.13, 0.54, 0.5, 0.99);
   d: path("M79.5 63C78.8572 69.3899 66.7493 79.5 49 79.5C31.2507 79.5 19 65.041 19 49C19 35.5711 24.5 25.5 29.4999 22C31.2719 21.5699 31.7018 25.6877 31.4999 27C29.4999 40 47.0759 69.7942 76 60.5C77.9283 59.8804 79.6421 61.5874 79.5 63Z");
+}
+
+body[data-darkmode=true] {
+  background-color: #5a316b;
+}
+
+.header__language-btn[data-darkmode=true] {
+  color: #fbf7fd;
+}
+
+.header__rightside[data-darkmode=true] .header__title {
+  color: #fbf7fd;
+}
+.header__rightside[data-darkmode=true] .header__title span {
+  color: #fbf7fd;
+}
+
+.about-me[data-darkmode=true] .about-me__header-bg {
+  background-color: #805a89;
+}
+.about-me[data-darkmode=true] .about-me__header-title {
+  color: #fbf7fd;
+}
+.about-me[data-darkmode=true] p {
+  color: #fbf7fd;
 }
 
 #me__dash {

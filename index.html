@@ -19,7 +19,7 @@
   <script src="https://kit.fontawesome.com/83c3e527ac.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body data-darkmode>
 
   <!--svg map-->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
@@ -135,7 +135,7 @@
           En la universidad conoci a una chama muy guapa e inteligente. Un dia me hablo de la bios y me flecho.❤
         </div> -->
       </div>
-      <div class="header__rightside">
+      <div class="header__rightside" data-darkmode>
         <div>
           <h1 class="header__title" data-text="header-title">Hi, my name is <br> <span>RICARDO SANCHEZ</span></h1> 
           <p class="header__subtext data" data-text="header-subtext">Full Stack Developer, Designer and Code Lover.<br><span>With code, I make impresive and original websites. The imagination have no limits</span></p> 
@@ -151,8 +151,9 @@
       </div>
     </div>
     <div class="header__settings">
-      <button class="header__language-btn" data-text="settings-language" >
-        Language
+      <button class="header__language-btn" data-darkmode>
+        <div class="header__language-EN">EN</div>
+        <div class="header__language-ES">ES</div>
       </button>
       <div data-appearIndex="1" class="header__darkmode-btn">
         <svg class="header__darkmode-svg" width="65" height="65" viewBox="0 0 94 94" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -174,7 +175,7 @@
   </header> 
 
   <!-- about me -->
-  <section id="about-me" class="about-me">
+  <section id="about-me" class="about-me" data-darkmode>
     <header class="about-me__header" data-intersection="false">
       <div class="about-me__header-bg"></div> 
       <div class="about-me__header-content-container about-me__header-part-1">
@@ -187,14 +188,14 @@
         </svg>
         <div>
           <h1 class="about-me__header-title" data-animatedWord>Welcome!</h1>
-          <p class="about-me__header-subtitle" data-text="about-me-header-text">Sientete libre de conocerme y un gusto cuando trabajemos juntos.</p> 
+          <p class="about-me__header-subtitle" data-text="about-me-header-text">Sientete libre de conocerme. Ya estoy listo para comenzar a trabajar.</p> 
         </div>     
       </div>
     </header>
     <div class="about-me__content">
       <div class="about-me__content-rightside">
-        <div class="about-me__info">
-          <h4 data-text="about-me-info-title" data-animatedWord>Un Poco Sobre Mi</h4>
+        <div class="about-me__info" data-darkmode>
+          <h4 data-text="about-me-info-title" data-animatedWord>Who Am I?</h4>
           <p data-text="about-me-info-p1">Soy un desarollador Full-stack localizado en Venezuela. Apacioando  a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
           <p data-text="about-me-info-p2">Aunque soy estudiante de Ingenier'ia. mi curiosidad y ganas de programar me hicieron ser completamente auditacta. Soy organizado, tranaquilo y muy detallista. Adoro resolver problemas, las matematica y pasar las noches con el codigo. musica y mucho cafe...</p>
           <p data-text="about-me-info-p3">Estoy interesando en el desarrollo de pginas, tanto por el fronent como por e backend, y a tras, prentendo ampliar mis conocimiento y especializarme en araes de la programcion como el desarrollo de Videojuego, la integiencias artifical y el analisis de datos.</p>
@@ -227,7 +228,7 @@
       <div class="about-me__content-leftside">
         <div class="about-me__photograph">
         </div>
-        <button class="about-me__resumeBtn" data-text="about-me-cv">My Resume</button>
+        <a href="./cv/CV - Ricardo Sánchez.pdf" class="about-me__resumeBtn" data-text="about-me-cv">My Resume</a>
       </div>
     </div>
   </section>
@@ -236,7 +237,7 @@
   <section id="skills" class="skills" >
     <header class="skills__header" data-intersection="false">
       <div class="skills__header-bg"></div> 
-      <div class="skills__header-content-container skills__header-part-1" data-parallaxHeader="0.1">
+      <div class="skills__header-content-container" data-parallaxHeader="0.1">
         <div>
           <h1 class="skills__header-title" data-animatedWord>Skills<span>.</span></h1>
           <p class="skills__header-subtitle">Adelante las tecnologias que conozco y aplico en mi trabajo. Nunca dejando de aprender.</p> 
@@ -254,7 +255,7 @@
 
       <div class="skills__radial-container">
 
-        <div class="skills__frontend">
+        <div class="skills__frontend" data-intersection="false">
           <div class="skills__frontend-radial">
             <div class= "skills__circle-path-frontend"></div>
           </div>
@@ -268,7 +269,7 @@
             <p id="skills__des-paragraph">Lenguaje de etiquetas</p>
           </div>
         </div>
-        <div class="skills__backend">
+        <div class="skills__backend" data-intersection="false">
           <div class="skills__backend-radial">
             <div class= "skills__circle-path-backend"></div>
           </div>
