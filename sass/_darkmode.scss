@@ -1,6 +1,10 @@
 $DM-font: #fbf7fd;
+$DM-main-bg: #3a1f45;
+$DM-primary-70: #512c59;
 $DM-primary-50: #805a89;
 $DM-primary-30: #988ab1;
+$DM-primary-10: #bcafd2;
+
 
 @mixin subHeaderDM{
 
@@ -12,6 +16,7 @@ $DM-primary-30: #988ab1;
 
     &-title{
       color: $DM-font;
+      span{color:$DM-primary-70}
     }
   }
 }
@@ -40,7 +45,16 @@ $DM-primary-30: #988ab1;
 }
 
 body[data-darkmode="true"]{
-  background-color: #5a316b
+  background-color: $DM-main-bg;
+
+  p{
+    color: $DM-font;
+  }
+
+  a{
+    color: $DM-font;
+  }
+
 }
 
 //header
@@ -58,6 +72,28 @@ body[data-darkmode="true"]{
   }
 }
 
+//nav-mobile
+.nav-mobile[data-darkmode='true']{
+  
+  .nav-mobile{
+    &__topbar{
+      background: linear-gradient(to bottom, $DM-main-bg 80%, #f0f6fd00);
+    }
+  }
+  
+  svg{
+    filter: drop-shadow(1px 1px 1px $DM-primary-50);
+  }
+
+  #hamburger-topBar,
+  #hamburger-middleBar,
+  #hamburger-bottomBar{
+    fill: $DM-font
+  }
+  
+}
+
+//about-me
 .about-me[data-darkmode='true']{
   
   .about-me{
@@ -68,4 +104,88 @@ body[data-darkmode="true"]{
     color: $DM-font;
   }
 
+}
+
+//skills
+.skills[data-darkmode="true"]{
+
+  .skills{
+    @include subHeaderDM();
+  }
+}
+
+//portfolio
+.portfolio[data-darkmode="true"]{
+  
+  .portfolio{
+    @include subHeaderDM();
+
+    &__item {
+      //border-bottom: 2px solid library.$primary-30;
+      &-header{
+        &-name{
+          span{
+            //color: library.$primary-90;
+          }
+        }
+  
+        &-technologies{
+          color: gray;
+        }
+      }
+  
+      &-link{      
+        &-github{
+          svg{
+            fill: gray;
+          }
+        
+        }
+      }
+    }
+  }
+}
+
+//contact
+
+#contact[data-darkmode="true"]{
+  background: linear-gradient(to bottom, $DM-main-bg 60%, black);
+}
+
+.contact[data-darkmode="true"]{
+
+  .contact__me{
+    #me-shadow__eye-left, #me-shadow__eye-right{
+      fill: $DM-main-bg;
+    }
+
+    #me-shadow__bg, #me-shadow__eye-dot-left, #me-shadow__eye-dot-right{
+      fill: $DM-primary-50;
+    }
+  }
+  
+  .contact-end{
+  
+    background-color: $DM-primary-50;
+  
+    &__social-links-container {
+      a {
+        &:hover {
+          background-color: $DM-font;
+        }
+      }
+    }
+  
+    &__social-link{
+      fill: $DM-main-bg;
+  
+      &:hover{
+        fill: $DM-font;
+      }
+    }
+  
+    &__handcrafted-by{
+      color: #56697C;
+    }
+  }
 }

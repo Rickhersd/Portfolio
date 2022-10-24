@@ -74,13 +74,15 @@
     </div>
   </nav> 
 
-  <div id="nav-mobile">
-    <div class="hamburger-button">
-      <svg class="hambuger-button" xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 70 58">
-        <path id="hamburger-middleBar" d="M0 28.603C0 30.0407 0.864852 31.2061 1.9317 31.2061H67.6096C68.6764 31.2061 69.5413 30.0407 69.5413 28.603C69.5413 27.1654 68.6764 26 67.6096 26H1.9317C0.864852 26 0 27.1654 0 28.603Z" />
-        <path id="hamburger-bottomBar" d="M0 55.603C0 57.0407 0.864852 58.2061 1.9317 58.2061H67.6096C68.6764 58.2061 69.5413 57.0407 69.5413 55.603C69.5413 54.1654 68.6764 53 67.6096 53H1.9317C0.864852 53 0 54.1654 0 55.603Z" />
-        <path id="hamburger-topBar" d="M0 2.60305C0 4.04067 0.864852 5.2061 1.9317 5.2061H67.6096C68.6764 5.2061 69.5413 4.04067 69.5413 2.60305C69.5413 1.16542 68.6764 0 67.6096 0H1.9317C0.864852 0 0 1.16542 0 2.60305Z" />
-      </svg>
+  <div id="nav-mobile" class="nav-mobile" data-darkmode>
+    <div class="nav-mobile__topbar">
+      <div class="hamburger-button">
+        <svg class="hambuger-button" xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 70 58">
+          <path id="hamburger-middleBar" d="M0 28.603C0 30.0407 0.864852 31.2061 1.9317 31.2061H67.6096C68.6764 31.2061 69.5413 30.0407 69.5413 28.603C69.5413 27.1654 68.6764 26 67.6096 26H1.9317C0.864852 26 0 27.1654 0 28.603Z" />
+          <path id="hamburger-bottomBar" d="M0 55.603C0 57.0407 0.864852 58.2061 1.9317 58.2061H67.6096C68.6764 58.2061 69.5413 57.0407 69.5413 55.603C69.5413 54.1654 68.6764 53 67.6096 53H1.9317C0.864852 53 0 54.1654 0 55.603Z" />
+          <path id="hamburger-topBar" d="M0 2.60305C0 4.04067 0.864852 5.2061 1.9317 5.2061H67.6096C68.6764 5.2061 69.5413 4.04067 69.5413 2.60305C69.5413 1.16542 68.6764 0 67.6096 0H1.9317C0.864852 0 0 1.16542 0 2.60305Z" />
+        </svg>
+      </div>
     </div>
     <div class="nav-mobile__list-item-container">
       <span></span>
@@ -234,7 +236,7 @@
   </section>
   
   <!-- skills -->
-  <section id="skills" class="skills" >
+  <section id="skills" class="skills" data-darkmode>
     <header class="skills__header" data-intersection="false">
       <div class="skills__header-bg"></div> 
       <div class="skills__header-content-container" data-parallaxHeader="0.1">
@@ -305,7 +307,7 @@
   </section>
 
   <!--portfolio -->
-  <section id="portfolio" class="portfolio">
+  <section id="portfolio" class="portfolio" data-darkmode>
     <header class="portfolio__header" data-intersection="false">
       <div class="portfolio__header-bg"></div> 
       <div class="portfolio__header-content-container portfolio__header-part-1">
@@ -343,13 +345,17 @@
         <img class="portfolio__item-image"src="https://source.unsplash.com/random/800x600?iran" width="800" height="600" alt="imagen">
         <div class="portfolio__item-content">
           <header class="portfolio__item-header">
-            <h3 class="portfolio__item-header-name" data-text="portfolio__project-blog-title" data-animatedWord>Personal Blog</h3> 
-            <p class="portfolio__item-header-description" data-text="portfolio__project-blog-p1">Mi pequeno espacio para escribir sobre los proyetos que hago, experimentos de codigo que realizo y mi vida personal como programador.</p>
-            <p class="portfolio__item-header-description" data-text="portfolio__project-blog-p2">Este proyecto esta construido sobre React.Js para el fronent, y con Node.Js y MySql para el backend. Tambien se utiliza TypeScript, SASS y PUG.</p>
+            <p class="portfolio__item-header-technologies" data-tex="portfolio__project-blog-p2">React, Node.Js, MySql, TypeScript, SASS, PUG...</p>
+            <h3 class="portfolio__item-header-name" data-tex="portfolio__project-blog-title" data-animatedWord>Personal Blog</h3> 
+            <p class="portfolio__item-header-description" data-tex="portfolio__project-blog-p1">Mi pequeno espacio para escribir sobre los proyetos que hago, experimentos de codigo que realizo y mi vida personal como programador.</p>
           </header>
           <ul class="portfolio__item-links ">
-            <li class="portfolio__item-link portfolio__item-link-github"><a href="" data-text="portfolio__project-repository">Repository</a></li>
-            <li class="portfolio__item-link portfolio__item-link-visit"><a href="" data-text="portfolio__project-view-proyect">Visit Website </a></li>
+            <li class="portfolio__item-link portfolio__item-link-github"><a href="" data-tex="portfolio__project-repository">
+              <svg class="contact-end__social-link" role="img" width="45" height="45" viewBox="0 0 45 45">
+                <use href="#svg-footer__github-icon"></use>
+              </svg>
+            </a></li>
+            <li class="portfolio__item-link portfolio__item-link-visit"><a href="" data-tex="portfolio__project-view-proyect">Visit Website </a></li>
           </ul>
         </div>   
       </div>
@@ -399,7 +405,7 @@
   </section>
 
   <!--contact -->
-  <footer id="contact">
+  <footer id="contact" class="contact" data-darkmode>
     <div class="contact__container" data-intersection="false">
 
       <div class="contact__form-cont">

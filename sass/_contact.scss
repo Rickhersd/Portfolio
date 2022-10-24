@@ -2,6 +2,7 @@
 
 /* Contact */
 #contact{
+  background: linear-gradient(to bottom, library.$main-bg 60%, library.$primary-50);
   min-height: 100vh;
   position: relative;
 }
@@ -180,14 +181,14 @@
       }
 
       #me-shadow__bg{
-        fill: library.$primary-30;
+        fill: library.$primary-50;
         animation: me-shadow 2.6s 1s cubic-bezier(.25,1.28,.46,1.01)forwards;
       }
 
       #me-shadow__eye-dot-left, #me-shadow__eye-dot-right{
         position: absolute;
 		    filter: opacity(0%);
-        fill: library.$primary-30;
+        fill: library.$primary-50;
 		    animation: showEyeDots 0.1s 2.9s linear forwards;
       }
     }
@@ -259,7 +260,7 @@
   grid-area: social-links;
 
   width: 100%;
-  background-color: library.$primary-30;
+  background-color: library.$primary-50;
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;

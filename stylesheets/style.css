@@ -124,7 +124,7 @@ body::-webkit-scrollbar-thumb {
   bottom: -1rem;
   border-radius: 2px;
   left: 0px;
-  background-color: #a2d1ff;
+  background-color: #acd6ff;
   width: 100px;
   height: 10px;
 }
@@ -532,6 +532,12 @@ body::-webkit-scrollbar-thumb {
   z-index: 10;
 }
 
+.nav-mobile__topbar {
+  width: 100%;
+  height: calc(60px + 0.6rem);
+  background: linear-gradient(to bottom, #f0f6fd 80%, rgba(240, 246, 253, 0));
+  display: none;
+}
 .nav-mobile__list-item-container {
   display: none;
   position: absolute;
@@ -543,12 +549,12 @@ body::-webkit-scrollbar-thumb {
 }
 .nav-mobile__list-item-container span {
   position: absolute;
-  width: calc(100% - 3rem);
+  width: calc(100% - 2.2rem);
   height: 2px;
-  left: 1.5rem;
+  left: 1.1rem;
   margin: auto;
   background-color: #a2d1ff;
-  top: 4.2rem;
+  top: 60px;
 }
 .nav-mobile__list-item-container ul {
   display: flex;
@@ -601,17 +607,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .hamburger-button {
-  background-color: #d5effc;
-  display: none;
   position: absolute;
-  padding: 14px 14px 14px 18px;
-  border-radius: 50px 0px 0px 50px;
-  top: 0.3rem;
-  right: 0rem;
+  padding: 14px 16px 14px 14px;
+  top: 0px;
+  right: 0px;
   z-index: 100;
   fill: #011f4b;
-  transition: filter 0.1s 0.5s ease;
-  filter: drop-shadow(1px 2px 1px #a2d1ff);
+  display: none;
 }
 .hamburger-button svg {
   translate: 0px 2px;
@@ -629,10 +631,6 @@ body::-webkit-scrollbar-thumb {
   transition: transform cubic-bezier(0.33, 1, 0.68, 1) 0.3s;
 }
 
-.hamburger-button__close {
-  transition: filter 0.1s 0s ease;
-  filter: none;
-}
 .hamburger-button__close #hamburger-topBar {
   transform: rotate(45deg) scaleX(1.1) translate(6px, -6px);
 }
@@ -645,6 +643,9 @@ body::-webkit-scrollbar-thumb {
 
 @media only screen and (max-width: 600px) {
   .hamburger-button {
+    display: block;
+  }
+  .nav-mobile__topbar {
     display: block;
   }
 }
@@ -664,7 +665,7 @@ body::-webkit-scrollbar-thumb {
 
 .about-me__header {
   width: 100%;
-  height: 350px;
+  height: 280px;
   position: relative;
 }
 .about-me__header-bg {
@@ -784,7 +785,7 @@ body::-webkit-scrollbar-thumb {
   color: #011f4b;
 }
 .about-me__photograph {
-  background-color: #a2d1ff;
+  background-color: #acd6ff;
   width: 300px;
   height: 400px;
 }
@@ -835,12 +836,13 @@ body::-webkit-scrollbar-thumb {
   .about-me__header {
     flex-direction: column;
     justify-content: center;
-    height: 280px;
+    height: 250px;
     width: min(1050px, 100%);
   }
   .about-me__header p {
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
   .about-me__header-content-container {
     flex-direction: column;
@@ -920,7 +922,7 @@ body::-webkit-scrollbar-thumb {
 }
 .skills__header {
   width: 100%;
-  height: 350px;
+  height: 280px;
   position: relative;
 }
 .skills__header-bg {
@@ -1205,12 +1207,13 @@ body::-webkit-scrollbar-thumb {
   .skills__header {
     flex-direction: column;
     justify-content: center;
-    height: 280px;
+    height: 250px;
     width: min(1050px, 100%);
   }
   .skills__header p {
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
   .skills__header-content-container {
     flex-direction: column;
@@ -1350,12 +1353,13 @@ body::-webkit-scrollbar-thumb {
   .skills__header {
     flex-direction: column;
     justify-content: center;
-    height: 280px;
+    height: 250px;
     width: min(1050px, 100%);
   }
   .skills__header p {
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
   .skills__header-content-container {
     flex-direction: column;
@@ -1452,14 +1456,13 @@ body::-webkit-scrollbar-thumb {
   }
 }
 #portfolio {
-  background-color: #f0f6fd;
   padding-top: 15rem;
   padding-bottom: 15rem;
 }
 
 .portfolio__header {
   width: 100%;
-  height: 350px;
+  height: 280px;
   position: relative;
 }
 .portfolio__header-bg {
@@ -1526,7 +1529,7 @@ body::-webkit-scrollbar-thumb {
   padding: 2rem;
   overflow: hidden;
   display: flex;
-  border-bottom: 1px solid #D3E8E5;
+  border-bottom: 2px solid #d5effc;
   gap: 1rem;
 }
 .portfolio__item-image {
@@ -1545,8 +1548,11 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .portfolio__item-header {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.3rem;
   font-family: "Red Hat Text";
+}
+.portfolio__item-header-name {
+  margin-top: 0.5rem;
 }
 .portfolio__item-header-name span {
   color: #011f4b;
@@ -1560,10 +1566,15 @@ body::-webkit-scrollbar-thumb {
   animation-name: SlideDownLetter;
 }
 .portfolio__item-header-description {
-  margin-top: 1.05rem;
+  margin-top: 0.5rem;
   font-size: 1rem;
-  color: #374F67;
-  line-height: 1.2;
+  color: #011f4b;
+  line-height: 1.4rem;
+}
+.portfolio__item-header-technologies {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: gray;
 }
 .portfolio__item-links {
   display: flex;
@@ -1574,7 +1585,6 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolio__item-link {
   position: relative;
-  border: 4px solid #56697C;
   list-style-type: none;
 }
 .portfolio__item-link a {
@@ -1582,12 +1592,12 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   display: block;
-  padding: 0.6rem 2rem;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   z-index: 2;
-  color: #56697C;
+  color: #011f4b;
   font-weight: 500;
   font-family: "Red Hat Text";
   text-decoration: none;
@@ -1599,42 +1609,36 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 10px;
-}
-.portfolio__item-link-github::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  border-radius: 5px 5px 0px 0px;
-  translate: -50% 0%;
-  background-color: #6E869F;
-  width: 95%;
-  height: 0%;
-  transition: height 0.2s ease;
 }
 .portfolio__item-link-github a {
   transition: color 0.2s ease;
+  width: 45px;
+  height: 45px;
 }
-.portfolio__item-link-github:hover {
-  border-color: #0F3154;
-}
-.portfolio__item-link-github:hover::before {
-  height: 90%;
-}
-.portfolio__item-link-github:hover a {
-  color: white;
+.portfolio__item-link-github svg {
+  translate: -50% 0%;
+  width: 45px;
+  height: 45px;
+  fill: gray;
 }
 .portfolio__item-link-visit {
   font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45px;
   border: 4px solid transparent;
+}
+.portfolio__item-link-visit a {
+  padding: 0.7rem;
+  width: inherit;
 }
 
 @media only screen and (max-width: 600px) {
   .portfolio__item {
     width: 100%;
     margin: auto;
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
     flex-direction: column;
   }
   .portfolio__item-image {
@@ -1649,12 +1653,13 @@ body::-webkit-scrollbar-thumb {
   .portfolio__header {
     flex-direction: column;
     justify-content: center;
-    height: 280px;
+    height: 250px;
     width: min(1050px, 100%);
   }
   .portfolio__header p {
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
   .portfolio__header-content-container {
     flex-direction: column;
@@ -1697,6 +1702,7 @@ body::-webkit-scrollbar-thumb {
 }
 /* Contact */
 #contact {
+  background: linear-gradient(to bottom, #f0f6fd 60%, #acd6ff);
   min-height: 100vh;
   position: relative;
 }
@@ -1847,13 +1853,13 @@ body::-webkit-scrollbar-thumb {
   animation: openEyes 0.5s 3s ease forwards;
 }
 .contact__me svg #me-shadow__bg {
-  fill: #d5effc;
+  fill: #acd6ff;
   animation: me-shadow 2.6s 1s cubic-bezier(0.25, 1.28, 0.46, 1.01) forwards;
 }
 .contact__me svg #me-shadow__eye-dot-left, .contact__me svg #me-shadow__eye-dot-right {
   position: absolute;
   filter: opacity(0%);
-  fill: #d5effc;
+  fill: #acd6ff;
   animation: showEyeDots 0.1s 2.9s linear forwards;
 }
 .contact__modal {
@@ -1913,7 +1919,7 @@ body::-webkit-scrollbar-thumb {
 .contact-end {
   grid-area: social-links;
   width: 100%;
-  background-color: #d5effc;
+  background-color: #acd6ff;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -2032,7 +2038,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 body[data-darkmode=true] {
-  background-color: #5a316b;
+  background-color: #3a1f45;
+}
+body[data-darkmode=true] p {
+  color: #fbf7fd;
+}
+body[data-darkmode=true] a {
+  color: #fbf7fd;
 }
 
 .header__language-btn[data-darkmode=true] {
@@ -2046,14 +2058,81 @@ body[data-darkmode=true] {
   color: #fbf7fd;
 }
 
+.nav-mobile[data-darkmode=true] .nav-mobile__topbar {
+  background: linear-gradient(to bottom, #3a1f45 80%, rgba(240, 246, 253, 0));
+}
+.nav-mobile[data-darkmode=true] svg {
+  filter: drop-shadow(1px 1px 1px #805a89);
+}
+.nav-mobile[data-darkmode=true] #hamburger-topBar,
+.nav-mobile[data-darkmode=true] #hamburger-middleBar,
+.nav-mobile[data-darkmode=true] #hamburger-bottomBar {
+  fill: #fbf7fd;
+}
+
 .about-me[data-darkmode=true] .about-me__header-bg {
   background-color: #805a89;
 }
 .about-me[data-darkmode=true] .about-me__header-title {
   color: #fbf7fd;
 }
+.about-me[data-darkmode=true] .about-me__header-title span {
+  color: #512c59;
+}
 .about-me[data-darkmode=true] p {
   color: #fbf7fd;
+}
+
+.skills[data-darkmode=true] .skills__header-bg {
+  background-color: #805a89;
+}
+.skills[data-darkmode=true] .skills__header-title {
+  color: #fbf7fd;
+}
+.skills[data-darkmode=true] .skills__header-title span {
+  color: #512c59;
+}
+
+.portfolio[data-darkmode=true] .portfolio__header-bg {
+  background-color: #805a89;
+}
+.portfolio[data-darkmode=true] .portfolio__header-title {
+  color: #fbf7fd;
+}
+.portfolio[data-darkmode=true] .portfolio__header-title span {
+  color: #512c59;
+}
+.portfolio[data-darkmode=true] .portfolio__item-header-technologies {
+  color: gray;
+}
+.portfolio[data-darkmode=true] .portfolio__item-link-github svg {
+  fill: gray;
+}
+
+#contact[data-darkmode=true] {
+  background: linear-gradient(to bottom, #3a1f45 60%, black);
+}
+
+.contact[data-darkmode=true] .contact__me #me-shadow__eye-left, .contact[data-darkmode=true] .contact__me #me-shadow__eye-right {
+  fill: #3a1f45;
+}
+.contact[data-darkmode=true] .contact__me #me-shadow__bg, .contact[data-darkmode=true] .contact__me #me-shadow__eye-dot-left, .contact[data-darkmode=true] .contact__me #me-shadow__eye-dot-right {
+  fill: #805a89;
+}
+.contact[data-darkmode=true] .contact-end {
+  background-color: #805a89;
+}
+.contact[data-darkmode=true] .contact-end__social-links-container a:hover {
+  background-color: #fbf7fd;
+}
+.contact[data-darkmode=true] .contact-end__social-link {
+  fill: #3a1f45;
+}
+.contact[data-darkmode=true] .contact-end__social-link:hover {
+  fill: #fbf7fd;
+}
+.contact[data-darkmode=true] .contact-end__handcrafted-by {
+  color: #56697C;
 }
 
 #me__dash {
