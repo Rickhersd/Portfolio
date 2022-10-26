@@ -1,5 +1,5 @@
 $DM-font: #fbf7fd;
-$DM-main-bg: #3a1f45;
+$DM-main-bg: #2c1635;
 $DM-primary-70: #512c59;
 $DM-primary-50: #805a89;
 $DM-primary-30: #988ab1;
@@ -59,7 +59,23 @@ body[data-darkmode="true"]{
 //header
 .header__language-btn[data-darkmode="true"] {
   color: $DM-font;
+
+  .header__language{
+
+    &-ES{
+      padding: 1.6rem 1.2rem;
+      text-shadow:  2px 2px 1px $DM-main-bg;
+    }
+
+    &-EN{
+      padding: 1.6rem 1.2rem;
+      text-shadow:  2px 2px 1px $DM-main-bg;
+    }
+
+  }
+
 }
+
 
 .header__rightside[data-darkmode="true"]{
   .header{
@@ -123,6 +139,19 @@ body[data-darkmode="true"]{
 
   .skills{
     @include subHeaderDM();
+  }
+}
+
+//loading
+.loading{
+  background-color: $DM-main-bg;
+
+  &__text{
+    color: $DM-font
+  }
+
+  &__bar{
+    background-color: $DM-font;
   }
 }
 

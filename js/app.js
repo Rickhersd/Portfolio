@@ -13,19 +13,15 @@ import { Translater } from "../models/Translater.js";
 import { MeShadow } from "../models/MeShadow.js";
 import { Carrousel } from "../models/Carrousel.js";
 
-(() => {
-  const href = location.href;
-  if (href.includes('#')){
-    const strToReplace = href.substring(href.indexOf('#'), href.length);
-    const newHref = href.replace(strToReplace, ""); 
-    location.replace(newHref);
-  }    
-})()
+
+window.addEventListener('DOMContentLoaded', (e) =>{
+  initLoading();
+})
 
 window.addEventListener('load', (event) => {
   const loadingEl = document.querySelector('.loading');
-  console.log('hola perros')
   loadingEl.style.display = 'none';
+  initPage();
 });
 
 const hamburgerMenuController = new HamburgerMenu();
@@ -33,9 +29,7 @@ hamburgerMenuController.setEvents();
 
 const darkMode = new DarkMode();
 darkMode.setBtn('.header__darkmode-btn');
-
-const headerNavController = new HeaderNav();
-headerNavController.addEvents();
+darkMode.setBtn('.nav-mobile__darkmode-btn')
 
 const translater = new Translater();
 let btn = document.documentElement.querySelector('.header__language-btn');
@@ -72,9 +66,18 @@ function fieldEmpty(){
 
 fieldEmpty();
 
-init();
+function initLoading(){
+  (() => {
+    const href = location.href;
+    if (href.includes('#')){
+      const strToReplace = href.substring(href.indexOf('#'), href.length);
+      const newHref = href.replace(strToReplace, ""); 
+      location.replace(newHref);
+    }    
+  })()
+}
 
-function init() {
+function initPage() {
 
   let actualClientHeight = document.documentElement.clientHeight;
   const btn = document.querySelector('.hamburger-button');
@@ -84,8 +87,23 @@ function init() {
     hamburgerMenuController.toogleHamburgerBtn();
   });
 
-  const ui = new SkillUI();
+    window.addEventListener('resize', () => {
+      actualClientHeight = calcClientHeight();
+    });
+    
+  window.addEventListener('scroll', () => {
+    navBar.checkScrollTop(actualClientHeight);
+  });
 
+  showHeroAnimations();
+  initIntersectionObserver();
+  configWheelSkills();
+  decodeEmail();
+}
+
+function configWheelSkills(){
+
+  const uiWheel = new SkillUI();
   const frontendContainer = document.querySelector(".skills__frontend-radial");
   const backendContainer = document.querySelector(".skills__backend-radial");
 
@@ -105,143 +123,124 @@ function init() {
     left: {x: 0, y: 350}
   }
 
-  ui.renderSkills(frontendSkills, frontendContainer, 'right', "inverse", options2, options);
-  ui.renderSkills(backendSkills, backendContainer, 'left', "clock", options2, options);
+  uiWheel.renderSkills(frontendSkills, frontendContainer, 'right', "inverse", options2, options);
+  uiWheel.renderSkills(backendSkills, backendContainer, 'left', "clock", options2, options);
+}
 
-    window.addEventListener('resize', () => {
-        actualClientHeight = calcClientHeight();
+function initIntersectionObserver(){
+  if(!window.IntersectionObserver) return;
+   
+  const targets = document.querySelectorAll(`[data-intersection]`); 
+  const options = {
+    root: null,
+    rootMargin: '-100px',
+    threshold: 0.1
+  }
+
+  const observer = new IntersectionObserver((entries, observer) => {       
+    entries.forEach((entry) => {
+      if (entry.isIntersecting){ 
+        entry.target.setAttribute('data-intersection', 'true');
+        observer.unobserve(entry.target);
+      };
     });
-    
-  window.addEventListener('scroll', () => {
-    navBar.checkScrollTop(actualClientHeight);
+  }, options); 
+
+  targets.forEach((target) => {
+    observer.observe(target)
   });
-
 }
-
-if(!!window.IntersectionObserver){
-    
-    let options = {
-        root: null,
-        rootMargin: '-100px',
-        threshold: 0.1
-    }
-
-    let observer = new IntersectionObserver((entries, observer) => 
-    {       
-        entries.forEach((entry) => 
-        {
-            console.log(entry);
-
-            if (entry.isIntersecting){ 
-                entry.target.setAttribute('data-intersection', 'true');
-                observer.unobserve(entry.target);
-            };
-        });
-    }, options); 
-
-    let elements = document.querySelectorAll(`[data-intersection]`);
-
-    for (let element of elements){
-        observer.observe(element);
-    }
-}
-
-
 
 function preventDefault(e) {
-    e.preventDefault();
+  e.preventDefault();
 }
 
-const blockElements = document.querySelectorAll(`[data-appearIndex]`);
-appear();
+function showHeroAnimations(){
 
-function appear(){
+  const meSvg = document.querySelector('.me__paused');
+  meSvg.classList.remove('me__paused');
 
-    for (let element of blockElements){
+  const blockElements = document.querySelectorAll(`[data-appearIndex]`);
+  for (let element of blockElements){
 
-        element.style.scale = '0.7';
-        element.style.opacity = "0";
+    element.style.scale = '0.7';
+    element.style.opacity = "0";
 
-        let keyframe = 
-        [
-            {opacity: 0.7},
-            {opacity: 1, scale: 1}
-        ]
+    let keyframe = 
+    [
+      {opacity: 0.7},
+      {opacity: 1, scale: 1}
+    ]
 
-        let delay = 80 * parseInt(element.dataset.appearindex);
+    let delay = 80 * parseInt(element.dataset.appearindex);
 
-        let options = {
-            delay: delay,
-            duration: 2500,
-            fill: 'forwards',
-            easing: 'cubic-bezier(.18,1.63,.21,.94)'
-        }
-
-        element.animate( keyframe, options);
+    let options = {
+      delay: delay,
+      duration: 2500,
+      fill: 'forwards',
+      easing: 'cubic-bezier(.18,1.63,.21,.94)'
     }
-    
+
+    element.animate(keyframe, options);
+  }
 }
 
 function calcClientHeight(){
     return document.documentElement.clientHeight 
 }
 
-//Encode Email address to base64 format
-const emailAddress = 'cmlja2hlcnNkMjAwMkBnbWFpbC5jb20=';
-const contactAnchor = document.getElementById('contact__email-address');
-contactAnchor.setAttribute('href', `mailto:${atob(emailAddress)}`);
+//Decode Email address from base64 format;
+function decodeEmail(){
+  const emailAddress = 'cmlja2hlcnNkMjAwMkBnbWFpbC5jb20=';
+  const contactAnchor = document.getElementById('contact__email-address');
+  contactAnchor.setAttribute('href', `mailto:${atob(emailAddress)}`);
+}
 
 //send FormData to sendEmial.php
 let form = document.querySelector('.contact__form');
 
 function formFetchPost (){
 
-    let formData = new FormData(form);
+  let formData = new FormData(form);
 
-    fetch('http://127.0.0.1:8080/MyPage/sendEmail.php', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => response.text())
-    .then(result => {
-        showModalResponse(checkResponse(result), result);
-    })
-    .catch(error => {
-        console.error('Error:', error)
-    });
+  fetch('http://127.0.0.1:8080/MyPage/sendEmail.php', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => response.text())
+  .then(result => {
+    showModalResponse(checkResponse(result), result);
+  })
+  .catch(error => {
+    console.error('Error:', error)
+  });
 }
 
 form.addEventListener('submit', (e) =>{
-    e.preventDefault();
-    formFetchPost();
+  e.preventDefault();
+  formFetchPost();
 });
 
 function checkResponse(response){
-    if (response == "Email sent successfully :)") return true;
-    if (response == "Oops! The Email couldn't be sent :(") return false
+  if (response == "Email sent successfully :)") return true;
+  if (response == "Oops! The Email couldn't be sent :(") return false
 }
 
 function showModalResponse(successful, response){
 
-    let modal = document.querySelector('.contact__modal');
-    let modalSvg = document.querySelector('.contact__modal-svg');
-    let modalResponse = document.querySelector('.contact__modal-response');
+  let modal = document.querySelector('.contact__modal');
+  let modalSvg = document.querySelector('.contact__modal-svg');
+  let modalResponse = document.querySelector('.contact__modal-response');
 
 
-    modal.classList.add('show-modal');
-    modalSvg.setAttribute('data-successful', successful);
-    modalResponse.textContent = response;
+  modal.classList.add('show-modal');
+  modalSvg.setAttribute('data-successful', successful);
+  modalResponse.textContent = response;
 
-    setTimeout(() => hideModalResponse(), 5000)
+  setTimeout(() => hideModalResponse(), 5000)
 }
 
 function hideModalResponse(){
-    console.log('termino el modal')
-}
-
-
-function clamp (min, value, max){
-  if (value > min && value < max) return value;
-  return value < min ? min : max;
+  console.log('termino el modal')
 }
 

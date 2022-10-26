@@ -28,9 +28,12 @@
       width:  600px;
       padding: 3rem;
       height: auto;
+      border: 1px solid library.$light-gray;
+      border-radius: 15px;
       aspect-ratio: 1/0.75;
       object-fit:cover;
       overflow: hidden;
+      background-color: library.$primary-10;
     }
 
     &-content{

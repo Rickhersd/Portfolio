@@ -1,5 +1,13 @@
 @use 'library.scss';
 
+.me__paused path{
+  animation-play-state: paused !important; 
+}
+
+.me__play path{
+  animation-play-state: running !important;
+}
+
 #me{
 
   &__dash{
