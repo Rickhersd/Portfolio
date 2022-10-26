@@ -2,7 +2,6 @@
 
 /* Contact */
 #contact{
-  background: linear-gradient(to bottom, library.$main-bg 60%, library.$primary-50);
   min-height: 100vh;
   position: relative;
 }
@@ -16,7 +15,7 @@
     grid-template-areas:
       'empty form svg-me empty2'
       'social-links social-links social-links social-links'; 
-    grid-template-columns: auto 480px 30% auto;
+    grid-template-columns: auto 520px 30% auto;
     grid-template-rows:  auto 150px;
     column-gap: 6rem;
 	}
@@ -27,7 +26,7 @@
 		gap: 1rem;
 		justify-content: center;
 		flex-direction: column;
-		width: min(90%, 480px);
+		width: min(90%, 520px);
 
     h1{
       font-family: library.$font-mono;
@@ -43,8 +42,8 @@
     p{
       padding: 0rem 0.1rem;
       font-family: "Red Hat Text";
-      font-size: clamp(0.9rem, 4vw , 1.1rem);
-      color: #374F67;
+      font-size: clamp(0.9rem, 4vw , 1.05rem);
+      color: library.$primary-90;
       line-height: 1.5;
     }
 	}
@@ -99,11 +98,11 @@
 			position: relative;
 			border-radius: 10px;
 			padding: 1rem;
-      border: 4px solid #56697C;
-			color: #56697C;
+      border: 2px solid #56697C;
+			color: library.$primary-90;
 			background-color: transparent;
 			font-weight: 500;
-			font-size: 0.9rem;
+			font-size: 1rem;
 			font-family: 'Roboto';
 			z-index: 1;
 			
@@ -121,9 +120,9 @@
 				padding: 0.6rem 1rem 0.1rem 1rem;
         border: none;
 				background-color: transparent;
-				border-bottom: 4px solid #56697C;
-				color: #56697C;
-				font-size: 0.9rem;
+				border-bottom: 2px solid #56697C;
+				color: library.$primary-90;
+				font-size: 1rem;
 				font-weight: 500;
 				font-family: 'Roboto';
 				z-index: 1;
@@ -135,13 +134,13 @@
 				left: 50%;
         border: none;
 				transform: translate(-50%, -50%);
-				padding: 0.7rem 5.5rem;
+				padding: 0.9rem 5.5rem;
 				font-family: 'Roboto';
 				letter-spacing: 0.1rem;
 				font-weight: 500;
         border-radius: 0.4rem;
-        background-color: #D3E8E5;
-        color: #56697C;
+        background-color: library.$primary-50;
+        color: white;
 
 				&:hover{
 					filter: drop-shadow(0px 0px 1px #56697c81)
@@ -181,14 +180,14 @@
       }
 
       #me-shadow__bg{
-        fill: library.$primary-50;
+        fill: library.$primary-30;
         animation: me-shadow 2.6s 1s cubic-bezier(.25,1.28,.46,1.01)forwards;
       }
 
       #me-shadow__eye-dot-left, #me-shadow__eye-dot-right{
         position: absolute;
 		    filter: opacity(0%);
-        fill: library.$primary-50;
+        fill: library.$primary-30;
 		    animation: showEyeDots 0.1s 2.9s linear forwards;
       }
     }
@@ -260,7 +259,7 @@
   grid-area: social-links;
 
   width: 100%;
-  background-color: library.$primary-50;
+  background-color: library.$primary-30;
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
@@ -361,9 +360,5 @@
 
 	.contact-end__phrase{
 		display: none;
-	}
-
-	.contact-end__handcrafted-by{
-
 	}
 }

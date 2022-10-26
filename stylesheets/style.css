@@ -35,8 +35,41 @@ html {
   margin-top: 6rem !important;
 }
 
+.margin-top__96 {
+  margin-top: 15rem !important;
+}
+
 .margin-top__240 {
   margin-top: 15rem !important;
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #acd6ff;
+}
+.loading__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: auto;
+}
+.loading__text {
+  font-size: 1rem;
+  font-family: "Roboto Slab", monospace;
+  color: #011f4b;
+  margin-bottom: 1rem;
+}
+.loading__bar {
+  width: inherit;
+  height: 2px;
+  background-color: #011f4b;
 }
 
 body {
@@ -61,6 +94,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10rem;
 }
 
 .header__container {
@@ -148,8 +182,8 @@ body::-webkit-scrollbar-thumb {
 }
 .header__settings {
   height: auto;
-  width: min(100%, 1400px);
-  padding: 1rem;
+  width: 100%;
+  padding: 1.4rem 1.6rem;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -171,6 +205,7 @@ body::-webkit-scrollbar-thumb {
   display: inline-block;
   margin-top: auto;
   margin-bottom: auto;
+  transition: top 0.15s ease;
 }
 .header__language-ES {
   font-family: inherit;
@@ -179,6 +214,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.1rem;
   position: absolute;
   font-size: inherit;
+  transition: inherit;
   padding: 1rem 1rem 1rem 0.9rem;
   top: 0px;
 }
@@ -188,9 +224,16 @@ body::-webkit-scrollbar-thumb {
   height: inherit;
   font-size: inherit;
   font-family: inherit;
+  transition: inherit;
   line-height: 1.1rem;
   padding: 1rem;
   top: 100%;
+}
+.header .header__language-moved .header__language-ES {
+  top: -100%;
+}
+.header .header__language-moved .header__language-EN {
+  top: 0px;
 }
 .header__nav {
   grid-area: header-nav;
@@ -660,12 +703,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 #about-me {
-  padding-top: 25rem;
+  margin-bottom: 10rem;
 }
 
 .about-me__header {
   width: 100%;
-  height: 280px;
+  height: 250px;
   position: relative;
 }
 .about-me__header-bg {
@@ -682,20 +725,20 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  width: min(1200px, 90%);
+  width: min(1100px, 90%);
   height: inherit;
   transition: translate 0.7s cubic-bezier(0.27, 0.54, 0.48, 1);
   translate: -1300px 0%;
 }
 .about-me__header-content-container div {
-  width: 63%;
+  width: 50%;
 }
 .about-me__header-title {
   text-align: left;
-  font-size: clamp(2rem, 8vw, 3.8rem);
+  font-size: clamp(1.9rem, 7vw, 2.5rem);
   margin-bottom: 1.6rem;
   line-height: 1.2;
-  color: #002b6b;
+  color: #011f4b;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -708,7 +751,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: #011f4b;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
-  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
   transition-duration: 1s;
   transition-delay: 0s;
   transition-timing-function: ease;
@@ -745,7 +788,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 2rem;
 }
 .about-me__content {
-  width: min(1030px, 90%);
+  width: min(1100px, 90%);
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -778,7 +821,7 @@ body::-webkit-scrollbar-thumb {
   margin: auto;
   margin-top: 0.8rem;
   font-family: "Red Hat Text";
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.7;
   display: block;
@@ -836,7 +879,7 @@ body::-webkit-scrollbar-thumb {
   .about-me__header {
     flex-direction: column;
     justify-content: center;
-    height: 250px;
+    height: 220px;
     width: min(1050px, 100%);
   }
   .about-me__header p {
@@ -920,9 +963,13 @@ body::-webkit-scrollbar-thumb {
     left: 220%;
   }
 }
+#skills {
+  margin-bottom: 10rem;
+}
+
 .skills__header {
   width: 100%;
-  height: 280px;
+  height: 250px;
   position: relative;
 }
 .skills__header-bg {
@@ -939,20 +986,20 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  width: min(1200px, 90%);
+  width: min(1100px, 90%);
   height: inherit;
   transition: translate 0.7s cubic-bezier(0.27, 0.54, 0.48, 1);
   translate: -1300px 0%;
 }
 .skills__header-content-container div {
-  width: 63%;
+  width: 50%;
 }
 .skills__header-title {
   text-align: left;
-  font-size: clamp(2rem, 8vw, 3.8rem);
+  font-size: clamp(1.9rem, 7vw, 2.5rem);
   margin-bottom: 1.6rem;
   line-height: 1.2;
-  color: #002b6b;
+  color: #011f4b;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -965,7 +1012,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: #011f4b;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
-  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
   transition-duration: 1s;
   transition-delay: 0s;
   transition-timing-function: ease;
@@ -1017,9 +1064,6 @@ body::-webkit-scrollbar-thumb {
   background-color: #f0f6fd;
   transition: all 0.3s ease;
 }
-.skills__description:hover {
-  transform: scale(1.05);
-}
 .skills__description > svg {
   margin: 0rem 1rem;
   fill: #56697C;
@@ -1031,7 +1075,7 @@ body::-webkit-scrollbar-thumb {
 .skills__description > div > h3 {
   font-size: 1.5rem;
   text-align: center;
-  color: gray;
+  color: #011f4b;
 }
 .skills__description > div > p {
   font-size: 1rem;
@@ -1046,9 +1090,6 @@ body::-webkit-scrollbar-thumb {
   background-color: #CCC;
   padding: 0.2rem 1rem;
   font-size: 1rem;
-}
-.skills__show {
-  display: none;
 }
 
 .skills__frontend {
@@ -1071,15 +1112,11 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   transform-origin: 0% 0%;
-  transform: rotate(30deg) translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   transition-property: transform, width;
   transition-duration: 0.3s;
   transition-timing-function: ease;
   z-index: 2;
-}
-.skills__radial-container:hover {
-  transform: rotate(0deg) translate(-50%, -50%);
-  width: calc(700px + 10rem);
 }
 .skills__radial-container:hover .skillElement {
   transform: translate(-50%, -50%) rotate(0deg);
@@ -1087,25 +1124,8 @@ body::-webkit-scrollbar-thumb {
 .skills__radial-container:hover .skillElement:hover {
   transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
 }
-.skills__radial-container:hover .skills__frontend-radial {
-  margin-right: 4rem;
-}
-.skills__radial-container:hover .skills__backend-radial {
-  margin-left: 4rem;
-}
 .skills__radial-container:hover .skills__description {
-  border-radius: 175px;
-  width: calc(330px + 8rem);
   transform: translate(-50%, -50%) rotate(0deg);
-}
-.skills__radial-container:hover .skills__description:hover {
-  transform: translate(-50%, -50%) scale(1.04) rotate(0deg);
-}
-.skills__radial-container:hover .skills__buttons-top {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-.skills__radial-container:hover .skills__buttons-down {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .skills__frontend-radial {
@@ -1156,7 +1176,7 @@ body::-webkit-scrollbar-thumb {
 
 .skillElement {
   position: absolute;
-  transform: translate(-50%, -50%) rotate(-30deg);
+  transform: translate(-50%, -50%);
   fill: #011f4b;
   display: inline-block;
   background-color: var(--white);
@@ -1170,7 +1190,7 @@ body::-webkit-scrollbar-thumb {
 }
 .skillElement:hover {
   cursor: pointer;
-  transform: translate(-50%, -50%) scale(1.1) rotate(-30deg);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 .skillElement > h5 {
   text-align: center;
@@ -1184,30 +1204,63 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.08rem;
 }
 
-.skills__buttons-top {
-  position: absolute;
-  top: 1.2rem;
-  width: 100px;
-  height: calc(170px - 0.4rem);
-  background-color: red;
-  clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
-  transition: clip-path 0.3s ease;
+.skills__radial-bg {
+  width: min(1150px, 100%);
+  height: 400px;
+  margin: 1rem auto;
+  position: relative;
+  z-index: 1;
 }
-
-.skills__buttons-down {
+.skills__radial-bg-backend {
   position: absolute;
-  bottom: 1.2rem;
-  width: 100px;
-  height: calc(170px - 0.4rem);
-  clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
-  transition: clip-path 0.3s ease;
+  right: 0rem;
+  bottom: 1rem;
+}
+.skills__radial-bg-frontend {
+  position: absolute;
+  left: 0rem;
+  top: 1rem;
+}
+.skills__radial-bg-text span {
+  font-size: 4rem;
+  font-family: "Roboto";
+  color: #56697C;
+  font-weight: 500;
+  translate: 0px -40px;
+  opacity: 0;
+  display: inline-block;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.18, 0.49, 0, 1.16);
+  animation-fill-mode: forwards;
+  animation-name: SlideDownLetter;
+  transition: all 0.15s ease;
+  cursor: default;
+}
+.skills__radial-bg-text span:hover {
+  transform-origin: 50% 100%;
+  transform: scaleY(0.9) scale(1.3) scaleX(0.8);
+}
+.skills__radial-bg svg {
+  position: absolute;
+  bottom: 0px;
+  overflow: visible;
+  right: -100px;
+  height: 400px;
+  width: auto;
+}
+.skills__radial-bg svg path {
+  fill: white;
+}
+.skills__radial-bg #svg__database-gear {
+  transform-origin: 29.5% 72.5%;
+  animation: gearRotate 15s linear forwards infinite;
 }
 
 @media only screen and (max-width: 800px) {
   .skills__header {
     flex-direction: column;
     justify-content: center;
-    height: 250px;
+    height: 220px;
     width: min(1050px, 100%);
   }
   .skills__header p {
@@ -1260,19 +1313,7 @@ body::-webkit-scrollbar-thumb {
   .skills__radial-container:hover .skillElement {
     transform: translate(-50%, -50%) rotate(0deg);
   }
-  .skills__radial-container:hover .skillElement:hover {
-    transform: translate(-50%, -50%);
-  }
-  .skills__radial-container:hover .skills__frontend-radial {
-    margin-right: 0rem;
-  }
-  .skills__radial-container:hover .skills__backend-radial {
-    margin-left: 0rem;
-  }
-  .skills__radial-container:hover {
-    transform: translate(0px, 0px) scale(1) rotate(0deg);
-  }
-  .skills__description, .skills__buttons-down, .skills__buttons-top {
+  .skills__description {
     display: none;
   }
   .skills__backend {
@@ -1348,12 +1389,51 @@ body::-webkit-scrollbar-thumb {
     color: #011f4b;
     letter-spacing: 0.08rem;
   }
+  .skills__radial-bg {
+    width: min(1150px, 100%);
+    height: 300px;
+    margin: 1rem auto;
+  }
+  .skills__radial-bg-backend {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .skills__radial-bg-frontend {
+    left: 1rem;
+    top: 1rem;
+  }
+  .skills__radial-bg-text span {
+    font-size: clamp(3.5rem, 8vw, 3.8rem);
+    color: #56697C;
+    transition: all 0.15s ease;
+    cursor: default;
+  }
+  .skills__radial-bg-text span:hover {
+    transform-origin: 50% 100%;
+    transform: scaleY(0.9) scale(1.3) scaleX(0.8);
+  }
+  .skills__radial-bg svg {
+    position: absolute;
+    bottom: 0px;
+    overflow: visible;
+    right: -100px;
+    height: 400px;
+    width: auto;
+  }
+  .skills__radial-bg svg path {
+    fill: white;
+  }
+  .skills__radial-bg #svg__database-gear {
+    transform-origin: 29.5% 72.5%;
+    animation: gearRotate 15s linear forwards infinite;
+  }
 }
 @media only screen and (max-width: 600px) {
   .skills__header {
     flex-direction: column;
     justify-content: center;
-    height: 250px;
+    height: 220px;
     width: min(1050px, 100%);
   }
   .skills__header p {
@@ -1390,53 +1470,6 @@ body::-webkit-scrollbar-thumb {
     translate: -500px 0%;
   }
 }
-.skills__radial-bg {
-  width: min(1500px, 100%);
-  height: 600px;
-  margin: 1rem auto;
-  position: relative;
-  z-index: 1;
-}
-.skills__radial-bg-backend {
-  position: absolute;
-  right: 6rem;
-  bottom: 1rem;
-}
-.skills__radial-bg-backend span {
-  font-size: 6rem;
-  font-family: "Roboto";
-  color: #56697C;
-  font-weight: 500;
-  translate: 0px -40px;
-  opacity: 0;
-  display: inline-block;
-  animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.18, 0.49, 0, 1.16);
-  animation-fill-mode: forwards;
-  animation-name: SlideDownLetter;
-  transition: all 0.15s ease;
-  cursor: default;
-}
-.skills__radial-bg-backend span:hover {
-  transform-origin: 50% 100%;
-  transform: scaleY(0.9) scale(1.3) scaleX(0.8);
-}
-.skills__radial-bg svg {
-  position: absolute;
-  bottom: 0px;
-  overflow: visible;
-  right: -100px;
-  height: 400px;
-  width: auto;
-}
-.skills__radial-bg svg path {
-  fill: white;
-}
-.skills__radial-bg #svg__database-gear {
-  transform-origin: 29.5% 72.5%;
-  animation: gearRotate 15s linear forwards infinite;
-}
-
 @keyframes SlideDownLetter {
   from {
     translate: 0px -40px;
@@ -1456,13 +1489,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 #portfolio {
-  padding-top: 15rem;
-  padding-bottom: 15rem;
+  margin-bottom: 10rem;
 }
 
 .portfolio__header {
   width: 100%;
-  height: 280px;
+  height: 250px;
   position: relative;
 }
 .portfolio__header-bg {
@@ -1479,20 +1511,20 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  width: min(1200px, 90%);
+  width: min(1100px, 90%);
   height: inherit;
   transition: translate 0.7s cubic-bezier(0.27, 0.54, 0.48, 1);
   translate: -1300px 0%;
 }
 .portfolio__header-content-container div {
-  width: 63%;
+  width: 50%;
 }
 .portfolio__header-title {
   text-align: left;
-  font-size: clamp(2rem, 8vw, 3.8rem);
+  font-size: clamp(1.9rem, 7vw, 2.5rem);
   margin-bottom: 1.6rem;
   line-height: 1.2;
-  color: #002b6b;
+  color: #011f4b;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -1505,7 +1537,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   color: #011f4b;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
-  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
   transition-duration: 1s;
   transition-delay: 0s;
   transition-timing-function: ease;
@@ -1518,7 +1550,7 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 .portfolio__flex-container {
-  width: min(100%, 1200px);
+  width: min(100%, 1150px);
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
@@ -1529,11 +1561,12 @@ body::-webkit-scrollbar-thumb {
   padding: 2rem;
   overflow: hidden;
   display: flex;
-  border-bottom: 2px solid #d5effc;
+  border-bottom: 1px solid #d5effc;
   gap: 1rem;
 }
-.portfolio__item-image {
+.portfolio__item-logotype {
   width: 600px;
+  padding: 3rem;
   height: auto;
   aspect-ratio: 1/0.75;
   object-fit: cover;
@@ -1567,14 +1600,15 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolio__item-header-description {
   margin-top: 0.5rem;
-  font-size: 1rem;
+  font-size: clamp(1rem, 4vw, 1.1rem);
   color: #011f4b;
-  line-height: 1.4rem;
+  line-height: 1.5rem;
 }
 .portfolio__item-header-technologies {
   font-size: 0.85rem;
   font-style: italic;
   color: gray;
+  display: none;
 }
 .portfolio__item-links {
   display: flex;
@@ -1612,14 +1646,14 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolio__item-link-github a {
   transition: color 0.2s ease;
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
 }
 .portfolio__item-link-github svg {
   translate: -50% 0%;
-  width: 45px;
-  height: 45px;
-  fill: gray;
+  width: 60px;
+  height: 60px;
+  fill: #011f4b;
 }
 .portfolio__item-link-visit {
   font-weight: 400;
@@ -1641,7 +1675,7 @@ body::-webkit-scrollbar-thumb {
     padding: 1rem 0rem;
     flex-direction: column;
   }
-  .portfolio__item-image {
+  .portfolio__item-logotype {
     width: min(450px, 90%);
     margin: auto;
   }
@@ -1650,10 +1684,16 @@ body::-webkit-scrollbar-thumb {
     margin: auto;
     width: min(450px, 90%);
   }
+  .portfolio__item-header-technologies {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: gray;
+    display: none;
+  }
   .portfolio__header {
     flex-direction: column;
     justify-content: center;
-    height: 250px;
+    height: 220px;
     width: min(1050px, 100%);
   }
   .portfolio__header p {
@@ -1702,7 +1742,6 @@ body::-webkit-scrollbar-thumb {
 }
 /* Contact */
 #contact {
-  background: linear-gradient(to bottom, #f0f6fd 60%, #acd6ff);
   min-height: 100vh;
   position: relative;
 }
@@ -1712,7 +1751,7 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   min-height: 100vh;
   grid-template-areas: "empty form svg-me empty2" "social-links social-links social-links social-links";
-  grid-template-columns: auto 480px 30% auto;
+  grid-template-columns: auto 520px 30% auto;
   grid-template-rows: auto 150px;
   column-gap: 6rem;
 }
@@ -1722,7 +1761,7 @@ body::-webkit-scrollbar-thumb {
   gap: 1rem;
   justify-content: center;
   flex-direction: column;
-  width: min(90%, 480px);
+  width: min(90%, 520px);
 }
 .contact__form-cont h1 {
   font-family: "Roboto Slab", monospace;
@@ -1737,8 +1776,8 @@ body::-webkit-scrollbar-thumb {
 .contact__form-cont p {
   padding: 0rem 0.1rem;
   font-family: "Red Hat Text";
-  font-size: clamp(0.9rem, 4vw, 1.1rem);
-  color: #374F67;
+  font-size: clamp(0.9rem, 4vw, 1.05rem);
+  color: #011f4b;
   line-height: 1.5;
 }
 .contact__form {
@@ -1785,11 +1824,11 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   border-radius: 10px;
   padding: 1rem;
-  border: 4px solid #56697C;
-  color: #56697C;
+  border: 2px solid #56697C;
+  color: #011f4b;
   background-color: transparent;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: "Roboto";
   z-index: 1;
 }
@@ -1802,9 +1841,9 @@ body::-webkit-scrollbar-thumb {
   padding: 0.6rem 1rem 0.1rem 1rem;
   border: none;
   background-color: transparent;
-  border-bottom: 4px solid #56697C;
-  color: #56697C;
-  font-size: 0.9rem;
+  border-bottom: 2px solid #56697C;
+  color: #011f4b;
+  font-size: 1rem;
   font-weight: 500;
   font-family: "Roboto";
   z-index: 1;
@@ -1815,13 +1854,13 @@ body::-webkit-scrollbar-thumb {
   left: 50%;
   border: none;
   transform: translate(-50%, -50%);
-  padding: 0.7rem 5.5rem;
+  padding: 0.9rem 5.5rem;
   font-family: "Roboto";
   letter-spacing: 0.1rem;
   font-weight: 500;
   border-radius: 0.4rem;
-  background-color: #D3E8E5;
-  color: #56697C;
+  background-color: #acd6ff;
+  color: white;
 }
 .contact__form input[type=submit]:hover {
   filter: drop-shadow(0px 0px 1px rgba(86, 105, 124, 0.5058823529));
@@ -1853,13 +1892,13 @@ body::-webkit-scrollbar-thumb {
   animation: openEyes 0.5s 3s ease forwards;
 }
 .contact__me svg #me-shadow__bg {
-  fill: #acd6ff;
+  fill: #d5effc;
   animation: me-shadow 2.6s 1s cubic-bezier(0.25, 1.28, 0.46, 1.01) forwards;
 }
 .contact__me svg #me-shadow__eye-dot-left, .contact__me svg #me-shadow__eye-dot-right {
   position: absolute;
   filter: opacity(0%);
-  fill: #acd6ff;
+  fill: #d5effc;
   animation: showEyeDots 0.1s 2.9s linear forwards;
 }
 .contact__modal {
@@ -1919,7 +1958,7 @@ body::-webkit-scrollbar-thumb {
 .contact-end {
   grid-area: social-links;
   width: 100%;
-  background-color: #acd6ff;
+  background-color: #d5effc;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -2061,6 +2100,16 @@ body[data-darkmode=true] a {
 .nav-mobile[data-darkmode=true] .nav-mobile__topbar {
   background: linear-gradient(to bottom, #3a1f45 80%, rgba(240, 246, 253, 0));
 }
+.nav-mobile[data-darkmode=true] .nav-mobile__list-item-container {
+  background-color: #512c59;
+}
+.nav-mobile[data-darkmode=true] .nav-mobile__list-item-container span {
+  background-color: #805a89;
+}
+.nav-mobile[data-darkmode=true] .nav-mobile__list-item-container a {
+  color: #fbf7fd;
+  text-shadow: 2px 2px 1px #3a1f45;
+}
 .nav-mobile[data-darkmode=true] svg {
   filter: drop-shadow(1px 1px 1px #805a89);
 }
@@ -2077,7 +2126,7 @@ body[data-darkmode=true] a {
   color: #fbf7fd;
 }
 .about-me[data-darkmode=true] .about-me__header-title span {
-  color: #512c59;
+  color: #fbf7fd;
 }
 .about-me[data-darkmode=true] p {
   color: #fbf7fd;
@@ -2090,7 +2139,7 @@ body[data-darkmode=true] a {
   color: #fbf7fd;
 }
 .skills[data-darkmode=true] .skills__header-title span {
-  color: #512c59;
+  color: #fbf7fd;
 }
 
 .portfolio[data-darkmode=true] .portfolio__header-bg {
@@ -2100,17 +2149,24 @@ body[data-darkmode=true] a {
   color: #fbf7fd;
 }
 .portfolio[data-darkmode=true] .portfolio__header-title span {
-  color: #512c59;
+  color: #fbf7fd;
+}
+.portfolio[data-darkmode=true] .portfolio__item {
+  border-color: black;
 }
 .portfolio[data-darkmode=true] .portfolio__item-header-technologies {
   color: gray;
 }
-.portfolio[data-darkmode=true] .portfolio__item-link-github svg {
-  fill: gray;
+.portfolio[data-darkmode=true] .portfolio__item-link-github a {
+  width: 45px;
+  height: 45px;
+  translate: -21% 0px;
 }
-
-#contact[data-darkmode=true] {
-  background: linear-gradient(to bottom, #3a1f45 60%, black);
+.portfolio[data-darkmode=true] .portfolio__item-link-github svg {
+  translate: -50% 0%;
+  width: 45px;
+  height: 45px;
+  fill: #bcafd2;
 }
 
 .contact[data-darkmode=true] .contact__me #me-shadow__eye-left, .contact[data-darkmode=true] .contact__me #me-shadow__eye-right {

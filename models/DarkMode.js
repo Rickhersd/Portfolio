@@ -3,7 +3,7 @@ export class DarkMode{
   constructor(){
     this.darkModeOn = false;
     this.darkModeElements = findElements();
-    this.currentTheme = checkLocalStorage();
+    this.currentTheme = this.#checkLocalStorage();
   }
 
   toggleDarkMode(){
@@ -18,22 +18,23 @@ export class DarkMode{
       this.toggleDarkMode();
     })
   }
+
+  #checkLocalStorage(){
+    let currentTheme = localStorage.getItem('theme');
+  
+    if(currentTheme != null){
+      if (currentTheme == 'dark') this.toggleDarkMode();
+      return currentTheme;
+    } else {
+      let prefersTheme = checkThemePreference();  
+      addLocalValue(prefersTheme);
+      return prefersTheme;
+    }
+  }
 }
 
 function findElements(){
   return document.querySelectorAll("[data-darkmode]");
-}
-
-function checkLocalStorage(){
-  let currentTheme = localStorage.getItem('theme');
-
-  if(currentTheme == 'light' || currentTheme == 'dark'){
-    return currentTheme;
-  } else {
-    let prefersTheme = checkThemePreference();  
-    addLocalValue(prefersTheme);
-    return prefersTheme;
-  }
 }
 
 function changeLocalValue(theme){
@@ -45,6 +46,7 @@ function addLocalValue(value){
 };
 
 function checkThemePreference(){
+  if (window.matchMedia == false) return 'light';
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
   return prefersDarkScheme.matches ? 'dark' : 'light';
 }

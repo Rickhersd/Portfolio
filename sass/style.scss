@@ -1,5 +1,6 @@
 @use "config.scss";
 @use "library.scss";
+@use "loading.scss";
 @use 'body.scss';
 @use 'header.scss';
 @use 'nav.scss';
@@ -260,8 +261,6 @@
 
     }
 }
-
-
 
 @keyframes blob {
     from {

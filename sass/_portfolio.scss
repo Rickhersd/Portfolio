@@ -1,8 +1,7 @@
 @use 'library.scss';
 
 #portfolio{
-  padding-top: 15rem;
-  padding-bottom: 15rem;
+  margin-bottom: 10rem;
 }
 
 .portfolio{
@@ -10,7 +9,7 @@
   @include library.subHeader();
   
   &__flex-container{
-    width: min(100%, 1200px);
+    width: min(100%, 1150px);
     margin: 3rem auto;
     display:flex;
     flex-direction: column;
@@ -22,11 +21,12 @@
     padding: 2rem;
     overflow: hidden;
     display: flex;
-    border-bottom: 2px solid library.$primary-30;
+    border-bottom: 1px solid library.$primary-30;
     gap: 1rem;
 
-    &-image{
+    &-logotype{
       width:  600px;
+      padding: 3rem;
       height: auto;
       aspect-ratio: 1/0.75;
       object-fit:cover;
@@ -63,15 +63,16 @@
 
       &-description{
         margin-top: 0.5rem;
-        font-size: 1rem;
+        font-size: clamp(1rem, 4vw, 1.1rem);
         color: library.$primary-90;
-        line-height: 1.4rem;
+        line-height: 1.5rem;
       }
 
       &-technologies{
         font-size: 0.85rem;
         font-style: italic;
         color: gray;
+        display: none;
       }
     }
 
@@ -114,17 +115,16 @@
 
         a{
           transition: color 0.2s ease;
-          width: 45px;
-          height: 45px;
+          width: 60px;
+          height: 60px;
         }
 
         svg{
           translate: -50% 0%;
-          width: 45px;
-          height: 45px;
-          fill: gray;
+          width: 60px;
+          height: 60px;
+          fill: library.$primary-90;
         }
-      
       }
     
       &-visit{
@@ -140,7 +140,6 @@
           width: inherit;
         }
       }
-
     }
   }
 }
@@ -153,7 +152,7 @@
     padding: 1rem 0rem;
     flex-direction: column;
 
-    &-image{
+    &-logotype{
       width: min(450px, 90%);
       margin: auto;
     }
@@ -162,6 +161,13 @@
       padding: 0rem;
       margin: auto;
       width: min(450px, 90%);
+    }
+
+    &-header-technologies{
+      font-size: 0.85rem;
+      font-style: italic;
+      color: gray;
+      display: none;
     }
   }
 

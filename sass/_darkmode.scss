@@ -9,14 +9,13 @@ $DM-primary-10: #bcafd2;
 @mixin subHeaderDM{
 
   &__header{
-    
     &-bg{
       background-color: $DM-primary-50;
     }
 
     &-title{
       color: $DM-font;
-      span{color:$DM-primary-70}
+      span{color:$DM-font}
     }
   }
 }
@@ -79,6 +78,19 @@ body[data-darkmode="true"]{
     &__topbar{
       background: linear-gradient(to bottom, $DM-main-bg 80%, #f0f6fd00);
     }
+  
+    &__list-item-container{
+      background-color: $DM-primary-70;
+  
+      span{
+        background-color: $DM-primary-50;
+      }
+  
+      a {
+        color: $DM-font;
+        text-shadow:  2px 2px 1px $DM-main-bg;
+      }
+    }
   }
   
   svg{
@@ -121,7 +133,7 @@ body[data-darkmode="true"]{
     @include subHeaderDM();
 
     &__item {
-      //border-bottom: 2px solid library.$primary-30;
+      border-color: black;
       &-header{
         &-name{
           span{
@@ -134,12 +146,19 @@ body[data-darkmode="true"]{
         }
       }
   
-      &-link{      
-        &-github{
-          svg{
-            fill: gray;
-          }
-        
+      &-link-github{
+
+        a{
+          width: 45px;
+          height: 45px;
+          translate: -21% 0px;
+        }
+
+        svg{
+          translate: -50% 0%;
+          width: 45px;
+          height: 45px;
+          fill: $DM-primary-10;
         }
       }
     }
@@ -147,11 +166,6 @@ body[data-darkmode="true"]{
 }
 
 //contact
-
-#contact[data-darkmode="true"]{
-  background: linear-gradient(to bottom, $DM-main-bg 60%, black);
-}
-
 .contact[data-darkmode="true"]{
 
   .contact__me{

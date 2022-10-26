@@ -13,6 +13,21 @@ import { Translater } from "../models/Translater.js";
 import { MeShadow } from "../models/MeShadow.js";
 import { Carrousel } from "../models/Carrousel.js";
 
+(() => {
+  const href = location.href;
+  if (href.includes('#')){
+    const strToReplace = href.substring(href.indexOf('#'), href.length);
+    const newHref = href.replace(strToReplace, ""); 
+    location.replace(newHref);
+  }    
+})()
+
+window.addEventListener('load', (event) => {
+  const loadingEl = document.querySelector('.loading');
+  console.log('hola perros')
+  loadingEl.style.display = 'none';
+});
+
 const hamburgerMenuController = new HamburgerMenu();
 hamburgerMenuController.setEvents();
 
@@ -26,6 +41,7 @@ const translater = new Translater();
 let btn = document.documentElement.querySelector('.header__language-btn');
 btn.addEventListener('click', () => {
   translater.toggleLang('en','es');
+  btn.classList.toggle('header__language-moved');
 });
 
 const navBar = new NavBar();
@@ -40,53 +56,25 @@ for(let element of stringsElements){
     separate(element);
 }
 
-const aboutNodes = getHeaderNodes('about-me')
-const skillsNodes = getHeaderNodes('skills')
-const portfolioNodes = getHeaderNodes('portfolio')
-
-const aboutHeader = new Header(aboutNodes.next().value, aboutNodes.next().value, [0.1, 0.2, 0.3, 0.4]);
-const skillsHeader = new Header(skillsNodes.next().value, skillsNodes.next().value, [0.1, 0.4, 0.3, 0.2]);
-const portfolioHeader = new Header(portfolioNodes.next().value, portfolioNodes.next().value, [0.4, 0.3, 0.2, 0.1]);
-/*
-aboutHeader.slide();
-skillsHeader.slide();
-portfolioHeader.slide();
-*/
-function* getHeaderNodes(sectionName){
-    yield document.querySelector(`.${sectionName}__header`);
-    yield document.querySelector(`.${sectionName}__header-content-container`);
-}
-
 const carrosuelItems = document.getElementsByClassName('about-me__hobby')
-
 const carrousel = new Carrousel(carrosuelItems);
 
 carrousel.setBtnLeft(document.querySelector('.about-me__hobbies-leftBtn'));
 carrousel.setBtnRight(document.querySelector('.about-me__hobbies-rightBtn'));
 
 
-window.onclick = (event) => {
-    if (!event.target.matches('.dropdown')) {
-        let el = document.getElementsByClassName("dropdown");
-        for(let i = 0; i < el.length; i++){
-            if (el[i].classList.contains("show")){
-                el[i].classList.remove("show");
-            }
-        }
-    }
-
-}
-
 function fieldEmpty(){
-    document.querySelectorAll(".contact__form-field").forEach(element => {
-        element.addEventListener("focus", e => e.target.parentElement.setAttribute("data-focused", true));
-        element.addEventListener("focusout", e => e.target.parentElement.setAttribute("data-focused", e.target.value != "" ? true : false));
-    });
+  document.querySelectorAll(".contact__form-field").forEach(element => {
+    element.addEventListener("focus", e => e.target.parentElement.setAttribute("data-focused", true));
+    element.addEventListener("focusout", e => e.target.parentElement.setAttribute("data-focused", e.target.value != "" ? true : false));
+  });
 }
 
 fieldEmpty();
 
-function main () {
+init();
+
+function init() {
 
   let actualClientHeight = document.documentElement.clientHeight;
   const btn = document.querySelector('.hamburger-button');
@@ -129,8 +117,6 @@ function main () {
   });
 
 }
-
-main();
 
 if(!!window.IntersectionObserver){
     

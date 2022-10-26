@@ -1,263 +1,268 @@
 @use 'library.scss';
 
+#skills{
+  margin-bottom: 10rem;
+
+}
+
 .skills {
 
-    @include library.subHeader();
+  @include library.subHeader();
 
-    &__container {
-        margin: 3rem 0rem;
-        border:#DDD 1px solid;
-        border-radius: 30px;
-        position: relative;
+  &__container {
+    margin: 3rem 0rem;
+    border:#DDD 1px solid;
+    border-radius: 30px;
+    position: relative;
 
-        & > h3 {
-            display: inline-block;
-            padding: 0px 0.5rem;
-            position: absolute;
-            top: -14px;
-            left: 60px;
-            background-color: library.$main-bg;
-            color: #666;
-            align-items: center;
-            justify-content: center;
-        }
+    & > h3 {
+      display: inline-block;
+      padding: 0px 0.5rem;
+      position: absolute;
+      top: -14px;
+      left: 60px;
+      background-color: library.$main-bg;
+      color: #666;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1rem;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: calc(330px + 1rem);
+    height: 330px;
+    border: 1px solid gray;
+    background-color: library.$main-bg;
+    transition: all 0.3s ease;
+    & > svg {
+      margin: 0rem 1rem;
+      fill: library.$color-40;
     }
 
+    & > div {
+      display: flex ;
+      flex-direction: column;
 
-    &__flex-container{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        margin: 1rem;
-    }
+      & > h3{
+        font-size: 1.5rem;
+        text-align: center;
+        color: library.$primary-90;
+      }
 
-    &__description {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
+      & > p{
+        font-size: 1rem;
+        font-family: library.$font-text;
+        color: gray;
+      }
+
+      & > button {
+        border: none;
+        cursor: pointer;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        width: calc(330px + 1rem);
-        height: 330px;
-        border: 1px solid gray;
-        background-color: library.$main-bg;
-        transition: all 0.3s ease;
-    
-        &:hover {
-            transform: scale(1.05);
-        }
-    
-        & > svg {
-            margin: 0rem 1rem;
-            fill: library.$color-40;
-        }
-
-        & > div {
-            display: flex ;
-            flex-direction: column;
-
-            & > h3{
-                font-size: 1.5rem;
-                text-align: center;
-                color: gray;
-            }
-
-            & > p{
-                font-size: 1rem;
-                font-family: library.$font-text;
-                color: gray;
-            }
-
-            & > button {
-                border: none;
-                cursor: pointer;
-                position: absolute;
-                bottom: 0px;
-                background-color: #CCC;
-                padding: 0.2rem 1rem;
-                font-size: 1rem;
-            }
-        }
+        bottom: 0px;
+        background-color: #CCC;
+        padding: 0.2rem 1rem;
+        font-size: 1rem;
+      }
     }
-    
-
-    &__show{
-        display:none;
-    }
-
+  }
 }
 
 .skills__frontend{
-    border-radius: 350px 0% 0% 350px;
+  border-radius: 350px 0% 0% 350px;
 }
 
 .skills__backend{
-    border-radius: 0% 350px 350px 0%;
+  border-radius: 0% 350px 350px 0%;
 }
 
-
 .skills__radial-container{
-    position: absolute;
-    display: flex;
-    top: 50%;
-    left: 50%;
-    border-radius: calc( 350px + 2rem);
-    width: calc(700px + 3rem);
-    height: calc(700px + 2rem);
-    background-color: library.$main-bg;
-    justify-content: center;
-    align-items: center;
-    transform-origin: 0% 0%;
-    transform: rotate(30deg) translate(-50%, -50%);
-    transition-property: transform, width;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    z-index: 2;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  border-radius: calc( 350px + 2rem);
+  width: calc(700px + 3rem);
+  height: calc(700px + 2rem);
+  background-color: library.$main-bg;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 0% 0%;
+  transform: translate(-50%, -50%);
+  transition-property: transform, width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  z-index: 2;
+
+  &:hover .skillElement{
+    transform: translate(-50%, -50%) rotate(0deg);
 
     &:hover{
-      transform: rotate(0deg) translate(-50%, -50%);
-      width: calc(700px + 10rem);
+      transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
     }
+  }
 
-    &:hover .skillElement{
-      transform: translate(-50%, -50%) rotate(0deg);
-
-      &:hover{
-        transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
-      }
-    }
-
-    &:hover .skills__frontend-radial{
-      margin-right: 4rem;
-    }
-
-    &:hover .skills__backend-radial{
-      margin-left: 4rem;
-    }
-
-    &:hover .skills__description{
-      border-radius: 175px;
-      width: calc(330px + 8rem);
-      transform: translate(-50%, -50%) rotate(0deg);
-        
-      &:hover{
-        transform: translate(-50%, -50%) scale(1.04) rotate(0deg);
-      }
-    }
-
-    &:hover .skills__buttons-top{
-      clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
-
-    &:hover .skills__buttons-down{
-      clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
+  &:hover .skills__description{
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
 }
 
 .skills__frontend-radial{
-    position: relative;
-    width: 350px;
-    margin-right: 0.5rem;
-    height: 700px;
-    overflow: hidden;
-    border-radius: 350px 0% 0% 350px;
-    clip-path: path('M 0 0 V 700 H 350 V 530 A 70 70 360 0 1 350 170 V 0 H 0z');
-    transition: all 0.3s ease;
+  position: relative;
+  width: 350px;
+  margin-right: 0.5rem;
+  height: 700px;
+  overflow: hidden;
+  border-radius: 350px 0% 0% 350px;
+  clip-path: path('M 0 0 V 700 H 350 V 530 A 70 70 360 0 1 350 170 V 0 H 0z');
+  transition: all 0.3s ease;
 
-    &:hover {
-        transform-origin: 100% 50%;
-        transform: scale(1.05);
-    }
+  &:hover {
+    transform-origin: 100% 50%;
+    transform: scale(1.05);
+  }
 }
 
 .skills__backend-radial{
-    position: relative;
-    margin-left: 0.5rem;
-    width: 350px;
-    height: 700px;
-    overflow: hidden;
-    border-radius: 0% 350px 350px 0%;
-    clip-path: path('M 350 0 H 0 V 170 A 70 70 0 0 1 0 530 V 700 H 350z');
-    transition: all 0.3s ease;
+  position: relative;
+  margin-left: 0.5rem;
+  width: 350px;
+  height: 700px;
+  overflow: hidden;
+  border-radius: 0% 350px 350px 0%;
+  clip-path: path('M 350 0 H 0 V 170 A 70 70 0 0 1 0 530 V 700 H 350z');
+  transition: all 0.3s ease;
 
-    &:hover {
-        transform-origin: 0% 50%;
-        transform: scale(1.05);
-    }
+  &:hover {
+    transform-origin: 0% 50%;
+    transform: scale(1.05);
+  }
 }
 
 .skills__circle-path-frontend{
-    background-color: library.$primary-30;
-    width: calc(350px * 2);
-    height: inherit;
-    border-radius: 50%;
+  background-color: library.$primary-30;
+  width: calc(350px * 2);
+  height: inherit;
+  border-radius: 50%;
 }
 
 .skills__circle-path-backend{
-    position: absolute;
-    left: calc(-1 * 350px);
-    background-color: library.$primary-30;
-    width: calc(350px * 2);
-    height: inherit;
-    border-radius: 50%;
+  position: absolute;
+  left: calc(-1 * 350px);
+  background-color: library.$primary-30;
+  width: calc(350px * 2);
+  height: inherit;
+  border-radius: 50%;
 }
 
 .skillElement{
-    position: absolute;
-    transform: translate(-50%, -50%) rotate(-30deg);
-    fill: library.$primary-90;
-    display:inline-block;
-    background-color: var(--white);
-    transition-property: transform, fill;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  fill: library.$primary-90;
+  display:inline-block;
+  background-color: var(--white);
+  transition-property: transform, fill;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  
+  & > svg {
+    height: 80px;
+    width: 80px;
+  }
+
+  &:hover{
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1.1) ;
+  }
+
+  & > h5 {
+    text-align: center;
+    transition-property: letter-spacing color;
     transition-timing-function: ease;
-    transition-duration: 0.3s;
-    
-    & > svg {
-        height: 80px;
-        width: 80px;
-    }
+    transition-duration: 0.1s;
+    color: library.$font-color-gray;
+  }
+
+  &:hover > h5 {
+    color: library.$primary-90;
+    letter-spacing: 0.08rem;
+  }
+}
+
+.skills__radial-bg{
+  width: min(1150px, 100%); 
+  height: 400px; 
+  margin: 1rem auto;
+  position: relative;
+  z-index: 1;
+
+  &-backend{
+    position: absolute;
+    right: 0rem;
+    bottom: 1rem;
+  }
+
+  &-frontend{
+    position: absolute;
+    left: 0rem;
+    top: 1rem;
+  }
+
+  &-text span{
+    font-size: 4rem;
+    font-family: 'Roboto';
+    color: library.$color-40;
+    font-weight: 500;
+    translate: 0px -40px;
+    opacity: 0;
+    display: inline-block;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(.18,.49,0,1.16);
+    animation-fill-mode: forwards;
+    animation-name: SlideDownLetter;
+    transition: all 0.15s ease;
+    cursor:default;
 
     &:hover{
-        cursor: pointer;
-        transform: translate(-50%, -50%) scale(1.1) rotate(-30deg);
+      transform-origin: 50% 100%;
+      transform: scaleY(0.9) scale(1.3) scaleX(0.8);
     }
+  }
 
-    & > h5 {
-        text-align: center;
-        transition-property: letter-spacing color;
-        transition-timing-function: ease;
-        transition-duration: 0.1s;
-        color: library.$font-color-gray;
-    }
-    &:hover > h5 {
-        color: library.$primary-90;
-        letter-spacing: 0.08rem;
-    }
-}
-
-
-.skills__buttons-top{
+  svg{
     position: absolute;
-    top: 1.2rem;
-    width: 100px;
-    height: calc(170px - 0.4rem);
-    background-color: red;
-    clip-path: polygon( 50% 0%, 50% 0%, 50% 100%, 50% 100%);
-    transition: clip-path 0.3s ease;
-}
+    bottom: 0px;
+    overflow: visible;
+    right: -100px;
+    height: 400px;
+    width: auto;
 
-.skills__buttons-down{
-    position: absolute;
-    bottom: 1.2rem;
-    width: 100px;
-    height: calc(170px - 0.4rem);
-    clip-path: polygon( 50% 0%, 50% 0%, 50% 100%, 50% 100%);
-    transition: clip-path 0.3s ease;
+    path{
+      fill: white;
+    }
+  }
+
+  #svg__database-gear{
+      transform-origin: 29.5% 72.5%;
+      animation: gearRotate 15s linear forwards infinite;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -284,25 +289,10 @@
     &:hover .skillElement{
       transform: translate(-50%, -50%) rotate(0deg);
 
-      &:hover{
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    &:hover .skills__frontend-radial{
-      margin-right: 0rem;
-    }
-
-    &:hover .skills__backend-radial{
-      margin-left: 0rem;
-    }
-      
-    &:hover{
-      transform: translate(0px, 0px) scale(1) rotate(0deg);
     }
   }
 
-  .skills__description, .skills__buttons-down, .skills__buttons-top{
+  .skills__description{
     display: none;
   }
 
@@ -398,6 +388,53 @@
       letter-spacing: 0.08rem;
     }
   }
+
+  .skills__radial-bg{
+    width: min(1150px, 100%); 
+    height: 300px; 
+    margin: 1rem auto;
+  
+    &-backend{
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+    }
+  
+    &-frontend{
+      left: 1rem;
+      top: 1rem;
+    }
+  
+    &-text span{
+      font-size: clamp(3.5rem, 8vw, 3.8rem);
+      color: library.$color-40;
+      transition: all 0.15s ease;
+      cursor:default;
+  
+      &:hover{
+        transform-origin: 50% 100%;
+        transform: scaleY(0.9) scale(1.3) scaleX(0.8);
+      }
+    }
+  
+    svg{
+      position: absolute;
+      bottom: 0px;
+      overflow: visible;
+      right: -100px;
+      height: 400px;
+      width: auto;
+  
+      path{
+        fill: white;
+      }
+    }
+  
+    #svg__database-gear{
+        transform-origin: 29.5% 72.5%;
+        animation: gearRotate 15s linear forwards infinite;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -407,59 +444,6 @@
   }
 }
 
-.skills__radial-bg{
-  width: min(1500px, 100%); 
-  height: 600px; 
-  margin: 1rem auto;
-  position: relative;
-  z-index: 1;
-
-  &-backend{
-    position: absolute;
-    right: 6rem;
-    bottom: 1rem;
-
-    span{
-      font-size: 6rem;
-      font-family: 'Roboto';
-      color: library.$color-40;
-      font-weight: 500;
-      translate: 0px -40px;
-      opacity: 0;
-      display: inline-block;
-      animation-duration: 0.5s;
-      animation-timing-function: cubic-bezier(.18,.49,0,1.16);
-      animation-fill-mode: forwards;
-      animation-name: SlideDownLetter;
-      transition: all 0.15s ease;
-      cursor:default;
-
-      &:hover{
-        transform-origin: 50% 100%;
-        transform: scaleY(0.9) scale(1.3) scaleX(0.8);
-      }
-    }
-  }
-
-  svg{
-    position: absolute;
-    bottom: 0px;
-    overflow: visible;
-    right: -100px;
-    height: 400px;
-    width: auto;
-
-    path{
-      fill: white;
-    }
-  }
-
-  #svg__database-gear{
-      transform-origin: 29.5% 72.5%;
-      animation: gearRotate 15s linear forwards infinite;
-  }
-
-}
 
 @keyframes SlideDownLetter {
   from{
