@@ -143,15 +143,18 @@ body[data-darkmode="true"]{
 }
 
 //loading
-.loading{
-  background-color: $DM-main-bg;
+.loading[data-darkmode="true"]{
 
-  &__text{
-    color: $DM-font
-  }
+  .loading{
+    background-color: $DM-main-bg;
 
-  &__bar{
-    background-color: $DM-font;
+    &__text{
+      color: $DM-font
+    }
+
+    &__bar{
+      background-color: $DM-font;
+    }
   }
 }
 

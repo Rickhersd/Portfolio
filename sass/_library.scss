@@ -88,7 +88,7 @@ $font-text: 'Red Hat Text', sans-serif;
       margin: auto;
       width: min(1100px, 90%);
       height: inherit;
-      transition: translate 0.7s cubic-bezier(.27,.54,.48,1);
+      transition: translate 0.5s cubic-bezier(.27,.54,.48,1);
       translate: -1300px 0%;
 
       div{
@@ -98,7 +98,7 @@ $font-text: 'Red Hat Text', sans-serif;
 
     &-title{
       text-align: left;
-      font-size: clamp(1.9rem, 7vw, 2.5rem);
+      font-size: clamp(1.9rem, 7vw, 4rem);
       margin-bottom: 1.6rem;
       line-height: 1.2;
       color: $primary-90;

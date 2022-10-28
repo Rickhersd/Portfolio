@@ -10,7 +10,7 @@
   
   &__flex-container{
     width: min(100%, 1150px);
-    margin: 3rem auto;
+    margin: 10rem auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -147,8 +147,18 @@
   }
 }
 
+@media only screen and (max-width: 900px){
+  .portfolio__flex-container{
+    margin-top: 5rem;
+  }
+}
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 500px){
+
+  .portfolio__flex-container{
+    margin-top: 2rem;
+  }
+
   .portfolio__item {
     width: 100%;
     margin: auto;

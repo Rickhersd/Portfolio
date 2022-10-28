@@ -20,8 +20,17 @@ window.addEventListener('DOMContentLoaded', (e) =>{
 
 window.addEventListener('load', (event) => {
   const loadingEl = document.querySelector('.loading');
-  loadingEl.style.display = 'none';
-  initPage();
+  const loadingText = document.querySelector('.loading__text')
+  const loadingCont = document.querySelector('.loading__container')
+  loadingText.innerHTML = "Iniciando Porfolio"
+  setTimeout(() => {
+    loadingCont.style.animationPlayState = 'running'
+    setTimeout(() =>{
+      loadingEl.style.display = 'none';
+      initPage();
+    }, 500) 
+
+  }, 2000)
 });
 
 const hamburgerMenuController = new HamburgerMenu();
