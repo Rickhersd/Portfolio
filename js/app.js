@@ -13,7 +13,6 @@ import { Translater } from "../models/Translater.js";
 import { MeShadow } from "../models/MeShadow.js";
 import { Carrousel } from "../models/Carrousel.js";
 
-
 window.addEventListener('DOMContentLoaded', (e) =>{
   initLoading();
 })
@@ -48,7 +47,7 @@ btn.addEventListener('click', () => {
 });
 
 const navBar = new NavBar();
-//navBar.setEvents();
+navBar.setEvents();
 
 const meShadow = new MeShadow();
 meShadow.start();
