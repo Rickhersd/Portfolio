@@ -48,7 +48,7 @@ btn.addEventListener('click', () => {
 });
 
 const navBar = new NavBar();
-navBar.setEvents();
+//navBar.setEvents();
 
 const meShadow = new MeShadow();
 meShadow.start();

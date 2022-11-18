@@ -1,10 +1,9 @@
 @use 'library.scss';
 
 #about-me{
-  margin-bottom: 10rem;
-  padding-bottom: 5rem ;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   background-color: library.$primary-10;
-
 }
 
 .about-me{
@@ -46,9 +45,8 @@
     flex-direction: row;
     margin: auto;
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-bottom: 6rem;
-    gap: 10rem;
 
     &-rightside{
       width: min(500px, 100%);
@@ -58,28 +56,22 @@
     &-leftside {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 1rem;
-      width: 300px;
+      width: 50%;
       height: auto;
     }
 
     > span{
       display: none;
-    };
+    }
   }
 
   &__info{
-    
-    span{
-      color: #002b6b;
-      font-size: clamp(1.9rem, 7vw, 2.5rem);
-      font-family: library.$font-mono;
-      font-weight: 600;
-    }
 
     p{
       margin: auto;
-      margin-top: 0.8rem;
+      margin-top: 0.9rem;
       font-family: 'Red Hat Text';
       font-size: 1.1rem;
       font-weight: 400;
@@ -96,7 +88,7 @@
   }
 
   &__resumeBtn {
-    width: 100%;
+    width: 300px;
     border: none;
     background-color: #ffefa4;
     position: relative;
@@ -142,7 +134,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 
   .about-me__header{
     @include library.MQ__sub-header__div-content-container();
@@ -155,6 +147,11 @@
       margin-top: 3rem;
       margin-bottom: 4rem;
       flex-direction: column;
+
+      &-rightside{
+        width: 100%;
+        padding: 0rem 1rem;
+      }
     }
 
     &__info{
@@ -172,12 +169,14 @@
         overflow-x: hidden;
         position: relative;
         display: flex;
+        display: none;
         flex-direction: row;
         justify-content: space-around;
         gap: 1rem;
       } 
   
       &-rightBtn{
+        display: none;
         width: 2rem;
         height: 2rem;
         background-color: red;
@@ -186,6 +185,7 @@
       &-leftBtn{
         width: 2rem;
         height: 2rem;
+        display: none;
         background-color: blue;
       }
     }

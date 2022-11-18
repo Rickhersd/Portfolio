@@ -91,11 +91,6 @@
           </li>
         </div>
         <span class="nav__span"></span>
-        <button class="nav__btn-arrow">
-          <svg width="13" height="8" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.59617 0.979523L13.3198 9.70318L22.0435 0.979523C22.9203 0.102661 24.3368 0.102661 25.2137 0.979523C26.0905 1.85639 26.0905 3.27286 25.2137 4.14972L14.8937 14.4697C14.0168 15.3466 12.6004 15.3466 11.7235 14.4697L1.4035 4.14972C0.526634 3.27286 0.526634 1.85639 1.4035 0.979523C2.28036 0.125145 3.71931 0.102661 4.59617 0.979523Z" fill="black"/>
-          </svg>            
-        </button>
       </ul>
     </div>
   </nav> 
@@ -219,6 +214,12 @@
         </svg>   
       </div>
     </div>
+    <div class="header__info">
+      <div class="header__info-btn"></div>
+      <p class="header__info-text" data-ext="header-text">
+        Este portfolio es un projecto en constante desarrollo. Periodicamente ira incorporando nuevos aspectos visuales y funcionales. Para saber acerca de la creacion de este y de futuras actualizaciones, revisar <a href=""> Repositirio en Github</a>
+      </p>
+    </div> 
   </header> 
 
   <!-- about me -->
@@ -234,16 +235,17 @@
           <path class="svg__hand-decoration" d="M43.7827 209C26.216 244.466 73.5135 298.817 110 281.775" stroke="#F9B06E" stroke-width="11" stroke-linecap="round"/>
         </svg>
         <div>
-          <h1 class="about-me__header-title" data-animatedWord>Welcome!</h1> 
+          <h1 class="about-me__header-title" data-animatedWord>About me</h1> 
+          <p class="about-me__header-subtitle">19 a'os, Venezolano y estudiante Universaritario.</p>
         </div>     
       </div>
     </header>
     <div class="about-me__content">
       <div class="about-me__content-rightside">
         <div class="about-me__info" data-darkmode>
-          <p data-text="about-me-info-p1">Soy un desarollador Full-stack localizado en Venezuela. Apacioando  a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
-          <p data-text="about-me-info-p2">Aunque soy estudiante de Ingenier'ia. mi curiosidad y ganas de programar me hicieron ser completamente auditacta. Soy organizado, tranaquilo y muy detallista. Adoro resolver problemas, las matematica y pasar las noches con el codigo. musica y mucho cafe...</p>
-          <p data-text="about-me-info-p3">Estoy interesando en el desarrollo de pginas, tanto por el fronent como por e backend, y a tras, prentendo ampliar mis conocimiento y especializarme en araes de la programcion como el desarrollo de Videojuego, la integiencias artifical y el analisis de datos.</p>
+          <p data-ext="about-me-info-p1">Soy un desarollador Web Full Stack, apacionado a la creacion de Efectos , animations and creating intuitive, dynamic user experiences. Ademas de por todo el trasfondo tecnico de las paginas webs.</p>
+          <p data-ext="about-me-info-p2">Aunque soy estudiante de Ingenier'ia, la mayor parte de mis conocmientos los obtuve tras muchas horas de estudios completamente auditactas. Soy organizado, muy detallista al resultado final y ob. Adoro resolver problemas, las matematica y adoro pasar las noches con codigo. musica y mucho cafe...</p>
+          <p data-ext="about-me-info-p3">Actualmente estoy interesando en el desarrollo y mantenimiento de Paginas Web, tanto del lado Frontend como del Backend. Tras ejercer varios a'os la carrera, tengo como objeto especializarme en otros campos de la programcion tales como el Desarrollo Movil, Inteligencia Artifical y Analisis de Datos.</p>
         </div>
         <div class="about-me__hobbies-carrousel">
           <ul class="about-me__hobbies-container | margin-top__32"> 
@@ -263,16 +265,10 @@
         </div>
         <button class='about-me__hobbies-leftBtn'></button>
         <button class='about-me__hobbies-rightBtn'></button>
-        <ul class="about-me__carrousel-dots">
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
       </div>
       <span style="width: 85%; height: 2px"></span>
       <div class="about-me__content-leftside">
-        <div class="about-me__photograph">
-        </div>
+        <div class="about-me__photograph"> </div>
         <a href="./cv/CV - Ricardo Sánchez.pdf" class="about-me__resumeBtn" data-text="about-me-cv">My Resume</a>
       </div>
     </div>
@@ -285,8 +281,8 @@
       <div class="skills__header-bg"></div> 
       <div class="skills__header-content-container" data-parallaxHeader="0.1">
         <div>
-          <h1 class="skills__header-title" data-animatedWord>Skills<span>.</span></h1>
-          <p class="skills__header-subtitle">Adelante las tecnologias que conozco y aplico en mi trabajo. Nunca dejando de aprender.</p> 
+          <h1 class="skills__header-title" data-animatedWord>2. Skills</h1>
+          <p class="skills__header-subtitle">The technologues I know.</p> 
         </div>                
       </div>
     </header>
@@ -310,7 +306,7 @@
         <div class="skills__radial-bg-backend">
           <h1 class="skills__radial-bg-text" data-animatedWord>BACKEND</h1>
           <p class="skills__radial-bg-info">
-            - Creacion y adminsitracion de Base de Datos relacionales y no realaciones <br>
+            - Diseno y manipulacion de Base de Datos Relacionales y no Relacionales <br>
             - Tokenizacion de usarios.
             - creacion de Dashboard Adminisrativos, pesta'as de admin, registro de usarios <br>
             - Verificacion de Datos para con el fin de evitiar inserciones MySQl, o ataes parecidos. <br>
@@ -319,8 +315,8 @@
         </div> 
       </div>
 
-      <div class="skills__radial-container">
-        <div class="skills__frontend" data-intersection="false">
+      <div class="skills__radial-container" data-intersection="false">
+        <div class="skills__frontend" >
           <div class="skills__frontend-radial">
             <div class= "skills__circle-path-frontend"></div>
           </div>
@@ -334,7 +330,7 @@
             <p id="skills__des-paragraph">Lenguaje de etiquetas</p>
           </div>
         </div>
-        <div class="skills__backend" data-intersection="false">
+        <div class="skills__backend">
           <div class="skills__backend-radial">
             <div class= "skills__circle-path-backend"></div>
           </div>
@@ -349,19 +345,19 @@
       <div class="portfolio__header-bg"></div> 
       <div class="portfolio__header-content-container portfolio__header-part-1">
         <div>
-          <h1 class="portfolio__header-title" data-animatedWord>Projects.</h1>
-          <p class="portfolio__header-subtitle">Here are a few past design projects I've worked on. Want to see more?</p> 
+          <h1 class="portfolio__header-title" data-animatedWord>3. Projects</h1>
+          <p class="portfolio__header-subtitle">Here are a my personal projects. I've worked on.</p> 
         </div>  
       </div>
     </header>
       
     <div class="portfolio__flex-container">
       <div class="portfolio__item" data-intersection="false">
-        <img class="portfolio__item-logotype" width="800" height="600" alt="imagen">
         <div class="portfolio__item-content">
           <header class="portfolio__item-header">
-            <p class="portfolio__item-header-technologies"><span data-text="portfolio-project-technologies">Technologies</span>: React, Node.Js, MySql, TypeScript, SASS, PUG...</p>
             <h3 class="portfolio__item-header-name" data-text="portfolio-project-personalBlog-title" data-animatedWord>Personal Blog</h3> 
+            <p class="portfolio__item-header-technologies"><span data-text="portfolio-project-technologies">Technologies</span>: React, Node.Js, MySql, TypeScript, SASS, PUG...</p>
+            <div class="portfolio__item-header-status">Status:<span data-text="portfolio-project-status-in-progress">In progress</span></div>
             <p class="portfolio__item-header-description" data-text="portfolio-project-personalBlog-p1">Mi pequeno espacio para escribir sobre los proyetos que hago, experimentos de codigo que realizo y mi vida personal como programador.</p>
           </header>
           <ul class="portfolio__item-links ">
@@ -379,24 +375,26 @@
         </div>   
       </div>
       <div class="portfolio__item" data-intersection="false">
-        <svg class="portfolio__item-logotype" width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_639_132)">
-          <path d="M25.2859 120.752C26.1104 121.233 26.8662 122.401 26.8662 123.431C26.8662 125.081 25.492 126.455 23.9117 126.455C23.4994 126.455 23.1558 126.317 22.8123 126.249C20.957 124.874 18.6209 123.981 16.1472 123.981C10.3067 123.981 6.32147 128.722 6.32147 134.631C6.32147 140.541 10.3755 145.213 16.1472 145.213C19.0331 145.213 21.6442 144.045 23.5681 142.19C24.0491 141.846 24.6675 141.64 25.2859 141.64C26.8663 141.64 28.1031 142.877 28.1031 144.457C28.1031 145.488 27.4847 146.381 26.7288 146.862C23.9117 149.267 20.1325 150.847 16.2159 150.847C7.28343 150.847 0 143.495 0 134.425C0 125.355 7.28343 118.003 16.2159 118.003C19.5141 117.935 22.6748 118.965 25.2859 120.752ZM41.6393 127.623C47.7546 127.623 52.8393 132.776 52.8393 139.166C52.8393 145.488 47.6859 150.916 41.6393 150.916C35.2491 150.916 29.9583 145.557 29.9583 139.166C29.9583 132.776 35.2491 127.623 41.6393 127.623ZM41.5705 145.213C44.2503 145.213 46.5178 142.671 46.5178 139.235C46.5178 135.8 44.2503 133.601 41.5705 133.601C38.6847 133.601 36.2798 135.731 36.2798 139.235C36.2798 142.602 38.6847 145.213 41.5705 145.213ZM56.6871 147.343V131.127C56.6871 129.341 58.0613 127.898 59.8478 127.898C61.5656 127.898 63.0086 129.341 63.0086 131.127V147.343C63.0086 149.13 61.5656 150.573 59.8478 150.573C58.1301 150.573 56.6871 149.061 56.6871 147.343ZM56.2061 121.782C56.2061 119.652 57.8552 118.003 59.8478 118.003C61.9092 118.003 63.5583 119.721 63.5583 121.782C63.5583 123.844 61.9092 125.493 59.8478 125.493C57.7865 125.424 56.2061 123.775 56.2061 121.782ZM75.1018 138.548V147.343C75.1018 149.13 73.6589 150.573 71.9411 150.573C70.2233 150.573 68.7804 149.13 68.7804 147.343V130.371C68.7804 128.997 69.8798 127.898 71.254 127.898C72.6282 127.898 73.6589 129.066 73.6589 130.371C76.2012 127.966 78.4687 127.623 80.5988 127.623C86.9202 127.623 89.7374 132.364 89.7374 137.792V147.343C89.7374 149.13 88.2945 150.573 86.5767 150.573C84.8589 150.573 83.4159 149.13 83.4159 147.343V138.548C83.4159 135.8 83.0724 133.463 79.0871 133.463C76.2699 133.463 75.1018 135.8 75.1018 138.548ZM110.213 141.915C109.458 141.915 108.977 141.571 108.564 141.09L101.212 133.12V147.343C101.212 149.13 99.7693 150.573 98.0515 150.573C96.3337 150.573 94.8908 149.13 94.8908 147.343V119.171C95.0969 118.69 95.5779 118.347 96.0589 118.347C96.6086 118.347 97.0896 118.828 97.4331 119.171L109.183 132.364C109.526 132.776 109.939 132.982 110.213 132.982C110.42 132.982 110.901 132.776 111.244 132.364L122.994 119.171C123.337 118.828 123.75 118.347 124.368 118.347C124.918 118.347 125.399 118.69 125.536 119.171V147.343C125.536 149.13 124.162 150.573 122.375 150.573C120.658 150.573 119.215 149.13 119.215 147.343V133.12L111.863 141.09C111.313 141.571 110.832 141.915 110.213 141.915ZM140.584 145.213C143.401 145.213 145.806 142.671 145.806 139.235C145.806 135.8 143.333 133.532 140.584 133.532C137.836 133.532 135.568 135.868 135.568 139.235C135.568 142.533 137.767 145.213 140.584 145.213ZM147.318 148.099L147.18 147.343C145.944 149.748 142.027 150.847 139.553 150.847C133.644 150.847 129.247 145.488 129.247 139.098C129.247 132.776 133.713 127.554 139.897 127.554C140.928 127.554 144.501 127.829 147.249 131.058L147.386 130.303C147.386 128.928 148.417 127.829 149.791 127.829C151.166 127.829 152.265 128.997 152.265 130.303V148.03C152.265 149.404 151.166 150.504 149.791 150.504C148.348 150.573 147.318 149.404 147.318 148.099ZM169.649 133.463H168.962C164.977 133.669 164.221 135.937 164.221 138.548V147.343C164.221 149.13 162.778 150.573 161.06 150.573C159.342 150.573 157.899 149.13 157.899 147.343V130.371C157.899 128.997 158.999 127.898 160.373 127.898C161.747 127.898 162.778 129.066 162.778 130.371C165.114 128.173 167.038 127.692 168.962 127.623H169.58C171.092 127.623 172.466 128.928 172.466 130.577C172.535 132.089 171.161 133.463 169.649 133.463ZM194.042 145.831C194.317 146.312 194.523 146.793 194.523 147.343C194.523 148.992 193.011 150.504 191.362 150.504C190.263 150.504 189.301 149.679 188.545 148.717L181.261 140.266V147.274C181.261 149.061 179.818 150.504 178.101 150.504C176.383 150.504 174.94 149.061 174.94 147.274V121.508C174.94 119.721 176.314 118.278 178.101 118.278C179.887 118.278 181.261 119.721 181.261 121.508V137.586L188.545 129.547C189.301 128.722 190.194 127.829 191.293 127.829C192.874 127.829 194.317 129.272 194.317 130.921C194.317 131.402 194.179 131.952 193.904 132.364L188.133 138.685L194.042 145.831ZM206.41 133.532C204.692 133.532 201.875 134.425 201.875 137.105H211.013C210.945 134.425 208.059 133.532 206.41 133.532ZM214.655 141.159H201.875C201.875 144.938 205.517 145.557 207.097 145.557C208.265 145.557 209.914 145.35 211.22 144.732C211.632 144.457 212.25 144.251 212.869 144.251C214.243 144.251 215.411 145.419 215.411 146.862C215.411 147.824 214.793 148.649 214.037 149.13C212.113 150.573 209.571 150.916 207.166 150.916C200.775 150.916 195.485 147.481 195.485 139.441C195.485 133.12 198.714 127.623 206.272 127.623C212.388 127.623 216.991 131.608 217.129 138.685C217.129 139.991 216.029 141.159 214.655 141.159ZM232.245 150.847H230.528C225.718 150.847 222.901 148.717 222.901 141.228V133.463H221.252C219.74 133.463 218.434 132.089 218.434 130.577C218.434 128.928 219.809 127.623 221.252 127.623H222.901V121.645C222.901 119.858 224.275 118.416 226.061 118.416C227.779 118.416 229.222 119.858 229.222 121.645V127.623H231.833C233.345 127.623 234.65 128.928 234.65 130.577C234.65 132.089 233.276 133.463 231.833 133.463H229.222V139.991C229.222 144.32 229.428 145.213 231.352 145.213H232.245C233.757 145.213 235.063 146.45 235.063 148.03C235.063 149.542 233.757 150.847 232.245 150.847ZM262.822 120.752C263.647 121.233 264.402 122.401 264.402 123.431C264.402 125.081 263.028 126.455 261.448 126.455C261.036 126.455 260.692 126.317 260.348 126.249C258.493 124.874 256.157 123.981 253.683 123.981C247.843 123.981 243.858 128.722 243.858 134.631C243.858 140.541 247.912 145.213 253.683 145.213C256.569 145.213 259.18 144.045 261.104 142.19C261.585 141.846 262.204 141.64 262.822 141.64C264.402 141.64 265.639 142.877 265.639 144.457C265.639 145.488 265.021 146.381 264.265 146.862C261.448 149.267 257.669 150.847 253.752 150.847C244.82 150.847 237.536 143.495 237.536 134.425C237.536 125.355 244.82 118.003 253.752 118.003C257.05 117.935 260.28 118.965 262.822 120.752ZM278.832 145.213C281.649 145.213 284.054 142.671 284.054 139.235C284.054 135.8 281.58 133.532 278.832 133.532C276.015 133.532 273.816 135.868 273.816 139.235C273.816 142.533 276.083 145.213 278.832 145.213ZM285.566 148.099L285.428 147.343C284.191 149.748 280.275 150.847 277.801 150.847C271.892 150.847 267.494 145.488 267.494 139.098C267.494 132.776 271.961 127.554 278.145 127.554C279.175 127.554 282.748 127.829 285.497 131.058L285.634 130.303C285.634 128.928 286.665 127.829 288.039 127.829C289.413 127.829 290.513 128.997 290.513 130.303V148.03C290.513 149.404 289.413 150.504 288.039 150.504C286.596 150.573 285.566 149.404 285.566 148.099ZM307.76 145.213C310.577 145.213 312.775 142.533 312.775 139.235C312.775 135.8 310.508 133.532 307.76 133.532C304.942 133.532 302.537 135.8 302.537 139.235C302.537 142.671 304.942 145.213 307.76 145.213ZM302.537 148.992V157.031C302.537 158.818 301.094 160.261 299.377 160.261C297.659 160.261 296.216 158.818 296.216 157.031V130.371C296.216 128.997 297.315 127.898 298.69 127.898C300.064 127.898 301.094 129.066 301.094 130.646C303.431 128.241 306.317 127.623 308.515 127.623C314.631 127.623 319.166 132.776 319.166 139.166C319.166 145.488 314.837 150.916 308.859 150.916C307.004 150.847 304.255 150.298 302.537 148.992Z" fill="#17181B"/>
-          <path d="M26.8662 123.431C26.8662 122.401 26.1104 121.233 25.2859 120.752C22.6748 118.965 19.5141 117.935 16.2159 118.003C7.28343 118.003 0 125.355 0 134.425C0 143.495 7.28343 150.847 16.2159 150.847C20.1325 150.847 23.9117 149.267 26.7288 146.862C27.4847 146.381 28.1031 145.488 28.1031 144.457C28.1031 142.877 26.8663 141.64 25.2859 141.64C24.6675 141.64 24.0491 141.846 23.5681 142.19C21.6442 144.045 19.0331 145.213 16.1472 145.213C10.3755 145.213 6.32147 140.541 6.32147 134.631C6.32147 128.722 10.3067 123.981 16.1472 123.981C18.6209 123.981 20.957 124.874 22.8123 126.249C23.1558 126.317 23.4994 126.455 23.9117 126.455C25.492 126.455 26.8662 125.081 26.8662 123.431Z" fill="#17181B"/>
-          <path d="M56.6871 131.127V147.343C56.6871 149.061 58.1301 150.573 59.8478 150.573C61.5656 150.573 63.0086 149.13 63.0086 147.343V131.127C63.0086 129.341 61.5656 127.898 59.8478 127.898C58.0613 127.898 56.6871 129.341 56.6871 131.127Z" fill="#17181B"/>
-          <path d="M191.231 214.81V200.675C191.231 196.258 193.1 192.504 197.608 192.504C203.984 192.504 204.533 196.258 204.533 200.675V214.81C204.533 217.681 206.842 220 209.59 220C212.338 220 214.647 217.681 214.647 214.81V199.461C214.647 190.737 210.14 183.118 200.026 183.118C196.618 183.118 192.99 183.67 188.923 187.535C188.923 185.436 187.274 183.559 185.075 183.559C182.877 183.559 181.118 185.326 181.118 187.535V214.81C181.118 217.681 183.426 220 186.175 220C188.923 220 191.231 217.681 191.231 214.81Z" fill="#17181B"/>
-          <path d="M113.012 172.425C113.012 170.637 111.69 168.61 110.247 167.775C105.678 164.675 100.147 162.886 94.3756 163.006C78.745 163.006 66 175.764 66 191.503C66 207.242 78.745 220 94.3756 220C101.229 220 107.842 217.258 112.772 213.084C114.094 212.25 115.176 210.7 115.176 208.911C115.176 206.169 113.012 204.022 110.247 204.022C109.165 204.022 108.083 204.38 107.241 204.976C103.874 208.196 99.3053 210.223 94.2554 210.223C84.1556 210.223 77.0617 202.115 77.0617 191.86C77.0617 181.606 84.0354 173.379 94.2554 173.379C98.5839 173.379 102.672 174.929 105.918 177.314C106.519 177.433 107.121 177.672 107.842 177.672C110.607 177.672 113.012 175.287 113.012 172.425Z" fill="#17181B"/>
-          <path d="M123 168.588V214.412C123 218.053 125.551 220 128.588 220C131.625 220 134.176 218.198 134.176 214.412V168.588C134.176 164.802 131.625 163 128.588 163C125.43 163 123 164.802 123 168.588Z" fill="#17181B"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M158.023 184.235C167.582 184.235 175.529 192.148 175.529 201.959C175.529 211.665 167.474 220 158.023 220C148.035 220 139.765 211.771 139.765 201.959C139.765 192.148 148.035 184.235 158.023 184.235ZM165.648 202.065C165.648 207.34 162.104 211.243 157.915 211.243C153.405 211.243 149.646 207.234 149.646 202.065C149.646 196.684 153.405 193.414 157.915 193.414C162.104 193.414 165.648 196.79 165.648 202.065Z" fill="#17181B"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M249.374 205.019H229.575C229.575 210.821 235.217 211.771 237.665 211.771C239.475 211.771 242.029 211.454 244.052 210.505C244.69 210.083 245.648 209.766 246.606 209.766C248.735 209.766 250.545 211.56 250.545 213.775C250.545 215.252 249.587 216.518 248.416 217.257C245.435 219.472 241.497 220 237.771 220C227.872 220 219.676 214.725 219.676 202.381C219.676 192.675 224.679 184.235 236.388 184.235C245.861 184.235 252.993 190.354 253.206 201.221C253.206 203.225 251.503 205.019 249.374 205.019ZM229.575 198.794C229.575 194.68 233.94 193.308 236.601 193.308C239.155 193.308 243.626 194.68 243.732 198.794H229.575Z" fill="#17181B"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M213.963 55V54.8934V54.7868C213.857 24.6221 189.629 0 159.982 0C130.228 0 106 24.6221 106 55C106 85.2713 130.228 110 159.982 110C173.69 110 186.654 104.777 196.643 95.2907C198.661 93.3721 198.768 90.281 196.855 88.2558C195.049 86.2306 191.967 86.124 189.948 87.936L189.842 88.0426C181.766 95.717 170.927 100.087 159.769 100.087C146.699 100.087 135.01 94.3314 126.934 85.1647L149.993 48.0717V65.2326C149.993 73.4399 153.181 76.1046 155.837 76.8508C158.494 77.5969 162.532 77.064 166.889 70.1357L179.534 49.5639C179.666 49.366 179.787 49.168 179.905 48.9763C180.167 48.5488 180.41 48.1529 180.703 47.8585V58.3043C180.703 65.9787 183.785 72.1608 189.098 75.1453C193.88 77.9167 199.937 77.5969 204.931 74.5058C211.094 70.4554 214.388 63.4205 213.963 55ZM194.092 66.1919C195.792 67.1512 198.024 66.938 199.937 65.7655C202.912 63.8469 204.4 60.0097 204.187 55.2132V55.1066V55C204.187 30.1647 184.316 10.0194 159.982 10.0194C135.647 10.0194 115.776 30.1647 115.776 55C115.776 62.3546 117.583 69.6027 120.983 76.1046L146.593 34.9613C149.674 30.2713 152.862 29.9516 154.987 30.5911C158.175 31.5504 159.875 34.6415 159.982 39.8643V62.5678L171.458 44.1279C173.265 41.1434 178.153 33.1492 184.635 35.0678C188.46 36.1337 190.692 40.2907 190.692 46.0465V58.0911C190.692 62.0349 191.967 64.9128 194.092 66.1919Z" fill="#17181B"/>
-          </g>
-          <defs>
-          <clipPath id="clip0_639_132">
-          <rect width="320" height="220" fill="white"/>
-          </clipPath>
-          </defs>
-        </svg> 
+        <div class="portfolio__item-content">
+          <header class="portfolio__item-header">
+            <p class="portfolio__item-header-technologies"><span data-text="portfolio-project-technologies">Technologies</span>: Sass, Booptrap, TypeScript, Firebase, </p>
+            <h3 class="portfolio__item-header-name" data-text="portfolio-project-notes-title" data-animatedWord></h3> 
+            <p class="portfolio__item-header-description" data-text="portfolio-project-notes-p1">Este simple proyecto esta pensando para estudiar el uso de base de datos con el servicio de Google, Firebase. Incluira autenticacion de usarios, y guardado, edicion y eliminacion de notas. Asi</p>
+          </header>
+          <ul class="portfolio__item-links ">
+            <li class="portfolio__item-link portfolio__item-link-github">
+              <a href="">
+                <svg class="contact-end__social-link" role="img" width="45" height="45" viewBox="0 0 45 45">
+                  <use href="#svg-footer__github-icon"></use>
+                </svg>
+              </a>
+              <div class="portfolio__item-link-status">Status:<span data-text="portfolio-project-status-in-progress">In progress</span></div>
+            </li>
+            <li class="portfolio__item-link portfolio__item-link-visit"><a href="" data-text="portfolio-project-view-project">Visit Website </a></li>
+          </ul>
+        </div>   
+      </div>
+      <div class="portfolio__item" data-intersection="false">
         <div class="portfolio__item-content">
           <header class="portfolio__item-header">
             <p class="portfolio__item-header-technologies"><span data-text="portfolio-project-technologies">Technologies</span>: React, Node.Js, MySql, TypeScript, SASS, PUG...</p>
@@ -410,33 +408,33 @@
                   <use href="#svg-footer__github-icon"></use>
                 </svg>
               </a>
+              <div class="portfolio__item-link-status">Status:<span data-text="portfolio-project-status-in-progress">In progress</span></div>
             </li>
             <li class="portfolio__item-link portfolio__item-link-visit"><a href="" data-text="portfolio-project-view-project">Visit Website </a></li>
           </ul>
         </div>   
       </div>
       <div class="portfolio__item" data-intersection="false">
-        <img class="portfolio__item-logotype" width="800" height="600" alt="imagen">
         <div class="portfolio__item-content">
           <header class="portfolio__item-header">
             <p class="portfolio__item-header-technologies"><span data-text="portfolio-project-technologies">Technologies</span>: React, Node.Js, MySql, TypeScript, SASS, PUG...</p>
             <h3 class="portfolio__item-header-name" data-text="portfolio-project-bigCoders-title" data-animatedWord>Personal Blog</h3> 
             <p class="portfolio__item-header-description" data-text="portfolio-project-bigCoders-p1">Mi pequeno espacio para escribir sobre los proyetos que hago, experimentos de codigo que realizo y mi vida personal como programador.</p>
           </header>
-          <ul class="portfolio__item-links ">
+          <ul class="portfolio__item-links">
             <li class="portfolio__item-link portfolio__item-link-github">
               <a href="">
                 <svg class="contact-end__social-link" role="img" width="45" height="45" viewBox="0 0 45 45">
                   <use href="#svg-footer__github-icon"></use>
                 </svg>
               </a>
+              <div class="portfolio__item-link-status">Status:<span data-text="portfolio-project-status-pending">Pending</span></div>
             </li>
             <li class="portfolio__item-link portfolio__item-link-visit"><a href="" data-text="portfolio-project-view-project">Visit Website </a></li>
           </ul>
         </div>   
       </div>
       <div class="portfolio__item" data-intersection="false">
-        <img class="portfolio__item-logotype" width="800" height="600" alt="imagen">
         <div class="portfolio__item-content">
           <header class="portfolio__item-header">
             <p class="portfolio__item-header-technologies"><span data-text="portfolio-project-technologies">Technologies</span>: React, Node.Js, MySql, TypeScript, SASS, PUG...</p>
@@ -450,6 +448,7 @@
                   <use href="#svg-footer__github-icon"></use>
                 </svg>
               </a>
+              <div class="portfolio__item-link-status">Status:<span data-text="portfolio-project-status-pending">Pending</span></div>
             </li>
             <li class="portfolio__item-link portfolio__item-link-visit"><a href="" data-text="portfolio-project-view-project">Visit Website </a></li>
           </ul>
@@ -463,8 +462,8 @@
     <div class="contact__container" data-intersection="false">
 
       <div class="contact__form-cont">
-        <h1 data-text="contact-title">Contact me</h1>
-        <p data-text="contact-paragraph">Estoy interesando en toda clase de oportunidades independimiente de su dificultad. Cualquier pregunta que quieras hacerme, no dudes en usar el siguiente formulario.</p>
+        <h1 data-text="contact-title">Contact</h1>
+        <p data-ext="contact-paragraph">No dudes en comunicarte conmigo en cualquier momento, ya sea por email directo o utilizando el fomulario de abajo. Estoy interesando en toda clase de proyectos sin importar su dificultad.</p>
         <form class="contact__form field" action= "sendEmail.php">
           <fieldset>
             <label class="contact__form-label" for="form__name" data-text="form-name">Nombre</label>

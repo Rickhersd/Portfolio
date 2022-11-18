@@ -11,6 +11,8 @@ $height-nav-item: 200px;
   font-size: 0.85rem;
   color: library.$font-color-white;
   z-index: 10;
+  height: 3.5rem;
+  background-color: library.$main-bg;
 }
 
 .nav{
@@ -18,7 +20,9 @@ $height-nav-item: 200px;
   &__container {
     position: absolute;
     top: 0px;
-    right: 0.8rem;
+    width: 90%;
+    height: inherit;
+    border-bottom: 1px solid library.$light-gray;
     translate: 0px -100px;
     transition: translate 0.3s ease;
   
@@ -60,7 +64,7 @@ $height-nav-item: 200px;
       bottom: 0.9rem;
       width: 120px;
       height: 2px;
-      background-color: rgb(193, 193, 193);
+      background-color: library.$primary-90;
     }
 
 
@@ -82,26 +86,6 @@ $height-nav-item: 200px;
         color: rgb(59, 59, 59);
       }
 
-    }
-
-    button {
-      cursor: pointer;
-      border: none;
-      width: 60px;
-      height: 60px;
-      background-color: library.$primary-90;
-
-      svg{
-        width: 19.5px;
-        height: 12px;
-        rotate: 180deg;
-        transform-origin: 50% 50%;
-        transition: rotate 0.3s ease;
-      }
-
-      path{
-        fill: library.$main-bg;
-      }
     }
   }
 
@@ -125,7 +109,6 @@ $height-nav-item: 200px;
 
 
 @media only screen and (max-width: 600px) {
-
   #nav{
     display:none;
   }
