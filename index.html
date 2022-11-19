@@ -10,13 +10,13 @@
   <meta name="keywords" content="Frontend, Developer, FullStack, Backend"> 
   <title>Ricardo Sanchez, webDev</title>
 
-  <link rel="preload" href="./js/app.js" as="script" crossorigin />
-  <link rel="preload" href="./stylesheets/style.css" as="style">
+  <link rel="preload" href="./src/app.js" as="script" crossorigin />
+  <link rel="preload" href="./src/stylesheets/style.css" as="style">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Red+Hat+Display:wght@400;500;600;800&family=Roboto+Mono&family=Red+Hat+Text:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="./src/stylesheets/style.css">
   <script src="https://kit.fontawesome.com/83c3e527ac.js" crossorigin="anonymous"></script>
 </head>
 
@@ -97,6 +97,8 @@
 
   <div id="nav-mobile" class="nav-mobile" data-darkmode>
     <div class="nav-mobile__topbar">
+      <span></span>
+      <a href="#home" class="nav-mobile__topbar-name">RS</a>
       <div class="hamburger-button">
         <svg class="hambuger-button" xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 70 58">
           <path id="hamburger-middleBar" d="M0 28.603C0 30.0407 0.864852 31.2061 1.9317 31.2061H67.6096C68.6764 31.2061 69.5413 30.0407 69.5413 28.603C69.5413 27.1654 68.6764 26 67.6096 26H1.9317C0.864852 26 0 27.1654 0 28.603Z" />
@@ -224,8 +226,8 @@
           </g>
         </svg>
       </div>
-      <p class="header__info-text" data-ext="header-text">
-        Este portfolio es un proyecto en constante desarrollo. Periódicamente será actualizado nuevos aspectos visuales y funcionales. Para saber más sobre el desarrollo de éste y futuras actualizaciones, revisar <a href="https://github.com/Rickhersd/Portfolio"> Repositorio en Github</a>
+      <p class="header__info-text" data-text="header-info-text">
+        Si quieres conocer acerca del desarrollo de este porfolio y sobre futuras actualizaciones, te invito a visitar mi <a href="https://github.com/Rickhersd/Portfolio" data-text="header-info-text-link"> Repositorio en GitHub</a>
       </p>
     </div> 
   </header> 
@@ -251,9 +253,9 @@
     <div class="about-me__content">
       <div class="about-me__content-rightside">
         <div class="about-me__info" data-darkmode>
-          <p data-ext="about-me-info-p1">Soy un desarollador Web Full Stack, apacionado a la creacion de Efectos , animations and creating intuitive, dynamic user experiences. Ademas de por todo el trasfondo tecnico de las paginas webs.</p>
-          <p data-ext="about-me-info-p2">Aunque soy estudiante de Ingenier'ia, la mayor parte de mis conocmientos los obtuve tras muchas horas de estudios completamente auditactas. Soy organizado, muy detallista al resultado final y ob. Adoro resolver problemas, las matematica y adoro pasar las noches con codigo. musica y mucho cafe...</p>
-          <p data-ext="about-me-info-p3">Actualmente estoy interesando en el desarrollo y mantenimiento de Paginas Web, tanto del lado Frontend como del Backend. Tras ejercer varios a'os la carrera, tengo como objeto especializarme en otros campos de la programcion tales como el Desarrollo Movil, Inteligencia Artifical y Analisis de Datos.</p>
+          <p data-ext="about-me-info-p1">Soy un Desarollador Web Full Stack con amplios conocimientos en el Desarrollo de Páginas y Aplicaciones Web. Soy capaz de lograr increíbles apartados visuales e intuivas y dinámicas experiencias de usuarios, asi como de ofrecer soluciones precisas, escalables y con rendimientos y</p>
+          <p data-ext="about-me-info-p2">Actualmente soy estudiante de Ingeniería y dedico mi día a día a la practica y aprendizaje de lenguajes y tencnologias en el campo del Desarrollo Web. Soy organizado con mi trabajo, muy detallista al resultado final y ob. Adoro resolver problemas, las matematica y adoro pasar las noches con codigo. musica y mucho cafe...</p>
+          <p data-ext="about-me-info-p3">Mi interes por la programacion y el sector nacio desde pequeño, Astoy interesando en el desarrollo y mantenimiento de Paginas Web, tanto del lado Frontend como del Backend. Tras ejercer varios a'os la carrera, tengo como objeto especializarme en otros campos de la programcion tales como el Desarrollo Movil, Inteligencia Artifical y Analisis de Datos.</p>
         </div>
         <div class="about-me__hobbies-carrousel">
           <ul class="about-me__hobbies-container | margin-top__32"> 
@@ -353,8 +355,8 @@
       <div class="portfolio__header-bg"></div> 
       <div class="portfolio__header-content-container portfolio__header-part-1">
         <div>
-          <h1 class="portfolio__header-title" data-animatedWord>3. Projects</h1>
-          <p class="portfolio__header-subtitle">Here are a my personal projects. I've worked on.</p> 
+          <h1 class="portfolio__header-title" data-text="portfolio-header-title" data-animatedWord>Proyectos Personales</h1>
+          <p class="portfolio__header-subtitle" data-text="portfolio-header-text">Aquí muestro la trayectoria de mis proyectos pesonales, en los cuales trabajo día a día</p> 
         </div>  
       </div>
     </header>
@@ -540,6 +542,6 @@
       </section> 
     </div>
   </footer> 
-  <script src="js/app.js" type="module"></script>
+  <script src="./src/app.js" type="module"></script>
 </body>
 </html>

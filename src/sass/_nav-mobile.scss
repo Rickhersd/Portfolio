@@ -13,9 +13,36 @@
 
   &__topbar{
     width: 100%;
-    height: calc(60px + 0.6rem);
-    background: linear-gradient(to bottom, library.$main-bg 80%, #f0f6fd00);
+    height: 53px;
+    background-color: library.$main-bg;
     display: none;
+    position: relative;
+
+    &-name{
+      color: library.$primary-90;
+      position: absolute;
+      padding: 12px 14px 6px 14px;
+      top: 0px;
+      left: 0px;
+      z-index: 100;
+      font-size: 2rem;
+      font-family: library.$font-mono;
+
+      &:visited, &:link, &:active{
+        text-decoration: none;
+        color: library.$primary-90;
+      }
+    }
+
+    span{
+      position: absolute;
+      width: calc(100% - 1.6rem);
+      height: 2px;
+      left: 0.8rem;
+      margin: auto;
+      background-color: library.$gray;
+      top: 52px;
+    }
   }
 
   &__list-item-container{
@@ -29,12 +56,12 @@
 
     span{
       position: absolute;
-      width: calc(100% - 2.2rem);
+      width: calc(100% - 1.6rem);
       height: 2px;
-      left: 1.1rem;
+      left: 0.8rem;
       margin: auto;
       background-color: #a2d1ff;
-      top: 60px;
+      top: 52px;
     }
 
     ul {
@@ -47,7 +74,7 @@
 
     li {
       margin: 1.5rem;
-      width: 200px;
+      width: 250px;
       animation: showOptions;
       animation-duration: 0.5s;
       animation-fill-mode: both;
@@ -80,10 +107,10 @@
     }
 
     a {
-      width: 200px;
+      width: 250px;
       display: block;
       color: library.$primary-90;
-      font-size: 2.6rem;
+      font-size: 2.2rem;
       font-weight: 600;
       text-align: right;
       font-family: library.$font-mono;
@@ -97,7 +124,7 @@
 
 .hamburger-button{
   position: absolute;
-  padding: 14px 16px 14px 14px;
+  padding: 12px 14px 12px 14px;
   top: 0px;
   right: 0px;
   z-index: 100;
@@ -106,7 +133,6 @@
 
   svg{
     translate: 0px 2px;
-    filter: drop-shadow(2px 2px 1px #a2d1ff);
   }
 
   #hamburger-topBar{
@@ -145,7 +171,9 @@
   }
 
   .nav-mobile__topbar{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: left;
   }
 }
 

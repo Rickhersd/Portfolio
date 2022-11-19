@@ -1,6 +1,6 @@
 import { frontendSkillsData } from "./skillsData.js";
 import { backendSkillsData } from "./skillsData.js";
-import { Skill } from "../models/Skills.js";
+import { Skill } from "../js/Skills.js";
 
 export const frontendSkills = frontendSkillsData.map(
     (skill) => new Skill(skill.id, skill.width, skill.height, skill.path, skill.svgFill, skill.description)

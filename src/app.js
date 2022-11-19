@@ -1,17 +1,17 @@
-import { frontendSkills } from "../data/skills.js";
-import { backendSkills } from "../data/skills.js";
+import { frontendSkills } from "./data/skills.js";
+import { backendSkills } from "./data/skills.js";
 
-import { SkillUI } from "../models/SkillsUI.js";
-import { HamburgerMenu } from "../models/HamburgerMenu.js";
-import { DarkMode } from "../models/DarkMode.js";
-import { ParallaxController } from "../models/Parallax.js";
-import { HeaderNav } from "../models/HeaderNav.js";
-import { NavBar } from "../models/NavBar.js";
-import { Header } from "../models/Headers.js";
-import { separate } from "../models/AnimationWord.js";
-import { Translater } from "../models/Translater.js";
-import { MeShadow } from "../models/MeShadow.js";
-import { Carrousel } from "../models/Carrousel.js";
+import { SkillUI } from "./js/SkillsUI.js";
+import { HamburgerMenu } from "./js/HamburgerMenu.js";
+import { DarkMode } from "./js/DarkMode.js";
+import { ParallaxController } from "./js/Parallax.js";
+import { HeaderNav } from "./js/HeaderNav.js";
+import { NavBar } from "./js/NavBar.js";
+import { Header } from "./js/Headers.js";
+import { separate } from "./js/AnimationWord.js";
+import { Translater } from "./js/Translater.js";
+import { MeShadow } from "./js/MeShadow.js";
+import { Carrousel } from "./js/Carrousel.js";
 
 window.addEventListener('DOMContentLoaded', (e) =>{
   initLoading();
