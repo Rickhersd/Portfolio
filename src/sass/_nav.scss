@@ -13,25 +13,50 @@ $height-nav-item: 200px;
   z-index: 10;
   height: 3.5rem;
   background-color: library.$main-bg;
+  transition: translate 0.3s ease;
+  translate: 0px -100px;
+}
+
+.nav__show {
+  translate: 0px 0px !important;
 }
 
 .nav{
 
   &__container {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
     top: 0px;
     width: 90%;
     height: inherit;
     border-bottom: 1px solid library.$light-gray;
-    translate: 0px -100px;
+    translate: 0px 0px;
     transition: translate 0.3s ease;
-  
-    ul {
-      display: flex;
-      position: relative;
-      flex-direction: row;
-      filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.02))
+  }
+
+  &__name{
+    color: library.$primary-90;
+    font-size: 1.1rem;
+    font-family: library.$font-mono;
+    margin-left: 1.8rem;
+    width: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:visited, &:link, &:active{
+      text-decoration: none;
+      color: library.$primary-90;
     }
+  }
+
+  &__list-container{
+    transition: translate 0.3s ease;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.02));
 
     div{
       display: flex;
@@ -43,11 +68,9 @@ $height-nav-item: 200px;
     }
 
     li{
-      background-color: library.$main-bg;
       list-style-type: none;
       width: 120px;
-      height: 60px;
-      opacity: 0;
+      height: 56px;
       transition: translate 0.3s ease, background-color 0.2s ease;
 
       &:first-of-type{
@@ -58,7 +81,6 @@ $height-nav-item: 200px;
 
     span{
       position: absolute;
-      opacity: 0;
       transition: translate 0.2s cubic-bezier(.25,0,.25,1), opacity 0.3s ease;
       clip-path: polygon(40% 0%, 60% 0%, 60% 100%, 40% 100%);
       bottom: 0.9rem;
@@ -66,7 +88,6 @@ $height-nav-item: 200px;
       height: 2px;
       background-color: library.$primary-90;
     }
-
 
     a {
       width: inherit;
@@ -77,20 +98,12 @@ $height-nav-item: 200px;
       padding: 0.5rem 0.5rem;
       align-items: center;
       justify-content: center;
-
-      h6{
-        font-size: 0.9rem;
-        font-weight: 500;
-        letter-spacing: 1px;
-        font-family: 'Roboto', sans-serif;
-        color: rgb(59, 59, 59);
-      }
-
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-family: 'Roboto', sans-serif;
+      color: rgb(59, 59, 59);
     }
-  }
-
-  &__list-container{
-    transition: translate 0.3s ease;
   }
 
   &__list-hidden{
@@ -101,12 +114,6 @@ $height-nav-item: 200px;
     }
   }
 }
-
-.nav__show {
-  translate: 0px 0px;
-}
-
-
 
 @media only screen and (max-width: 600px) {
   #nav{

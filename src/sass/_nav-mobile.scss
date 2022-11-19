@@ -21,11 +21,11 @@
     &-name{
       color: library.$primary-90;
       position: absolute;
-      padding: 12px 14px 6px 14px;
+      padding: 8px 14px 6px 14px;
       top: 0px;
       left: 0px;
       z-index: 100;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-family: library.$font-mono;
 
       &:visited, &:link, &:active{
@@ -37,7 +37,7 @@
     span{
       position: absolute;
       width: calc(100% - 1.6rem);
-      height: 2px;
+      height: 1px;
       left: 0.8rem;
       margin: auto;
       background-color: library.$gray;
@@ -57,7 +57,7 @@
     span{
       position: absolute;
       width: calc(100% - 1.6rem);
-      height: 2px;
+      height: 1px;
       left: 0.8rem;
       margin: auto;
       background-color: #a2d1ff;
@@ -76,25 +76,25 @@
       margin: 1.5rem;
       width: 250px;
       animation: showOptions;
-      animation-duration: 0.5s;
+      animation-duration: 0.4s;
       animation-fill-mode: both;
       list-style-type: none;
       position: relative;
 
       &[id="nav-mobile__about-me"]{
-        animation-delay: 0.08s;
+        animation-delay: 0.07s;
       }
 
       &[id="nav-mobile__skills"]{
-        animation-delay: 0.16s;
+        animation-delay: 0.14s;
       }
 
       &[id="nav-mobile__portfolio"]{
-        animation-delay: 0.24s;
+        animation-delay: 0.21s;
       }
 
       &[id="nav-mobile__contact"]{
-        animation-delay: 0.32s;
+        animation-delay: 0.28s;
       }
 
       &:last-of-type{
@@ -164,6 +164,12 @@
   }
 }
 
+@media only screen and (max-height: 700px) {
+  .nav-mobile__list-item-container ul{
+    margin-top: 5rem;
+  }
+}
+
 @media only screen and (max-width: 600px) {
 
   .hamburger-button {
@@ -180,7 +186,7 @@
 @keyframes showOptions{
   from {
     opacity: 0;
-    transform: translate(-100px, 0px);
+    transform: translate(-80px, 0px);
   } 
   to {
     opacity: 1;

@@ -1,93 +1,46 @@
-
-let keyframes = [
-  {translate: '0px -100px', opacty: 0},
-  {translate: '0px 0px', opacity: 1}
-]
-
 export class NavBar{
 
   constructor (){
-    this.nav = document.querySelector('.nav__container');
-    this.headerStyle = window.getComputedStyle(document.getElementById("home"));
     this.onDisplay = false;  
-    this.spanElement = document.querySelector('.nav__span');
-    this.liElements = document.querySelectorAll('.nav__list-item');
-    this.listContainer = document.querySelector('.nav__list-container');
-    this.arrowBtn = document.querySelector('.nav__btn-arrow');
+    this.navbar = document.getElementById('nav');
   }
 
   checkScrollTop(actualClientHeight){
-    let winScroll =  document.documentElement.scrollTop;
+    let winScroll = document.documentElement.scrollTop;
 
-    if(this.onDisplay == false && winScroll > this.calcScrollTigger(actualClientHeight)){
+    if(this.onDisplay == false && winScroll > this.calcScrollTrigger(actualClientHeight)){
       this.show();
     }
     
-    if(this.onDisplay == true && winScroll < this.calcScrollTigger(actualClientHeight)){
+    if(this.onDisplay == true && winScroll < this.calcScrollTrigger(actualClientHeight)){
       this.hide();
     }
   }
 
   show(){
     this.onDisplay = true;
-    this.nav.classList.add('nav__show');
-    this.showAnimate();
+    this.navbar.classList.add('nav__show');
   }
 
   hide(){
     this.onDisplay = false;
-    this.nav.classList.remove('nav__show');
-    this.hideAnimate();
+    this.navbar.classList.remove('nav__show');
   } 
 
-  calcScrollTigger(actualClientHeight){
-   return actualClientHeight + parseInt(this.headerStyle.marginBottom.replace("px", ""))
+  calcScrollTrigger(actualClientHeight){
+    const headerStyle = window.getComputedStyle(document.getElementById("home"));
+    return actualClientHeight + parseInt(headerStyle.marginBottom.replace("px", ""))
   }
 
-  setEvents(){
-    let liWidth = this.liElements[0].clientWidth;
+  setSpan(){
+    const liElements = document.querySelectorAll('.nav__list-item');
+    const liWidth = liElements[0].clientWidth;
+    const spanEl = document.querySelector('.nav__span');
 
-    for(let i = 0; i < this.liElements.length; i++){
-      this.liElements[i].addEventListener('mouseenter', () => this.moveSpan(liWidth * i))
-    }
-
-    this.arrowBtn.addEventListener('click', () => {
-      this.listContainer.classList.toggle("nav__list-hidden");
-    })
-  }
-
-  moveSpan(xtranslate){
-    this.spanElement.setAttribute('style', `translate: ${xtranslate}px 0px`)
-  }
-
-  showAnimate(){
-
-    for(let i = 0; i < this.liElements.length; i++){
-
-      let options = {
-        duration: 300,
-        delay: 50 * (i + 1),
-        easing: 'ease',
-        fill: 'forwards',
-      }
-
-      this.liElements[this.liElements.length - (i + 1)].animate(keyframes, options);
-    }
-  }
-
-  hideAnimate(){
-
-    for(let i = 0; i < this.liElements.length; i++){
-
-      let options = {
-        duration: 100,
-        delay: 25 * (i + 1),
-        easing: 'ease',
-        fill: 'forwards',
-        direction: 'reverse',
-      }
-
-      this.liElements[i].animate(keyframes, options);
+    for(let i = 0; i < liElements.length; i++){
+      liElements[i].addEventListener('mouseenter', () => {
+        spanEl.setAttribute('style', `translate: ${liWidth * i}px 0px`)
+      })
     }
   }
 }

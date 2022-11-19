@@ -19,21 +19,21 @@ function send(){
     $mail = new PHPMailer(true);
     try {
       //Server settings
-      $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-      $mail->isSMTP();                                            //Send using SMTP
-      $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-      $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-      $mail->Username   = 'ricardosanchez.webdev@gmail.com';                     //SMTP username
-      $mail->Password   = 'RickWeb2002Dev*';                               //SMTP password
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
-      $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+      $mail->SMTPDebug = SMTP::DEBUG_SERVER;                  
+      $mail->isSMTP();                                           
+      $mail->Host       = 'smtp.gmail.com';                     
+      $mail->SMTPAuth   = true;                                  
+      $mail->Username   = 'XXXX@gmail.com';                     
+      $mail->Password   = 'XXXX';                               
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            
+      $mail->Port       = 587;                                    
 
       //Recipients
-      $mail->setFrom('ricardosanchez.webdev@gmail.com', 'Mailer');
-      $mail->addAddress('rickhersd2002@gmail.com', 'Mailer');     //Add a recipient
+      $mail->setFrom('XXXX@gmail.com', 'Mailer');
+      $mail->addAddress('XXXX@gmail.com', 'Mailer');  
 
       //Content
-      $mail->isHTML(true);                                  //Set email format to HTML
+      $mail->isHTML(true);                                 
       $mail->Subject = 'Contact Email';
       $mail->Body    = 'Name: ' . $name . '<br>Email: ' . $email . '<br>Content: ' . $content;
 

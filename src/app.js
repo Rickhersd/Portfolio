@@ -28,7 +28,6 @@ window.addEventListener('load', (event) => {
       loadingEl.style.display = 'none';
       initPage();
     }, 500) 
-
   }, 2000)
 });
 
@@ -40,14 +39,14 @@ darkMode.setBtn('.header__darkmode-btn');
 darkMode.setBtn('.nav-mobile__darkmode-btn')
 
 const translater = new Translater();
-let btn = document.documentElement.querySelector('.header__language-btn');
-btn.addEventListener('click', () => {
-  translater.toggleLang('en','es');
-  btn.classList.toggle('header__language-moved');
+let btns = document.querySelectorAll('.language-btn');
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    translater.toggleLang('en','es');
+    console.log("hola")
+    btn.classList.toggle('language-moved');
+  }); 
 });
-
-const navBar = new NavBar();
-navBar.setEvents();
 
 const meShadow = new MeShadow();
 meShadow.start();
@@ -95,18 +94,24 @@ function initPage() {
     hamburgerMenuController.toogleHamburgerBtn();
   });
 
-    window.addEventListener('resize', () => {
-      actualClientHeight = calcClientHeight();
-    });
-    
-  window.addEventListener('scroll', () => {
-    navBar.checkScrollTop(actualClientHeight);
+  window.addEventListener('resize', () => {
+    actualClientHeight = calcClientHeight();
   });
 
+  initNavbar(actualClientHeight);
   showHeroAnimations();
   initIntersectionObserver();
   configWheelSkills();
   decodeEmail();
+}
+
+function initNavbar(actualClientHeight){
+  const navBar = new NavBar();
+
+  navBar.setSpan();
+  window.addEventListener('scroll', () => {
+    navBar.checkScrollTop(actualClientHeight);
+  });
 }
 
 function configWheelSkills(){

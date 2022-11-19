@@ -67,29 +67,28 @@
   <!--nav -->
   <nav id="nav">
     <div class="nav__container">
-      <ul>
-        <div class="nav__list-container">
-          <li class="nav__list-item nav__item-about-me">
-            <a href="#about-me">
-              <h6>About me</h6>
-            </a>
-          </li>
-          <li class="nav__list-item nav__item-skills">
-            <a href="#skills">
-              <h6>Skills</h6>
-            </a>
-          </li>
-          <li class="nav__list-item nav__item-porfolio">
-            <a href="#portfolio">
-              <h6>Portfolio</h6>
-            </a>
-          </li>
-          <li class="nav__list-item nav__item-contact">
-            <a href="#contact">
-              <h6>Contact</h6>
-            </a>
-          </li>
-        </div>
+      <a href="#home" class="nav__name">Ricardo Sánchez</a>
+      <ul class="nav__list-container">
+        <li class="nav__list-item nav__item-about-me">
+          <a href="#about-me">
+            About me
+          </a>
+        </li>
+        <li class="nav__list-item nav__item-skills">
+          <a href="#skills">
+            Skills
+          </a>
+        </li>
+        <li class="nav__list-item nav__item-porfolio">
+          <a href="#portfolio">
+            Portfolio
+          </a>
+        </li>
+        <li class="nav__list-item nav__item-contact">
+          <a href="#contact" data-text="">
+            Contact
+          </a>
+        </li>
         <span class="nav__span"></span>
       </ul>
     </div>
@@ -116,9 +115,9 @@
         <li id="nav-mobile__portfolio" class="nav-mobile__list-item"><a href="#portfolio" data-text="nav-portfolio">Portfolio</a></li>
         <li id="nav-mobile__contact" class="nav-mobile__list-item"><a href="#contact" data-text="nav-contact">Contact</a></li>
         <li>
-          <button class="header__language-btn" data-darkmode>
-            <div class="header__language-EN">EN</div>
-            <div class="header__language-ES">ES</div>
+          <button class="language-btn" data-darkmode>
+            <div class="language-EN">EN</div>
+            <div class="language-ES">ES</div>
           </button>
           <div data-appearIndex="1" class="nav-mobile__darkmode-btn">
             <svg class="svg-darkmode" width="55" height="55" viewBox="0 0 94 94" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -195,9 +194,9 @@
       </div>
     </div>
     <div class="header__settings">
-      <button class="header__language-btn" data-darkmode>
-        <div class="header__language-EN">EN</div>
-        <div class="header__language-ES">ES</div>
+      <button class="language-btn" data-darkmode>
+        <div class="language-EN">EN</div>
+        <div class="language-ES">ES</div>
       </button>
       <div data-appearIndex="1" class="header__darkmode-btn">
         <svg class="svg-darkmode" width="55" height="55" viewBox="0 0 94 94" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -245,17 +244,17 @@
           <path class="svg__hand-decoration" d="M43.7827 209C26.216 244.466 73.5135 298.817 110 281.775" stroke="#F9B06E" stroke-width="11" stroke-linecap="round"/>
         </svg>
         <div>
-          <h1 class="about-me__header-title" data-animatedWord>About me</h1> 
-          <p class="about-me__header-subtitle">19 a'os, Venezolano y estudiante Universaritario.</p>
+          <h1 class="about-me__header-title" data-animatedWord>Sobre mi</h1> 
+          <p class="about-me__header-subtitle">20 años, Venezolano y Estudiante Universitario</p>
         </div>     
       </div>
     </header>
     <div class="about-me__content">
       <div class="about-me__content-rightside">
         <div class="about-me__info" data-darkmode>
-          <p data-ext="about-me-info-p1">Soy un Desarollador Web Full Stack con amplios conocimientos en el Desarrollo de Páginas y Aplicaciones Web. Soy capaz de lograr increíbles apartados visuales e intuivas y dinámicas experiencias de usuarios, asi como de ofrecer soluciones precisas, escalables y con rendimientos y</p>
-          <p data-ext="about-me-info-p2">Actualmente soy estudiante de Ingeniería y dedico mi día a día a la practica y aprendizaje de lenguajes y tencnologias en el campo del Desarrollo Web. Soy organizado con mi trabajo, muy detallista al resultado final y ob. Adoro resolver problemas, las matematica y adoro pasar las noches con codigo. musica y mucho cafe...</p>
-          <p data-ext="about-me-info-p3">Mi interes por la programacion y el sector nacio desde pequeño, Astoy interesando en el desarrollo y mantenimiento de Paginas Web, tanto del lado Frontend como del Backend. Tras ejercer varios a'os la carrera, tengo como objeto especializarme en otros campos de la programcion tales como el Desarrollo Movil, Inteligencia Artifical y Analisis de Datos.</p>
+          <p data-text="about-me-info-p1">Soy un Desarollador Web Full Stack con amplios conocimientos en la diseño y desarrollo de páginas y aplicaciones web. Soy capaz de lograr increíbles apartados visuales e intuivas y dinámicas experiencias de usuario, asi como de ofrecer soluciones precisas, escalables y con rendimientos sobresalientes.</p>
+          <p data-text="about-me-info-p2">Actualmente estudio Ingeniería en Informatica y cuando no estudio la carrera, dedico mis horas al aprendizaje de lenguajes y tencnologías enfocadas al Desarrollo Web. Soy organizado con mi trabajo, muy detallista al resultado final y responsable. Adoro resolver problemas, las matemáticas y, como no podía ser de otra manera, pasar las noches programando, con música y café.</p>
+          <p data-text="about-me-info-p3">Mi interés por la programación nació desde muy pequeño y ya durante mi bachillerato comm hobby programaba en Unity y Visual Studio utilizando C#. Por ahora estoy enfocado exclusivamente al desarrollo web, pero en unos años me especializaré en otras áreas de la programción como el Desarrollo Móvil, la Inteligencia Artifical o el Análisis de Datos.</p>
         </div>
         <div class="about-me__hobbies-carrousel">
           <ul class="about-me__hobbies-container | margin-top__32"> 
@@ -291,7 +290,7 @@
       <div class="skills__header-bg"></div> 
       <div class="skills__header-content-container" data-parallaxHeader="0.1">
         <div>
-          <h1 class="skills__header-title" data-animatedWord>2. Skills</h1>
+          <h1 class="skills__header-title" data-animatedWord>Skills</h1>
           <p class="skills__header-subtitle">The technologues I know.</p> 
         </div>                
       </div>
@@ -356,7 +355,7 @@
       <div class="portfolio__header-content-container portfolio__header-part-1">
         <div>
           <h1 class="portfolio__header-title" data-text="portfolio-header-title" data-animatedWord>Proyectos Personales</h1>
-          <p class="portfolio__header-subtitle" data-text="portfolio-header-text">Aquí muestro la trayectoria de mis proyectos pesonales, en los cuales trabajo día a día</p> 
+          <p class="portfolio__header-subtitle" data-text="portfolio-header-text">Aquí los proyectos en los cuales estoy trabajando día a día.</p> 
         </div>  
       </div>
     </header>
