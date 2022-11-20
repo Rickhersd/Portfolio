@@ -475,16 +475,16 @@
         <p data-ext="contact-paragraph">No dudes en comunicarte conmigo en cualquier momento, ya sea por email directo o utilizando el fomulario de abajo. Estoy interesando en toda clase de proyectos sin importar su dificultad.</p>
         <form class="contact__form field" action= "sendEmail.php">
           <fieldset>
-            <label class="contact__form-label" for="form__name" data-text="form-name">Nombre</label>
-            <input class="contact__form-field" type="text" name="form__name" type="text" maxlength="96" autocomplete="off" required>
+            <label class="contact__form-label" for="user__name" data-text="form-name">Nombre</label>
+            <input class="contact__form-field" type="text" name="user__name" type="text" maxlength="96" autocomplete="off" required>
           </fieldset>
           <fieldset>
-            <label class="contact__form-label" for="form__email" data-text="form-email">Correo Electrónico</label>
-            <input class="contact__form-field" type="email" name="form__email" maxlength="96" autocomplete="off" required>
+            <label class="contact__form-label" for="user__email" data-text="form-email">Correo Electrónico</label>
+            <input class="contact__form-field" type="email" name="user__email" maxlength="96" autocomplete="off" required>
           </fieldset>
           <fieldset>
-            <label class="contact__form-label" for="form__content" data-text="form-content">Tu mensaje</label>
-            <textarea class="contact__form-field" name='form__content' rows="5" maxlength="342"required></textarea>
+            <label class="contact__form-label" for="user__content" data-text="form-content">Tu mensaje</label>
+            <textarea class="contact__form-field" name='user__content' rows="5" maxlength="342"required></textarea>
           </fieldset>
           <fieldset>
             <input class="contact__form-field" type="submit" value="ENVIAR"></button>
@@ -542,5 +542,11 @@
     </div>
   </footer> 
   <script src="./src/app.js" type="module"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (() => {
+      emailjs.init("sJ6q2p_owG6fKBxe7");
+    })();
+</script>
 </body>
 </html>

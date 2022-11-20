@@ -43,7 +43,6 @@ let btns = document.querySelectorAll('.language-btn');
 btns.forEach(btn => {
   btn.addEventListener('click', () => {
     translater.toggleLang('en','es');
-    console.log("hola")
     btn.classList.toggle('language-moved');
   }); 
 });
@@ -98,6 +97,7 @@ function initPage() {
     actualClientHeight = calcClientHeight();
   });
 
+  initForm();
   initNavbar(actualClientHeight);
   showHeroAnimations();
   initIntersectionObserver();
@@ -168,6 +168,7 @@ function preventDefault(e) {
   e.preventDefault();
 }
 
+
 function showHeroAnimations(){
 
   const meSvg = document.querySelector('.me__paused');
@@ -209,34 +210,22 @@ function decodeEmail(){
   contactAnchor.setAttribute('href', `mailto:${atob(emailAddress)}`);
 }
 
-//send FormData to sendEmial.php
-let form = document.querySelector('.contact__form');
+//send FormData to emailJs.Service
+function initForm (){
 
-function formFetchPost (){
+  const form = document.querySelector('.contact__form');
+  const serviceID = "service_jp500qr"; 
+  const templateID = "template_gsuoasf";
 
-  let formData = new FormData(form);
-
-  fetch('http://127.0.0.1:8080/MyPage/sendEmail.php', {
-    method: 'POST',
-    body: formData,
-  })
-  .then(response => response.text())
-  .then(result => {
-    showModalResponse(checkResponse(result), result);
-  })
-  .catch(error => {
-    console.error('Error:', error)
-  });
-}
-
-form.addEventListener('submit', (e) =>{
-  e.preventDefault();
-  formFetchPost();
-});
-
-function checkResponse(response){
-  if (response == "Email sent successfully :)") return true;
-  if (response == "Oops! The Email couldn't be sent :(") return false
+  form.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    emailjs.sendForm(serviceID, templateID, form)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+  }); 
 }
 
 function showModalResponse(successful, response){
@@ -244,7 +233,6 @@ function showModalResponse(successful, response){
   let modal = document.querySelector('.contact__modal');
   let modalSvg = document.querySelector('.contact__modal-svg');
   let modalResponse = document.querySelector('.contact__modal-response');
-
 
   modal.classList.add('show-modal');
   modalSvg.setAttribute('data-successful', successful);
