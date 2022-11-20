@@ -214,34 +214,41 @@ function decodeEmail(){
 function initForm (){
 
   const form = document.querySelector('.contact__form');
+  const submitBtn = document.getElementById('submit-btn');
+  const resGreen = document.querySelector('.contact__response-green');
+  const resRed = document.querySelector('.contact__response-red');
+  const resDurantion = 4000;
+
   const serviceID = "service_jp500qr"; 
   const templateID = "template_gsuoasf";
 
   form.addEventListener('submit', (e) =>{
     e.preventDefault();
-    emailjs.sendForm(serviceID, templateID, form)
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
+    submitBtn.toggleAttribute("disabled");
+    try{
+      emailjs.sendForm(serviceID, templateID, form)
+      .then( function (res) {
+        resGreen.style.display = 'flex';
+        submitBtn.toggleAttribute("disabled");
+        setTimeout(() => {
+          resGreen.style.display = 'none';
+        },resDurantion)
+      },function (err) {
+        resRed.style.display = 'flex';
+        submitBtn.toggleAttribute("disabled");
+        setTimeout(() => {
+          resRed.style.display = 'none';
+        },resDurantion)
+      });
+    }catch(err){
+      setTimeout(() => {
+        resRed.style.display = 'flex';
+        submitBtn.toggleAttribute("disabled");
+        setTimeout(() => {
+          resRed.style.display = 'none';
+        },resDurantion)
+      },3000)
+    }
   }); 
-}
-
-function showModalResponse(successful, response){
-
-  let modal = document.querySelector('.contact__modal');
-  let modalSvg = document.querySelector('.contact__modal-svg');
-  let modalResponse = document.querySelector('.contact__modal-response');
-
-  modal.classList.add('show-modal');
-  modalSvg.setAttribute('data-successful', successful);
-  modalResponse.textContent = response;
-
-  setTimeout(() => hideModalResponse(), 5000)
-}
-
-function hideModalResponse(){
-  console.log('termino el modal')
 }
 

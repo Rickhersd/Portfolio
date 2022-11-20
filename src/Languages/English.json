@@ -39,6 +39,8 @@
   "form-name":"Name",
   "form-email":"Email Address",
   "form-content":"Your Message",
+  "form-response-green": "Email sent successfully",
+  "form-response-red": "The Email couldn't be sent",
   "contact-phrase":"Code is capable of incredible things",
   "contact-handcrafted-by":"This website was handcrafted by me © 2022"
 }

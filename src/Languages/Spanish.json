@@ -43,6 +43,8 @@
   "form-name":"Nombre",
   "form-email":"Correo Electronico",
   "form-content":"Tu mensaje",
+  "form-response-green": "Correo enviado exitosamente",
+  "form-response-red": "El correo no pudo ser enviado",
   "contact-phrase":"El codigo es capaz de cosas incriebles",
   "contact-handcrafted-by":"Esta pagina web fue hecha por mi © 2022"
 }

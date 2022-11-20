@@ -473,7 +473,7 @@
       <div class="contact__form-cont">
         <h1 data-text="contact-title">Contact</h1>
         <p data-ext="contact-paragraph">No dudes en comunicarte conmigo en cualquier momento, ya sea por email directo o utilizando el fomulario de abajo. Estoy interesando en toda clase de proyectos sin importar su dificultad.</p>
-        <form class="contact__form field" action= "sendEmail.php">
+        <form class="contact__form field" action="sendEmail.php">
           <fieldset>
             <label class="contact__form-label" for="user__name" data-text="form-name">Nombre</label>
             <input class="contact__form-field" type="text" name="user__name" type="text" maxlength="96" autocomplete="off" required>
@@ -484,10 +484,15 @@
           </fieldset>
           <fieldset>
             <label class="contact__form-label" for="user__content" data-text="form-content">Tu mensaje</label>
-            <textarea class="contact__form-field" name='user__content' rows="5" maxlength="342"required></textarea>
+            <textarea class="contact__form-field" name='user__content' rows="5" maxlength="342" required></textarea>
           </fieldset>
           <fieldset>
-            <input class="contact__form-field" type="submit" value="ENVIAR"></button>
+            <input id="submit-btn"  class="contact__form-field" type="submit" value="ENVIAR"></input>
+            <span class="circle__loading circle__first">
+              <span class="circle__loading circle__second"></span>
+            </span>
+            <div class="contact__response-green" data-text="form-response-green">Mensaje enviado exitosamente</div>
+            <div class="contact__response-red" data-text="form-response-red">El mensaje no pudo ser enviado</div>
           </fieldset>
         </form>
       </div>
@@ -501,20 +506,6 @@
           <ellipse id="me-shadow__eye-dot-right" cx="174" cy="135" rx="11" ry="13" fill="#D3E8E5"/>
         </svg>        
       </div> 
-      <!--
-      <div class="contact__modal">
-        <svg class="contact__modal-svg" viewBox="0 0 335 271" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M280.434 77.7546L77.4415 21.711C70.0093 19.6591 62.317 24.0027 60.2355 31.4267L22.7771 165.028C20.6907 172.47 25.0291 180.194 32.4694 182.286L235.031 239.215C242.471 241.306 250.198 236.972 252.294 229.533L290.184 95.0462C292.288 87.5763 287.915 79.82 280.434 77.7546Z" fill="#0F3154"/>
-          <path d="M66.2232 7.75511L261.226 61.5928C271.185 64.3423 277.241 74.4146 275 84.5L240 210.5C236.327 220.388 225.682 225.803 215.528 222.949L17.8926 167.404C10.1556 165.23 5.5508 157.297 7.5 149.5L43.5 20C46.5755 10.4938 56.5922 5.09612 66.2232 7.75511Z" fill="#FBFBFB"/>
-          <path d="M43.5 20V20C46.5755 10.4938 56.5922 5.09612 66.2232 7.75511L261.226 61.5928C271.185 64.3423 277.241 74.4146 275 84.5V84.5M43.5 20L7.5 149.5M43.5 20L100.5 106.5M275 84.5L180.46 129.5M275 84.5L240 210.5M180.46 129.5L158 140C140 147.5 128 145 115.5 129L100.5 106.5M180.46 129.5L240 210.5M240 210.5V210.5C236.327 220.388 225.682 225.803 215.528 222.949L17.8926 167.404C10.1556 165.23 5.5508 157.297 7.5 149.5V149.5M7.5 149.5L100.5 106.5" stroke="#56697C" stroke-width="15"/>
-          <g class="contact__modal-svg-error">
-            <path d="M168.681 228.673L254.413 179.176" stroke="#E10E0E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M187.355 160.617L236.852 246.349" stroke="#E10E0E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-          <path class="contact__modal-svg-successful" d="M185 177.5C195.5 193.5 202.339 212.64 204.5 228C232.71 192.486 266.733 160.123 319 151.5" stroke="#02B81E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>  
-        <p class="contact__modal-response"></p>
-      </div> --> 
       
       <section class="contact-end"> 
         <div class="contact-end__social-links-container">
