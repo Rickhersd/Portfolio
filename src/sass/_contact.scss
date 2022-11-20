@@ -13,11 +13,10 @@
     display: grid;
     min-height: 100vh;
     grid-template-areas:
-      'empty form svg-me empty2'
-      'social-links social-links social-links social-links'; 
-    grid-template-columns: auto 480px 35% auto;
+      'empty form empty2'
+      'social-links social-links social-links'; 
+    grid-template-columns: auto min(1150px, 100%) auto;
     grid-template-rows:  auto 150px;
-    column-gap: 1rem;
 	}
 
 	&__form-cont{
@@ -27,6 +26,7 @@
 		justify-content: center;
 		flex-direction: column;
 		width: min(90%, 520px);
+    margin-bottom: 2.5rem;
 
     h1{
       font-family: library.$font-mono;
@@ -98,7 +98,7 @@
 			position: relative;
 			border-radius: 10px;
 			padding: 1rem;
-      border: 2px solid #56697C;
+      border: 2px solid library.$primary-90;
 			color: library.$primary-90;
 			background-color: transparent;
 			font-weight: 500;
@@ -109,10 +109,7 @@
 			&:focus {
 				outline: 0;
 			}
-
 		}
-
-    
 
 		input {
 
@@ -122,7 +119,7 @@
 				padding: 0.6rem 1rem 0.1rem 1rem;
         border: none;
 				background-color: transparent;
-				border-bottom: 2px solid #56697C;
+				border-bottom: 2px solid library.$primary-90;
 				color: library.$primary-90;
 				font-size: 1rem;
 				font-weight: 500;
@@ -142,7 +139,7 @@
 				letter-spacing: 0.1rem;
 				font-weight: 500;
         border-radius: 0.4rem;
-        background-color: #56697C;
+        background-color: library.$primary-90;
         color: white;
         transition: filter 0.3s ease;
 
@@ -217,38 +214,6 @@
       scale: 0.5;
       opacity: 0;
       animation: showResponse 4s ease forwards;
-    }
-  }
-
-  &__me{
-    grid-area: svg-me;
-    position: relative;
-
-    svg{
-      position: absolute;
-      width: 100%;
-      height: auto;
-      overflow: visible;
-      bottom: -0.5rem;
-
-      #me-shadow__eye-left, #me-shadow__eye-right{
-        fill:  library.$main-bg;
-        transform-origin: 0% 44%;
-        transform: scaleY(0);
-        animation: openEyes 0.5s 3s ease forwards;
-      }
-
-      #me-shadow__bg{
-        fill: library.$primary-30;
-        animation: me-shadow 2.6s 1s cubic-bezier(.25,1.28,.46,1.01)forwards;
-      }
-
-      #me-shadow__eye-dot-left, #me-shadow__eye-dot-right{
-        position: absolute;
-		    filter: opacity(0%);
-        fill: library.$primary-30;
-		    animation: showEyeDots 0.1s 2.9s linear forwards;
-      }
     }
   }
 }
@@ -329,7 +294,7 @@
     margin: -17px 0 0 -17px;
     height: 34px;
     width: 34px;
-    border-top-color: #56697C;
+    border-top-color: library.$primary-80;
     animation: loading 1s infinite linear;
     scale: 0.5;
     opacity: 0;
@@ -340,7 +305,7 @@
     margin: -10px -5px 0 -10px;
     height: 20px;
     width: 20px;
-    border-top-color: #56697C;
+    border-top-color: library.$primary-80;
     animation: loading 1.5s infinite linear;
   }
 
@@ -369,21 +334,6 @@
   }
 }
 
-@keyframes showEyeDots{
-	from{filter: opacity(0%)}
-	to{filter: opacity(100%)}	
-}
-
-@keyframes openEyes {
-  from{transform: scaleY(0)}
-  to{transform: scaleY(1)}
-}
-
-@keyframes me-shadow {
-  from{d: path("M94 305.222L109.5 305.222C109.999 305.222 124.5 305.222 125.5 305.222C126.5 305.222 138.293 305.222 139 305.222C139.707 305.222 150.501 305.222 151.001 305.222C151.501 305.222 165.502 305.222 165.502 305.222C166 305.222 181.5 305.222 181.5 305.222C182.5 305.222 196.148 305.222 197.002 305.222C198 305.222 214.5 305.222 215.502 305.222C216.138 305.222 237.998 305.222 238.5 305.222C239.498 305.222 257.127 305.222 257.502 305.222C257.877 305.222 273.003 306.222 273.5 307.222H0C0 306.222 15.0028 305.222 18.0017 305.222C21.0018 305.222 38.5013 305.222 39.5 305.222C40.4987 305.222 56 305.222 56 305.222C56 305.222 71.4995 305.222 72.5 305.222C73.5005 305.222 92.9987 305.222 94 305.222Z")};
-  to{d: path("M37.5 117.449L39.5 100.449C22.7077 75.4486 45.5001 55.4485 60 44.9486C74.4999 34.4486 78 -13.0514 161.5 3.44852C175.5 6.21498 201.5 14.4486 214.5 20.9486C227.674 27.5356 219.292 57.4486 219.292 57.4486C245.5 53.9486 238 115.449 238 115.449C263 116.949 251 166.449 243.5 171.949C236.5 177.082 233.557 178.186 221 179.949C221 196.949 205.768 218.212 182 239.449C199 239.449 227 250.449 227 268.449C256 268.449 273.5 295 273.5 307.5H0C0 293 16.5 268.449 48.9999 266.449C48.9999 253.449 66.5 239.449 89.7921 239.449C51 207.949 55 179.949 55 179.949C55 179.949 38.6028 181.949 34 174.949C10 138.448 19 118.949 37.5 117.449Z")}
-}
-
 @media only screen and (max-width: 900px){
 
   .contact__container{ 
@@ -397,17 +347,10 @@
 	.contact__container{
     grid-template-areas:
       'form'
-			'svg-me'
       'social-links'; 
     grid-template-columns: auto;
-    grid-template-rows: auto 330px 120px;
+    grid-template-rows: auto120px;
     column-gap: 3rem;
-	}
-
-	#me-shadow__svg{
-		left: 50%;
-		translate: -50% 0%;
-		width: 290px;
 	}
 
 	.contact__form-cont{
@@ -426,10 +369,6 @@
 @media only screen and (max-width: 600px){
 
 	.contact__container{
-    grid-template-rows: auto 250px 120px;
-	}
-
-	#me-shadow__svg{
-		width: 220px;
+    grid-template-rows: auto 120px;
 	}
 }

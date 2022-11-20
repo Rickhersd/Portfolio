@@ -65,7 +65,7 @@ html {
 .loading__text {
   font-size: 0.9rem;
   font-family: "Red Hat Text";
-  color: #011f4b;
+  color: #00043c;
   font-weight: 400;
 }
 
@@ -230,7 +230,7 @@ body::-webkit-scrollbar-thumb {
   text-align: left;
   font-size: clamp(2.1rem, 5vw, 3.5rem);
   line-height: 1.2;
-  color: #011f4b;
+  color: #00043c;
   font-family: "Roboto Slab", monospace;
   font-weight: 300;
   position: relative;
@@ -241,13 +241,13 @@ body::-webkit-scrollbar-thumb {
   bottom: -1rem;
   border-radius: 2px;
   left: 0px;
-  background-color: #acd6ff;
+  background-color: #90c7ff;
   width: 100px;
   height: 10px;
 }
 .header__title span {
   font-size: clamp(2.3rem, 5vw, 4rem);
-  color: #011f4b;
+  color: #00043c;
   font-weight: 600;
   font-family: "Roboto Slab", monospace;
 }
@@ -439,7 +439,7 @@ body::-webkit-scrollbar-thumb {
     left: 50%;
     translate: -50% 0%;
     border-radius: 2px;
-    background-color: #d5effc;
+    background-color: #bbe6fb;
     width: 100px;
     height: 5px;
   }
@@ -479,7 +479,7 @@ body::-webkit-scrollbar-thumb {
     width: 70px;
     height: 70px;
     font-size: 1.6rem;
-    color: #011f4b;
+    color: #00043c;
     font-family: "Roboto Slab", monospace;
     font-weight: 500;
     text-shadow: 2px 2px 1px #a2d1ff;
@@ -500,7 +500,7 @@ body::-webkit-scrollbar-thumb {
   transform: scale(1.1);
 }
 .svg-darkmode__bg {
-  fill: #d5effc;
+  fill: #bbe6fb;
   transform-origin: 50% 50%;
   transition: all 0.4s ease;
 }
@@ -544,10 +544,10 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
   .svg-darkmode .svg-darkmode__sunMoon {
-    stroke: #011f4b;
+    stroke: #00043c;
   }
   .svg-darkmode .svg-darkmode__group path {
-    fill: #011f4b;
+    fill: #00043c;
   }
 }
 #nav {
@@ -581,7 +581,7 @@ body::-webkit-scrollbar-thumb {
   transition: translate 0.3s ease;
 }
 .nav__name {
-  color: #011f4b;
+  color: #00043c;
   font-size: 1.1rem;
   font-family: "Roboto Slab", monospace;
   margin-left: 1.8rem;
@@ -592,7 +592,7 @@ body::-webkit-scrollbar-thumb {
 }
 .nav__name:visited, .nav__name:link, .nav__name:active {
   text-decoration: none;
-  color: #011f4b;
+  color: #00043c;
 }
 .nav__list-container {
   transition: translate 0.3s ease;
@@ -624,7 +624,7 @@ body::-webkit-scrollbar-thumb {
   bottom: 0.9rem;
   width: 120px;
   height: 2px;
-  background-color: #011f4b;
+  background-color: #00043c;
 }
 .nav__list-container a {
   width: inherit;
@@ -717,7 +717,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 .nav-mobile__topbar-name {
-  color: #011f4b;
+  color: #00043c;
   position: absolute;
   padding: 8px 14px 6px 14px;
   top: 0px;
@@ -728,7 +728,7 @@ body::-webkit-scrollbar-thumb {
 }
 .nav-mobile__topbar-name:visited, .nav-mobile__topbar-name:link, .nav-mobile__topbar-name:active {
   text-decoration: none;
-  color: #011f4b;
+  color: #00043c;
 }
 .nav-mobile__topbar span {
   position: absolute;
@@ -795,7 +795,7 @@ body::-webkit-scrollbar-thumb {
 .nav-mobile__list-item-container a {
   width: 250px;
   display: block;
-  color: #011f4b;
+  color: #00043c;
   font-size: 2.2rem;
   font-weight: 600;
   text-align: right;
@@ -811,7 +811,7 @@ body::-webkit-scrollbar-thumb {
   top: 0px;
   right: 0px;
   z-index: 100;
-  fill: #011f4b;
+  fill: #00043c;
   display: none;
 }
 .hamburger-button svg {
@@ -877,7 +877,7 @@ body::-webkit-scrollbar-thumb {
 .about-me__header-bg {
   position: absolute;
   border-radius: 0% 150rem 150rem 0%;
-  background-color: #d5effc;
+  background-color: #bbe6fb;
   width: 80%;
   height: inherit;
   transition: height 0.7s cubic-bezier(0.27, 0.54, 0.48, 1);
@@ -904,7 +904,7 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(1.9rem, 7vw, 4rem);
   margin-bottom: 0.2rem;
   line-height: 1.2;
-  color: #011f4b;
+  color: #00043c;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -915,7 +915,7 @@ body::-webkit-scrollbar-thumb {
 .about-me__header-subtitle {
   font-family: "Red Hat Text";
   font-weight: 400;
-  color: #011f4b;
+  color: #00043c;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
   font-size: clamp(1.3rem, 5vw, 1.5rem);
   transition-duration: 1s;
@@ -986,10 +986,10 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   line-height: 1.7;
   display: block;
-  color: #011f4b;
+  color: #00043c;
 }
 .about-me__photograph {
-  background-color: #acd6ff;
+  background-color: #90c7ff;
   width: 300px;
   height: 400px;
 }
@@ -1143,7 +1143,7 @@ body::-webkit-scrollbar-thumb {
 .skills__header-bg {
   position: absolute;
   border-radius: 0% 150rem 150rem 0%;
-  background-color: #d5effc;
+  background-color: #bbe6fb;
   width: 80%;
   height: inherit;
   transition: height 0.7s cubic-bezier(0.27, 0.54, 0.48, 1);
@@ -1170,7 +1170,7 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(1.9rem, 7vw, 4rem);
   margin-bottom: 0.2rem;
   line-height: 1.2;
-  color: #011f4b;
+  color: #00043c;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -1181,7 +1181,7 @@ body::-webkit-scrollbar-thumb {
 .skills__header-subtitle {
   font-family: "Red Hat Text";
   font-weight: 400;
-  color: #011f4b;
+  color: #00043c;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
   font-size: clamp(1.3rem, 5vw, 1.5rem);
   transition-duration: 1s;
@@ -1247,7 +1247,7 @@ body::-webkit-scrollbar-thumb {
 .skills__description > div > h3 {
   font-size: 1.5rem;
   text-align: center;
-  color: #011f4b;
+  color: #00043c;
 }
 .skills__description > div > p {
   font-size: 1rem;
@@ -1333,7 +1333,7 @@ body::-webkit-scrollbar-thumb {
   transform: scaleY(0.9) scale(1.3) scaleX(0.8);
 }
 .skills__radial-bg-info {
-  color: #011f4b;
+  color: #00043c;
   margin-top: 0.5rem;
   font-size: 1rem;
   line-height: 1.7rem;
@@ -1374,7 +1374,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .skills__circle-path-frontend {
-  background-color: #d5effc;
+  background-color: #bbe6fb;
   width: 700px;
   height: inherit;
   border-radius: 50%;
@@ -1383,7 +1383,7 @@ body::-webkit-scrollbar-thumb {
 .skills__circle-path-backend {
   position: absolute;
   left: -350px;
-  background-color: #d5effc;
+  background-color: #bbe6fb;
   width: 700px;
   height: inherit;
   border-radius: 50%;
@@ -1392,7 +1392,7 @@ body::-webkit-scrollbar-thumb {
 .skillElement {
   position: absolute;
   transform: translate(-50%, -50%);
-  fill: #011f4b;
+  fill: #00043c;
   display: inline-block;
   background-color: var(--white);
   transition-property: transform, fill;
@@ -1415,7 +1415,7 @@ body::-webkit-scrollbar-thumb {
   color: #646464;
 }
 .skillElement:hover > h5 {
-  color: #011f4b;
+  color: #00043c;
   letter-spacing: 0.08rem;
 }
 
@@ -1633,7 +1633,7 @@ body::-webkit-scrollbar-thumb {
   .skillElement {
     position: absolute;
     transform: translate(-50%, -50%) rotate(0deg);
-    fill: #011f4b;
+    fill: #00043c;
     display: inline-block;
     background-color: var(--white);
     transition-property: transform, fill;
@@ -1656,7 +1656,7 @@ body::-webkit-scrollbar-thumb {
     color: #646464;
   }
   .skillElement:hover > h5 {
-    color: #011f4b;
+    color: #00043c;
     letter-spacing: 0.08rem;
   }
   .skills__radial-bg {
@@ -1725,7 +1725,7 @@ body::-webkit-scrollbar-thumb {
 .portfolio__header-bg {
   position: absolute;
   border-radius: 0% 150rem 150rem 0%;
-  background-color: #d5effc;
+  background-color: #bbe6fb;
   width: 80%;
   height: inherit;
   transition: height 0.7s cubic-bezier(0.27, 0.54, 0.48, 1);
@@ -1752,7 +1752,7 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(1.9rem, 7vw, 4rem);
   margin-bottom: 0.2rem;
   line-height: 1.2;
-  color: #011f4b;
+  color: #00043c;
   font-family: "Roboto Slab", monospace;
   font-weight: 700;
   position: relative;
@@ -1763,7 +1763,7 @@ body::-webkit-scrollbar-thumb {
 .portfolio__header-subtitle {
   font-family: "Red Hat Text";
   font-weight: 400;
-  color: #011f4b;
+  color: #00043c;
   line-height: clamp(1.8rem, 5vw, 2.5rem);
   font-size: clamp(1.3rem, 5vw, 1.5rem);
   transition-duration: 1s;
@@ -1808,7 +1808,7 @@ body::-webkit-scrollbar-thumb {
   margin-top: 0.5rem;
 }
 .portfolio__item-header-name span {
-  color: #011f4b;
+  color: #00043c;
   font-family: "Roboto Slab", monospace;
   font-weight: 800;
   font-size: clamp(1.9rem, 7vw, 2.5rem);
@@ -1821,7 +1821,7 @@ body::-webkit-scrollbar-thumb {
 .portfolio__item-header-description {
   margin-top: 0.5rem;
   font-size: 1.1rem;
-  color: #011f4b;
+  color: #00043c;
   line-height: 1.5rem;
 }
 .portfolio__item-header-technologies {
@@ -1859,7 +1859,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   font-size: 1rem;
   z-index: 2;
-  color: #011f4b;
+  color: #00043c;
   font-weight: 500;
   font-family: "Red Hat Text";
   text-decoration: none;
@@ -1881,7 +1881,7 @@ body::-webkit-scrollbar-thumb {
   translate: -50% 0%;
   width: 60px;
   height: 60px;
-  fill: #011f4b;
+  fill: #00043c;
 }
 .portfolio__item-link-visit {
   font-weight: 400;
@@ -1976,10 +1976,9 @@ body::-webkit-scrollbar-thumb {
   margin: auto;
   display: grid;
   min-height: 100vh;
-  grid-template-areas: "empty form svg-me empty2" "social-links social-links social-links social-links";
-  grid-template-columns: auto 480px 35% auto;
+  grid-template-areas: "empty form empty2" "social-links social-links social-links";
+  grid-template-columns: auto min(1150px, 100%) auto;
   grid-template-rows: auto 150px;
-  column-gap: 1rem;
 }
 .contact__form-cont {
   grid-area: form;
@@ -1988,10 +1987,11 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   flex-direction: column;
   width: min(90%, 520px);
+  margin-bottom: 2.5rem;
 }
 .contact__form-cont h1 {
   font-family: "Roboto Slab", monospace;
-  color: #011f4b;
+  color: #00043c;
   font-weight: 600;
   width: 100%;
   font-size: clamp(1.9rem, 7vw, 4rem);
@@ -2003,7 +2003,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0rem 0.1rem;
   font-family: "Red Hat Text";
   font-size: 1.1rem;
-  color: #011f4b;
+  color: #00043c;
   line-height: 1.5;
 }
 .contact__form {
@@ -2050,8 +2050,8 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   border-radius: 10px;
   padding: 1rem;
-  border: 2px solid #56697C;
-  color: #011f4b;
+  border: 2px solid #00043c;
+  color: #00043c;
   background-color: transparent;
   font-weight: 500;
   font-size: 1rem;
@@ -2067,8 +2067,8 @@ body::-webkit-scrollbar-thumb {
   padding: 0.6rem 1rem 0.1rem 1rem;
   border: none;
   background-color: transparent;
-  border-bottom: 2px solid #56697C;
-  color: #011f4b;
+  border-bottom: 2px solid #00043c;
+  color: #00043c;
   font-size: 1rem;
   font-weight: 500;
   font-family: "Roboto";
@@ -2086,7 +2086,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 0.1rem;
   font-weight: 500;
   border-radius: 0.4rem;
-  background-color: #56697C;
+  background-color: #00043c;
   color: white;
   transition: filter 0.3s ease;
 }
@@ -2149,38 +2149,11 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   animation: showResponse 4s ease forwards;
 }
-.contact__me {
-  grid-area: svg-me;
-  position: relative;
-}
-.contact__me svg {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-  bottom: -0.5rem;
-}
-.contact__me svg #me-shadow__eye-left, .contact__me svg #me-shadow__eye-right {
-  fill: #f0f6fd;
-  transform-origin: 0% 44%;
-  transform: scaleY(0);
-  animation: openEyes 0.5s 3s ease forwards;
-}
-.contact__me svg #me-shadow__bg {
-  fill: #d5effc;
-  animation: me-shadow 2.6s 1s cubic-bezier(0.25, 1.28, 0.46, 1.01) forwards;
-}
-.contact__me svg #me-shadow__eye-dot-left, .contact__me svg #me-shadow__eye-dot-right {
-  position: absolute;
-  filter: opacity(0%);
-  fill: #d5effc;
-  animation: showEyeDots 0.1s 2.9s linear forwards;
-}
 
 .contact-end {
   grid-area: social-links;
   width: 100%;
-  background-color: #d5effc;
+  background-color: #bbe6fb;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -2239,7 +2212,7 @@ body::-webkit-scrollbar-thumb {
   margin: -17px 0 0 -17px;
   height: 34px;
   width: 34px;
-  border-top-color: #56697C;
+  border-top-color: #1b7cde;
   animation: loading 1s infinite linear;
   scale: 0.5;
   opacity: 0;
@@ -2249,7 +2222,7 @@ body::-webkit-scrollbar-thumb {
   margin: -10px -5px 0 -10px;
   height: 20px;
   width: 20px;
-  border-top-color: #56697C;
+  border-top-color: #1b7cde;
   animation: loading 1.5s infinite linear;
 }
 
@@ -2278,30 +2251,6 @@ body::-webkit-scrollbar-thumb {
     scale: 1;
   }
 }
-@keyframes showEyeDots {
-  from {
-    filter: opacity(0%);
-  }
-  to {
-    filter: opacity(100%);
-  }
-}
-@keyframes openEyes {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-@keyframes me-shadow {
-  from {
-    d: path("M94 305.222L109.5 305.222C109.999 305.222 124.5 305.222 125.5 305.222C126.5 305.222 138.293 305.222 139 305.222C139.707 305.222 150.501 305.222 151.001 305.222C151.501 305.222 165.502 305.222 165.502 305.222C166 305.222 181.5 305.222 181.5 305.222C182.5 305.222 196.148 305.222 197.002 305.222C198 305.222 214.5 305.222 215.502 305.222C216.138 305.222 237.998 305.222 238.5 305.222C239.498 305.222 257.127 305.222 257.502 305.222C257.877 305.222 273.003 306.222 273.5 307.222H0C0 306.222 15.0028 305.222 18.0017 305.222C21.0018 305.222 38.5013 305.222 39.5 305.222C40.4987 305.222 56 305.222 56 305.222C56 305.222 71.4995 305.222 72.5 305.222C73.5005 305.222 92.9987 305.222 94 305.222Z");
-  }
-  to {
-    d: path("M37.5 117.449L39.5 100.449C22.7077 75.4486 45.5001 55.4485 60 44.9486C74.4999 34.4486 78 -13.0514 161.5 3.44852C175.5 6.21498 201.5 14.4486 214.5 20.9486C227.674 27.5356 219.292 57.4486 219.292 57.4486C245.5 53.9486 238 115.449 238 115.449C263 116.949 251 166.449 243.5 171.949C236.5 177.082 233.557 178.186 221 179.949C221 196.949 205.768 218.212 182 239.449C199 239.449 227 250.449 227 268.449C256 268.449 273.5 295 273.5 307.5H0C0 293 16.5 268.449 48.9999 266.449C48.9999 253.449 66.5 239.449 89.7921 239.449C51 207.949 55 179.949 55 179.949C55 179.949 38.6028 181.949 34 174.949C10 138.448 19 118.949 37.5 117.449Z");
-  }
-}
 @media only screen and (max-width: 900px) {
   .contact__container {
     grid-template-columns: auto 430px 35% auto;
@@ -2310,15 +2259,10 @@ body::-webkit-scrollbar-thumb {
 }
 @media only screen and (max-width: 780px) {
   .contact__container {
-    grid-template-areas: "form" "svg-me" "social-links";
+    grid-template-areas: "form" "social-links";
     grid-template-columns: auto;
-    grid-template-rows: auto 330px 120px;
+    grid-template-rows: auto120px;
     column-gap: 3rem;
-  }
-  #me-shadow__svg {
-    left: 50%;
-    translate: -50% 0%;
-    width: 290px;
   }
   .contact__form-cont {
     gap: 0px;
@@ -2333,10 +2277,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media only screen and (max-width: 600px) {
   .contact__container {
-    grid-template-rows: auto 250px 120px;
-  }
-  #me-shadow__svg {
-    width: 220px;
+    grid-template-rows: auto 120px;
   }
 }
 .svg-darkmode__sunMoon[data-darkmode=true] {
@@ -2366,14 +2307,14 @@ body[data-darkmode=true] {
   background-color: rgb(34, 34, 34);
 }
 body[data-darkmode=true] p {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 body[data-darkmode=true] a {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 
 .header__language-btn[data-darkmode=true] {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .header__language-btn[data-darkmode=true] .header__language-ES {
   padding: 1.6rem 1.2rem;
@@ -2385,10 +2326,10 @@ body[data-darkmode=true] a {
 }
 
 .header__rightside[data-darkmode=true] .header__title {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .header__rightside[data-darkmode=true] .header__title span {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 
 .nav-mobile[data-darkmode=true] .nav-mobile__topbar {
@@ -2401,56 +2342,56 @@ body[data-darkmode=true] a {
   background-color: #805a89;
 }
 .nav-mobile[data-darkmode=true] .nav-mobile__list-item-container a {
-  color: #fbf7fd;
+  color: #f3f3f3;
   text-shadow: 2px 2px 1px rgb(34, 34, 34);
 }
 .nav-mobile[data-darkmode=true] #hamburger-topBar,
 .nav-mobile[data-darkmode=true] #hamburger-middleBar,
 .nav-mobile[data-darkmode=true] #hamburger-bottomBar {
-  fill: #fbf7fd;
+  fill: #f3f3f3;
 }
 
 .about-me[data-darkmode=true] .about-me__header-bg {
   background-color: #805a89;
 }
 .about-me[data-darkmode=true] .about-me__header-title {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .about-me[data-darkmode=true] .about-me__header-title span {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .about-me[data-darkmode=true] p {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 
 .skills[data-darkmode=true] .skills__header-bg {
   background-color: #805a89;
 }
 .skills[data-darkmode=true] .skills__header-title {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .skills[data-darkmode=true] .skills__header-title span {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 
 .loading[data-darkmode=true] .loading {
   background-color: rgb(34, 34, 34);
 }
 .loading[data-darkmode=true] .loading__text {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .loading[data-darkmode=true] .loading__bar {
-  background-color: #fbf7fd;
+  background-color: #f3f3f3;
 }
 
 .portfolio[data-darkmode=true] .portfolio__header-bg {
   background-color: #805a89;
 }
 .portfolio[data-darkmode=true] .portfolio__header-title {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .portfolio[data-darkmode=true] .portfolio__header-title span {
-  color: #fbf7fd;
+  color: #f3f3f3;
 }
 .portfolio[data-darkmode=true] .portfolio__item {
   border-color: black;
@@ -2470,26 +2411,59 @@ body[data-darkmode=true] a {
   fill: #bcafd2;
 }
 
-.contact[data-darkmode=true] .contact__me #me-shadow__eye-left, .contact[data-darkmode=true] .contact__me #me-shadow__eye-right {
-  fill: rgb(34, 34, 34);
+.contact[data-darkmode=true] .contact__form-cont h1 {
+  color: #90c7ff;
 }
-.contact[data-darkmode=true] .contact__me #me-shadow__bg, .contact[data-darkmode=true] .contact__me #me-shadow__eye-dot-left, .contact[data-darkmode=true] .contact__me #me-shadow__eye-dot-right {
-  fill: #805a89;
+.contact[data-darkmode=true] .contact__form fieldset[data-focused=true] .contact__form-label:not(.contact__form-label[for=user__content]) {
+  color: #90c7ff;
+}
+.contact[data-darkmode=true] .contact__form fieldset[data-focused=true] .contact__form-label[for=user__content] {
+  color: #90c7ff;
+}
+.contact[data-darkmode=true] .contact__form-label {
+  color: #b7b7b7;
+}
+.contact[data-darkmode=true] .contact__form-label[for=user__content] {
+  background-color: rgb(34, 34, 34);
+}
+.contact[data-darkmode=true] .contact__form textarea {
+  border-color: #808080;
+  color: #f3f3f3;
+  background-color: transparent;
+}
+.contact[data-darkmode=true] .contact__form input[type=text], .contact[data-darkmode=true] .contact__form input[type=email] {
+  background-color: transparent;
+  border-color: #808080;
+  color: #f3f3f3;
+}
+.contact[data-darkmode=true] .contact__form input[type=submit] {
+  background-color: #1b7cde;
+  color: white;
+}
+.contact[data-darkmode=true] .contact__form input[type=submit]:hover {
+  filter: none;
+}
+.contact[data-darkmode=true] .contact__form input[type=submit]:disabled {
+  filter: grayscale(1);
+}
+.contact[data-darkmode=true] .contact__form p {
+  color: #0e3c4d;
 }
 .contact[data-darkmode=true] .contact-end {
-  background-color: #805a89;
+  border-top: 2px solid #808080;
+  background-color: #3e3e3e;
 }
 .contact[data-darkmode=true] .contact-end__social-links-container a:hover {
-  background-color: #fbf7fd;
+  background-color: #1b7cde;
 }
 .contact[data-darkmode=true] .contact-end__social-link {
-  fill: rgb(34, 34, 34);
+  fill: #1b7cde;
 }
 .contact[data-darkmode=true] .contact-end__social-link:hover {
-  fill: #fbf7fd;
+  fill: #f3f3f3;
 }
 .contact[data-darkmode=true] .contact-end__handcrafted-by {
-  color: #56697C;
+  color: #808080;
 }
 
 .me__paused path {
@@ -2550,13 +2524,13 @@ body[data-darkmode=true] a {
   animation: meHairTop 1.5s 1.2s ease forwards;
 }
 #me__neck-left {
-  fill: #d5effc;
+  fill: #bbe6fb;
   transform-origin: 50% 0%;
   opacity: 0;
   animation: meNeckSide 0.5s 1s ease forwards;
 }
 #me__neck-right {
-  fill: #d5effc;
+  fill: #bbe6fb;
   transform-origin: 50% 0%;
   opacity: 0;
   animation: meNeckSide 0.5s 1.2s ease forwards;
@@ -2774,7 +2748,7 @@ body[data-darkmode=true] a {
 }
 .svg-icons:hover {
   cursor: pointer;
-  fill: #011f4b;
+  fill: #00043c;
 }
 .svg-icons > h5 {
   text-align: center;
@@ -2784,7 +2758,7 @@ body[data-darkmode=true] a {
   color: #646464;
 }
 .svg-icons:hover > h5 {
-  color: #011f4b;
+  color: #00043c;
   letter-spacing: 0.08rem;
 }
 

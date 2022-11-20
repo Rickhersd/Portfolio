@@ -472,7 +472,8 @@
 
       <div class="contact__form-cont">
         <h1 data-text="contact-title">Contact</h1>
-        <p data-ext="contact-paragraph">No dudes en comunicarte conmigo en cualquier momento, ya sea por email directo o utilizando el fomulario de abajo. Estoy interesando en toda clase de proyectos sin importar su dificultad.</p>
+        <p data-ext="contact-paragraph">No dudes en comunicarte conmigo en cualquier momento, ya sea por email directo a <a id="contact__email-address-text"></a>
+         o utilizando el fomulario de abajo. Estoy interesando en toda clase de proyectos sin importar su dificultad.</p>
         <form class="contact__form field" action="sendEmail.php">
           <fieldset>
             <label class="contact__form-label" for="user__name" data-text="form-name">Nombre</label>
@@ -496,20 +497,10 @@
           </fieldset>
         </form>
       </div>
-
-      <div class="contact__me">
-        <svg id="me-shadow__svg" width="274" height="308" viewBox="0 0 274 308" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path id="me-shadow__bg" fill-rule="evenodd" clip-rule="evenodd" d="M94 305.222L109.5 305.222C109.999 305.222 124.5 305.222 125.5 305.222C126.5 305.222 138.293 305.222 139 305.222C139.707 305.222 150.501 305.222 151.001 305.222C151.501 305.222 165.502 305.222 165.502 305.222C166 305.222 181.5 305.222 181.5 305.222C182.5 305.222 196.148 305.222 197.002 305.222C198 305.222 214.5 305.222 215.502 305.222C216.138 305.222 237.998 305.222 238.5 305.222C239.498 305.222 257.127 305.222 257.502 305.222C257.877 305.222 273.003 306.222 273.5 307.222H0C0 306.222 15.0028 305.222 18.0017 305.222C21.0018 305.222 38.5013 305.222 39.5 305.222C40.4987 305.222 56 305.222 56 305.222C56 305.222 71.4995 305.222 72.5 305.222C73.5005 305.222 92.9987 305.222 94 305.222Z" fill="#D3E8E5"/>
-          <path id="me-shadow__eye-left" d="M110 135C110 144.941 104.18 153 97 153C89.8203 153 84 144.941 84 135C84 125.059 89.8203 117 97 117C104.18 117 110 125.059 110 135Z" fill="#F5F5F5"/>
-          <path id="me-shadow__eye-right" d="M187 135C187 144.941 181.18 153 174 153C166.82 153 161 144.941 161 135C161 125.059 166.82 117 174 117C181.18 117 187 125.059 187 135Z" fill="#F5F5F5"/>
-          <ellipse id="me-shadow__eye-dot-left"cx="97" cy="135" rx="11" ry="13" fill="#D3E8E5"/>
-          <ellipse id="me-shadow__eye-dot-right" cx="174" cy="135" rx="11" ry="13" fill="#D3E8E5"/>
-        </svg>        
-      </div> 
       
       <section class="contact-end"> 
         <div class="contact-end__social-links-container">
-          <a id="contact__email-address" >
+          <a id="contact__email-address-icon" >
             <svg class="contact-end__social-link" role="img" width="45" height="45" viewBox="0 0 45 45">
               <use href="#svg-footer__email-icon"></use>
             </svg>
@@ -526,7 +517,7 @@
           </a>
         </div>
         <div class="contact-end__handcrafted-by">
-          <p data-text="contact-phrase" class="contact-end__phrase">EL CODIGO ES CAPAZ DE COSAS INCREIBLES</p>
+          <p data-text="contact-phrase" class="contact-end__phrase">EL CÓDIGO ES CAPAZ DE COSAS INCREÍBLES</p>
           <p data-text="contact-handcrafted-by">This website was handcrafted by me © 2022</p> 
         </div>
       </section> 

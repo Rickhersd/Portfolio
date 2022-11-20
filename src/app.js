@@ -10,7 +10,7 @@ import { NavBar } from "./js/NavBar.js";
 import { Header } from "./js/Headers.js";
 import { separate } from "./js/AnimationWord.js";
 import { Translater } from "./js/Translater.js";
-import { MeShadow } from "./js/MeShadow.js";
+//import { MeShadow } from "./js/MeShadow.js";
 import { Carrousel } from "./js/Carrousel.js";
 
 window.addEventListener('DOMContentLoaded', (e) =>{
@@ -47,8 +47,8 @@ btns.forEach(btn => {
   }); 
 });
 
-const meShadow = new MeShadow();
-meShadow.start();
+//const meShadow = new MeShadow();
+//meShadow.start();
 
 let stringsElements = document.querySelectorAll('[data-animatedWord]');
 
@@ -206,8 +206,12 @@ function calcClientHeight(){
 //Decode Email address from base64 format;
 function decodeEmail(){
   const emailAddress = 'cmlja2hlcnNkMjAwMkBnbWFpbC5jb20=';
-  const contactAnchor = document.getElementById('contact__email-address');
-  contactAnchor.setAttribute('href', `mailto:${atob(emailAddress)}`);
+  const contactAnchorIcon = document.getElementById('contact__email-address-icon');
+  const contactAnchorText = document.getElementById('contact__email-address-text');
+
+  contactAnchorIcon.setAttribute('href', `mailto:${atob(emailAddress)}`);
+  contactAnchorText.setAttribute('href', `mailto:${atob(emailAddress)}`);
+  contactAnchorText.innerHTML = atob(emailAddress);
 }
 
 //send FormData to emailJs.Service
