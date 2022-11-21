@@ -1256,7 +1256,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .skills__radial {
-  width: min(100%, 1100px);
+  width: min(100% - 2rem, 1100px);
   margin: 2rem auto;
   position: relative;
   overflow: hidden;
@@ -1264,7 +1264,7 @@ body::-webkit-scrollbar-thumb {
   grid-template-areas: "frontend skills" "backend skills";
   grid-template-columns: 35% 65%;
   grid-template-rows: 50% 50%;
-  gap: 1rem;
+  row-gap: 1rem;
 }
 .skills__radial-container {
   grid-area: skills;
@@ -1297,28 +1297,34 @@ body::-webkit-scrollbar-thumb {
 }
 .skills__radial-bg {
   width: 100%;
-  height: 100%;
-  height: auto;
+  height: 90%;
   margin: auto;
 }
 .skills__radial-bg-backend {
   grid-area: backend;
   padding: 1rem;
   height: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgb(192, 192, 192);
   background-color: #f7fbff;
 }
 .skills__radial-bg-frontend {
   grid-area: frontend;
   padding: 1rem;
   height: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgb(192, 192, 192);
   background-color: #f7fbff;
 }
+.skills__radial-bg-text {
+  text-align: center;
+  margin: 1rem 0rem;
+}
 .skills__radial-bg-text span {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Roboto";
-  color: #56697C;
+  color: #00043c;
   font-weight: 500;
-  translate: 0px -40px;
   opacity: 0;
   display: inline-block;
   animation-duration: 0.5s;
@@ -1430,6 +1436,9 @@ body::-webkit-scrollbar-thumb {
     transform: translate(0%, -50%);
     transform-origin: 50% 0%;
     margin: auto;
+  }
+  .skills__radial-bg {
+    width: calc(100% - 2rem);
   }
   .skills__radial-bg-text span {
     font-size: clamp(3.5rem, 8vw, 3.8rem);
@@ -1714,7 +1723,6 @@ body::-webkit-scrollbar-thumb {
 
 #portfolio {
   padding-top: 5rem;
-  margin-bottom: 10rem;
 }
 
 .portfolio__header {
@@ -1778,7 +1786,7 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 .portfolio__flex-container {
-  width: min(100%, 1150px);
+  width: min(90%, 1150px);
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
@@ -1786,14 +1794,14 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolio__item {
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 0rem;
   overflow: hidden;
   display: flex;
-  border-bottom: 1px solid rgb(236, 236, 236);
+  border-bottom: 2px solid rgb(236, 236, 236);
   gap: 1rem;
 }
 .portfolio__item-content {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0rem;
   width: inherit;
   display: flex;
   flex-direction: column;
@@ -1801,7 +1809,6 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .portfolio__item-header {
-  margin-bottom: 0.3rem;
   font-family: "Red Hat Text";
 }
 .portfolio__item-header-name {
@@ -1811,7 +1818,7 @@ body::-webkit-scrollbar-thumb {
   color: #00043c;
   font-family: "Roboto Slab", monospace;
   font-weight: 800;
-  font-size: clamp(1.9rem, 7vw, 2.5rem);
+  font-size: clamp(1.7rem, 6vw, 2.5rem);
   animation-duration: 0.5s;
   display: inline-block;
   animation-timing-function: cubic-bezier(0.18, 0.49, 0, 1.16);
@@ -1819,24 +1826,34 @@ body::-webkit-scrollbar-thumb {
   animation-name: SlideDownLetter;
 }
 .portfolio__item-header-description {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
   font-size: 1.1rem;
   color: #00043c;
   line-height: 1.5rem;
+  width: 90%;
 }
 .portfolio__item-header-technologies {
   font-size: 0.85rem;
   font-style: italic;
   color: gray;
 }
+.portfolio__item-header-status {
+  font-size: 0.8rem;
+  padding: 0.1rem 0rem;
+  color: gray;
+}
 .portfolio__item-header-status span[data-text=portfolio-project-status-pending] {
-  color: red;
+  color: rgb(150, 0, 0);
+  font-style: italic;
 }
 .portfolio__item-header-status span[data-text=portfolio-project-status-in-progress] {
-  color: yellow;
+  color: rgb(156, 156, 0);
+  font-style: italic;
 }
 .portfolio__item-header-status span[data-text=portfolio-project-status-deployed] {
-  color: green;
+  color: rgb(0, 144, 0);
+  font-style: italic;
 }
 .portfolio__item-links {
   display: flex;
@@ -1874,13 +1891,14 @@ body::-webkit-scrollbar-thumb {
 }
 .portfolio__item-link-github a {
   transition: color 0.2s ease;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
+  translate: -20% 0px;
 }
 .portfolio__item-link-github svg {
   translate: -50% 0%;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   fill: #00043c;
 }
 .portfolio__item-link-visit {
@@ -1899,12 +1917,16 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 650px) {
   .portfolio__flex-container {
     margin-top: 2rem;
+    margin-bottom: 0rem;
+    width: 100%;
   }
   .portfolio__item {
-    width: 100%;
     margin: auto;
     padding: 1rem 0rem;
     flex-direction: column;
+  }
+  .portfolio__item-header-description {
+    width: 100%;
   }
   .portfolio__item-content {
     padding: 0rem;
@@ -1912,7 +1934,7 @@ body::-webkit-scrollbar-thumb {
     width: 90%;
   }
   .portfolio__item-header-technologies {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-style: italic;
     color: gray;
   }
@@ -1977,7 +1999,7 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   min-height: 100vh;
   grid-template-areas: "empty form empty2" "social-links social-links social-links";
-  grid-template-columns: auto min(1150px, 100%) auto;
+  grid-template-columns: auto min(1150px, 90%) auto;
   grid-template-rows: auto 150px;
 }
 .contact__form-cont {
@@ -2269,7 +2291,6 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    justify-content: flex-end;
   }
   .contact-end__phrase {
     display: none;
@@ -2278,6 +2299,11 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 600px) {
   .contact__container {
     grid-template-rows: auto 120px;
+  }
+}
+@media only screen and (max-height: 700px) {
+  .contact__form-cont {
+    margin-bottom: 2.5rem;
   }
 }
 .svg-darkmode__sunMoon[data-darkmode=true] {
@@ -2394,21 +2420,25 @@ body[data-darkmode=true] a {
   color: #f3f3f3;
 }
 .portfolio[data-darkmode=true] .portfolio__item {
-  border-color: black;
+  border-color: rgb(21, 21, 21);
+}
+.portfolio[data-darkmode=true] .portfolio__item-header-name span {
+  color: #bbe6fb;
 }
 .portfolio[data-darkmode=true] .portfolio__item-header-technologies {
   color: gray;
 }
-.portfolio[data-darkmode=true] .portfolio__item-link-github a {
-  width: 45px;
-  height: 45px;
-  translate: -21% 0px;
+.portfolio[data-darkmode=true] .portfolio__item-header-status span[data-text=portfolio-project-status-pending] {
+  color: #fc5656;
+}
+.portfolio[data-darkmode=true] .portfolio__item-header-status span[data-text=portfolio-project-status-in-progress] {
+  color: #ffff81;
+}
+.portfolio[data-darkmode=true] .portfolio__item-header-status span[data-text=portfolio-project-status-deployed] {
+  color: rgb(0, 200, 0);
 }
 .portfolio[data-darkmode=true] .portfolio__item-link-github svg {
-  translate: -50% 0%;
-  width: 45px;
-  height: 45px;
-  fill: #bcafd2;
+  fill: #bbe6fb;
 }
 
 .contact[data-darkmode=true] .contact__form-cont h1 {

@@ -2,7 +2,6 @@
 
 #portfolio{
   padding-top: 5rem;
-  margin-bottom: 10rem;
 }
 
 .portfolio{
@@ -10,7 +9,7 @@
   @include library.subHeader();
   
   &__flex-container{
-    width: min(100%, 1150px);
+    width: min(90%, 1150px);
     margin: 5rem auto;
     display:flex;
     flex-direction: column;
@@ -19,14 +18,14 @@
 
   &__item {
     width: 100%;
-    padding: 2rem;
+    padding: 2rem 0rem;
     overflow: hidden;
     display: flex;
-    border-bottom: 1px solid library.$light-gray;
+    border-bottom: 2px solid library.$light-gray;
     gap: 1rem;
 
     &-content{
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0rem;
       width: inherit;
       display: flex;
       flex-direction: column;
@@ -35,7 +34,6 @@
     }
 
     &-header{
-      margin-bottom: 0.3rem;
       font-family: "Red Hat Text";
 
       &-name{
@@ -45,7 +43,7 @@
           color: library.$primary-90;
           font-family: library.$font-mono;
           font-weight: 800;
-          font-size: clamp(1.9rem, 7vw, 2.5rem);
+          font-size: clamp(1.7rem, 6vw, 2.5rem);
           animation-duration: 0.5s;
           display: inline-block;
           animation-timing-function: cubic-bezier(.18,.49,0,1.16);
@@ -55,10 +53,12 @@
       }
 
       &-description{
-        margin-top: 0.5rem;
+        margin-top: 0.8rem;
+        margin-bottom: 0.5rem;
         font-size: 1.1rem;
         color: library.$primary-90;
         line-height: 1.5rem;
+        width: 90%;
       }
 
       &-technologies{
@@ -68,17 +68,23 @@
       }
 
       &-status{
+        font-size: 0.80rem;
+        padding: 0.1rem 0rem;
+        color: gray;
         
         span[data-text="portfolio-project-status-pending"]{
-          color: red;
+          color: rgb(150, 0, 0);
+          font-style: italic;
         }
 
         span[data-text="portfolio-project-status-in-progress"]{
-          color: yellow;
+          color: rgb(156, 156, 0);
+          font-style: italic;
         }
         
         span[data-text="portfolio-project-status-deployed"]{
-          color: green;
+          color: rgb(0, 144, 0);
+          font-style: italic;
         }
       }
     }
@@ -122,14 +128,15 @@
 
         a{
           transition: color 0.2s ease;
-          width: 60px;
-          height: 60px;
+          width: 45px;
+          height: 45px;
+          translate: -20% 0px;
         }
 
         svg{
           translate: -50% 0%;
-          width: 60px;
-          height: 60px;
+          width: 45px;
+          height: 45px;
           fill: library.$primary-90;
         }
       }
@@ -155,13 +162,18 @@
 
   .portfolio__flex-container{
     margin-top: 2rem;
+    margin-bottom: 0rem;
+    width: 100%;
   }
 
   .portfolio__item {
-    width: 100%;
     margin: auto;
     padding: 1rem 0rem;
     flex-direction: column;
+
+    &-header-description{
+      width: 100%;
+    } 
 
     &-content{
       padding: 0rem;
@@ -170,7 +182,7 @@
     }
 
     &-header-technologies{
-      font-size: 0.85rem;
+      font-size: 0.80rem;
       font-style: italic;
       color: gray;
     }

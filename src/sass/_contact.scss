@@ -15,7 +15,7 @@
     grid-template-areas:
       'empty form empty2'
       'social-links social-links social-links'; 
-    grid-template-columns: auto min(1150px, 100%) auto;
+    grid-template-columns: auto min(1150px, 90%) auto;
     grid-template-rows:  auto 150px;
 	}
 
@@ -358,7 +358,6 @@
 		align-items: center;
 		margin-left: auto;
 		margin-right: auto;
-		justify-content: flex-end;
 	} 
 
 	.contact-end__phrase{
@@ -371,4 +370,10 @@
 	.contact__container{
     grid-template-rows: auto 120px;
 	}
+}
+
+@media only screen and (max-height: 700px) {
+  .contact__form-cont{
+    margin-bottom: 2.5rem;
+  }
 }

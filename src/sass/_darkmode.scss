@@ -164,33 +164,36 @@ body[data-darkmode="true"]{
     @include subHeaderDM();
 
     &__item {
-      border-color: black;
+      border-color: rgb(21, 21, 21);
       &-header{
         &-name{
           span{
-            //color: library.$primary-90;
+            color: library.$primary-30;
           }
         }
   
         &-technologies{
           color: gray;
         }
+
+        &-status{
+          
+          span[data-text="portfolio-project-status-pending"]{
+            color: #fc5656;
+          }
+  
+          span[data-text="portfolio-project-status-in-progress"]{
+            color: #ffff81;
+          }
+          
+          span[data-text="portfolio-project-status-deployed"]{
+            color: rgb(0, 200, 0);
+          }
+        }
       }
   
-      &-link-github{
-
-        a{
-          width: 45px;
-          height: 45px;
-          translate: -21% 0px;
-        }
-
-        svg{
-          translate: -50% 0%;
-          width: 45px;
-          height: 45px;
-          fill: $DM-primary-10;
-        }
+      &-link-github svg{
+        fill: library.$primary-30;
       }
     }
   }
