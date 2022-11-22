@@ -22,10 +22,11 @@
       color: library.$primary-90;
       position: absolute;
       padding: 8px 14px 6px 14px;
-      top: 0px;
-      left: 0px;
+      display: flex;
+      align-items: center;
+      height: 54px;
       z-index: 100;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-family: library.$font-mono;
 
       &:visited, &:link, &:active{
@@ -36,9 +37,8 @@
 
     span{
       position: absolute;
-      width: calc(100% - 1.6rem);
+      width: 100%;
       height: 1px;
-      left: 0.8rem;
       margin: auto;
       background-color: library.$gray;
       top: 52px;
@@ -56,9 +56,8 @@
 
     span{
       position: absolute;
-      width: calc(100% - 1.6rem);
+      width: 100%;
       height: 1px;
-      left: 0.8rem;
       margin: auto;
       background-color: #a2d1ff;
       top: 52px;

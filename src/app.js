@@ -4,10 +4,7 @@ import { backendSkills } from "./data/skills.js";
 import { SkillUI } from "./js/SkillsUI.js";
 import { HamburgerMenu } from "./js/HamburgerMenu.js";
 import { DarkMode } from "./js/DarkMode.js";
-import { ParallaxController } from "./js/Parallax.js";
-import { HeaderNav } from "./js/HeaderNav.js";
 import { NavBar } from "./js/NavBar.js";
-import { Header } from "./js/Headers.js";
 import { separate } from "./js/AnimationWord.js";
 import { Translater } from "./js/Translater.js";
 //import { MeShadow } from "./js/MeShadow.js";
@@ -56,12 +53,13 @@ for(let element of stringsElements){
     separate(element);
 }
 
+/*
 const carrosuelItems = document.getElementsByClassName('about-me__hobby')
 const carrousel = new Carrousel(carrosuelItems);
 
 carrousel.setBtnLeft(document.querySelector('.about-me__hobbies-leftBtn'));
 carrousel.setBtnRight(document.querySelector('.about-me__hobbies-rightBtn'));
-
+*/
 
 function fieldEmpty(){
   document.querySelectorAll(".contact__form-field").forEach(element => {

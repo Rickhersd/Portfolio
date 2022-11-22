@@ -10,6 +10,7 @@ $height-nav-item: 200px;
   width: 100vw;
   font-size: 0.85rem;
   color: library.$font-color-white;
+  border-bottom: 1px solid library.$light-gray;
   z-index: 10;
   height: 3.5rem;
   background-color: library.$main-bg;
@@ -28,9 +29,8 @@ $height-nav-item: 200px;
     display: flex;
     justify-content: space-between;
     top: 0px;
-    width: 90%;
+    width: min(1150px, 100%);
     height: inherit;
-    border-bottom: 1px solid library.$light-gray;
     translate: 0px 0px;
     transition: translate 0.3s ease;
   }
@@ -104,14 +104,6 @@ $height-nav-item: 200px;
       letter-spacing: 1px;
       font-family: 'Roboto', sans-serif;
       color: rgb(59, 59, 59);
-    }
-  }
-
-  &__list-hidden{
-    translate: 0px -100px;
-    
-    & ~ button svg {
-      rotate: 0deg;
     }
   }
 }

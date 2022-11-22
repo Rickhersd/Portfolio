@@ -65,27 +65,27 @@
   </div>
 
   <!--nav -->
-  <nav id="nav">
+  <nav id="nav" data-darkmode>
     <div class="nav__container">
       <a href="#home" class="nav__name">Ricardo Sánchez</a>
       <ul class="nav__list-container">
         <li class="nav__list-item nav__item-about-me">
-          <a href="#about-me">
+          <a href="#about-me" data-text="nav-about-me">
             About me
           </a>
         </li>
         <li class="nav__list-item nav__item-skills">
-          <a href="#skills">
+          <a href="#skills" data-text="nav-skills">
             Skills
           </a>
         </li>
         <li class="nav__list-item nav__item-porfolio">
-          <a href="#portfolio">
+          <a href="#portfolio" data-text="nav-portfolio">
             Portfolio
           </a>
         </li>
         <li class="nav__list-item nav__item-contact">
-          <a href="#contact" data-text="">
+          <a href="#contact" data-text="nav-contact">
             Contact
           </a>
         </li>
@@ -97,7 +97,7 @@
   <div id="nav-mobile" class="nav-mobile" data-darkmode>
     <div class="nav-mobile__topbar">
       <span></span>
-      <a href="#home" class="nav-mobile__topbar-name">RS</a>
+      <a href="#home" class="nav-mobile__topbar-name">Ricardo Sánchez</a>
       <div class="hamburger-button">
         <svg class="hambuger-button" xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 70 58">
           <path id="hamburger-middleBar" d="M0 28.603C0 30.0407 0.864852 31.2061 1.9317 31.2061H67.6096C68.6764 31.2061 69.5413 30.0407 69.5413 28.603C69.5413 27.1654 68.6764 26 67.6096 26H1.9317C0.864852 26 0 27.1654 0 28.603Z" />
@@ -199,7 +199,7 @@
         <div class="language-ES">ES</div>
       </button>
       <div data-appearIndex="1" class="header__darkmode-btn">
-        <svg class="svg-darkmode" width="55" height="55" viewBox="0 0 94 94" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <svg class="svg-darkmode" width="50" height="50" viewBox="0 0 94 94" fill="white" xmlns="http://www.w3.org/2000/svg">
           <path class="svg-darkmode__bg" data-darkmode fill="#6E869F" d="M73 49C73 60.598 63.598 70 52 70C40.402 70 31 60.598 31 49C31 37.402 40.402 28 52 28C53.1437 28 54.266 28.0914 55.36 28.2674C64.4063 29.7221 71.5203 36.955 72.7958 46.06C72.9304 47.0207 73 48.0022 73 49Z"/>
           <path class="svg-darkmode__sunMoon" data-darkmode stroke="#6E869F" stroke-width="9" d="M72 47C72 60.8071 60.8071 72 47 72C33.1929 72 22 60.8071 22 47C22 33.1929 33.1929 22 47 22C48.3615 22 49.6976 22.1088 51 22.3183C61.7694 24.0501 70.2384 32.6607 71.7569 43.5C71.9172 44.6437 72 45.8122 72 47Z"/>
           <g class="svg-darkmode__group" data-darkmode>
@@ -215,7 +215,7 @@
         </svg>   
       </div>
     </div>
-    <div class="header__info">
+    <div class="header__info" data-darkmode>
       <div class="header__info-btn">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="m0 0h24v24h-24z" fill="#fff" opacity="0" transform="matrix(-1 0 0 -1 24 24)"/>
@@ -226,7 +226,7 @@
         </svg>
       </div>
       <p class="header__info-text" data-text="header-info-text">
-        Si quieres conocer acerca del desarrollo de este porfolio y sobre futuras actualizaciones, te invito a visitar mi <a href="https://github.com/Rickhersd/Portfolio" data-text="header-info-text-link"> Repositorio en GitHub</a>
+        Si quieres conocer acerca del desarrollo de este porfolio y sobre futuras actualizaciones, te invito a visitar el <a href="https://github.com/Rickhersd/Portfolio" data-text="header-info-text-link"></a>
       </p>
     </div> 
   </header> 
@@ -255,7 +255,12 @@
           <p data-text="about-me-info-p1">Soy un Desarollador Web Full Stack con amplios conocimientos en la diseño y desarrollo de páginas y aplicaciones web. Soy capaz de lograr increíbles apartados visuales e intuivas y dinámicas experiencias de usuario, asi como de ofrecer soluciones precisas, escalables y con rendimientos sobresalientes.</p>
           <p data-text="about-me-info-p2">Actualmente estudio Ingeniería en Informatica y cuando no estudio la carrera, dedico mis horas al aprendizaje de lenguajes y tencnologías enfocadas al Desarrollo Web. Soy organizado con mi trabajo, muy detallista al resultado final y responsable. Adoro resolver problemas, las matemáticas y, como no podía ser de otra manera, pasar las noches programando, con música y café.</p>
           <p data-text="about-me-info-p3">Mi interés por la programación nació desde muy pequeño y ya durante mi bachillerato comm hobby programaba en Unity y Visual Studio utilizando C#. Por ahora estoy enfocado exclusivamente al desarrollo web, pero en unos años me especializaré en otras áreas de la programción como el Desarrollo Móvil, la Inteligencia Artifical o el Análisis de Datos.</p>
+          <div class="about-me__links"> 
+            <a href="./src/cv/CV - Ricardo Sánchez.pdf" class="about-me__links-resume" data-text="about-me-cv">My Resume</a>
+            <a href="http://wwww.github.com/Rickhersd/" class="about-me__links-github">Github</a>
+          <div>
         </div>
+        <!--
         <div class="about-me__hobbies-carrousel">
           <ul class="about-me__hobbies-container | margin-top__32"> 
             <li class="about-me__hobby about-me__hobby-item1">
@@ -274,11 +279,7 @@
         </div>
         <button class='about-me__hobbies-leftBtn'></button>
         <button class='about-me__hobbies-rightBtn'></button>
-      </div>
-      <span style="width: 85%; height: 2px"></span>
-      <div class="about-me__content-leftside">
-        <div class="about-me__photograph"> </div>
-        <a href="./cv/CV - Ricardo Sánchez.pdf" class="about-me__resumeBtn" data-text="about-me-cv">My Resume</a>
+        -->
       </div>
     </div>
   </section>
@@ -351,7 +352,7 @@
       <div class="portfolio__header-bg"></div> 
       <div class="portfolio__header-content-container portfolio__header-part-1">
         <div>
-          <h1 class="portfolio__header-title" data-text="portfolio-header-title" data-animatedWord>Proyectos Personales</h1>
+          <h1 class="portfolio__header-title" data-text="portfolio-header-title" data-animatedWord>Proyectos</h1>
           <p class="portfolio__header-subtitle" data-text="portfolio-header-text">Aquí los proyectos en los cuales estoy trabajando día a día.</p> 
         </div>  
       </div>

@@ -31,7 +31,7 @@ $DM-gray-90: #303030;
   transform-origin: 50% 50%;
   transform: rotate(0deg);
   transition-timing-function: cubic-bezier(.13,.54,.5,.99);
-  stroke: rgb(252, 248, 253);
+  stroke: library.$primary-50;
   d: path("M83.9886 59.8669C83.2336 68.1625 68.5976 84 47.7493 84C26.9009 84 10 67.1178 10 46.2927C10 28.8586 21.3248 13.11 33.4045 10.0933C35.4859 9.5349 37.1795 11.6017 36.4245 13.11C25.8547 34.2257 46.2393 69.6707 80.2136 57.6045C82.4786 56.8001 84.1555 58.033 83.9886 59.8669Z");
 }
   
@@ -45,7 +45,7 @@ $DM-gray-90: #303030;
 .svg-darkmode__bg[data-darkmode="true"] {
   transform-origin: 50% 50%;
   transform: rotate(0deg);
-  fill: rgb(215, 205, 237);
+  fill: $DM-gray-70;
   transition-timing-function: cubic-bezier(.13,.54,.5,.99);
   d: path("M79.5 63C78.8572 69.3899 66.7493 79.5 49 79.5C31.2507 79.5 19 65.041 19 49C19 35.5711 24.5 25.5 29.4999 22C31.2719 21.5699 31.7018 25.6877 31.4999 27C29.4999 40 47.0759 69.7942 76 60.5C77.9283 59.8804 79.6421 61.5874 79.5 63Z");
 }
@@ -76,6 +76,23 @@ body[data-darkmode="true"]{
       text-shadow:  2px 2px 1px $DM-main-bg;
     }
   }
+
+}
+
+.header__info[data-darkmode="true"]{
+
+  .header__info{
+    
+    &-btn g{
+      fill: library.$primary-50;
+    }
+
+    &-text{
+      background: $DM-gray-70;
+      border: 1px solid library.$gray;
+      
+    }
+  }
 }
 
 
@@ -89,19 +106,44 @@ body[data-darkmode="true"]{
   }
 }
 
+//language
+.language-btn[data-darkmode="true"]{
+  
+  background-color: $DM-gray-70;
+  color: library.$primary-50;
+  
+
+  .language-moved{
+    .language-ES{
+      top: -100%
+    }
+    .language-EN{
+      top: 0px
+    }
+  }
+}
+
 //nav-mobile
 .nav-mobile[data-darkmode='true']{
   
   .nav-mobile{
     &__topbar{
       background: $DM-main-bg;
+
+      &-name{
+        color: $DM-font;
+
+        &:visited, &:link, &:active{
+          color: $DM-font;
+        }
+      }
     }
   
     &__list-item-container{
-      background-color: $DM-primary-70;
+      background-color: $DM-gray-70;
   
       span{
-        background-color: $DM-primary-50;
+        background-color: $DM-main-bg;
       }
   
       a {
@@ -120,11 +162,65 @@ body[data-darkmode="true"]{
   
 }
 
+//nav
+#nav[data-darkmode='true']{
+
+  color: library.$font-color-white;
+  background-color: $DM-main-bg;
+  border-bottom: 1px solid $DM-gray-50;
+
+  .nav{
+  
+    &__name{
+      color: $DM-font;
+      
+      &:visited, &:link, &:active{
+        color: $DM-font;
+      }
+    }
+  
+    &__list-container{
+      filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.02));
+  
+  
+      span{
+        background-color: library.$primary-50;
+      }
+  
+      a {
+        color: $DM-font;
+      }
+    }
+  }
+}
+
 //about-me
 .about-me[data-darkmode='true']{
   
   .about-me{
     @include subHeaderDM();
+
+    &__links{
+      
+      &-resume {
+        background-color: library.$primary-70;
+        color: $DM-gray-70;
+      }
+
+      &-github{
+
+        color: library.$primary-50;
+
+        &:active, &:link, &:visited{
+          color: library.$primary-50;
+        }
+
+        &:after{
+          content: "";
+          background-color: library.$primary-50;
+        }
+      }
+    }
   }
 
   p{
@@ -138,8 +234,68 @@ body[data-darkmode="true"]{
 
   .skills{
     @include subHeaderDM();
+
+    &__container {
+
+
+      & > h3 {
+        background-color: library.$main-bg;
+        color: #666;
+        align-items: center;
+        justify-content: center;
+      }
+    }  
+
+    &__description {
+      border: 1px solid $DM-gray-30;
+      background-color: transparent;
+    }
   }
+
+  .skills__radial{
+    &-container{
+      background-color: transparent;
+    }
+
+    &-bg{
+      &-backend{
+        border: 1px solid $DM-gray-30;
+        background-color: $DM-gray-70;
+      }
+
+      &-frontend{
+        border: 1px solid $DM-gray-30;
+        background-color: $DM-gray-70;
+      }
+    
+      &-text span{
+        color: library.$primary-50;
+      }
+    }
+  }
+
+  .skills__circle-path-frontend{
+    background-color: $DM-gray-70;
+  }
+
+  .skills__circle-path-backend{
+    background-color: $DM-gray-70;
+  }
+
+  .skillElement{
+    fill: library.$primary-50;
+
+    & > h5 {
+      color: $DM-gray-30;
+    }
+
+    &:hover > h5 {
+      color: $DM-font;
+    }
+  }
+
 }
+
 
 //loading
 .loading[data-darkmode="true"]{
@@ -164,7 +320,7 @@ body[data-darkmode="true"]{
     @include subHeaderDM();
 
     &__item {
-      border-color: rgb(21, 21, 21);
+      border-color: $DM-gray-50;
       &-header{
         &-name{
           span{
@@ -205,7 +361,7 @@ body[data-darkmode="true"]{
   .contact__form-cont{
 
     h1{
-      color: library.$primary-50;
+      color: $DM-font;
     }
 	}
 
@@ -244,8 +400,8 @@ body[data-darkmode="true"]{
 			}
 
 			&[type="submit"] {
-        background-color: library.$primary-80;
-        color: white;
+        background-color: library.$primary-70;
+        color: $DM-gray-70;
 
 				&:hover{
 					filter: none;
@@ -269,14 +425,14 @@ body[data-darkmode="true"]{
     background-color: $DM-gray-70;
   
     &__social-links-container a:hover {
-      background-color: library.$primary-80;
+      background-color: library.$primary-70;
     }
   
     &__social-link{
-      fill: library.$primary-80;
+      fill: library.$primary-70;
   
       &:hover{
-        fill: $DM-font;
+        fill: $DM-gray-70;
       }
     }
   

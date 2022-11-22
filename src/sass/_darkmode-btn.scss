@@ -3,23 +3,27 @@
 .svg-darkmode{
   cursor: pointer;
   transition: transform 0.3s ease;
-  padding: 0.5rem;
+  overflow: visible;
+  padding: 0.2rem;
 
   &:hover{
     transform: scale(1.1);
   }
 
   &__bg{
-    fill: library.$primary-30;
+    fill: library.$primary-10;
     transform-origin: 50% 50%;
     transition: all 0.4s ease;
   }
   
   &__sunMoon {
     transform-origin: 50% 50%;
-    transition: all 0.4s ease;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-property: transform, d;
     transform: rotate(-240deg);
     fill: transparent;
+    stroke: library.$primary-90;
 
     &[darkmode="true"]{
       transform-origin: 50% 50%;
@@ -37,7 +41,7 @@
     z-index: -1;   
 
     path{
-      fill: library.$primary-70;
+      fill: library.$primary-90;
     }
 
     &[darkmode="true"]{
