@@ -395,11 +395,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media only screen and (max-width: 700px) {
-  .header__leftside svg {
-    width: min(100%, 400px);
-  }
-}
-@media only screen and (max-width: 700px) {
   #me__group {
     translate: 25px 0px;
   }
@@ -429,7 +424,7 @@ body::-webkit-scrollbar-thumb {
   .header__container {
     grid-template-areas: "header-info" "svg-me" "svg-me" "header-nav";
     grid-template-columns: 100%;
-    grid-template-rows: 80px auto auto 80px;
+    grid-template-rows: auto auto auto auto;
   }
   .header__nav-list {
     grid-template-columns: repeat(2, 1fr);
@@ -451,6 +446,9 @@ body::-webkit-scrollbar-thumb {
     translate: 0% 0%;
     width: 100%;
     margin-top: 0rem;
+  }
+  .header__leftside svg {
+    width: min(100%, 400px);
   }
   .header__settings {
     display: none;
@@ -1302,19 +1300,27 @@ body::-webkit-scrollbar-thumb {
 }
 .skills__radial-bg-backend {
   grid-area: backend;
-  padding: 2.5rem 1.5rem;
+  padding: 0rem 1.5rem;
   height: 100%;
   border-radius: 1rem;
   border: 1px solid rgb(192, 192, 192);
   background-color: #d2e9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .skills__radial-bg-frontend {
   grid-area: frontend;
-  padding: 2.5rem 1.5rem;
+  padding: 0rem 1.5rem;
   height: 100%;
   border-radius: 1rem;
   border: 1px solid rgb(192, 192, 192);
   background-color: #d2e9ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .skills__radial-bg-text {
   text-align: center;
@@ -1513,7 +1519,7 @@ body::-webkit-scrollbar-thumb {
   .skills__radial {
     grid-template-areas: "frontend" "skills" "backend";
     grid-template-columns: 100%;
-    grid-template-rows: 350px auto 350px;
+    grid-template-rows: 300px auto 300px;
     width: 100%;
     gap: 2rem;
   }
@@ -1558,11 +1564,13 @@ body::-webkit-scrollbar-thumb {
   }
   .skills__radial-bg-backend {
     border-radius: 0px;
+    padding: 0rem 1rem;
     border-left: none !important;
     border-right: none !important;
   }
   .skills__radial-bg-frontend {
     border-radius: 0px;
+    padding: 0rem 1rem;
     border-left: none !important;
     border-right: none !important;
   }

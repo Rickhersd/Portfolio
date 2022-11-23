@@ -129,20 +129,28 @@
   
     &-backend{
       grid-area: backend;
-      padding: 2.5rem 1.5rem;
+      padding: 0rem 1.5rem;
       height: 100%;
       border-radius: 1rem;
       border: 1px solid library.$gray;
       background-color: library.$primary-10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   
     &-frontend{
       grid-area: frontend;
-      padding: 2.5rem 1.5rem;
+      padding: 0rem 1.5rem;
       height: 100%;
       border-radius: 1rem;
       border: 1px solid library.$gray;
       background-color: library.$primary-10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   
     &-text {
@@ -381,7 +389,7 @@
       'skills'
       'backend';
     grid-template-columns: 100%;
-    grid-template-rows: 350px auto 350px;
+    grid-template-rows: 300px auto 300px;
     width: 100%;
     gap:2rem;
   }
@@ -436,12 +444,14 @@
 
     &-backend{ 
       border-radius: 0px;
+      padding: 0rem 1rem;
       border-left: none !important;
       border-right: none !important;
     }
 
     &-frontend{
       border-radius: 0px;
+      padding: 0rem 1rem;
       border-left: none !important;
       border-right: none !important;
     }
