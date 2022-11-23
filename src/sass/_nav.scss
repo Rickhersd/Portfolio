@@ -39,8 +39,9 @@ $height-nav-item: 200px;
     color: library.$primary-90;
     font-size: 1.1rem;
     font-family: library.$font-mono;
-    margin-left: 1.8rem;
-    width: 11rem;
+    translate: -0.9rem 0rem;
+    padding: 0rem 1.8rem;
+    width: 14rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +54,7 @@ $height-nav-item: 200px;
 
   &__list-container{
     transition: translate 0.3s ease;
+    translate: 0.9rem 0rem;
     display: flex;
     position: relative;
     flex-direction: row;

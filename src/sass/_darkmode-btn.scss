@@ -57,12 +57,11 @@
 @media only screen and (max-width: 600px) {
 
   .svg-darkmode{
-    width: 70px;
-    height: 70px;
-    filter: drop-shadow(2px 2px 1px #a2d1ff);
+    width: 60px;
+    height: 60px;
 
     .svg-darkmode__bg{
-      display: none;
+      fill: library.$primary-50;
     }
 
     .svg-darkmode__sunMoon{

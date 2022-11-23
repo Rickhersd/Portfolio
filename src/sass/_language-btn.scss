@@ -58,3 +58,20 @@
     top: 0px
   }
 }
+
+@media only screen and (max-width: 600px) {
+
+  .language{
+    
+    &-btn{
+      width: 60px;
+      height: 60px;
+      font-size: 1.2rem;
+      color: library.$primary-90;
+      font-family: library.$font-mono;
+      font-weight: 500;
+      background-color: library.$primary-50;
+    }  
+  }
+
+}

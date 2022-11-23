@@ -16,9 +16,7 @@ window.addEventListener('DOMContentLoaded', (e) =>{
 
 window.addEventListener('load', (event) => {
   const loadingEl = document.querySelector('.loading');
-  const loadingText = document.querySelector('.loading__text')
-  const loadingCont = document.querySelector('.loading__container')
-  loadingText.innerHTML = "Iniciando Porfolio"
+  const loadingCont = document.querySelector('.loading__container');
   setTimeout(() => {
     loadingCont.style.animationPlayState = 'running'
     setTimeout(() =>{
@@ -36,7 +34,9 @@ darkMode.setBtn('.header__darkmode-btn');
 darkMode.setBtn('.nav-mobile__darkmode-btn')
 
 const translater = new Translater();
+
 let btns = document.querySelectorAll('.language-btn');
+translater.moveLangBtn(btns);
 btns.forEach(btn => {
   btn.addEventListener('click', () => {
     translater.toggleLang('en','es');
@@ -118,15 +118,23 @@ function configWheelSkills(){
   const frontendContainer = document.querySelector(".skills__frontend-radial");
   const backendContainer = document.querySelector(".skills__backend-radial");
 
+  const options2 = {
+    maxWidth: 720,
+    radio: 205,
+    skillsToShow: 8,
+    right: {x: 300, y: 300},
+    left: {x: 0, y:  300}
+  }
+
   const options = {
-    maxWidth: 800,
+    maxWidth: 600,
     radio: 150,
     skillsToShow: 6,
     right: {x: 250, y: 250},
-    left: {x: 0, y:  250}
+    left: {x: 0, y: 250}
   }
 
-  const options2 = {
+  const options3 = {
     maxWidth: 2000,
     radio: 260,
     skillsToShow: 10,
@@ -134,8 +142,8 @@ function configWheelSkills(){
     left: {x: 0, y: 350}
   }
 
-  uiWheel.renderSkills(frontendSkills, frontendContainer, 'right', "inverse", options2, options);
-  uiWheel.renderSkills(backendSkills, backendContainer, 'left', "clock", options2, options);
+  uiWheel.renderSkills(frontendSkills, frontendContainer, 'right', "inverse", options3, options2, options);
+  uiWheel.renderSkills(backendSkills, backendContainer, 'left', "clock", options3, options2, options);
 }
 
 function initIntersectionObserver(){
@@ -205,11 +213,8 @@ function calcClientHeight(){
 function decodeEmail(){
   const emailAddress = 'cmlja2hlcnNkMjAwMkBnbWFpbC5jb20=';
   const contactAnchorIcon = document.getElementById('contact__email-address-icon');
-  const contactAnchorText = document.getElementById('contact__email-address-text');
 
   contactAnchorIcon.setAttribute('href', `mailto:${atob(emailAddress)}`);
-  contactAnchorText.setAttribute('href', `mailto:${atob(emailAddress)}`);
-  contactAnchorText.innerHTML = atob(emailAddress);
 }
 
 //send FormData to emailJs.Service

@@ -9,6 +9,13 @@ export class Translater{
     this.currentLanguage = this.checkLocalStorage();
   }
 
+  moveLangBtn(btns){
+    if(this.currentLanguage == "es") return;
+    btns.forEach(btn => {
+      btn.classList.toggle('language-moved'); 
+    });
+  }
+
   toggleLang(firstLang, secondLang){
     let lang = (this.currentLanguage == firstLang) ? secondLang : firstLang;
     this.translate(lang);
@@ -16,7 +23,6 @@ export class Translater{
   }
 
   translate(lang){
-
     let lngData = selectLanguageData(lang);
     changeHtmlang(lang);
     addLocalValue(lang);
@@ -37,10 +43,11 @@ export class Translater{
       currentLang = checkLangPreference();
       currentLang = normalizeLangCode(currentLang);
       addLocalValue(currentLang);
-      if (currentLang != "en") this.translate(currentLang);
+      if (currentLang != "es") this.translate(currentLang);
+      console.log("hola");
     } else {
       currentLang = localValue;
-      if (localValue != "en") this.translate(localValue);  
+      if (localValue != "es") this.translate(localValue);  
     } 
     return currentLang;
   }

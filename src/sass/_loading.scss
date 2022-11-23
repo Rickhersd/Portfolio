@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   background-color: library.$main-bg;
+  transition: background-color 0.5s ease;
 
   &__container{
     display: flex;
@@ -18,13 +19,6 @@
     height: auto;
     animation: desappearLoading 0.3s forwards ease;
     animation-play-state: paused;
-  }
-
-  &__text{
-    font-size: 0.9rem;
-    font-family: 'Red Hat Text';
-    color: library.$primary-90;
-    font-weight: 400;
   }
 }
 

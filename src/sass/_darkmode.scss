@@ -59,6 +59,20 @@ body[data-darkmode="true"]{
   a{
     color: $DM-font;
   }
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    }
+    
+  &::-webkit-scrollbar-track {
+  background-color: $DM-gray-70;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    height: 10rem;
+    background-color: library.$primary-50;
+    border-radius: 2px;
+  }
 }
 
 //header
@@ -79,11 +93,22 @@ body[data-darkmode="true"]{
 
 }
 
+.header__nav[data-darkmode="true"]{
+
+  .header__nav-item{
+    background-color: library.$primary-50;
+
+    a {
+      color: $DM-main-bg !important;
+    }
+  }
+}
+
 .header__info[data-darkmode="true"]{
 
   .header__info{
     
-    &-btn g{
+    &-btn path, &-btn g{
       fill: library.$primary-50;
     }
 
@@ -121,6 +146,25 @@ body[data-darkmode="true"]{
       top: 0px
     }
   }
+
+  
+}
+
+@media only screen and (max-width: 600px) {
+
+  .language-btn[data-darkmode="true"]{
+    background-color: $DM-gray-90;
+    color: library.$primary-50;
+  }
+
+  .svg-darkmode__bg[data-darkmode="true"] {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+    fill: $DM-gray-90;
+    transition-timing-function: cubic-bezier(.13,.54,.5,.99);
+    d: path("M79.5 63C78.8572 69.3899 66.7493 79.5 49 79.5C31.2507 79.5 19 65.041 19 49C19 35.5711 24.5 25.5 29.4999 22C31.2719 21.5699 31.7018 25.6877 31.4999 27C29.4999 40 47.0759 69.7942 76 60.5C77.9283 59.8804 79.6421 61.5874 79.5 63Z");
+  }
+
 }
 
 //nav-mobile
@@ -153,13 +197,48 @@ body[data-darkmode="true"]{
     }
   }
   
-
   #hamburger-topBar,
   #hamburger-middleBar,
   #hamburger-bottomBar{
     fill: $DM-font
   }
+}
+
+.loading[data-darkmode="true"]{
+
+  background-color: $DM-main-bg;
+
+  .svg__computer{
+
+    width: 100px;
+    height: 100px;
+    opacity: 1;
   
+    &-dot{
+      stroke: $DM-gray-50;
+    }
+  
+    &-line{
+      stroke: library.$primary-50;
+    }
+  
+    &-dash{
+      stroke: $DM-gray-50;
+    }
+  
+    &-button{
+      opacity: 0;
+      animation: appear ease 0.2s forwards;
+      animation-delay: 0.8s;
+      fill: $DM-gray-50;
+    }
+  
+    &-block{
+      fill: library.$primary-50;
+      transform-origin: 20% 0%;
+      animation: appearScale 0.5s ease forwards;
+    }
+  }
 }
 
 //nav
@@ -347,11 +426,19 @@ body[data-darkmode="true"]{
           }
         }
       }
-  
+      
       &-link-github svg{
         fill: library.$primary-30;
       }
+
+      &-locker{
+        fill: #ffff81 !important;
+      }
     }
+  }
+
+  .visit-locked{
+    color: $DM-gray-50;
   }
 }
 
