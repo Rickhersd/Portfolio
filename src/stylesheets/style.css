@@ -1239,18 +1239,23 @@ body::-webkit-scrollbar-thumb {
   fill: #56697C;
 }
 .skills__description > div {
-  display: none;
   flex-direction: column;
 }
 .skills__description > div > h3 {
   font-size: 1.5rem;
   text-align: center;
   color: #00043c;
+  display: none;
 }
 .skills__description > div > p {
   font-size: 1rem;
   font-family: "Red Hat Text", sans-serif;
-  color: gray;
+  color: rgb(57, 57, 57);
+  display: none;
+}
+.skills__description > div > p:first-of-type {
+  display: block;
+  text-align: center;
 }
 
 .skills__radial {
@@ -1386,7 +1391,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .skills__circle-path-frontend {
-  background-color: #bbe6fb;
+  background-color: #d2e9ff;
   width: 700px;
   height: inherit;
   border-radius: 50%;
@@ -1395,7 +1400,7 @@ body::-webkit-scrollbar-thumb {
 .skills__circle-path-backend {
   position: absolute;
   left: -350px;
-  background-color: #bbe6fb;
+  background-color: #d2e9ff;
   width: 700px;
   height: inherit;
   border-radius: 50%;

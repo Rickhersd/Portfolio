@@ -58,19 +58,25 @@
     }
 
     & > div {
-      display: none;
       flex-direction: column;
 
       & > h3{
         font-size: 1.5rem;
         text-align: center;
         color: library.$primary-90;
+        display: none;
       }
 
       & > p{
         font-size: 1rem;
         font-family: library.$font-text;
-        color: gray;
+        color: rgb(57, 57, 57);
+        display: none; 
+      }
+
+      & > p:first-of-type{
+        display: block;
+        text-align: center;
       }
     }
   }
@@ -227,7 +233,7 @@
 }
 
 .skills__circle-path-frontend{
-  background-color: library.$primary-30;
+  background-color: library.$primary-10;
   width: calc(350px * 2);
   height: inherit;
   border-radius: 50%;
@@ -236,7 +242,7 @@
 .skills__circle-path-backend{
   position: absolute;
   left: calc(-1 * 350px);
-  background-color: library.$primary-30;
+  background-color: library.$primary-10;
   width: calc(350px * 2);
   height: inherit;
   border-radius: 50%;

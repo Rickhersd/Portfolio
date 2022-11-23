@@ -114,7 +114,7 @@ export const backendSkillsData = [
     svgFill: "#00618A",
     description: "El lenguaje de la web"
   },
-  {
+  /*{
     id: 'NodeJS',
     width:'65',
     height:'70',
@@ -129,7 +129,7 @@ export const backendSkillsData = [
     path:"m288 288h-32v-64h32zm288-128v192h-288v32h-128v-32h-160v-192zm-416 32h-128v128h64v-96h32v96h32zm160 0h-128v160h64v-32h64zm224 0h-192v128h64v-96h32v96h32v-96h32v96h32z",
     svgFill: "#cb3837",
     description: "HTML es un lenguaje de etiquetas"
-  }, 
+  },*/ 
   {
     id: 'Java',
     width:'24',
