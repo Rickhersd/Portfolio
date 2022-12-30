@@ -2,17 +2,87 @@
 
 #portfolio{
   padding-top: 5rem;
+  background-color: #e4f2ff
 }
 
 .portfolio{
 
   @include library.subHeader();
+
+  &__card{
+    padding: 1rem;
+    width: 32%;
+    background-color: #f9fcff;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 10px 0px rgba(216, 216, 216, 0.5);
+
+    &-img{
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 0.4rem;
+      border: 1px solid gray;
+    }
+
+    &-title{
+      font-size: 1.1rem;
+      margin: 0.3rem 0rem;
+    }
+
+    &-badged{
+      cursor: pointer;
+      display: inline;
+      padding:0.3rem 0.6rem;
+      font-size: 0.8rem;
+      border-radius: 1rem;;
+      border: 1px solid gray;
+      margin: 0.3rem 0rem;
+      color: gray;
+      background-color: rgb(244, 244, 244);
+      
+      &[data-text="portfolio-project-status-pending"]{
+        color: rgb(150, 0, 0);
+        border-color: rgb(150, 0, 0);
+      }
+
+      &[data-text="portfolio-project-status-in-progress"]{
+        color: rgb(156, 156, 0);
+        border-color: rgb(156, 156, 0);
+        background-color: rgb(255, 255, 161);
+      }
+      
+      &[data-text="portfolio-project-status-deployed"]{
+        color: rgb(0, 144, 0);
+        border-color: rgb(0, 144, 0);
+      }
+    }
+
+    &-technologies{
+      margin: 0.3rem 0rem;
+    }
+
+    &-description{
+      margin: 0.8rem 0rem;
+    }
+
+    &-links{
+      display: flex;
+      justify-content: space-between;
+      background-color: transparent;
+      flex-direction: row;
+      text-align: center;
+    }
+
+    
+  }
   
   &__flex-container{
     width: min(90%, 1150px);
     margin: 5rem auto;
+    column-gap: 0.5rem;
+    row-gap: 0.8rem;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
   }
 

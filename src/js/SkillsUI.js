@@ -47,7 +47,8 @@ export class SkillUI {
       changeParamaeters(selectOptions(options), side);
       rotate();
     });
-
+  
+    //
 		function createSvgElement(name, width, height, path){
 			let element = document.createElementNS(URI,'svg')
 			element.setAttribute("role","img");
@@ -64,6 +65,7 @@ export class SkillUI {
 			return element;
 		}
 
+    //
     function createSvgList(skills) {
 
       let svgList = [];

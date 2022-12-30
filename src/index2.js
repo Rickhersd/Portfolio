@@ -1,3 +1,6 @@
+console.log('Compilando el CSS con Webpack 5');
+import './sass/style.scss';
+
 import { frontendSkills } from "./data/skills.js";
 import { backendSkills } from "./data/skills.js";
 
@@ -9,6 +12,9 @@ import { separate } from "./js/AnimationWord.js";
 import { Translater } from "./js/Translater.js";
 //import { MeShadow } from "./js/MeShadow.js";
 import { Carrousel } from "./js/Carrousel.js";
+import prueba from './js/prueba';
+
+prueba();
 
 window.addEventListener('DOMContentLoaded', (e) =>{
   initLoading();
