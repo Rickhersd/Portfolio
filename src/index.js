@@ -11,6 +11,8 @@ import Contact from "./views/contact.view";
 import AboutMe from "./views/aboutMe.view";
 import Error404 from "./views/Error404.view";
 
+import './sass/_body.scss'
+
 const router = createBrowserRouter([
   {
     path: "/",
