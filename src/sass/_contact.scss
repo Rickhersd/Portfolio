@@ -298,7 +298,6 @@
     border-top-color: library.$primary-80;
     animation: loading 1s infinite linear;
     scale: 0.5;
-    opacity: 0;
     transition: scale ease 0.3s, opacity ease 0.3s;
   }
 
