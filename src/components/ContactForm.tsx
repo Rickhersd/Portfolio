@@ -19,7 +19,6 @@ export default function ContactForm() {
     setIsSending(true);
 
     const form = document.querySelector('.contact__form') as HTMLFormElement;
-    console.log(form)
 
     try{
       emailjs.sendForm(SERVICES_ID, TEMPLATE_ID, form, PUBLIC_KEY)

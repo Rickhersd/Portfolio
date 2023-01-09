@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectCard from "./projectCard/projectCard";
+import ProjectCard from "./projectCard";
 import { projectsList } from '../data/projects';
 
 import './projectCard.scss';

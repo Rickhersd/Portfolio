@@ -83,37 +83,29 @@
 }
 
 .skills__radial{
-  width: min(calc(100% - 2rem), 1150px);
   margin: 2rem auto;
   position: relative;
   overflow: hidden;
-  display: grid;
-  grid-template-areas:
-    'frontend skills'
-    'backend skills';
-  grid-template-columns: 35% 65%;
-  grid-template-rows: 50% 50%;
-  row-gap: 1rem;
+  display: flex;
 
   &-container{
-    grid-area: skills;
     display: flex;
-    scale: 0.7;
-    rotate: 360deg;
-    opacity: 0;
+    scale: 0.8;
+    width: 50%;
     top: 50%;
     right: 0;
     border-radius: calc( 350px + 2rem);
-    gap: 1rem;
-    width: calc(700px + 3rem);
-    height: calc(700px + 2rem);
     background-color: library.$main-bg;
     justify-content: center;
     align-items: center;
     transform-origin: 50% 50%;
-    transition-property: transform, width, scale, opacity, rotate;
-    transition-duration: 1.5s;
-    transition-timing-function: ease;
+
+    &-frontend{
+    }
+
+    &-backend{
+     flex-direction: row-reverse;
+    }
   
     &:hover .skillElement{
       transform: translate(-50%, -50%) rotate(0deg);
@@ -127,75 +119,11 @@
       transform: translate(-50%, -50%) rotate(0deg);
     }
   }
-
-  &-bg{
-    width: 100%;
-    height: 80%; 
-    margin: auto;
-  
-    &-backend{
-      grid-area: backend;
-      padding: 0rem 1.5rem;
-      height: 100%;
-      border-radius: 1rem;
-      border: 1px solid library.$gray;
-      background-color: library.$primary-10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    &-frontend{
-      grid-area: frontend;
-      padding: 0rem 1.5rem;
-      height: 100%;
-      border-radius: 1rem;
-      border: 1px solid library.$gray;
-      background-color: library.$primary-10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    &-text {
-
-      text-align: center;
-
-      span{
-        font-size: 1.5rem;
-        font-family: 'Roboto';
-        color: library.$primary-90;
-        font-weight: 500;
-        opacity: 0;
-        display: inline-block;
-        animation-duration: 0.5s;
-        animation-timing-function: cubic-bezier(.18,.49,0,1.16);
-        animation-fill-mode: forwards;
-        animation-name: SlideDownLetter;
-        transition: all 0.15s ease;
-        cursor:default;
-  
-        &:hover{
-          transform-origin: 50% 100%;
-          transform: scaleY(0.9) scale(1.3) scaleX(0.8);
-        }
-      }
-    }
-  
-    &-info{
-      color: library.$font-color-gray;
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      line-height: 1.7rem;  
-      text-align: center;
-    }
-  }
 }
 
 .skills__frontend{
   border-radius: 350px 0% 0% 350px;
+  filter: drop-shadow(0px 0px 1px black);
 
   &-radial{
     position: relative;
@@ -203,7 +131,7 @@
     height: 700px;
     overflow: hidden;
     border-radius: 350px 0% 0% 350px;
-    clip-path: path('M 0 0 V 700 H 350 V 530 A 70 70 360 0 1 350 170 V 0 H 0z');
+    
     transition: all 0.3s ease;
   
     &:hover {
@@ -215,6 +143,7 @@
 
 .skills__backend{
   border-radius: 0% 350px 350px 0%;
+  filter: drop-shadow(0px 0px 1px black);
 
   &-radial{
     position: relative;
@@ -241,7 +170,7 @@
 
 .skills__circle-path-backend{
   position: absolute;
-  left: calc(-1 * 350px);
+  translate: -25% 0%;
   background-color: library.$primary-10;
   width: calc(350px * 2);
   height: inherit;
@@ -651,4 +580,69 @@
 @keyframes gearRotate{
     from{rotate:0deg}
     to{rotate:360deg}
+}
+
+
+.skillwheel__large-size{
+
+  &-frontend{
+    width: 450px;
+    height: 900px;
+    translate: 50% 0%;
+    border-radius: 450px 0px 0px 450px;
+    clip-path: path('M 0 0 V 900 H 200 L 450 700 V 200 L 200 0 H 0z');
+  }
+
+  &-backend{
+    width: 450px;
+    height: 900px;
+    translate: -50% 0%;
+    border-radius: 0px 450px 450px 0px;
+    clip-path: path('M 450 0 V 900 H 250 L 0 700 V 200 L 250 0 H 0z');
+  }
+
+  & > div:first-of-type{
+    border-radius: 450px 0px 0px 450px;
+  }
+}
+
+.skillwheel__middle-size{
+
+  &-frontend{
+    width: 350px;
+    height: 700px;
+    border-radius: 350px 0px 0px 350px;
+    clip-path: path("M 0 0 V 700 H 100 L 350 500 V 200 L 100 0 H 0z");
+  }
+
+  &-backend{ 
+    width: 350px;
+    height: 700px;
+    border-radius: 0px 350px 350px 0px;
+    clip-path: path("M 350 0 V 700 H 250 L 0 500 V 200 L 250 0 H 0z");
+  }
+}
+
+.skillwheel__small-size{
+
+  &-frontend{
+    width: 250px;
+    height: 500px;
+    border-radius: 250px 0px 0px 250px;
+    translate: -50% 0%;
+    clip-path: path("M 0 0 V 500 L 250 300 A 100 100 160 0 1 250 200 M 150 0 H 0z");
+  }
+
+  &-backend{
+    width: 250px;
+    height: 500px;
+    z-index: 2;
+    border-radius: 0px 250px 250px 0px;
+    translate: 50% 0%;
+    clip-path: path("M 250 0 V 500 L 0 300 A 150 150 160 0 1 0 200 M 50 0 H 0z");
+  }
+
+  & > div:first-of-type{
+    border-radius: 250px 0px 0px 250px;
+  }
 }

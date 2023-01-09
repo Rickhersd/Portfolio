@@ -5,46 +5,48 @@ import Services from "../components/services";
 import Section from "../components/section";
 import ContactForm from "../components/ContactForm";
 
-const Home = () => {
+import GmailIcon from '../images/gmailIcon.svg'
+import LinkedinIcon from '../images/linkedinIcon.svg'
+import GithubIcon from '../images/github.svg'
+
+const Root = () => {
   return (
     <div>
       <Navbar></Navbar>
       Home!
       <Services></Services>
       <ProjectsGroup></ProjectsGroup>
-      <footer>
-        <div>
-        <ContactForm></ContactForm>
-        </div>
-        <div>
-        <section className="contact-end"> 
-        <div className="contact-end__social-links-container">
-          <a id="contact__email-address-icon" >
-            <svg className="contact-end__social-link" role="img" width="45" height="45" viewBox="0 0 45 45">
-              <use href="#svg-footer__email-icon"></use>
-            </svg>
-          </a>
-          <a href="https://github.com/Rickhersd">
-            <svg className="contact-end__social-link" role="img" width="45" height="45" viewBox="0 0 45 45">
-              <use href="#svg-footer__github-icon"></use>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/ricardosan-webdev/">
-            <svg className="contact-end__social-link" role="img" width="45" height="45" viewBox="0 0 45 45">
-              <use href="#svg-footer__linkedin-icon"></use>
-            </svg>
-          </a>
-        </div>
-        <div className="contact-end__handcrafted-by">
-          <p data-text="contact-phrase" className="contact-end__phrase">EL CÓDIGO ES CAPAZ DE COSAS INCREÍBLES</p>
-          <p data-text="contact-handcrafted-by">Esta página web fue hecha por mí © 2022</p> 
-        </div>
-      </section> 
-        </div>  
 
+
+      <footer className="footer">
+        <div className="footer__rightside">
+          <ContactForm></ContactForm>
+        </div>
+        <div className="footer__leftside">
+          <section className="contact-end"> 
+            <div className="contact-end__social-links-container">
+              <a id="contact__email-address-icon" >
+                <GmailIcon className='contact-end__social-link'></GmailIcon>
+              </a>
+              <a href="https://github.com/Rickhersd">
+                <GithubIcon className='contact-end__social-link'></GithubIcon>
+              </a>
+              <a href="https://www.linkedin.com/in/ricardosan-webdev/">
+                <LinkedinIcon className='contact-end__social-link'></LinkedinIcon>
+              </a>
+            </div>
+            <div className="contact-end__handcrafted-by">
+              <p data-text="contact-phrase" className="contact-end__phrase">EL CÓDIGO ES CAPAZ DE COSAS INCREÍBLES</p>
+              <p data-text="contact-handcrafted-by">Esta página web fue hecha por mí © 2022</p> 
+            </div>
+          </section> 
+        </div> 
+        <div className="footer__end">
+
+        </div>  
       </footer>
     </div>
   )
 };
 
-export default Home;
+export default Root;

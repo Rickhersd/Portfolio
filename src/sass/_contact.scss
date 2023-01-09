@@ -6,21 +6,39 @@
   position: relative;
 }
 
+.footer{
+
+	display: grid;
+	min-height: 100vh;
+	grid-template-areas:
+		'empty rightside leftside empty2'
+		'contact-end contact-end contact-end contact-end'; 
+	grid-template-columns: auto min(500px) auto auto;
+	grid-template-rows:  auto 150px;
+	
+	&__rightside{
+		grid-area: rightside;
+	}
+
+	&__leftside{ 
+		grid-area: leftside;
+	}
+
+	&__end{
+		grid-area: contact-end;
+	}
+
+}
+
 .contact{
 
 	&__container{
 		margin: auto;
-    display: grid;
-    min-height: 100vh;
-    grid-template-areas:
-      'empty form empty2'
-      'social-links social-links social-links'; 
-    grid-template-columns: auto min(1150px, 90%) auto;
-    grid-template-rows:  auto 150px;
+
 	}
 
 	&__form-cont{
-    grid-area: form;
+    grid-area: rightside;
 		display: flex;
 		gap: 1rem;
 		justify-content: center;

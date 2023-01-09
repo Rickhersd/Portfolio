@@ -1,6 +1,8 @@
 import React from 'react'
 import '../sass/_nav.scss'
 import { Link } from 'react-router-dom'
+import DarkmodeBtn from './darkmodeBtn'
+import LanguageBtn from './languageBtn'
 
 export default function Navbar() {
   return (
@@ -30,6 +32,10 @@ export default function Navbar() {
           </li>
           <span className="nav__span"></span>
         </ul>
+        <div style={{width: '200px'}}>
+          <LanguageBtn></LanguageBtn>
+          <DarkmodeBtn></DarkmodeBtn>
+        </div>
       </div>
     </nav> 
   )

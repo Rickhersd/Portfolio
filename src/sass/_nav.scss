@@ -4,14 +4,12 @@ $height-nav-item: 200px;
 
 #nav {
   display: flex;
-  position: fixed;
   align-items: center;
   justify-content: center;
   top: 0px;
   width: 100vw;
   font-size: 0.85rem;
   color: library.$font-color-white;
-  border-bottom: 1px solid library.$light-gray;
   z-index: 10;
   height: 3.5rem;
   background-color: library.$main-bg;

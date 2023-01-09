@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Children, createContext, useContext, useReducer } from "react";
 import ReactDOM from "react-dom/client";
 import {
     createBrowserRouter,
     RouterProvider,
   } from "react-router-dom";
 
-import Home from "./views/home.view";
+import Root from "./views/home.view";
 import Projects from "./views/projects.view";
 import Contact from "./views/contact.view";
 import AboutMe from "./views/aboutMe.view";
@@ -16,28 +16,72 @@ import './sass/_body.scss'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-    errorElement: <Error404 />
+    element: <Root />,
+    errorElement: <Error404 />,
+    children: [
+      {
+        path: "/:lang/projects/",
+        element: <Projects />
+      },
+      {
+        path: "/:lang/contact",
+        element: <Contact />,
+      },
+    ],
   },
   {
-    path: "/:lang/aboutMe/",
+    path: "/about-me",
     element: <AboutMe />,
-    errorElement: <Error404 />
-  },
-  {
-    path: "/:lang/projects/",
-    element: <Projects />,
-    errorElement: <Error404 />
-  },
-  {
-    path: "/:lang/contact",
-    element: <Contact />,
-    errorElement: <Error404 />
   },
 ])
 
+const initialState = {
+  isDarkmodeOn: false
+};
+
+const actions = {
+  TOGGLE_DARKMODE: "TOGGLE_DARKMODE",
+};
+
+const darkmodeReducer = (state, action) => {
+  switch (action.type){
+    case actions.TOGGLE_DARKMODE:
+      return !state
+    default: 
+      return state;
+  }
+}
+
+export const ConfigContext = createContext();
+
+const reducers = ({isDarkmodeOn}, action) => {
+  return {
+    isDarkmodeOn: darkmodeReducer(isDarkmodeOn, action),
+  }
+}
+
+const ConfigProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducers, initialState)
+
+  const value = {
+    isDarkmodeOn: state.isDarkmodeOn,
+    toggleDarkmode: () => {
+      console.log(state.isDarkmodeOn)
+      dispatch({type: actions.TOGGLE_DARKMODE})
+    }
+  }
+
+  return (
+    <ConfigContext.Provider value={value}>
+      {children}
+    </ConfigContext.Provider>
+  );
+} 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ConfigProvider>
+      <RouterProvider router={router} />
+    </ConfigProvider>
   </React.StrictMode>
 );

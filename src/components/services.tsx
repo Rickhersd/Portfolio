@@ -3,6 +3,7 @@ import Service from './service'
 
 import '../sass/services.scss'
 import databaseIcon from '../images/databaseCog.svg'
+import { Link } from 'react-router-dom'
 
 export default function Services() {
 
@@ -26,6 +27,10 @@ export default function Services() {
           title={'UX and UI Designer'} 
           description={'Desarrallo para'} 
           svgUrl={databaseIcon}></Service>
+      </div>
+      <div>
+        <Link to=''><button> About me</button></Link>
+        <Link to=''><button> Contact-me</button></Link>
       </div>
     </section>
   )

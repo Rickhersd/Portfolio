@@ -1,8 +1,8 @@
 console.log('Compilando el CSS con Webpack 5');
 import './sass/style.scss';
 
-import { frontendSkills } from "./data/skills.js";
-import { backendSkills } from "./data/skills.js";
+import { frontendSkills } from "./data/skillsList.js";
+import { backendSkills } from "./data/skillsList.js";
 
 import { SkillUI } from "./js/SkillsUI.js";
 import { HamburgerMenu } from "./js/HamburgerMenu.js";
@@ -212,7 +212,7 @@ function showHeroAnimations(){
 }
 
 function calcClientHeight(){
-    return document.documentElement.clientHeight 
+  return document.documentElement.clientHeight 
 }
 
 //Decode Email address from base64 format;
