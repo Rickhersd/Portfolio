@@ -3,12 +3,15 @@ import '../sass/_nav.scss'
 import { Link } from 'react-router-dom'
 import DarkmodeBtn from './darkmodeBtn'
 import LanguageBtn from './languageBtn'
+import LogotypeIcon from '../images/logotype.svg'
 
 export default function Navbar() {
   return (
     <nav id="nav" data-darkmode>
       <div className="nav__container">
-        <Link to="home" className="nav__name">Ricardo Sánchez</Link>
+        <Link to="home" className="nav__name">
+          <LogotypeIcon></LogotypeIcon>
+        </Link>
         <ul className="nav__list-container">
           <li className="nav__list-item nav__item-about-me">
             <Link to="about-me">
@@ -31,11 +34,11 @@ export default function Navbar() {
             </Link>
           </li>
           <span className="nav__span"></span>
+          <li className="nav__list-item-config">
+            <LanguageBtn></LanguageBtn>
+            <DarkmodeBtn></DarkmodeBtn>
+          </li>
         </ul>
-        <div style={{width: '200px'}}>
-          <LanguageBtn></LanguageBtn>
-          <DarkmodeBtn></DarkmodeBtn>
-        </div>
       </div>
     </nav> 
   )

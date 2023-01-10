@@ -30,13 +30,14 @@ $height-nav-item: 200px;
     width: min(1150px, 100%);
     height: inherit;
     translate: 0px 0px;
+    padding: 0.5rem;
     transition: translate 0.3s ease;
   }
 
   &__name{
-    color: library.$primary-90;
-    font-size: 1.1rem;
-    font-family: library.$font-mono;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     translate: -0.9rem 0rem;
     padding: 0rem 1.8rem;
     width: 14rem;
@@ -48,6 +49,15 @@ $height-nav-item: 200px;
       text-decoration: none;
       color: library.$primary-90;
     }
+  }
+
+  &__list-item-config{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   &__list-container{
@@ -95,7 +105,6 @@ $height-nav-item: 200px;
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      padding: 0.5rem 0.5rem;
       align-items: center;
       justify-content: center;
 
@@ -107,6 +116,7 @@ $height-nav-item: 200px;
     }
   }
 }
+
 
 @media only screen and (max-width: 600px) {
   #nav{

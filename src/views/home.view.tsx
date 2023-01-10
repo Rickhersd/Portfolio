@@ -13,7 +13,6 @@ const Root = () => {
   return (
     <div>
       <Navbar></Navbar>
-      Home!
       <Services></Services>
       <ProjectsGroup></ProjectsGroup>
 
